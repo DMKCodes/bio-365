@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { useRefreshMutation } from '../features/authApiSlice';
-import usePersist from '../hooks/usePersist';
+import { useRefreshMutation } from '../../features/authApiSlice';
+import usePersist from '../../hooks/usePersist';
 import { useSelector } from 'react-redux';
-import { selectToken } from '../features/userSlice';
+import { selectToken } from '../../features/userSlice';
 import { Outlet } from 'react-router-dom';
 
 const PersistLogin = () => {
@@ -48,9 +48,7 @@ const PersistLogin = () => {
         content = <p>Loading...</p>;
     } else if (isError) {
         console.log(error);
-        content = (
-            <p>Error refreshing your details.  Please refresh or try logging in again.</p>
-        );
+        content = <p>Error refreshing your details.  Please refresh or try logging in again.</p>
     } else if (isSuccess && trueSuccess) {
         console.log('persist success');
         content = <Outlet />;

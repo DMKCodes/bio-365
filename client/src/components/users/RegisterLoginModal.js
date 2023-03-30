@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../features/userSlice';
+import { selectCurrentUser } from '../../features/userSlice';
 import {
     Button,
     Modal,
@@ -28,7 +28,7 @@ const RegisterLoginModal = () => {
                 {currentUser ? (
                     <UserDropdown />
                 ) : (
-                    <Button outline color='light' onClick={() => setModalOpen(true)}>
+                    <Button outline onClick={() => setModalOpen(true)}>
                         Log In
                     </Button>
                 )}
@@ -36,8 +36,8 @@ const RegisterLoginModal = () => {
             <Modal isOpen={modalOpen}>
                 <Nav tabs justified>
                     <NavItem>
-                        <NavLink 
-                            className={activeTab === 'login' ? 'active' : ''} 
+                        <NavLink
+                            className={activeTab === 'login' ? 'active' : ''}
                             onClick={() => setActiveTab('login')}
                             style={{ cursor: 'pointer' }}
                         >
@@ -45,8 +45,8 @@ const RegisterLoginModal = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink 
-                            className={activeTab === 'register' ? 'active' : ''} 
+                        <NavLink
+                            className={activeTab === 'register' ? 'active' : ''}
                             onClick={() => setActiveTab('register')}
                             style={{ cursor: 'pointer' }}
                         >
@@ -56,21 +56,21 @@ const RegisterLoginModal = () => {
                 </Nav>
                 <TabContent activeTab={activeTab}>
                     <TabPane tabId='register'>
-                        { error ? (
+                        {error ? (
                             <h4 className='p-3'>{errorMsg}</h4>
                         ) : currentUser ? (
                             <h4 className='p-3'>Registration successful! Logging in...</h4>
                         ) : (
-                            <RegisterForm 
+                            <RegisterForm
                                 setModalOpen={setModalOpen}
                                 setError={setError}
                                 setErrorMsg={setErrorMsg}
                                 setActiveTab={setActiveTab}
-                            />  
+                            />
                         )}
                     </TabPane>
                     <TabPane tabId='login'>
-                        { error ? (
+                        {error ? (
                             <h4 className='p-3'>{errorMsg}</h4>
                         ) : currentUser ? (
                             <h4 className='m-3'>Login successful. Redirecting...</h4>

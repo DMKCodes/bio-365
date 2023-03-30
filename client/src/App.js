@@ -1,10 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import PersistLogin from './components/PersistLogin';
+import Header from './components/utils/Header';
+import PersistLogin from './components/utils/PersistLogin';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
-import Footer from './components/Footer';
+import PolicyPage from './pages/PolicyPage';
+import NewsPage from './pages/NewsPage';
+import LearnPage from './pages/LearnPage';
+import ResourcesPage from './pages/ResourcesPage';
+import AboutPage from './pages/AboutPage';
+import Footer from './components/utils/Footer';
 
 function App() {
     return (
@@ -19,6 +24,26 @@ function App() {
                     <Route 
                         path='/dashboard' 
                         element={<DashboardPage />}
+                    />
+                    <Route
+                        path='/policy'
+                        element={<PolicyPage />}
+                    />
+                    <Route
+                        path='/news'
+                        element={<NewsPage />}
+                    />
+                    <Route
+                        path='/learn'
+                        element={<LearnPage />}
+                    />
+                    <Route
+                        path='/resources'
+                        element={<ResourcesPage />}
+                    />
+                    <Route
+                        path='/about'
+                        element={<AboutPage />}
                     />
                 </Route>
             </Routes>

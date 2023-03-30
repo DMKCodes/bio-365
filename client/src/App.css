@@ -1,10 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
+
 .App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   text-align: center;
+  font-family: 'Lusitana', serif;
 }
 
-.footer {
-  margin-top: auto;
+.article-title {
+  height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.article-blurb {
+  height: 6em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.article-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { checkAdmin, selectCurrentUser } from '../features/userSlice';
 import { Container, Row, Col } from 'reactstrap';
-import Subheader from '../components/Subheader';
-import UserPanel from '../components/UserPanel';
-import AdminPanel from '../components/AdminPanel';
+import Subheader from '../components/utils/Subheader';
+import UserPanel from '../components/users/UserPanel';
+import AdminPanel from '../components/users/AdminPanel';
 
 const DashboardPage = () => {
     const currentUser = useSelector(selectCurrentUser);
@@ -11,7 +11,7 @@ const DashboardPage = () => {
     const { username } = currentUser;
 
     return (
-        <Container fluid className='mt-3'>
+        <Container className='mt-3'>
             <Subheader current={`Dashboard: ${username}`}/>
             <Row className='pt-1'>
                 <h2>Welcome, {username}!</h2>

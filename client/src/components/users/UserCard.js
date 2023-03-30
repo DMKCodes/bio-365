@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { selectCurrentUser, clearCurrentUser } from '../features/userSlice';
-import { usePutUserByIdMutation, useDeleteUserByIdMutation } from '../features/authApiSlice';
+import { selectCurrentUser, clearCurrentUser } from '../../features/userSlice';
+import { usePutUserByIdMutation, useDeleteUserByIdMutation } from '../../features/authApiSlice';
 import { Row, Col, Button } from 'reactstrap';
 import ChangeUsernameForm from './ChangeUsernameForm';
 
@@ -27,9 +27,9 @@ const UserCard = ({ user, setStatusMsg }) => {
             return;
         }
         try {
-            await putUserById({ 
+            await putUserById({
                 _id,
-                newVals: { username: values.newUsername } 
+                newVals: { username: values.newUsername }
             }).unwrap();
 
             setChangeUsername(false);
@@ -50,7 +50,7 @@ const UserCard = ({ user, setStatusMsg }) => {
     const delUser = async () => {
         try {
             await deleteUserById({ _id }).unwrap();
-            
+
             if (currentUser._id === _id) {
                 setStatusMsg('Account successfully deleted.  Redirecting...');
                 setTimeout(() => {
@@ -81,22 +81,22 @@ const UserCard = ({ user, setStatusMsg }) => {
             <p>Admin: {admin ? 'Yes' : 'No'}</p>
             <Row className='justify-content-center'>
                 {changeUsername ? (
-                    <ChangeUsernameForm 
-                        setChangeUsername={setChangeUsername} 
-                        putUserUsername={putUserUsername} 
+                    <ChangeUsernameForm
+                        setChangeUsername={setChangeUsername}
+                        putUserUsername={putUserUsername}
                     />
                 ) : usernameChanged ? (
                     <p className='text-success'><b>Username successfully changed.</b></p>
                 ) : (
-                <Button 
-                    outline 
-                    type='submit' 
-                    color='warning'
-                    style={{ width: '175px' }}
-                    onClick={() => setChangeUsername(true)}
-                >
-                    Change Username
-                </Button>
+                    <Button
+                        outline
+                        type='submit'
+                        color='warning'
+                        style={{ width: '175px' }}
+                        onClick={() => setChangeUsername(true)}
+                    >
+                        Change Username
+                    </Button>
                 )}
             </Row>
             <Row className='mt-2 justify-content-center'>
@@ -106,17 +106,17 @@ const UserCard = ({ user, setStatusMsg }) => {
                     ) : deleteUser ? (
                         <>
                             <p>Are you sure you want to delete your account?  This operation is <b style={{ color: 'red' }}>permanent</b>.</p>
-                            <Button 
-                                type='submit' 
+                            <Button
+                                type='submit'
                                 color='danger'
                                 className='me-2'
                                 onClick={() => delUser()}
                             >
                                 Confirm
                             </Button>
-                            <Button 
-                                type='button' 
-                                color='secondary' 
+                            <Button
+                                type='button'
+                                color='secondary'
                                 onClick={() => setDeleteUser(false)}
                             >
                                 Cancel

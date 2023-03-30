@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const indexRouter = require('./routes/indexRouter');
 const refreshTokenRouter = require('./routes/refreshTokenRouter');
 const userRouter = require('./routes/userRouter');
+const newsRouter = require('./routes/newsRouter');
 
 // configure mongodb w/ mongoose
 const mongoose = require('mongoose');
@@ -47,6 +48,7 @@ app.use(passport.initialize());
 app.use('/', indexRouter);
 app.use('/refresh', refreshTokenRouter);
 app.use('/users', userRouter);
+app.use('/news', newsRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

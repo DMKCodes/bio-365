@@ -1,19 +1,20 @@
 import { useDispatch } from 'react-redux';
-import { setCurrentUser } from '../features/userSlice';
-import { useLoginMutation } from '../features/authApiSlice';
-import usePersist from '../hooks/usePersist';
+import { setCurrentUser } from '../../features/userSlice';
+import { useLoginMutation, useRegisterMutation } from '../../features/authApiSlice';
 import { Col, Button, FormGroup, Label } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
-const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
+const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => {
     const dispatch = useDispatch();
-
-    const [persist, setPersist] = usePersist();
-
+    const [register] = useRegisterMutation();
     const [login] = useLoginMutation();
 
-    const loginSchema = yup.object().shape({
+    const registerSchema = yup.object().shape({
+        email: yup
+            .string()
+            .email('Invalid email format.')
+            .required('Required.'),
         username: yup
             .string()
             .min(4, 'Must be at least 4 characters.')
@@ -25,29 +26,46 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[0-9]){1})((?=.*[A-Z]){1}).*$/,
                 "Password must contain at least 8 characters, one uppercase, one number and one special character."
             )
+            .required('Required.'),
+        confirmPassword: yup
+            .string()
+            .oneOf([yup.ref('password'), null], 'Passwords do not match.')
             .required('Required.')
     });
 
+    const handleRegisterSubmit = async (values) => {
+        try {
+            await register(values).unwrap();
+            handleLoginSubmit(values);
+        } catch (error) {
+            setError(true);
+            if (!error?.data) {
+                setErrorMsg('No server response.');
+            } else if (error.status === 409) {
+                setErrorMsg(error.data.error);
+            } else {
+                setErrorMsg('Internal error, please try again.  Redirecting...');
+            }
+            setTimeout(() => {
+                setModalOpen(false);
+                setError(false);
+            }, '3000');
+        };
+    };
+
     const handleLoginSubmit = async (values) => {
         try {
-            if (values.remember) {
-                setPersist(true);
-            }
-
-            const response = await login({ 
-                username: values.username, 
-                password: values.password 
-            }).unwrap();
+            const response = await login(values).unwrap();
             const user = response.user;
             const token = response.token;
             dispatch(setCurrentUser({ user, token }));
 
             setTimeout(() => {
                 setModalOpen(false);
+                setActiveTab('login');
                 setError(false);
             }, '2000');
         } catch (error) {
-            console.log(error);
             setError(true);
             if (!error?.data) {
                 setErrorMsg('No server response.');
@@ -68,10 +86,11 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
             initialValues={{
                 username: '',
                 password: '',
-                remember: false
+                email: '',
+                admin: false
             }}
-            validationSchema={loginSchema}
-            onSubmit={handleLoginSubmit}
+            validationSchema={registerSchema}
+            onSubmit={handleRegisterSubmit}
         >
             {(formik) => {
                 const { errors, touched } = formik;
@@ -79,10 +98,10 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                     <Form className='p-3'>
                         <FormGroup row>
                             <Label htmlFor='username' md='3'>
-                                Username: 
+                                Username:
                             </Label>
                             <Col md='9'>
-                                <Field 
+                                <Field
                                     name='username'
                                     autoComplete='off'
                                     className={`form-control${errors.username && touched.username ? ' is-invalid' : ''}`}
@@ -98,10 +117,10 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                         </FormGroup>
                         <FormGroup row>
                             <Label htmlFor='password' md='3'>
-                                Password: 
+                                Password:
                             </Label>
                             <Col md='9'>
-                                <Field 
+                                <Field
                                     name='password'
                                     type='password'
                                     autoComplete='off'
@@ -117,22 +136,60 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label check htmlFor='remember' md='3'>
-                                Remember me?
+                            <Label htmlFor='confirmPassword' md='3'>
+                                Confirm Password:
                             </Label>
                             <Col md='9'>
                                 <Field
-                                    name='remember'
+                                    name='confirmPassword'
+                                    type='password'
+                                    autoComplete='off'
+                                    className={`form-control${errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : ''}`}
+                                />
+                                {errors.confirmPassword && touched.confirmPassword ? (
+                                    <ErrorMessage
+                                        component='span'
+                                        name='confirmPassword'
+                                        className='invalid-feedback'
+                                    />
+                                ) : null}
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label htmlFor='email' md='3'>
+                                Email:
+                            </Label>
+                            <Col md='9'>
+                                <Field
+                                    name='email'
+                                    autoComplete='off'
+                                    className={`form-control${errors.email && touched.email ? ' is-invalid' : ''}`}
+                                />
+                                {errors.email && touched.email ? (
+                                    <ErrorMessage
+                                        component='span'
+                                        name='email'
+                                        className='invalid-feedback'
+                                    />
+                                ) : null}
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label check htmlFor='admin' md='3'>
+                                Admin?
+                            </Label>
+                            <Col md='9'>
+                                <Field
+                                    name='admin'
                                     type='checkbox'
                                     className='form-check-input mt-2'
-                                    checked={persist}
                                 />
                             </Col>
                         </FormGroup>
                         <FormGroup row>
                             <Col className='d-flex justify-content-center'>
                                 <Button type='submit' color='success' className='me-3'>
-                                    Login
+                                    Register
                                 </Button>
                                 <Button type='button' color='secondary' onClick={() => setModalOpen(false)}>
                                     Cancel
@@ -146,4 +203,4 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
     );
 };
 
-export default LoginForm;
+export default RegisterForm;

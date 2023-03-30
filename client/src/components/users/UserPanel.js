@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentUser, clearCurrentUser } from '../features/userSlice';
+import { selectCurrentUser, clearCurrentUser } from '../../features/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { 
     useGetUserByIdQuery, 
     usePutUserByIdMutation, 
     useDeleteUserByIdMutation 
-} from '../features/authApiSlice';
+} from '../../features/authApiSlice';
 import { Container, Row, Col, Button } from 'reactstrap';
 import ChangePasswordForm from './ChangePasswordForm';
 

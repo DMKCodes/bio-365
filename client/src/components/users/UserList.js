@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Row, Col, Button } from 'reactstrap';
-import { 
-    useGetAllUsersQuery, 
-    useDeleteAllUsersMutation 
-} from '../features/authApiSlice';
+import {
+    useGetAllUsersQuery,
+    useDeleteAllUsersMutation
+} from '../../features/authApiSlice';
 import UserCard from './UserCard';
 
 const UserList = () => {
@@ -36,7 +36,7 @@ const UserList = () => {
     const delAllUsers = async () => {
         try {
             await deleteAllUsers().unwrap();
-            
+
             setStatusMsg('All other users successfully deleted.');
             setAllUsers('');
         } catch (error) {
@@ -56,10 +56,10 @@ const UserList = () => {
         <>
             <Row className='border border-top-0 justify-content-center p-3'>
                 <Col md='4'>
-                    <Button 
-                        outline 
-                        type='submit' 
-                        color='primary' 
+                    <Button
+                        outline
+                        type='submit'
+                        color='primary'
                         onClick={() => setGetAllUsersStarted(true)}
                     >
                         Populate Users
@@ -88,10 +88,10 @@ const UserList = () => {
                     <>
                         {allUsers.map((user) => {
                             return (
-                                <UserCard 
-                                    key={user._id} 
-                                    user={user} 
-                                    setStatusMsg={setStatusMsg} 
+                                <UserCard
+                                    key={user._id}
+                                    user={user}
+                                    setStatusMsg={setStatusMsg}
                                 />
                             );
                         })}
@@ -100,7 +100,7 @@ const UserList = () => {
                     null
                 )}
             </Row>
-        </>       
+        </>
     );
 };
 

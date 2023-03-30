@@ -2,7 +2,7 @@ import { Container, Row, Col} from 'reactstrap';
 
 const Footer = () => {
     return (
-        <footer className='footer sticky-bottom bg-success text-light'>
+        <footer className='footer'>
             <Container className='p-2'>
                 <Row>
                     <Col md='4' xs='12'>
@@ -13,7 +13,6 @@ const Footer = () => {
                             href='https://github.com/DMKCodes'
                             target='_blank'
                             rel='noreferrer'
-                            style={{ color: 'white' }}
                         >
                             GitHub
                         </a>
@@ -23,7 +22,6 @@ const Footer = () => {
                             href='https://dmk.codes/'
                             target='_blank'
                             rel='noreferrer'
-                            style={{ color: 'white' }}
                         >
                             Portfolio
                         </a>
