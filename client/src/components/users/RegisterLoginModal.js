@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../features/userSlice';
 import {
     Button,
     Modal,
@@ -10,29 +8,20 @@ import {
     TabContent,
     TabPane
 } from 'reactstrap';
-import UserDropdown from './UserDropdown';
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 
-const RegisterLoginModal = () => {
+const RegisterLoginModal = ({ currentUser }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('login');
     const [error, setError] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
 
-    const currentUser = useSelector(selectCurrentUser);
-
     return (
-        <>
-            <span className='navbar-text me-md-5'>
-                {currentUser ? (
-                    <UserDropdown />
-                ) : (
-                    <Button outline onClick={() => setModalOpen(true)}>
-                        Log In
-                    </Button>
-                )}
-            </span>
+        <>       
+            <Button outline onClick={() => setModalOpen(true)}>
+                Log In
+            </Button>
             <Modal isOpen={modalOpen}>
                 <Nav tabs justified>
                     <NavItem>

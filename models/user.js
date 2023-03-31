@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 const Schema = mongoose.Schema;
+const Article = require('./article');
 
 const userSchema = new Schema({
     email: {
@@ -12,7 +13,8 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    refreshToken: String
+    refreshToken: String,
+    savedArticles: [Article.schema]
 });
 
 userSchema.plugin(passportLocalMongoose);

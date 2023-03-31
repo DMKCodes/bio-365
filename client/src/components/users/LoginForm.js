@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { setCurrentUser } from '../../features/userSlice';
-import { useLoginMutation } from '../../features/authApiSlice';
+import { setCurrentUser } from '../../features/users/userSlice';
+import { useLoginMutation } from '../../features/users/authApiSlice';
 import usePersist from '../../hooks/usePersist';
 import { Col, Button, FormGroup, Label } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';

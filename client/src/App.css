@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
 
 .App {
-  text-align: center;
   font-family: 'Lusitana', serif;
+}
+
+.article-card {
+  text-align: center;
 }
 
 .article-title {

@@ -1,17 +1,11 @@
-import { useArticlesQuery } from '../../features/newsApiSlice';
 import ArticleCard from './ArticleCard';
 import { Col } from 'reactstrap';
 
-const NewsList = () => {
-    const {
-        data,
-        error,
-        isLoading
-    } = useArticlesQuery();
-
+const NewsList = ({ data, error, isLoading }) => {
     let content;
 
     if (error) {
+        console.log(error);
         content = <p>Error retrieving articles. Please refresh and try again.</p>;
     } else if (isLoading) {
         content = <p>Loading...</p>;
@@ -26,10 +20,14 @@ const NewsList = () => {
             })
         );
     } else {
-        content = <p>Unknown error. Please refresh and try again.</p>;
+        content = <p>Unknown error when fetching articles. Please refresh and try again.</p>;
     }
 
-    return content;
+    return (
+        <>
+            {content}
+        </>
+    );
 };
 
 export default NewsList;

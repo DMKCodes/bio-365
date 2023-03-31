@@ -1,4 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../features/users/userSlice';
+import { 
+    useAddArticleMutation
+} from '../../features/users/articlesApiSlice';
 import {
     Row,
     Col,
@@ -18,6 +23,9 @@ import DTE from '../../app/media/dte.png';
 
 const ArticleCard = ({ article }) => {
     const [image, setImage] = useState(null);
+    const [userId, setUserId] = useState(null);
+    const currentUser = useSelector(selectCurrentUser);
+
     const { 
         title, 
         link, 
@@ -28,6 +36,12 @@ const ArticleCard = ({ article }) => {
         source,
         category
     } = article;
+
+    useEffect(() => {
+        if (currentUser) {
+            setUserId(currentUser._id);
+        }
+    }, [currentUser]);
 
     useEffect(() => {
         if (article.image) {
@@ -46,8 +60,18 @@ const ArticleCard = ({ article }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const [postArticle] = useAddArticleMutation();
+
+    const addArticle = async () => {
+        try {
+            await postArticle({ userId, article }).unwrap();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
-        <Card className='mb-4'>
+        <Card className='article-card mb-4'>
             <CardImg
                 alt='card image'
                 className='article-image'
@@ -74,18 +98,20 @@ const ArticleCard = ({ article }) => {
                     href={link}  
                     tag='a' 
                 >
-                    Read Article
+                    Full Article
                 </Button>
-                <Button
-                    outline
-                    type='button' 
-                    color='secondary'
-                    size='sm'
-                    href={link}  
-                    tag='a' 
-                >
-                    Save For Later
-                </Button>
+                {currentUser &&
+                    <Button
+                        outline
+                        type='button' 
+                        color='secondary'
+                        size='sm'
+                        tag='a'
+                        onClick={() => addArticle()}
+                    >
+                        Save For Later
+                    </Button>
+                }
                 <Row className='mt-3'>
                     <Col xs='3'>
                         <CardText>

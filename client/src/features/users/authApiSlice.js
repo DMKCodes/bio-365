@@ -1,4 +1,4 @@
-import { apiSlice } from '../app/api/apiSlice';
+import { apiSlice } from '../../app/api/apiSlice';
 import { setCurrentUser, updateToken } from './userSlice';
 
 export const authApiSlice = apiSlice.injectEndpoints({
@@ -31,14 +31,14 @@ export const authApiSlice = apiSlice.injectEndpoints({
             query: (_id) => `/users/${_id}`
         }),
         putUserById: builder.mutation({
-            query:({ _id, ...credentials }) => ({
+            query: ({ _id, ...credentials }) => ({
                 url: `/users/${_id}`,
                 method: 'PUT',
                 body: { ...credentials }
             })
         }),
         deleteUserById: builder.mutation({
-            query:({ _id, ...credentials }) => ({
+            query: ({ _id, ...credentials }) => ({
                 url: `/users/${_id}`,
                 method: 'DELETE',
                 body: { ...credentials }

@@ -1,6 +1,7 @@
 const express = require('express');
 const userRouter = express.Router();
 const User = require('../models/user');
+const Article = require('../models/article');
 const passport = require('passport');
 const authenticate = require('../authenticate');
 require('dotenv').config();
@@ -92,10 +93,13 @@ userRouter.route('/:userId')
 .delete(authenticate.verifyUser, async (req, res, next) => {
     try {
         if (req.user._id.equals(req.params.userId) || req.user.admin) {
-            const deletedUser = await User.findByIdAndDelete(req.params.userId);
+            const user = await User.findById(req.params.userId);
+            if (user) {
+                user.savedArticles = [];
+                await user.save();
 
-            res.setHeader('Content-Type', 'application/json');
-            if (deletedUser) {
+                await User.findByIdAndDelete(req.params.userId);
+                res.setHeader('Content-Type', 'application/json');
                 res.status(200).json({ deletedUser, status: 'User successfully deleted.' });
             } else {
                 res.status(404).json({ error: 'This user does not exist.' });
@@ -103,6 +107,75 @@ userRouter.route('/:userId')
         } else {
             res.setHeader('Content-Type', 'application/json');
             res.status(403).json({ error: 'You are not authorized to delete this user.'})
+        }
+    } catch (err) {
+        return next(err);
+    }
+});
+
+userRouter.route('/:userId/articles')
+.get(authenticate.verifyUser, async (req, res, next) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (user) {
+            if (user.savedArticles.length > 0) {
+                console.log(user.savedArticles);
+                res.status(200).json({ 
+                    articles: user.savedArticles, 
+                    status: 'Articles successfully retrieved.' 
+                })
+            } else {
+                res.status(404).json({ error: 'This user has no saved articles.' });
+            }
+        } else {
+            res.status(404).json({ error: 'This user does not exist.' });
+        }
+    } catch (err) {
+        return next(err);
+    }
+})
+.post(authenticate.verifyUser, async (req, res, next) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (user) {
+            const article = req.body.article;
+            const newArticle = new Article(article);
+
+            user.savedArticles.push(newArticle);
+            await user.save();
+
+            res.status(200).json({ 
+                status: 'Article created and saved.', 
+                article: newArticle 
+            });
+        } else {
+            res.status(404).json({ error: 'This user does not exist.' });
+        }
+    } catch (err) {
+        console.log(err);
+        return next(err);
+    }
+});
+
+userRouter.route('/:userId/articles/:articleId')
+.delete(authenticate.verifyUser, async (req, res, next) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        if (user) {
+            const articleIndex = await user.articles.findIndex(
+                (article) => article._id.toString() === req.params.articleId
+            );
+
+            if (articleIndex > -1) {
+                user.articles.splice(articleIndex, 1);
+                await user.save();
+
+                res.status(200).json({ status: 'Article removed.'});
+            } else {
+                res.status(404).json({ error: 'Article not found in saved articles.' });
+            }
+        } else {
+            res.status(404).json({ error: 'This user does not exist.' });
         }
     } catch (err) {
         return next(err);
@@ -145,7 +218,7 @@ userRouter.post('/login', async (req, res, next) => {
         }
         if (!user) {
             res.setHeader('Content-Type', 'application/json');
-            console.log(info.message);
+
             if (info.message === 'Password or username is incorrect') {
                 res.status(401).json({ error: 'Username or password is incorrect' });
             } else {

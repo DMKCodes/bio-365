@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { useRefreshMutation } from '../../features/authApiSlice';
+import { useRefreshMutation } from '../../features/users/authApiSlice';
 import usePersist from '../../hooks/usePersist';
 import { useSelector } from 'react-redux';
-import { selectToken } from '../../features/userSlice';
-import { Outlet } from 'react-router-dom';
+import { selectToken } from '../../features/users/userSlice';
+import { Navigate, Outlet } from 'react-router-dom';
 
 const PersistLogin = () => {
     const [persist] = usePersist();
@@ -41,8 +41,7 @@ const PersistLogin = () => {
     let content;
 
     if (!persist) {
-        console.log('no persist');
-        content = <Outlet />;
+        content = <Navigate to='/' />;
     } else if (isLoading) {
         console.log('loading');
         content = <p>Loading...</p>;

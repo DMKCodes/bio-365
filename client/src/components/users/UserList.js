@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'reactstrap';
 import {
     useGetAllUsersQuery,
     useDeleteAllUsersMutation
-} from '../../features/authApiSlice';
+} from '../../features/users/authApiSlice';
 import UserCard from './UserCard';
 
 const UserList = () => {

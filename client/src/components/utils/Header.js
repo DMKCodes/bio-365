@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../features/users/userSlice';
 import { NavLink } from 'react-router-dom';
 import {
     Container,
@@ -9,9 +11,11 @@ import {
     Collapse
 } from 'reactstrap';
 import RegisterLoginModal from '../users/RegisterLoginModal';
+import UserDropdown from '../users/UserDropdown';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const currentUser = useSelector(selectCurrentUser);
 
     return (
         <Container className='px-0'>
@@ -48,7 +52,11 @@ const Header = () => {
                             </NavLink>
                         </NavItem>
                     </Nav>
-                    <RegisterLoginModal />
+                    {currentUser ? (
+                        <UserDropdown />
+                    ) : (
+                        <RegisterLoginModal currentUser={currentUser} />
+                    )}
                 </Collapse>
             </Navbar>
         </Container>

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { selectCurrentUser, clearCurrentUser } from '../../features/userSlice';
-import { usePutUserByIdMutation, useDeleteUserByIdMutation } from '../../features/authApiSlice';
+import { selectCurrentUser, clearCurrentUser } from '../../features/users/userSlice';
+import { usePutUserByIdMutation, useDeleteUserByIdMutation } from '../../features/users/authApiSlice';
 import { Row, Col, Button } from 'reactstrap';
 import ChangeUsernameForm from './ChangeUsernameForm';
 

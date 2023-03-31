@@ -18,34 +18,34 @@ function App() {
             <Routes>
                 <Route element={<PersistLogin />}>
                     <Route 
-                        path='/' 
-                        element={<HomePage />} 
-                    />
-                    <Route 
                         path='/dashboard' 
                         element={<DashboardPage />}
                     />
-                    <Route
-                        path='/policy'
-                        element={<PolicyPage />}
-                    />
-                    <Route
-                        path='/news'
-                        element={<NewsPage />}
-                    />
-                    <Route
-                        path='/learn'
-                        element={<LearnPage />}
-                    />
-                    <Route
-                        path='/resources'
-                        element={<ResourcesPage />}
-                    />
-                    <Route
-                        path='/about'
-                        element={<AboutPage />}
-                    />
                 </Route>
+                <Route 
+                    path='/' 
+                    element={<HomePage />} 
+                />
+                <Route
+                    path='/policy'
+                    element={<PolicyPage />}
+                />
+                <Route
+                    path='/news'
+                    element={<NewsPage />}
+                />
+                <Route
+                    path='/learn'
+                    element={<LearnPage />}
+                />
+                <Route
+                    path='/resources'
+                    element={<ResourcesPage />}
+                />
+                <Route
+                    path='/about'
+                    element={<AboutPage />}
+                />
             </Routes>
             <Footer />
         </div>
