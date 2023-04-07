@@ -23,37 +23,7 @@ newsRouter.get('/articles', async (req, res, next) => {
     }
 });
 
-newsRouter.get('/news', async (req, res, next) => {
-    try {
-        const allArticles = await fetchArticles();
-        if (allArticles && allArticles.length) {
-            const articles = allArticles.filter(
-                (article) => article.category === 'News'
-            );
-            res.status(200).json({ articles });
-        } else {
-            res.status(404).json({ message: 'No articles found.' });
-        }
-    } catch (err) {
-        return next(err);
-    }
-});
-
-newsRouter.get('/research', async (req, res, next) => {
-    try {
-        const allArticles = await fetchArticles();
-        if (allArticles && allArticles.length) {
-            const articles = allArticles.filter(
-                (article) => article.category === 'Research'
-            );
-            res.status(200).json({ articles });
-        } else {
-            res.status(404).json({ message: 'No articles found.' });
-        }
-    } catch (err) {
-        return next(err);
-    }
-});
+// Below routes are for testing, not used by front end. 
 
 newsRouter.get('/mongabay', async (req, res, next) => {
     try {

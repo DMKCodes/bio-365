@@ -18,8 +18,6 @@ const DashboardPage = () => {
         isLoading
     } = useGetArticlesQuery(_id);
 
-    console.log(data);
-
     return (
         <Container className='mt-3 text-center'>
             <Subheader current={`Dashboard: ${username}`}/>
@@ -39,8 +37,8 @@ const DashboardPage = () => {
                 </Row>
             }
             <Row>
-                <h5>Your Saved Articles</h5>
-                <NewsList data={data} error={error} isLoading={isLoading} />
+                <h5>Your Reading List</h5>
+                <NewsList data={data} error={error} isLoading={isLoading} dashboard={true}/>
             </Row>
         </Container>
     );

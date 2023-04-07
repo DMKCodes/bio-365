@@ -22,30 +22,12 @@ function App() {
                         element={<DashboardPage />}
                     />
                 </Route>
-                <Route 
-                    path='/' 
-                    element={<HomePage />} 
-                />
-                <Route
-                    path='/policy'
-                    element={<PolicyPage />}
-                />
-                <Route
-                    path='/news'
-                    element={<NewsPage />}
-                />
-                <Route
-                    path='/learn'
-                    element={<LearnPage />}
-                />
-                <Route
-                    path='/resources'
-                    element={<ResourcesPage />}
-                />
-                <Route
-                    path='/about'
-                    element={<AboutPage />}
-                />
+                <Route path='/' element={<HomePage />} />
+                <Route path='/policy' element={<PolicyPage />} />
+                <Route path='/news' element={<NewsPage />} />
+                <Route path='/learn' element={<LearnPage />} />
+                <Route path='/resources' element={<ResourcesPage />} />
+                <Route path='/about' element={<AboutPage />} />
             </Routes>
             <Footer />
         </div>

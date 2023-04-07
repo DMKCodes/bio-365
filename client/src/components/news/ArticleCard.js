@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../features/users/userSlice';
 import { 
-    useAddArticleMutation
+    useAddArticleMutation,
+    useDeleteArticleMutation
 } from '../../features/users/articlesApiSlice';
 import {
     Row,
@@ -21,10 +22,9 @@ import SciDaily from '../../app/media/sciencedaily.jpg';
 import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
-const ArticleCard = ({ article }) => {
-    const [image, setImage] = useState(null);
-    const [userId, setUserId] = useState(null);
+const ArticleCard = ({ article, dashboard }) => {
     const currentUser = useSelector(selectCurrentUser);
+    const { _id } = currentUser;
 
     const { 
         title, 
@@ -37,11 +37,7 @@ const ArticleCard = ({ article }) => {
         category
     } = article;
 
-    useEffect(() => {
-        if (currentUser) {
-            setUserId(currentUser._id);
-        }
-    }, [currentUser]);
+    const [image, setImage] = useState(null);
 
     useEffect(() => {
         if (article.image) {
@@ -61,10 +57,20 @@ const ArticleCard = ({ article }) => {
     }, []);
 
     const [postArticle] = useAddArticleMutation();
+    const [deleteArticle] = useDeleteArticleMutation();
 
     const addArticle = async () => {
         try {
-            await postArticle({ userId, article }).unwrap();
+            await postArticle({ _id, article }).unwrap();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const delArticle = async () => {
+        try {
+            const articleId = article._id;
+            await deleteArticle({ _id, articleId }).unwrap();
         } catch (error) {
             console.log(error);
         }
@@ -100,7 +106,18 @@ const ArticleCard = ({ article }) => {
                 >
                     Full Article
                 </Button>
-                {currentUser &&
+                {currentUser && dashboard ? (
+                    <Button
+                        outline
+                        type='button' 
+                        color='danger'
+                        size='sm'
+                        tag='a'
+                        onClick={() => delArticle()}
+                    >
+                        Remove Bookmark
+                    </Button>
+                ) : currentUser && !dashboard ? (
                     <Button
                         outline
                         type='button' 
@@ -109,8 +126,9 @@ const ArticleCard = ({ article }) => {
                         tag='a'
                         onClick={() => addArticle()}
                     >
-                        Save For Later
+                        Add Bookmark
                     </Button>
+                ) : null
                 }
                 <Row className='mt-3'>
                     <Col xs='3'>

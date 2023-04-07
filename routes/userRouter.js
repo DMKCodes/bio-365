@@ -119,7 +119,6 @@ userRouter.route('/:userId/articles')
         const user = await User.findById(req.params.userId);
         if (user) {
             if (user.savedArticles.length > 0) {
-                console.log(user.savedArticles);
                 res.status(200).json({ 
                     articles: user.savedArticles, 
                     status: 'Articles successfully retrieved.' 
@@ -152,7 +151,6 @@ userRouter.route('/:userId/articles')
             res.status(404).json({ error: 'This user does not exist.' });
         }
     } catch (err) {
-        console.log(err);
         return next(err);
     }
 });
@@ -162,12 +160,12 @@ userRouter.route('/:userId/articles/:articleId')
     try {
         const user = await User.findById(req.params.userId);
         if (user) {
-            const articleIndex = await user.articles.findIndex(
+            const articleIndex = await user.savedArticles.findIndex(
                 (article) => article._id.toString() === req.params.articleId
             );
 
             if (articleIndex > -1) {
-                user.articles.splice(articleIndex, 1);
+                user.savedArticles.splice(articleIndex, 1);
                 await user.save();
 
                 res.status(200).json({ status: 'Article removed.'});
