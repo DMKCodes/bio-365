@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setAllArticles, clearAllArticles } from '../features/news/newsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { 
+    setAllArticles, 
+    clearAllArticles, 
+    setDisplayArticles,
+    selectDisplayArticles
+} from '../features/news/newsSlice';
 import { useArticlesQuery } from '../features/news/newsApiSlice';
 import Subheader from '../components/utils/Subheader';
 import NewsList from '../components/news/NewsList';
@@ -9,16 +14,20 @@ import { Container, Row } from 'reactstrap';
 
 const NewsPage = () => {
     const dispatch = useDispatch();
+    const displayArticles = useSelector(selectDisplayArticles);
 
     const {
         data,
-        error,
+        isError,
         isLoading
     } = useArticlesQuery();
 
     useEffect(() => {
-        dispatch(clearAllArticles());
-        dispatch(setAllArticles(data));
+        if (data) {
+            dispatch(clearAllArticles());
+            dispatch(setAllArticles(data.articles));
+            dispatch(setDisplayArticles(data.articles));
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);
 
@@ -27,7 +36,16 @@ const NewsPage = () => {
             <Subheader current={'News'} />
             <NewsFilter />
             <Row>
-                <NewsList data={data} error={error} isLoading={isLoading} dashboard={false} />
+                {isError ? (
+                    <p>Error retrieving articles. Please refresh and try again.</p>
+                ) : isLoading ? (
+                    <p>Loading...</p>
+                ) : displayArticles ? (
+                    <NewsList 
+                        articles={displayArticles}
+                        dashboard={false} 
+                    />
+                ) : null}
             </Row>
         </Container>
     );

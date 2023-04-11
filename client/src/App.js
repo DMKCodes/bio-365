@@ -17,21 +17,18 @@ function App() {
             <Header />
             <Routes>
                 <Route element={<PersistLogin />}>
-                    <Route 
-                        path='/dashboard' 
-                        element={<DashboardPage />}
-                    />
+                    <Route path='/dashboard' element={<DashboardPage />} />
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/policy' element={<PolicyPage />} />
+                    <Route path='/news' element={<NewsPage />} />
+                    <Route path='/learn' element={<LearnPage />} />
+                    <Route path='/resources' element={<ResourcesPage />} />
+                    <Route path='/about' element={<AboutPage />} />
                 </Route>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/policy' element={<PolicyPage />} />
-                <Route path='/news' element={<NewsPage />} />
-                <Route path='/learn' element={<LearnPage />} />
-                <Route path='/resources' element={<ResourcesPage />} />
-                <Route path='/about' element={<AboutPage />} />
             </Routes>
             <Footer />
         </div>
     );
-}
+};
 
 export default App;
