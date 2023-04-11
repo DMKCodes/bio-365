@@ -29,7 +29,7 @@ const newsSlice = createSlice({
                 displayArticles: action.payload
             })
         },
-        clearDisplayArticles: (state) => {
+        resetDisplayArticles: (state) => {
             return ({
                 ...state,
                 displayArticles: state.allArticles
@@ -41,8 +41,24 @@ const newsSlice = createSlice({
             if (!filterValue) {
                 state.displayArticles = state.allArticles;
             } else {
-                state.displayArticles = state.allArticles.filter(article => {
+                state.displayArticles = state.allArticles.filter((article) => {
                     return article[filterType] === filterValue;
+                });
+            }
+        },
+        searchDisplayArticles: (state, action) => {
+            const searchQuery = action.payload.toLowerCase();
+
+            if (!searchQuery) {
+                state.displayArticles = state.allArticles;
+            } else {
+                state.displayArticles = state.allArticles.filter((article) => {
+                    return (
+                        article.title.toLowerCase().includes(searchQuery) ||
+                        article.publisher.toLowerCase().includes(searchQuery) ||
+                        article.category.toLowerCase().includes(searchQuery) ||
+                        article.snippet.toLowerCase().includes(searchQuery)
+                    );
                 });
             }
         }
@@ -55,8 +71,9 @@ export const {
     setAllArticles,
     clearAllArticles,
     setDisplayArticles,
-    clearDisplayArticles,
-    filterDisplayArticles
+    resetDisplayArticles,
+    filterDisplayArticles,
+    searchDisplayArticles
 } = newsSlice.actions;
 
 export const selectDisplayArticles = (state) => {

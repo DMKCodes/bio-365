@@ -24,13 +24,20 @@ const UserDropdown = () => {
 
     return (
         <div>
-            <Dropdown isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)}>
-                <DropdownToggle caret color='light'>
+            <Dropdown 
+                isOpen={dropdownOpen} 
+                toggle={() => setDropdownOpen(!dropdownOpen)}
+            >
+                <DropdownToggle caret color='success'>
                     {currentUser.username}
                 </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem>
-                        <NavLink className='nav-link' to='/dashboard' style={{ color: 'black' }}>
+                        <NavLink 
+                            className='nav-link' 
+                            to='/dashboard' 
+                            style={{ color: 'black' }}
+                        >
                             Dashboard
                         </NavLink>
                     </DropdownItem>

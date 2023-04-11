@@ -31,3 +31,15 @@
   height: 250px;
   object-fit: cover;
 }
+
+.searchbar {
+  padding-right: 40px;
+}
+
+.searchbar-icons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer
+}
