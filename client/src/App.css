@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
 
 .App {
-  font-family: 'Lusitana', serif;
+  font-family: 'Anuphan', sans-serif;
   padding-top: 1.5rem;
+  background-color: #efefef;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .article-card {
@@ -10,11 +21,11 @@
 }
 
 .article-title {
-  height: 2.4em;
+  height: 4.8em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 

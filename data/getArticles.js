@@ -88,7 +88,6 @@ const fetchArticles = async () => {
     const shuffledArticles = shuffleArticles(allArticles);
     const sortedArticles = sortByDate(shuffledArticles, 'pubDate');
 
-    console.log(sortedArticles);
     return sortedArticles;
 };
 

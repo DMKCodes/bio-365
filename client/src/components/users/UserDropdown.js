@@ -27,8 +27,14 @@ const UserDropdown = () => {
             <Dropdown 
                 isOpen={dropdownOpen} 
                 toggle={() => setDropdownOpen(!dropdownOpen)}
+                group
             >
-                <DropdownToggle caret color='success'>
+                    
+                <DropdownToggle 
+                    caret
+                    color='success' 
+                    className='rounded-0'
+                >
                     {currentUser.username}
                 </DropdownToggle>
                 <DropdownMenu>

@@ -18,6 +18,8 @@ const DashboardPage = () => {
         isLoading
     } = useGetArticlesQuery(_id);
 
+    console.log(data);
+
     return (
         <Container className='mt-3 text-center'>
             <Subheader current={`Dashboard: ${username}`}/>

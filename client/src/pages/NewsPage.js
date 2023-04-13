@@ -39,7 +39,7 @@ const NewsPage = () => {
                 {isError ? (
                     <p>Error retrieving articles. Please refresh and try again.</p>
                 ) : isLoading ? (
-                    <p>Loading...</p>
+                    <p>Fetching the latest articles...</p>
                 ) : displayArticles ? (
                     <NewsList 
                         articles={displayArticles}

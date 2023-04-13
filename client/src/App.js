@@ -7,7 +7,6 @@ import DashboardPage from './pages/DashboardPage';
 import PolicyPage from './pages/PolicyPage';
 import NewsPage from './pages/NewsPage';
 import LearnPage from './pages/LearnPage';
-import ResourcesPage from './pages/ResourcesPage';
 import AboutPage from './pages/AboutPage';
 import Footer from './components/utils/Footer';
 
@@ -22,7 +21,6 @@ function App() {
                     <Route path='/policy' element={<PolicyPage />} />
                     <Route path='/news' element={<NewsPage />} />
                     <Route path='/learn' element={<LearnPage />} />
-                    <Route path='/resources' element={<ResourcesPage />} />
                     <Route path='/about' element={<AboutPage />} />
                 </Route>
             </Routes>

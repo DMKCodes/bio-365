@@ -19,12 +19,13 @@ import {
 } from 'reactstrap';
 
 const NewsFilter = () => {
+    const dispatch = useDispatch();
+    
     const [sourceDropdownOpen, setSourceDropdownOpen] = useState(false);
     const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+
     const [searchQuery, setSearchQuery] = useState('');
     const [searchPerformed, setSearchPerformed] = useState(false);
-
-    const dispatch = useDispatch();
 
     const handleFilterChange = (filterType, filterValue) => {
         dispatch(filterDisplayArticles({ filterType, filterValue }));
@@ -49,7 +50,7 @@ const NewsFilter = () => {
     };
 
     return (
-        <Row className='mb-3'>
+        <Row className='mb-3 news-filter'>
             <Col md='6' className='d-flex align-items-center'>
                 <h5 className='mb-0'>Filter By: </h5>
                 <Dropdown 
@@ -57,7 +58,11 @@ const NewsFilter = () => {
                     toggle={() => setCategoryDropdownOpen(!categoryDropdownOpen)}
                     className='mx-3'
                 >
-                    <DropdownToggle caret color='success'>
+                    <DropdownToggle 
+                        caret 
+                        color='success' 
+                        className='rounded-0'
+                    >
                         Category
                     </DropdownToggle>
                     <DropdownMenu>
@@ -82,8 +87,12 @@ const NewsFilter = () => {
                     isOpen={sourceDropdownOpen} 
                     toggle={() => setSourceDropdownOpen(!sourceDropdownOpen)}
                 >
-                    <DropdownToggle caret color='success'>
-                        Source
+                    <DropdownToggle 
+                        caret 
+                        color='success' 
+                        className='rounded-0'
+                    >
+                        Publisher
                     </DropdownToggle>
                     <DropdownMenu>
                         <DropdownItem
