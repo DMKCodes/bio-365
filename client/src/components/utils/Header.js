@@ -18,7 +18,7 @@ const Header = () => {
     const currentUser = useSelector(selectCurrentUser);
 
     return (
-        <Container className='header px-0 border-bottom border-5 border-dark'>
+        <Container className='header px-0 mb-5 border-bottom border-5 border-dark'>
             <Navbar sticky='top' expand='md'>
                 <NavLink className='nav-link' to='/'>
                     <h2 className='logo'>

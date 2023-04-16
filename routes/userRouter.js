@@ -210,6 +210,7 @@ userRouter.post('/register', async (req, res, next) => {
 });
 
 userRouter.post('/login', async (req, res, next) => {
+    console.log(req.body);
     passport.authenticate('local', async (err, user, info) => {
         if (err) {
             return next(err);

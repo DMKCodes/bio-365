@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import { checkAdmin, selectCurrentUser } from '../features/users/userSlice';
 import { useGetArticlesQuery } from '../features/users/articlesApiSlice';
 import { Container, Row, Col } from 'reactstrap';
-import Subheader from '../components/utils/Subheader';
 import UserPanel from '../components/users/UserPanel';
 import AdminPanel from '../components/users/AdminPanel';
 import NewsList from '../components/news/NewsList';
@@ -14,15 +13,12 @@ const DashboardPage = () => {
 
     const {
         data,
-        error,
+        isError,
         isLoading
     } = useGetArticlesQuery(_id);
 
-    console.log(data);
-
     return (
         <Container className='mt-3 text-center'>
-            <Subheader current={`Dashboard: ${username}`}/>
             <Row className='pt-1'>
                 <h2>Welcome, {username}!</h2>
             </Row>
@@ -39,8 +35,17 @@ const DashboardPage = () => {
                 </Row>
             }
             <Row>
-                <h5>Your Reading List</h5>
-                <NewsList data={data} error={error} isLoading={isLoading} dashboard={true}/>
+                <h4 className='mb-5'>Your Reading List</h4>
+                {isError ? (
+                    <p>Error retrieving articles. Please refresh and try again.</p>
+                ) : isLoading ? (
+                    <p>Fetching the latest articles...</p>
+                ) : data ? (
+                    <NewsList 
+                        articles={data.articles}
+                        dashboard={true} 
+                    />
+                ) : null}
             </Row>
         </Container>
     );

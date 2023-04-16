@@ -1,28 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../features/users/userSlice';
+import { Row, Col, Button } from 'reactstrap';
 import { 
     useAddArticleMutation,
     useDeleteArticleMutation
 } from '../../features/users/articlesApiSlice';
-import {
-    Row,
-    Col,
-    Button, 
-    Card, 
-    CardImg,
-    CardBody, 
-    CardTitle, 
-    CardSubtitle, 
-    CardText 
-} from 'reactstrap';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
 import SciDaily from '../../app/media/sciencedaily.jpg';
 import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
-const ArticleCard = ({ article, dashboard }) => {
+const FeaturedArticle = ({ article, dashboard }) => {
     const currentUser = useSelector(selectCurrentUser);
     const { _id } = currentUser;
 
@@ -77,77 +67,81 @@ const ArticleCard = ({ article, dashboard }) => {
     };
 
     return (
-        <Card className='article-card mb-4'>
-            <CardImg
-                alt='card image'
-                className='article-image'
-                src={image}
-            />
-            <CardBody>
-                <CardSubtitle>
-                    <small className='text-muted'>
+        <Row className='py-3 mb-3 align-items-center'>
+            <Col md='6'>
+                <img src={image} alt='article image' className='w-100' />
+            </Col>
+            <Col md='6'>
+                <Row>
+                    <h5 className='article-title fw-bold text-center'>
+                        {title}
+                    </h5>
+                </Row>
+                <Row>
+                    <small className='text-muted text-center'>
                         Author: {author}, {pubDate}
-                    </small><br/>
-                </CardSubtitle>
-                <CardTitle tag='h5' className='article-title fw-bold px-1'>
-                    {title}
-                </CardTitle>
-                <CardText className='article-blurb px-1'>
-                    {snippet}
-                </CardText>
-                <Button
-                    outline
-                    type='button' 
-                    color='dark'
-                    size='sm'
-                    className='me-2'
-                    href={link}  
-                    tag='a' 
-                >
-                    Full Article
-                </Button>
-                {currentUser && dashboard ? (
-                    <Button
-                        outline
-                        type='button' 
-                        color='danger'
-                        size='sm'
-                        tag='a'
-                        onClick={() => delArticle()}
-                    >
-                        Remove Bookmark
-                    </Button>
-                ) : currentUser && !dashboard ? (
-                    <Button
-                        outline
-                        type='button' 
-                        color='secondary'
-                        size='sm'
-                        tag='a'
-                        onClick={() => addArticle()}
-                    >
-                        Add Bookmark
-                    </Button>
-                ) : null }
+                    </small>
+                </Row>
+                <Row>
+                    <p className='article-blurb text-center'>{snippet}</p>
+                </Row>
+                <Row>
+                    <Col className='d-flex justify-content-center'>
+                        <Button
+                            outline
+                            type='button' 
+                            color='dark'
+                            size='sm'
+                            className='me-2'
+                            href={link}  
+                            tag='a' 
+                        >
+                            Full Article
+                        </Button>
+                        {currentUser && dashboard ? (
+                            <Button
+                                outline
+                                type='button' 
+                                color='danger'
+                                size='sm'
+                                tag='a'
+                                onClick={() => delArticle()}
+                            >
+                                Remove Bookmark
+                            </Button>
+                        ) : currentUser && !dashboard ? (
+                            <Button
+                                outline
+                                type='button' 
+                                color='secondary'
+                                size='sm'
+                                tag='a'
+                                onClick={() => addArticle()}
+                            >
+                                Add Bookmark
+                            </Button>
+                        ) : null }
+                    </Col>
+                </Row>
                 <Row className='mt-3'>
                     <Col xs='3'>
-                        <CardText>
+                        <p>
                             <small className='text-success fw-bold float-start ms-2'>
                                 {category}
                             </small>
-                        </CardText>
+                        </p>
                     </Col>
                     <Col xs='9'>
-                        <CardText>
+                        <p>
                             <small className='text-muted float-end me-2'>
                                 Source: <a href={source}>{publisher}</a>
                             </small>
-                        </CardText>
+                        </p>
                     </Col>
                 </Row>
-            </CardBody>
-        </Card>
+            </Col>
+        </Row>
     );
 };
 
-export default ArticleCard;
+export default FeaturedArticle;
