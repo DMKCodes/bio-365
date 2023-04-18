@@ -11,7 +11,11 @@ const NewsList = ({ articles, dashboard }) => {
                 articles.map((article, index) => {
                     if (index === 0 || index === 16 || index % 16 === 0) {
                         return (
-                            <FeaturedArticle article={article} dashboard={dashboard} />
+                            <FeaturedArticle 
+                                article={article} 
+                                dashboard={dashboard} 
+                                key={article.title} 
+                            />
                         );
                     } else {
                         return (

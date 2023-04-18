@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../features/users/userSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { 
+    selectCurrentUser,
+    checkSavedArticles,
+    addSavedArticle,
+    removeSavedArticle
+} from '../../features/users/userSlice';
 import { 
     useAddArticleMutation,
     useDeleteArticleMutation
@@ -23,6 +28,8 @@ import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
 const ArticleCard = ({ article, dashboard }) => {
+    const dispatch = useDispatch();
+
     const currentUser = useSelector(selectCurrentUser);
     const { _id } = currentUser;
 
@@ -36,6 +43,14 @@ const ArticleCard = ({ article, dashboard }) => {
         source,
         category
     } = article;
+
+    const [isSaved, setIsSaved] = useState(false);
+    
+    const savedCheck = useSelector((state) => checkSavedArticles(state, title));
+    
+    useEffect(() => {
+        setIsSaved(savedCheck);
+    }, [savedCheck]);
 
     const [image, setImage] = useState(null);
 
@@ -62,6 +77,8 @@ const ArticleCard = ({ article, dashboard }) => {
     const addArticle = async () => {
         try {
             await postArticle({ _id, article }).unwrap();
+            dispatch(addSavedArticle(article));
+            setIsSaved(true);
         } catch (error) {
             console.log(error);
         }
@@ -71,6 +88,8 @@ const ArticleCard = ({ article, dashboard }) => {
         try {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();
+            dispatch(removeSavedArticle(title));
+            setIsSaved(false);
         } catch (error) {
             console.log(error);
         }
@@ -106,7 +125,7 @@ const ArticleCard = ({ article, dashboard }) => {
                 >
                     Full Article
                 </Button>
-                {currentUser && dashboard ? (
+                {(currentUser && dashboard) || isSaved ? (
                     <Button
                         outline
                         type='button' 

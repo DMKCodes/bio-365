@@ -69,7 +69,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
     return (
         <Row className='py-3 mb-3 align-items-center'>
             <Col md='6'>
-                <img src={image} alt='article image' className='w-100' />
+                <img src={image} alt='' className='w-100' />
             </Col>
             <Col md='6'>
                 <Row>

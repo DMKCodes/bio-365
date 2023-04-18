@@ -51,7 +51,8 @@ router.get('/', async (req, res, next) => {
                         _id: foundUser._id,
                         username: foundUser.username,
                         admin: foundUser.admin,
-                        email: foundUser.email
+                        email: foundUser.email,
+                        savedArticles: foundUser.savedArticles
                     },
                     status: 'You have successfully logged in.'
                 });

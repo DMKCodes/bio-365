@@ -28,6 +28,28 @@ const userSlice = createSlice({
                 ...state,
                 token: action.payload
             });
+        },
+        addSavedArticle: (state, action) => {
+            console.log(JSON.stringify(state.currentUser, null, 2));
+            return ({
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    savedArticles: [...state.currentUser.savedArticles, action.payload]
+                }
+            });
+        },
+        removeSavedArticle: (state, action) => {
+            console.log(JSON.stringify(state.currentUser, null, 2));
+            return ({
+                ...state,
+                currentUser: {
+                    ...state.currentUser,
+                    savedArticles: state.currentUser.savedArticles.filter(
+                        article => article.title !== action.payload.title
+                    )
+                }
+            });
         }
     }
 });
@@ -37,7 +59,9 @@ export const userReducer = userSlice.reducer;
 export const { 
     setCurrentUser, 
     clearCurrentUser, 
-    updateToken 
+    updateToken,
+    addSavedArticle,
+    removeSavedArticle
 } = userSlice.actions;
 
 export const selectCurrentUser = (state) => {
@@ -50,4 +74,12 @@ export const checkAdmin = (state) => {
 
 export const selectToken = (state) => {
     return state.user.token;
+};
+
+export const checkSavedArticles = (state, title) => {
+    const savedArticles = state.user.currentUser.savedArticles;
+    if (!savedArticles) {
+        return false;
+    }
+    return savedArticles.some((article) => article.title === title);
 };

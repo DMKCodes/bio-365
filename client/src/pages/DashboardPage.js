@@ -14,6 +14,7 @@ const DashboardPage = () => {
     const {
         data,
         isError,
+        error,
         isLoading
     } = useGetArticlesQuery(_id);
 
@@ -37,7 +38,11 @@ const DashboardPage = () => {
             <Row>
                 <h4 className='mb-5'>Your Reading List</h4>
                 {isError ? (
-                    <p>Error retrieving articles. Please refresh and try again.</p>
+                    error.status === 404 ? (
+                        <p>{error.data.error}</p>
+                    ) : (
+                        <p>Error retrieving articles. Please refresh and try again.</p>
+                    )
                 ) : isLoading ? (
                     <p>Fetching the latest articles...</p>
                 ) : data ? (

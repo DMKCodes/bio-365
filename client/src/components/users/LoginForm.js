@@ -39,6 +39,7 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 password: values.password
             }).unwrap();
             const user = response.user;
+            console.log(response.user);
             const token = response.token;
             dispatch(setCurrentUser({ user, token }));
 

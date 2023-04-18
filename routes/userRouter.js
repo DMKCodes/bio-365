@@ -124,7 +124,7 @@ userRouter.route('/:userId/articles')
                     status: 'Articles successfully retrieved.' 
                 })
             } else {
-                res.status(404).json({ error: 'This user has no saved articles.' });
+                res.status(404).json({ error: 'You have no bookmarks.' });
             }
         } else {
             res.status(404).json({ error: 'This user does not exist.' });
@@ -210,7 +210,6 @@ userRouter.post('/register', async (req, res, next) => {
 });
 
 userRouter.post('/login', async (req, res, next) => {
-    console.log(req.body);
     passport.authenticate('local', async (err, user, info) => {
         if (err) {
             return next(err);
@@ -254,7 +253,8 @@ userRouter.post('/login', async (req, res, next) => {
                         _id: user._id,
                         username: user.username,
                         admin: user.admin,
-                        email: user.email
+                        email: user.email,
+                        savedArticles: user.savedArticles
                     },
                     token: newAccessToken,
                     status: 'You have successfully logged in.'
