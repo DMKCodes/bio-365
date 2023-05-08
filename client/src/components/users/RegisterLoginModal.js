@@ -45,7 +45,7 @@ const RegisterLoginModal = ({ currentUser }) => {
                 </Nav>
                 <TabContent activeTab={activeTab}>
                     <TabPane tabId='register'>
-                        {error ? (
+                        { error ? (
                             <h4 className='p-3'>{errorMsg}</h4>
                         ) : currentUser ? (
                             <h4 className='p-3'>Registration successful! Logging in...</h4>
@@ -59,7 +59,7 @@ const RegisterLoginModal = ({ currentUser }) => {
                         )}
                     </TabPane>
                     <TabPane tabId='login'>
-                        {error ? (
+                        { error ? (
                             <h4 className='p-3'>{errorMsg}</h4>
                         ) : currentUser ? (
                             <h4 className='m-3'>Login successful. Redirecting...</h4>

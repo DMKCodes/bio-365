@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { selectCurrentUser, clearCurrentUser } from '../../features/users/userSlice';
+import { selectCurrentUser, clearCurrentUser, checkAdmin } from '../../features/users/userSlice';
 import {
     Dropdown,
     DropdownToggle,
@@ -13,6 +13,7 @@ import {
 const UserDropdown = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const currentUser = useSelector(selectCurrentUser);
+    const isAdmin = useSelector(checkAdmin);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -44,9 +45,20 @@ const UserDropdown = () => {
                             to='/dashboard' 
                             style={{ color: 'black' }}
                         >
-                            Dashboard
+                            User Dashboard
                         </NavLink>
                     </DropdownItem>
+                    { currentUser && isAdmin &&
+                        <DropdownItem>
+                            <NavLink 
+                                className='nav-link' 
+                                to='/admin' 
+                                style={{ color: 'black' }}
+                            >
+                                Admin Dashboard
+                            </NavLink>
+                        </DropdownItem>
+                    }
                     <DropdownItem>
                         <NavItem onClick={() => logout()}>
                             Logout

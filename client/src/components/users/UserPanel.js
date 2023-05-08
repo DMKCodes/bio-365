@@ -104,7 +104,6 @@ const UserPanel = () => {
         <Container>
             <Row className='border'>
                 <h4 className='pt-2'>User Panel</h4>
-                <p>Use this panel to view and modify your own account.</p>
                 {statusMsg &&
                     <p><b>{statusMsg}</b></p>
                 }
