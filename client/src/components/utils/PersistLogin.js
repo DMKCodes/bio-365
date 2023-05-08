@@ -44,10 +44,10 @@ const PersistLogin = () => {
         content = <Navigate to='/' />;
     } else if (isLoading) {
         console.log('loading');
-        content = <p>Loading...</p>;
+        content = <p className='text-center'>Loading...</p>;
     } else if (isError) {
         console.log(error);
-        content = <p>Error refreshing your details.  Please refresh or try logging in again.</p>
+        content = <p className='text-center'>Error refreshing your details.  Please refresh or try logging in again.</p>
     } else if (isSuccess && trueSuccess) {
         console.log('persist success');
         content = <Outlet />;

@@ -4,10 +4,17 @@
   font-family: 'Anuphan', sans-serif;
   padding-top: 1.5rem;
   background-color: #efefef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   font-weight: bold;
+}
+
+.footer {
+  margin-top: auto;
 }
 
 .logo {
