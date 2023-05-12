@@ -8,6 +8,7 @@ const fetchMongabayArticles = async () => {
         const feed = await parser.parseURL(url);
 
         const abbrArticles = feed.items.map((item) => {
+            
             const abbrArticle = {
                 title: item.title,
                 link: item.link,

@@ -39,8 +39,8 @@ const sortByDate = (arr, date) => {
 };
 
 const truncateAuthorName = (name) => {
-    const authorArr = name.split(',');
-    return authorArr[0];
+        const authorArr = name.split(',');
+        return authorArr[0];
 };
 
 const replaceSpecialChars = (content) => {
@@ -49,6 +49,7 @@ const replaceSpecialChars = (content) => {
             case '&nbsp;':
                 return ' ';
             case '&rsquo;':
+                return "'";
             case '&lsquo;':
                 return "'";
             default:

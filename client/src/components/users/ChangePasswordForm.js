@@ -92,10 +92,17 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                         </FormGroup>
                         <FormGroup row>
                             <Col className='d-flex justify-content-center'>
-                                <Button outline type='submit' color='success' className='me-3'>
+                                <Button 
+                                    type='submit' 
+                                    color='success' 
+                                    className='me-3 rounded-0 btn-sm'
+                                >
                                     Submit
                                 </Button>
-                                <Button outline type='button' onClick={() => setChangePassword(false)}>
+                                <Button 
+                                    type='button'
+                                    className='rounded-0 btn-sm'
+                                    onClick={() => setChangePassword(false)}>
                                     Cancel
                                 </Button>
                             </Col>

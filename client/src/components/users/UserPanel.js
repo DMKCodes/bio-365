@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser, clearCurrentUser } from '../../features/users/userSlice';
 import { useNavigate } from 'react-router-dom';
-import { 
-    useGetUserByIdQuery, 
+import {
     usePutUserByIdMutation, 
     useDeleteUserByIdMutation 
 } from '../../features/users/authApiSlice';
@@ -11,14 +10,6 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import ChangePasswordForm from './ChangePasswordForm';
 
 const UserPanel = () => {
-    const [fetchedUser, setFetchedUser] = useState({
-        _id: false,
-        username: false,
-        email: false
-    });
-
-    const [getUserStarted, setGetUserStarted] = useState(false);
-
     const [changePassword, setChangePassword] = useState(false);
     const [passwordChanged, setPasswordChanged] = useState(false);
 
@@ -31,30 +22,10 @@ const UserPanel = () => {
     const navigate = useNavigate();
 
     const currentUser = useSelector(selectCurrentUser);
-    const { _id } = currentUser;
+    const { _id, username, email } = currentUser;
 
-    const getUserById = useGetUserByIdQuery(_id, { skip: !getUserStarted });
     const [putUserById] = usePutUserByIdMutation();
     const [deleteUserById] = useDeleteUserByIdMutation();
-
-    useEffect(() => {
-        if (getUserStarted) {
-            if (fetchedUser._id) {
-                getUserById.refetch();
-            }
-            const { data, error } = getUserById;
-
-            if (error) {
-                setStatusMsg('Error retrieving user details.');
-            } else if (data) {
-                const { _id, username, email } = data.user;
-                setStatusMsg('Successfully retrieved user details.');
-                setFetchedUser({ _id, username, email });
-                setGetUserStarted(false);
-            }
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [getUserStarted, getUserById]);
 
     const putUserPassword = async (values) => {
         try {
@@ -108,37 +79,54 @@ const UserPanel = () => {
                     <p><b>{statusMsg}</b></p>
                 }
             </Row>
-            <Row className='pt-3 border border-top-0'>
-                <Col md='4' className='border-end'>
-                    <Button 
-                        outline 
-                        color='primary' 
-                        type='submit' 
-                        onClick={() => setGetUserStarted(true)}
-                    >
-                        Populate Details
-                    </Button>
-                    <p>GET /users/:userId</p>
-                </Col>
-                <Col md='8' className='pb-3'>
-                    <b>User ID</b>: {fetchedUser._id}<br/>
-                    <b>Username</b>: {fetchedUser.username}<br/>
-                    <b>Email</b>: {fetchedUser.email}<br/>
+            <Row className='pt-3 border border-top-0 text-center'>
+                <Col className='pb-3'>
+                    <b>Username</b>: {username}<br/>
+                    <b>Email</b>: {email}<br/>
                 </Col>
             </Row>
-            <Row className='pt-3 border border-top-0'>
+            <Row className='py-3 border border-top-0'>
                 <Col md='4' className='border-end'>
                     <Button 
-                        outline 
-                        color='warning' 
+                        color='success'
+                        className='rounded-0 btn-sm'
                         type='submit' 
                         onClick={() => setChangePassword(true)}
                     >
+                        Change Username
+                    </Button>
+                </Col>
+                <Col md='4' className='border-end'>
+                    <Button 
+                        color='success'
+                        className='rounded-0 btn-sm'
+                        type='submit' 
+                        onClick={() => {
+                            setDeleteAccount(false);
+                            setChangePassword(true);
+                        }}
+                    >
                         Change Password
                     </Button>
-                    <p>PUT /users/:userId</p>
+                </Col>
+                <Col md='4' className='border-end'>
+                    <Button 
+                        color='danger'
+                        className='rounded-0 btn-sm'
+                        type='submit' 
+                        onClick={() => {
+                            setChangePassword(false);
+                            setDeleteAccount(true);
+                        }}
+                    >
+                        Delete Account
+                    </Button>
                 </Col>
                 <Col md='8'>
+
+                </Col>  
+            </Row>
+            <Row className='d-flex justify-content-center py-3 border border-top-0'>
                     {changePassword ? (
                         <ChangePasswordForm 
                             putUser={putUserPassword} 
@@ -146,50 +134,33 @@ const UserPanel = () => {
                         />
                     ) : passwordChanged ? (
                         <div>Your password has been successfully changed.</div>
-                    ) : null}
-                </Col>  
-            </Row>
-            <Row className='pt-3 border border-top-0'>
-                <Col md='4' className='border-end'>
-                    <Button 
-                        outline 
-                        color='danger' 
-                        type='submit' 
-                        onClick={() => setDeleteAccount(true)}
-                    >
-                        Delete Account
-                    </Button>
-                    <p>DEL /users/:userId</p>
-                </Col>
-                <Col md='8' className='pb-3'>
-                    {deleteAccount ? (
+                    ) : deleteAccount ? (
                         <>
-                            <div className='mb-2'>
+                            <div className='mb-3'>
                                 Are you sure you want to delete your account?{' '}
                                 This operation is <b style={{ color: 'red' }}>permanent</b>.
                             </div>
-                            <Button 
-                                outline 
-                                color='danger' 
-                                className='me-3' 
-                                type='submit' 
-                                onClick={() => delUser(_id)}
-                            >
-                                Delete
-                            </Button>
-                            <Button 
-                                outline 
-                                type='button' 
-                                onClick={() => setDeleteAccount(false)}
-                            >
-                                Cancel
-                            </Button>
+                            <Col md='6'>
+                                <Button 
+                                    color='danger' 
+                                    className='me-5 rounded-0 btn-sm' 
+                                    type='submit' 
+                                    onClick={() => delUser(_id)}
+                                >
+                                    Delete
+                                </Button>
+                                <Button 
+                                    type='button'
+                                    className='rounded-0 btn-sm' 
+                                    onClick={() => setDeleteAccount(false)}
+                                >
+                                    Cancel
+                                </Button>
+                            </Col>
                         </>
                     ) : accountDeleted ? (
                         <div>Your account has been deleted.  Redirecting...</div>
-                    ) : null
-                    }
-                </Col>
+                    ) : null}
             </Row>
         </Container>
     );

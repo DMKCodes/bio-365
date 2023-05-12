@@ -7,7 +7,7 @@ import NewsList from '../components/news/NewsList';
 
 const DashboardPage = () => {
     const currentUser = useSelector(selectCurrentUser);
-    const { username, _id } = currentUser;
+    const { _id } = currentUser;
 
     const {
         data,
@@ -18,9 +18,6 @@ const DashboardPage = () => {
 
     return (
         <Container className='mt-3 text-center'>
-            <Row className='pt-1'>
-                <h2>Welcome, {username}!</h2>
-            </Row>
             <Row className='d-flex justify-content-center mb-5'>
                 <Col xs='10' md='8' className='pt-3'>
                     <UserPanel />
