@@ -29,8 +29,7 @@ const UserDropdown = () => {
                 isOpen={dropdownOpen} 
                 toggle={() => setDropdownOpen(!dropdownOpen)}
                 group
-            >
-                    
+            >   
                 <DropdownToggle 
                     caret
                     color='success' 

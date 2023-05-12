@@ -116,7 +116,8 @@ const ArticleCard = ({ article, dashboard }) => {
                 <CardText 
                     className={`article-blurb px-1 mb-0 ${expanded ? 'expanded' : ''}`}
                 >
-                    <b>Snippet: </b>{snippet}
+                    {snippet.length > 0 ? <b>Preview: </b> : null}
+                    {snippet}
                 </CardText>
                 <Row className='mb-3 d-flex justify-content-end'>
                     <Col xs='3'>
@@ -131,10 +132,11 @@ const ArticleCard = ({ article, dashboard }) => {
                 <Button
                     type='button' 
                     color='success'
-                    size='sm'
-                    className='me-2'
-                    href={link}  
-                    tag='a' 
+                    className='me-2 rounded-0 btn-sm'
+                    href={link}
+                    target='_blank'
+                    rel='noreferrer noopener'
+                    tag='a'
                 >
                     Full Article
                 </Button>
@@ -142,7 +144,7 @@ const ArticleCard = ({ article, dashboard }) => {
                     <Button
                         type='button' 
                         color='danger'
-                        size='sm'
+                        className='rounded-0 btn-sm'
                         tag='a'
                         onClick={() => delArticle()}
                     >
@@ -152,7 +154,7 @@ const ArticleCard = ({ article, dashboard }) => {
                     <Button
                         type='button' 
                         color='secondary'
-                        size='sm'
+                        className='rounded-0 btn-sm'
                         tag='a'
                         onClick={() => addArticle()}
                     >

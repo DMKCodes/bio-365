@@ -88,12 +88,12 @@ const FeaturedArticle = ({ article, dashboard }) => {
                 <Row>
                     <Col className='d-flex justify-content-center'>
                         <Button
-                            outline
                             type='button' 
-                            color='dark'
-                            size='sm'
-                            className='me-2'
-                            href={link}  
+                            color='success'
+                            className='me-2 rounded-0 btn-sm'
+                            href={link}
+                            target='_blank'
+                            rel='noreferrer noopener'
                             tag='a' 
                         >
                             Full Article
@@ -103,7 +103,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                                 outline
                                 type='button' 
                                 color='danger'
-                                size='sm'
+                                className='rounded-0 btn-sm'
                                 tag='a'
                                 onClick={() => delArticle()}
                             >
@@ -114,7 +114,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                                 outline
                                 type='button' 
                                 color='secondary'
-                                size='sm'
+                                className='rounded-0 btn-sm'
                                 tag='a'
                                 onClick={() => addArticle()}
                             >

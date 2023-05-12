@@ -7,13 +7,15 @@ import {
     useDeleteUserByIdMutation 
 } from '../../features/users/authApiSlice';
 import { Container, Row, Col, Button } from 'reactstrap';
+import UpdateAccountDropdown from './UpdateAccountDropdown';
 import ChangeUsernameForm from './ChangeUsernameForm';
 import ChangePasswordForm from './ChangePasswordForm';
+import ChangeEmailForm from './ChangeEmailForm';
 
 const UserPanel = () => {
     const [changeUsername, setChangeUsername] = useState(false);
-
     const [changePassword, setChangePassword] = useState(false);
+    const [changeEmail, setChangeEmail] = useState(false);
 
     const [deleteAccount, setDeleteAccount] = useState(false);
     const [accountDeleted, setAccountDeleted] = useState(false);
@@ -39,6 +41,10 @@ const UserPanel = () => {
                 await putUserById({ _id, newVals: { password: values.newPassword } }).unwrap();
                 setChangePassword(false);
                 setStatusMsg('Password successfully updated.');
+            } else if (values.newEmail) {
+                await putUserById({ _id, newVals: { email: values.newEmail } }).unwrap();
+                setChangeEmail(false);
+                setStatusMsg('Email successfully updated.');
             }
         } catch (error) {
             if (!error?.data) {
@@ -81,63 +87,26 @@ const UserPanel = () => {
     return (
         <Container className='bg-light'>
             <Row className='border'>
-                <h4 className='pt-2'>Account Management</h4>
+                    <h4 className='pt-2'>Account Management</h4>
+            </Row>
+            <Row>
                 {statusMsg &&
                     <p><b>{statusMsg}</b></p>
                 }
             </Row>
-            <Row className='pt-3 border border-top-0 text-center'>
-                <Col className='pb-3'>
+            <Row className='border border-top-0 text-center'>
+                <Col md='6' className='py-3'>
                     <b>Username</b>: {username}<br/>
                     <b>Email</b>: {email}<br/>
                 </Col>
-            </Row>
-            <Row className='py-3 border border-top-0'>
-                <Col md='4' className='border-end'>
-                    <Button 
-                        color='success'
-                        className='rounded-0 btn-sm'
-                        type='submit' 
-                        onClick={() => {
-                            setChangeUsername(true);
-                            setChangePassword(false);
-                            setDeleteAccount(false);
-                        }}
-                    >
-                        Change Username
-                    </Button>
+                <Col md='6' className='py-3 d-flex justify-content-center align-items-center'>
+                    <UpdateAccountDropdown 
+                        setChangeUsername={setChangeUsername}
+                        setChangePassword={setChangePassword}
+                        setChangeEmail={setChangeEmail}
+                        setDeleteAccount={setDeleteAccount}
+                    />
                 </Col>
-                <Col md='4' className='border-end'>
-                    <Button 
-                        color='success'
-                        className='rounded-0 btn-sm'
-                        type='submit' 
-                        onClick={() => {
-                            setChangeUsername(false);
-                            setChangePassword(true);
-                            setDeleteAccount(false);
-                        }}
-                    >
-                        Change Password
-                    </Button>
-                </Col>
-                <Col md='4' className='border-end'>
-                    <Button 
-                        color='danger'
-                        className='rounded-0 btn-sm'
-                        type='submit' 
-                        onClick={() => {
-                            setChangeUsername(false);
-                            setChangePassword(false);
-                            setDeleteAccount(true);
-                        }}
-                    >
-                        Delete Account
-                    </Button>
-                </Col>
-                <Col md='8'>
-
-                </Col>  
             </Row>
             <Row className='d-flex justify-content-center py-3 border border-top-0'>
                     {changeUsername ? (
@@ -149,6 +118,11 @@ const UserPanel = () => {
                         <ChangePasswordForm 
                             putUser={updateUserDetails} 
                             setChangePassword={setChangePassword} 
+                        />
+                    ) : changeEmail ? (
+                        <ChangeEmailForm 
+                            putUser={updateUserDetails}
+                            setChangeEmail={setChangeEmail}
                         />
                     ) : deleteAccount ? (
                         <>
