@@ -7,11 +7,13 @@ import {
     useDeleteUserByIdMutation 
 } from '../../features/users/authApiSlice';
 import { Container, Row, Col, Button } from 'reactstrap';
+import ChangeUsernameForm from './ChangeUsernameForm';
 import ChangePasswordForm from './ChangePasswordForm';
 
 const UserPanel = () => {
+    const [changeUsername, setChangeUsername] = useState(false);
+
     const [changePassword, setChangePassword] = useState(false);
-    const [passwordChanged, setPasswordChanged] = useState(false);
 
     const [deleteAccount, setDeleteAccount] = useState(false);
     const [accountDeleted, setAccountDeleted] = useState(false);
@@ -27,12 +29,17 @@ const UserPanel = () => {
     const [putUserById] = usePutUserByIdMutation();
     const [deleteUserById] = useDeleteUserByIdMutation();
 
-    const putUserPassword = async (values) => {
+    const updateUserDetails = async (values) => {
         try {
-            await putUserById({ _id, newVals: { password: values.newPassword } }).unwrap();
-            setChangePassword(false);
-            setPasswordChanged(true);
-            setStatusMsg(false);
+            if (values.newUsername) {
+                await putUserById({ _id, newVals: { username: values.newUsername } }).unwrap();
+                setChangeUsername(false);
+                setStatusMsg('Username successfully updated.');
+            } else if (values.newPassword) {
+                await putUserById({ _id, newVals: { password: values.newPassword } }).unwrap();
+                setChangePassword(false);
+                setStatusMsg('Password successfully updated.');
+            }
         } catch (error) {
             if (!error?.data) {
                 setStatusMsg('No server response.');
@@ -72,9 +79,9 @@ const UserPanel = () => {
     };
 
     return (
-        <Container>
+        <Container className='bg-light'>
             <Row className='border'>
-                <h4 className='pt-2'>User Panel</h4>
+                <h4 className='pt-2'>Account Management</h4>
                 {statusMsg &&
                     <p><b>{statusMsg}</b></p>
                 }
@@ -91,7 +98,11 @@ const UserPanel = () => {
                         color='success'
                         className='rounded-0 btn-sm'
                         type='submit' 
-                        onClick={() => setChangePassword(true)}
+                        onClick={() => {
+                            setChangeUsername(true);
+                            setChangePassword(false);
+                            setDeleteAccount(false);
+                        }}
                     >
                         Change Username
                     </Button>
@@ -102,8 +113,9 @@ const UserPanel = () => {
                         className='rounded-0 btn-sm'
                         type='submit' 
                         onClick={() => {
-                            setDeleteAccount(false);
+                            setChangeUsername(false);
                             setChangePassword(true);
+                            setDeleteAccount(false);
                         }}
                     >
                         Change Password
@@ -115,6 +127,7 @@ const UserPanel = () => {
                         className='rounded-0 btn-sm'
                         type='submit' 
                         onClick={() => {
+                            setChangeUsername(false);
                             setChangePassword(false);
                             setDeleteAccount(true);
                         }}
@@ -127,13 +140,16 @@ const UserPanel = () => {
                 </Col>  
             </Row>
             <Row className='d-flex justify-content-center py-3 border border-top-0'>
-                    {changePassword ? (
+                    {changeUsername ? (
+                        <ChangeUsernameForm
+                            putUser={updateUserDetails}
+                            setChangeUsername={setChangeUsername}
+                        />
+                    ) : changePassword ? (
                         <ChangePasswordForm 
-                            putUser={putUserPassword} 
+                            putUser={updateUserDetails} 
                             setChangePassword={setChangePassword} 
                         />
-                    ) : passwordChanged ? (
-                        <div>Your password has been successfully changed.</div>
                     ) : deleteAccount ? (
                         <>
                             <div className='mb-3'>

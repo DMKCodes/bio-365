@@ -122,7 +122,7 @@ userRouter.route('/:userId/articles')
                 res.status(200).json({ 
                     articles: user.savedArticles, 
                     status: 'Articles successfully retrieved.' 
-                })
+                });
             } else {
                 res.status(404).json({ error: 'You have no bookmarks.' });
             }

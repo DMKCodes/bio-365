@@ -2,7 +2,7 @@ import { Col, FormGroup, Button, Label } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
-const ChangeUsernameForm = ({ setChangeUsername, putUserUsername }) => {
+const ChangeUsernameForm = ({ setChangeUsername, putUser }) => {
     const changeUsernameSchema = yup.object().shape({
         newUsername: yup
             .string()
@@ -17,7 +17,7 @@ const ChangeUsernameForm = ({ setChangeUsername, putUserUsername }) => {
                 newUsername: ''
             }}
             validationSchema={changeUsernameSchema}
-            onSubmit={(values) => putUserUsername(values)}
+            onSubmit={(values) => putUser(values)}
         >
             {(formik) => {
                 const { errors, touched } = formik;
@@ -44,10 +44,18 @@ const ChangeUsernameForm = ({ setChangeUsername, putUserUsername }) => {
                         </FormGroup>
                         <FormGroup row>
                             <Col className='d-flex justify-content-center'>
-                                <Button outline type='submit' color='success' className='me-3'>
+                                <Button 
+                                    type='submit' 
+                                    color='success' 
+                                    className='me-3 rounded-0 btn-sm'
+                                >
                                     Submit
                                 </Button>
-                                <Button outline type='button' onClick={() => setChangeUsername(false)}>
+                                <Button 
+                                    type='button'
+                                    className='rounded-0 btn-sm'
+                                    onClick={() => setChangeUsername(false)}
+                                >
                                     Cancel
                                 </Button>
                             </Col>

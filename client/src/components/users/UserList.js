@@ -57,25 +57,23 @@ const UserList = () => {
             <Row className='border border-top-0 justify-content-center p-3'>
                 <Col md='4'>
                     <Button
-                        outline
                         type='submit'
-                        color='primary'
+                        color='success'
+                        className='rounded-0 btn-sm'
                         onClick={() => setGetAllUsersStarted(true)}
                     >
                         Populate Users
                     </Button>
-                    <p className='mb-0'>GET /users</p>
                 </Col>
                 <Col md='4'>
                     <Button
-                        outline
                         type='submit'
                         color='danger'
+                        className='rounded-0 btn-sm'
                         onClick={() => delAllUsers()}
                     >
                         Delete All Users
                     </Button>
-                    <p className='mb-0'>DEL /users</p>
                 </Col>
                 {statusMsg &&
                     <Col xs='12' className='mt-3'>

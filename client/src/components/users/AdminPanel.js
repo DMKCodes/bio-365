@@ -2,9 +2,8 @@ import { Container, Row, Col } from 'reactstrap';
 import UserList from './UserList';
 
 const AdminPanel = () => {
-
     return (
-        <Container className='mb-5'>
+        <Container className='mb-5 bg-light'>
             <Row className='border'>
                 <h4 className='pt-2'>Admin Panel</h4>
                 <p>Use this panel to view and modify other user accounts.</p>

@@ -45,6 +45,8 @@ const ArticleCard = ({ article, dashboard }) => {
     } = article;
 
     const [isSaved, setIsSaved] = useState(false);
+
+    const [expanded, setExpanded] = useState(false);
     
     const savedCheck = useSelector((state) => checkSavedArticles(state, title));
     
@@ -111,13 +113,24 @@ const ArticleCard = ({ article, dashboard }) => {
                 <CardTitle tag='h5' className='article-title fw-bold px-1'>
                     {title}
                 </CardTitle>
-                <CardText className='article-blurb px-1'>
-                    {snippet}
+                <CardText 
+                    className={`article-blurb px-1 mb-0 ${expanded ? 'expanded' : ''}`}
+                >
+                    <b>Snippet: </b>{snippet}
                 </CardText>
+                <Row className='mb-3 d-flex justify-content-end'>
+                    <Col xs='3'>
+                        <small
+                            className='toggle-read-more'
+                            onClick={() => setExpanded(!expanded)}
+                        >
+                            {expanded ? 'Collapse' : 'Expand'}
+                        </small>
+                    </Col>
+                </Row>
                 <Button
-                    outline
                     type='button' 
-                    color='dark'
+                    color='success'
                     size='sm'
                     className='me-2'
                     href={link}  
@@ -127,7 +140,6 @@ const ArticleCard = ({ article, dashboard }) => {
                 </Button>
                 {(currentUser && dashboard) || isSaved ? (
                     <Button
-                        outline
                         type='button' 
                         color='danger'
                         size='sm'
@@ -138,7 +150,6 @@ const ArticleCard = ({ article, dashboard }) => {
                     </Button>
                 ) : currentUser && !dashboard ? (
                     <Button
-                        outline
                         type='button' 
                         color='secondary'
                         size='sm'

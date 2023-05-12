@@ -9,6 +9,7 @@ import ChangeUsernameForm from './ChangeUsernameForm';
 const UserCard = ({ user, setStatusMsg }) => {
     const [changeUsername, setChangeUsername] = useState(false);
     const [usernameChanged, setUsernameChanged] = useState(false);
+    
     const [deleteUser, setDeleteUser] = useState(false);
     const [userDeleted, setUserDeleted] = useState(false);
 
@@ -89,9 +90,9 @@ const UserCard = ({ user, setStatusMsg }) => {
                     <p className='text-success'><b>Username successfully changed.</b></p>
                 ) : (
                     <Button
-                        outline
                         type='submit'
                         color='warning'
+                        className='rounded-0 btn-sm'
                         style={{ width: '175px' }}
                         onClick={() => setChangeUsername(true)}
                     >
@@ -109,7 +110,7 @@ const UserCard = ({ user, setStatusMsg }) => {
                             <Button
                                 type='submit'
                                 color='danger'
-                                className='me-2'
+                                className='me-2 rounded-0 btn-sm'
                                 onClick={() => delUser()}
                             >
                                 Confirm
@@ -117,6 +118,7 @@ const UserCard = ({ user, setStatusMsg }) => {
                             <Button
                                 type='button'
                                 color='secondary'
+                                className='rounded-0 btn-sm'
                                 onClick={() => setDeleteUser(false)}
                             >
                                 Cancel
@@ -124,9 +126,9 @@ const UserCard = ({ user, setStatusMsg }) => {
                         </>
                     ) : (
                         <Button
-                            outline
                             type='submit'
                             color='danger'
+                            className='rounded-0 btn-sm'
                             onClick={() => setDeleteUser(true)}
                         >
                             Delete User

@@ -30,7 +30,6 @@ const userSlice = createSlice({
             });
         },
         addSavedArticle: (state, action) => {
-            console.log(JSON.stringify(state.currentUser, null, 2));
             return ({
                 ...state,
                 currentUser: {
@@ -40,7 +39,6 @@ const userSlice = createSlice({
             });
         },
         removeSavedArticle: (state, action) => {
-            console.log(JSON.stringify(state.currentUser, null, 2));
             return ({
                 ...state,
                 currentUser: {

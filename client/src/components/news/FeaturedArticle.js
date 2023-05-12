@@ -73,14 +73,14 @@ const FeaturedArticle = ({ article, dashboard }) => {
             </Col>
             <Col md='6'>
                 <Row>
-                    <h5 className='article-title fw-bold text-center'>
-                        {title}
-                    </h5>
-                </Row>
-                <Row>
                     <small className='text-muted text-center'>
                         Author: {author}, {pubDate}
                     </small>
+                </Row>
+                <Row>
+                    <h5 className='article-title fw-bold text-center'>
+                        {title}
+                    </h5>
                 </Row>
                 <Row>
                     <p className='article-blurb text-center'>{snippet}</p>
