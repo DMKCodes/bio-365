@@ -27,7 +27,7 @@ import SciDaily from '../../app/media/sciencedaily.jpg';
 import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
-const ArticleCard = ({ article, dashboard }) => {
+const ArticleCard = ({ article }) => {
     const dispatch = useDispatch();
 
     const currentUser = useSelector(selectCurrentUser);
@@ -46,13 +46,13 @@ const ArticleCard = ({ article, dashboard }) => {
 
     const [isSaved, setIsSaved] = useState(false);
 
-    const [expanded, setExpanded] = useState(false);
-    
-    const savedCheck = useSelector((state) => checkSavedArticles(state, title));
+    const checkSaved = useSelector((state) => checkSavedArticles(state, title));
     
     useEffect(() => {
-        setIsSaved(savedCheck);
-    }, [savedCheck]);
+        setIsSaved(checkSaved);
+    }, [checkSaved]);
+    
+    const [expanded, setExpanded] = useState(false);
 
     const [image, setImage] = useState(null);
 
@@ -80,7 +80,6 @@ const ArticleCard = ({ article, dashboard }) => {
         try {
             await postArticle({ _id, article }).unwrap();
             dispatch(addSavedArticle(article));
-            setIsSaved(true);
         } catch (error) {
             console.log(error);
         }
@@ -91,7 +90,6 @@ const ArticleCard = ({ article, dashboard }) => {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();
             dispatch(removeSavedArticle(title));
-            setIsSaved(false);
         } catch (error) {
             console.log(error);
         }
@@ -100,7 +98,7 @@ const ArticleCard = ({ article, dashboard }) => {
     return (
         <Card className='article-card mb-4'>
             <CardImg
-                alt='card image'
+                alt='Article Image'
                 className='article-image'
                 src={image}
             />
@@ -113,22 +111,17 @@ const ArticleCard = ({ article, dashboard }) => {
                 <CardTitle tag='h5' className='article-title fw-bold px-1'>
                     {title}
                 </CardTitle>
-                <CardText 
-                    className={`article-blurb px-1 mb-0 ${expanded ? 'expanded' : ''}`}
-                >
-                    {snippet.length > 0 ? <b>Preview: </b> : null}
-                    {snippet}
+                <CardText>
+                    <small 
+                        className='article-preview' 
+                        onClick={() => setExpanded(!expanded)}
+                    >
+                        Preview [{!expanded ? '+' : '-'}]
+                    </small>
+                    {expanded &&
+                        <p>{snippet}</p>
+                    }
                 </CardText>
-                <Row className='mb-3 d-flex justify-content-end'>
-                    <Col xs='3'>
-                        <small
-                            className='toggle-read-more'
-                            onClick={() => setExpanded(!expanded)}
-                        >
-                            {expanded ? 'Collapse' : 'Expand'}
-                        </small>
-                    </Col>
-                </Row>
                 <Button
                     type='button' 
                     color='success'
@@ -140,23 +133,29 @@ const ArticleCard = ({ article, dashboard }) => {
                 >
                     Full Article
                 </Button>
-                {(currentUser && dashboard) || isSaved ? (
+                {currentUser && isSaved ? (
                     <Button
                         type='button' 
                         color='danger'
                         className='rounded-0 btn-sm'
                         tag='a'
-                        onClick={() => delArticle()}
+                        onClick={() => {
+                            delArticle();
+                            setIsSaved(false);
+                        }}
                     >
                         Remove Bookmark
                     </Button>
-                ) : currentUser && !dashboard ? (
+                ) : currentUser && !isSaved ? (
                     <Button
                         type='button' 
                         color='secondary'
                         className='rounded-0 btn-sm'
                         tag='a'
-                        onClick={() => addArticle()}
+                        onClick={() => {
+                            addArticle();
+                            setIsSaved(true);
+                        }}
                     >
                         Add Bookmark
                     </Button>

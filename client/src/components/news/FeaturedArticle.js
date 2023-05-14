@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../features/users/userSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { 
+    selectCurrentUser,
+    checkSavedArticles,
+    addSavedArticle,
+    removeSavedArticle } from '../../features/users/userSlice';
 import { Row, Col, Button } from 'reactstrap';
 import { 
     useAddArticleMutation,
@@ -12,7 +16,9 @@ import SciDaily from '../../app/media/sciencedaily.jpg';
 import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
-const FeaturedArticle = ({ article, dashboard }) => {
+const FeaturedArticle = ({ article }) => {
+    const dispatch = useDispatch();
+
     const currentUser = useSelector(selectCurrentUser);
     const { _id } = currentUser;
 
@@ -26,6 +32,16 @@ const FeaturedArticle = ({ article, dashboard }) => {
         source,
         category
     } = article;
+
+    const [isSaved, setIsSaved] = useState(false);
+
+    const checkSaved = useSelector((state) => checkSavedArticles(state, title));
+    
+    useEffect(() => {
+        setIsSaved(checkSaved);
+    }, [checkSaved]);
+
+    const [expanded, setExpanded] = useState(false);
 
     const [image, setImage] = useState(null);
 
@@ -52,6 +68,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
     const addArticle = async () => {
         try {
             await postArticle({ _id, article }).unwrap();
+            dispatch(addSavedArticle(article));
         } catch (error) {
             console.log(error);
         }
@@ -61,17 +78,18 @@ const FeaturedArticle = ({ article, dashboard }) => {
         try {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();
+            dispatch(removeSavedArticle(title));
         } catch (error) {
             console.log(error);
         }
     };
 
     return (
-        <Row className='py-3 mb-3 align-items-center'>
+        <Row className='py-3 mb-3'>
             <Col md='6'>
-                <img src={image} alt='' className='w-100' />
+                <img src={image} alt='' className='featured-article-image w-100' />
             </Col>
-            <Col md='6'>
+            <Col md='6' className='d-flex flex-column justify-content-center'>
                 <Row>
                     <small className='text-muted text-center'>
                         Author: {author}, {pubDate}
@@ -82,8 +100,16 @@ const FeaturedArticle = ({ article, dashboard }) => {
                         {title}
                     </h5>
                 </Row>
-                <Row>
-                    <p className='article-blurb text-center'>{snippet}</p>
+                <Row className='text-center pb-3'>
+                    <small 
+                        className='article-preview' 
+                        onClick={() => setExpanded(!expanded)}
+                    >
+                        Preview [{!expanded ? '+' : '-'}]
+                    </small>
+                    {(expanded && snippet.length > 0) &&
+                        <p>{snippet}</p>
+                    }
                 </Row>
                 <Row>
                     <Col className='d-flex justify-content-center'>
@@ -98,25 +124,29 @@ const FeaturedArticle = ({ article, dashboard }) => {
                         >
                             Full Article
                         </Button>
-                        {currentUser && dashboard ? (
+                        {currentUser && isSaved ? (
                             <Button
-                                outline
                                 type='button' 
                                 color='danger'
                                 className='rounded-0 btn-sm'
                                 tag='a'
-                                onClick={() => delArticle()}
+                                onClick={() => {
+                                    delArticle();
+                                    setIsSaved(false);
+                                }}
                             >
                                 Remove Bookmark
                             </Button>
-                        ) : currentUser && !dashboard ? (
+                        ) : currentUser && !isSaved ? (
                             <Button
-                                outline
                                 type='button' 
                                 color='secondary'
                                 className='rounded-0 btn-sm'
                                 tag='a'
-                                onClick={() => addArticle()}
+                                onClick={() => {
+                                    addArticle();
+                                    setIsSaved(true);
+                                }}
                             >
                                 Add Bookmark
                             </Button>

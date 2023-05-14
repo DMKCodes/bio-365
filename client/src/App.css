@@ -35,18 +35,8 @@
   -webkit-box-orient: vertical;
 }
 
-.article-blurb {
-  height: 6em;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-}
-
-.article-blurb.expanded {
-  height: auto;
-  overflow: visible;
-  -webkit-line-clamp: unset;
+.article-preview {
+  cursor: pointer;
 }
 
 .toggle-read-more {
@@ -61,6 +51,11 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+}
+
+.featured-article-image {
+  max-height: 700px;
+  object-fit: scale-down;
 }
 
 .searchbar {
