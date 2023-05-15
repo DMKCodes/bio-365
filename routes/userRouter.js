@@ -168,7 +168,7 @@ userRouter.route('/:userId/articles/:articleId')
                 user.savedArticles.splice(articleIndex, 1);
                 await user.save();
 
-                res.status(200).json({ status: 'Article removed.'});
+                res.status(200).json({ status: 'Article removed.' });
             } else {
                 res.status(404).json({ error: 'Article not found in saved articles.' });
             }

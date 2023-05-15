@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { 
     selectCurrentUser,
     checkSavedArticles,
@@ -8,7 +9,7 @@ import {
 import { Row, Col, Button } from 'reactstrap';
 import { 
     useAddArticleMutation,
-    useDeleteArticleMutation
+    useDeleteArticleMutation,
 } from '../../features/users/articlesApiSlice';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
@@ -16,7 +17,7 @@ import SciDaily from '../../app/media/sciencedaily.jpg';
 import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
-const FeaturedArticle = ({ article }) => {
+const FeaturedArticle = ({ article, dashboard }) => {
     const dispatch = useDispatch();
 
     const currentUser = useSelector(selectCurrentUser);
@@ -60,7 +61,7 @@ const FeaturedArticle = ({ article }) => {
             setImage(DTE);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [article]);
 
     const [postArticle] = useAddArticleMutation();
     const [deleteArticle] = useDeleteArticleMutation();
@@ -78,6 +79,7 @@ const FeaturedArticle = ({ article }) => {
         try {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();
+            
             dispatch(removeSavedArticle(title));
         } catch (error) {
             console.log(error);
@@ -103,13 +105,12 @@ const FeaturedArticle = ({ article }) => {
                 <Row>
                     <Col className='d-flex justify-content-center'>
                         <Button
-                            type='button' 
+                            type='link' 
                             color='success'
                             className='me-2 rounded-0 btn-sm'
                             href={link}
                             target='_blank'
                             rel='noreferrer noopener'
-                            tag='a' 
                         >
                             Full Article
                         </Button>
@@ -117,17 +118,16 @@ const FeaturedArticle = ({ article }) => {
                             type='button'
                             color='dark'
                             className='me-2 rounded-0 btn-sm'
-                            tag='a'
                             onClick={() => setExpanded(!expanded)}
                         >
                             Preview [{!expanded ? '+' : '-'}]
                         </Button>
-                        {currentUser && isSaved ? (
+
+                        {currentUser && isSaved && dashboard ? (
                             <Button
                                 type='button' 
                                 color='danger'
                                 className='rounded-0 btn-sm'
-                                tag='a'
                                 onClick={() => {
                                     delArticle();
                                     setIsSaved(false);
@@ -135,12 +135,24 @@ const FeaturedArticle = ({ article }) => {
                             >
                                 Remove Bookmark
                             </Button>
+                        ) : currentUser && isSaved && !dashboard ? (
+                            <NavLink
+                                className='nav-link d-inline-block' 
+                                to='/dashboard' 
+                            >
+                                <Button
+                                    type='link'
+                                    color='dark'
+                                    className='rounded-0 btn-sm'
+                                >
+                                    Dashboard
+                                </Button>
+                            </NavLink>
                         ) : currentUser && !isSaved ? (
                             <Button
                                 type='button' 
                                 color='secondary'
                                 className='rounded-0 btn-sm'
-                                tag='a'
                                 onClick={() => {
                                     addArticle();
                                     setIsSaved(true);
@@ -149,6 +161,7 @@ const FeaturedArticle = ({ article }) => {
                                 Add Bookmark
                             </Button>
                         ) : null }
+
                     </Col>
                 </Row>
                 <Row className='text-center mt-3'>

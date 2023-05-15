@@ -9,26 +9,26 @@ const NewsList = ({ articles, dashboard }) => {
         return (
             !dashboard ? (
                 articles.map((article, index) => {
-                    if (index === 0 || index === 16 || index % 16 === 0) {
+                    if (index === 0 || index % 16 === 0) {
                         return (
                             <FeaturedArticle 
                                 article={article} 
+                                key={index} 
                                 dashboard={dashboard} 
-                                key={article.title} 
                             />
                         );
                     } else {
                         return (
-                            <Col lg='4' md='6' key={article.title}>
+                            <Col lg='4' md='6' key={index}>
                                 <ArticleCard article={article} dashboard={dashboard} />
                             </Col>
                         );
                     }
                 })
             ) : (
-                articles.map((article) => {
+                articles.map((article, index) => {
                     return (
-                        <Col lg='4' md='6' key={article.title}>
+                        <Col lg='4' md='6' key={index}>
                             <ArticleCard article={article} dashboard={dashboard} />
                         </Col>
                     );
