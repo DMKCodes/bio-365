@@ -111,17 +111,6 @@ const ArticleCard = ({ article }) => {
                 <CardTitle tag='h5' className='article-title fw-bold px-1'>
                     {title}
                 </CardTitle>
-                <CardText>
-                    <small 
-                        className='article-preview' 
-                        onClick={() => setExpanded(!expanded)}
-                    >
-                        Preview [{!expanded ? '+' : '-'}]
-                    </small>
-                    {expanded &&
-                        <p>{snippet}</p>
-                    }
-                </CardText>
                 <Button
                     type='button' 
                     color='success'
@@ -132,6 +121,15 @@ const ArticleCard = ({ article }) => {
                     tag='a'
                 >
                     Full Article
+                </Button>
+                <Button
+                    type='button'
+                    color='dark'
+                    className='me-2 rounded-0 btn-sm'
+                    tag='a'
+                    onClick={() => setExpanded(!expanded)}
+                >
+                    Preview [{!expanded ? '+' : '-'}]
                 </Button>
                 {currentUser && isSaved ? (
                     <Button
@@ -160,6 +158,11 @@ const ArticleCard = ({ article }) => {
                         Add Bookmark
                     </Button>
                 ) : null }
+                <CardText className='mt-3'>
+                    {(expanded && snippet.length > 0) &&
+                        <p>{snippet}</p>
+                    }
+                </CardText>
                 <Row className='mt-3'>
                     <Col xs='3'>
                         <CardText>

@@ -100,17 +100,6 @@ const FeaturedArticle = ({ article }) => {
                         {title}
                     </h5>
                 </Row>
-                <Row className='text-center pb-3'>
-                    <small 
-                        className='article-preview' 
-                        onClick={() => setExpanded(!expanded)}
-                    >
-                        Preview [{!expanded ? '+' : '-'}]
-                    </small>
-                    {(expanded && snippet.length > 0) &&
-                        <p>{snippet}</p>
-                    }
-                </Row>
                 <Row>
                     <Col className='d-flex justify-content-center'>
                         <Button
@@ -123,6 +112,15 @@ const FeaturedArticle = ({ article }) => {
                             tag='a' 
                         >
                             Full Article
+                        </Button>
+                        <Button
+                            type='button'
+                            color='dark'
+                            className='me-2 rounded-0 btn-sm'
+                            tag='a'
+                            onClick={() => setExpanded(!expanded)}
+                        >
+                            Preview [{!expanded ? '+' : '-'}]
                         </Button>
                         {currentUser && isSaved ? (
                             <Button
@@ -152,6 +150,11 @@ const FeaturedArticle = ({ article }) => {
                             </Button>
                         ) : null }
                     </Col>
+                </Row>
+                <Row className='text-center mt-3'>
+                    {(expanded && snippet.length > 0) &&
+                        <p>{snippet}</p>
+                    }
                 </Row>
                 <Row className='mt-3'>
                     <Col xs='3'>
