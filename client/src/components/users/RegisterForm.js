@@ -86,8 +86,7 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
             initialValues={{
                 username: '',
                 password: '',
-                email: '',
-                admin: false
+                email: ''
             }}
             validationSchema={registerSchema}
             onSubmit={handleRegisterSubmit}
@@ -97,10 +96,10 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                 return (
                     <Form className='p-3'>
                         <FormGroup row>
-                            <Label htmlFor='username' md='3'>
+                            <Label htmlFor='username' md='4'>
                                 Username:
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='username'
                                     autoComplete='off'
@@ -116,10 +115,10 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label htmlFor='password' md='3'>
+                            <Label htmlFor='password' md='4'>
                                 Password:
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='password'
                                     type='password'
@@ -136,10 +135,10 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label htmlFor='confirmPassword' md='3'>
+                            <Label htmlFor='confirmPassword' md='4'>
                                 Confirm Password:
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='confirmPassword'
                                     type='password'
@@ -156,10 +155,10 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label htmlFor='email' md='3'>
+                            <Label htmlFor='email' md='4'>
                                 Email:
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='email'
                                     autoComplete='off'
@@ -172,18 +171,6 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                                         className='invalid-feedback'
                                     />
                                 ) : null}
-                            </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Label check htmlFor='admin' md='3'>
-                                Admin?
-                            </Label>
-                            <Col md='9'>
-                                <Field
-                                    name='admin'
-                                    type='checkbox'
-                                    className='form-check-input mt-2'
-                                />
                             </Col>
                         </FormGroup>
                         <FormGroup row>

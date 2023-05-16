@@ -9,7 +9,7 @@ import * as yup from 'yup';
 const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
     const dispatch = useDispatch();
 
-    const [persist, setPersist] = usePersist();
+    const [, setPersist] = usePersist();
 
     const [login] = useLoginMutation();
 
@@ -38,8 +38,8 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 username: values.username,
                 password: values.password
             }).unwrap();
+
             const user = response.user;
-            console.log(response.user);
             const token = response.token;
             dispatch(setCurrentUser({ user, token }));
 
@@ -79,10 +79,10 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 return (
                     <Form className='p-3'>
                         <FormGroup row>
-                            <Label htmlFor='username' md='3'>
+                            <Label htmlFor='username' md='4'>
                                 Username:
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='username'
                                     autoComplete='off'
@@ -98,10 +98,10 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label htmlFor='password' md='3'>
+                            <Label htmlFor='password' md='4'>
                                 Password:
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='password'
                                     type='password'
@@ -118,24 +118,31 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label check htmlFor='remember' md='3'>
+                            <Label check htmlFor='remember' md='4'>
                                 Remember me?
                             </Label>
-                            <Col md='9'>
+                            <Col md='8'>
                                 <Field
                                     name='remember'
                                     type='checkbox'
                                     className='form-check-input mt-2'
-                                    checked={persist}
                                 />
                             </Col>
                         </FormGroup>
                         <FormGroup row>
                             <Col className='d-flex justify-content-center'>
-                                <Button type='submit' color='success' className='me-3'>
+                                <Button 
+                                    type='submit' 
+                                    color='success' 
+                                    className='me-3'
+                                >
                                     Login
                                 </Button>
-                                <Button type='button' color='secondary' onClick={() => setModalOpen(false)}>
+                                <Button 
+                                    type='button' 
+                                    color='secondary' 
+                                    onClick={() => setModalOpen(false)}
+                                >
                                     Cancel
                                 </Button>
                             </Col>

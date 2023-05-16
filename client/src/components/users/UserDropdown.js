@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { selectCurrentUser, clearCurrentUser, checkAdmin } from '../../features/users/userSlice';
+import usePersist from '../../hooks/usePersist';
 import {
     Dropdown,
     DropdownToggle,
@@ -12,6 +13,8 @@ import {
 
 const UserDropdown = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [, setPersist] = usePersist();
+
     const currentUser = useSelector(selectCurrentUser);
     const isAdmin = useSelector(checkAdmin);
 
@@ -19,8 +22,9 @@ const UserDropdown = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        navigate('/');
         dispatch(clearCurrentUser());
+        setPersist(false);
+        navigate('/');
     };
 
     return (

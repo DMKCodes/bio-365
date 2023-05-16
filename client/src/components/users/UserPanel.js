@@ -87,7 +87,7 @@ const UserPanel = () => {
     return (
         <Container className='bg-light'>
             <Row className='border'>
-                    <h4 className='pt-2'>Account Management</h4>
+                    <h4 className='pt-2'>Manage Your Account</h4>
             </Row>
             <Row>
                 {statusMsg &&

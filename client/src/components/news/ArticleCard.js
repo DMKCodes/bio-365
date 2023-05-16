@@ -32,7 +32,6 @@ const ArticleCard = ({ article, dashboard }) => {
     const dispatch = useDispatch();
 
     const currentUser = useSelector(selectCurrentUser);
-    const { _id } = currentUser;
 
     const { 
         title, 
@@ -78,6 +77,8 @@ const ArticleCard = ({ article, dashboard }) => {
     const [deleteArticle] = useDeleteArticleMutation();
 
     const addArticle = async () => {
+        const { _id } = currentUser;
+
         try {
             await postArticle({ _id, article }).unwrap();
             dispatch(addSavedArticle(article));
@@ -87,6 +88,8 @@ const ArticleCard = ({ article, dashboard }) => {
     };
 
     const delArticle = async () => {
+        const { _id } = currentUser;
+        
         try {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();

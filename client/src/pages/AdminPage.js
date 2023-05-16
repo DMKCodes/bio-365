@@ -20,7 +20,7 @@ const AdminPage = () => {
                     </Col>
                 </Row>
             ) : (
-                <p className='text-center'></p>
+                <p className='text-center'>You are not authorized to view this page.</p>
             )}
         </Container>
     );

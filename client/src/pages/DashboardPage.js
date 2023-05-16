@@ -18,28 +18,33 @@ const DashboardPage = () => {
 
     return (
         <Container className='mt-3 text-center'>
-            <Row className='d-flex justify-content-center mb-5'>
-                <Col xs='10' md='8' className='pt-3'>
-                    <UserPanel />
-                </Col>
-            </Row>
-            <Row>
-                <h4 className='mb-5'>Your Reading List</h4>
-                {isError ? (
-                    error.status === 404 ? (
-                        <p>{error.data.error}</p>
-                    ) : (
-                        <p>Error retrieving articles. Please refresh and try again.</p>
-                    )
-                ) : isLoading ? (
-                    <p>Fetching the latest articles...</p>
-                ) : data ? (
-                    <NewsList 
-                        articles={data.articles}
-                        dashboard={true} 
-                    />
-                ) : null}
-            </Row>
+            {currentUser ? (
+                <>
+                    <Row className='d-flex justify-content-center mb-5'>
+                        <Col xs='10' md='8' className='pt-3'>
+                            <UserPanel />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <h4 className='mb-5'>Your Reading List</h4>
+                        {isError ? (
+                            error.status === 404 ? (
+                                <p>{error.data.error}</p>
+                            ) : (
+                                <p>Error retrieving articles. Please refresh and try again.</p>
+                            )
+                        ) : isLoading ? (
+                            <p>Fetching the latest articles...</p>
+                        ) : data ? (
+                            <NewsList 
+                                articles={data.articles}
+                                dashboard={true} 
+                            />
+                        ) : null}
+                    </Row>
+                </>
+                ) : <p>You are not logged in.</p>
+            }
         </Container>
     );
 };

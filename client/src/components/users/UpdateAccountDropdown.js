@@ -25,7 +25,7 @@ const UpdateAccountDropdown = ({
                 color='success' 
                 className='rounded-0 btn-sm'
             >
-                Update Account
+                Actions
             </DropdownToggle>
             <DropdownMenu>
                 <DropdownItem onClick={() => {

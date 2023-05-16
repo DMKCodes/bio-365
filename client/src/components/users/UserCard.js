@@ -88,25 +88,12 @@ const UserCard = ({ user, setStatusMsg }) => {
                     />
                 ) : usernameChanged ? (
                     <p className='text-success'><b>Username successfully changed.</b></p>
-                ) : (
-                    <Button
-                        type='submit'
-                        color='warning'
-                        className='rounded-0 btn-sm'
-                        style={{ width: '175px' }}
-                        onClick={() => setChangeUsername(true)}
-                    >
-                        Change Username
-                    </Button>
-                )}
-            </Row>
-            <Row className='mt-2 justify-content-center'>
-                <Col md='6'>
-                    {userDeleted ? (
-                        <p className='text-success'><b>User successfully deleted.</b></p>
-                    ) : deleteUser ? (
-                        <>
-                            <p>Are you sure you want to delete your account?  This operation is <b style={{ color: 'red' }}>permanent</b>.</p>
+                ) : userDeleted ? (
+                    <p className='text-success'><b>User successfully deleted.</b></p>
+                ) : deleteUser ? (
+                    <>
+                        <p>Are you sure you want to delete this account?  This operation is <b style={{ color: 'red' }}>permanent</b>.</p>
+                        <Col md='6'>
                             <Button
                                 type='submit'
                                 color='danger'
@@ -115,6 +102,8 @@ const UserCard = ({ user, setStatusMsg }) => {
                             >
                                 Confirm
                             </Button>
+                        </Col>
+                        <Col md='6'>
                             <Button
                                 type='button'
                                 color='secondary'
@@ -123,18 +112,33 @@ const UserCard = ({ user, setStatusMsg }) => {
                             >
                                 Cancel
                             </Button>
-                        </>
-                    ) : (
-                        <Button
-                            type='submit'
-                            color='danger'
-                            className='rounded-0 btn-sm'
-                            onClick={() => setDeleteUser(true)}
-                        >
-                            Delete User
-                        </Button>
-                    )}
-                </Col>
+                        </Col>
+                    </>
+                ) : (
+                    <>
+                        <Col md='6'>
+                            <Button
+                                type='button'
+                                color='warning'
+                                className='rounded-0 btn-sm'
+                                style={{ width: '175px' }}
+                                onClick={() => setChangeUsername(true)}
+                            >
+                                Change Username
+                            </Button>
+                        </Col>
+                        <Col md='6'>
+                            <Button
+                                type='button'
+                                color='danger'
+                                className='rounded-0 btn-sm'
+                                onClick={() => setDeleteUser(true)}
+                            >
+                                Delete User
+                            </Button>
+                        </Col>
+                    </>
+                )}
             </Row>
         </Col>
     );
