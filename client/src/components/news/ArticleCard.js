@@ -176,7 +176,7 @@ const ArticleCard = ({ article, dashboard }) => {
 
                 <CardText className='mt-3'>
                     {(expanded && snippet.length > 0) &&
-                        <p>{snippet}</p>
+                        snippet
                     }
                 </CardText>
                 <Row className='mt-3'>
