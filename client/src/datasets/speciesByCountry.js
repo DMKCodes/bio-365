@@ -99,7 +99,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 291.58
   },
   {
-    name: 'UNITED STATES',
+    name: 'UNITED STATES OF AMERICA',
     birdSpecies: 844,
     amphibianSpecies: 326,
     fishSpecies: 3081,
@@ -165,7 +165,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 214.71
   },
   {
-    name: 'DEMOCRATIC REPUBLIC OF THE CONGO',
+    name: 'DEM. REP. CONGO',
     birdSpecies: 1110,
     amphibianSpecies: 227,
     fishSpecies: 1528,
@@ -506,7 +506,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 111.11
   },
   {
-    name: 'CENTRAL AFRICAN REPUBLIC',
+    name: 'CENTRAL AFRICAN REP.',
     birdSpecies: 720,
     amphibianSpecies: 58,
     fishSpecies: 200,
@@ -583,7 +583,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 102.33
   },
   {
-    name: "COTE D'IVOIRE",
+    name: "CÔTE D'IVOIRE",
     birdSpecies: 671,
     amphibianSpecies: 85,
     fishSpecies: 676,
@@ -792,7 +792,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 76.44
   },
   {
-    name: 'EQUATORIAL GUINEA',
+    name: 'EQ. GUINEA',
     birdSpecies: 434,
     amphibianSpecies: 51,
     fishSpecies: 569,
@@ -935,7 +935,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 65.27
   },
   {
-    name: 'GUINEA BISSAU',
+    name: 'GUINEA-BISSAU',
     birdSpecies: 453,
     amphibianSpecies: 21,
     fishSpecies: 676,
@@ -957,7 +957,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 64.11
   },
   {
-    name: 'TRINIDAD &TOBAGO',
+    name: 'TRINIDAD & TOBAGO',
     birdSpecies: 397,
     amphibianSpecies: 40,
     fishSpecies: 988,
@@ -1155,7 +1155,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 52.54
   },
   {
-    name: 'DOMINICAN REP .',
+    name: 'DOMINICAN REP.',
     birdSpecies: 245,
     amphibianSpecies: 50,
     fishSpecies: 530,
@@ -1650,7 +1650,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 34.3
   },
   {
-    name: 'SLOVAK REPUBLIC',
+    name: 'SLOVAKIA',
     birdSpecies: 294,
     amphibianSpecies: 18,
     fishSpecies: 92,
@@ -1661,7 +1661,7 @@ export const SPECIES_COUNTRIES = [
     globalBiodiversityIndex: 34.23
   },
   {
-    name: 'CZECH REPUBLIC',
+    name: 'CZECHIA',
     birdSpecies: 287,
     amphibianSpecies: 21,
     fishSpecies: 80,
@@ -2209,5 +2209,158 @@ export const SPECIES_COUNTRIES = [
     vascularPlantSpecies: 714,
     totalSpecies: 758,
     globalBiodiversityIndex: 5.47
+  },
+  {
+    name: 'GREENLAND',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'WESTERN SAHARA',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'SIERRA LEONE',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'S. SUDAN',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'TURKMENISTAN',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'TAJIKISTAN',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'KOSOVO',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'MACEDONIA',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'FALKLAND IS.',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'NEW CALEDONIA',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'SOLOMON IS.',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
+  },
+  {
+    name: 'TAIWAN',
+    birdSpecies: 'No Data',
+    amphibianSpecies: 'No Data',
+    fishSpecies: 'No Data',
+    mammalSpecies: 'No Data',
+    reptileSpecies: 'No Data',
+    vascularPlantSpecies: 'No Data',
+    totalSpecies: 'No Data',
+    globalBiodiversityIndex: 'No Data'
   }
+];
+
+// Conservation International - https://www.biodiversitya-z.org/content/megadiverse-countries
+export const MEGADIVERSE = [
+  'United States of America',
+  'Brazil',
+  'Mexico',
+  'Colombia',
+  'Ecuador',
+  'Peru',
+  'Venezuela',
+  'Democratic Republic of Congo',
+  'South Africa',
+  'Madagascar',
+  'India',
+  'Malaysia',
+  'Indonesia',
+  'Philippines',
+  'Papua New Guinea',
+  'China',
+  'Australia'
 ];

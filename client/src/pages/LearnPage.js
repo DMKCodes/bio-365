@@ -1,4 +1,4 @@
-import Globe from '../components/datavis/InteractiveGlobe';
+import GlobePanel from '../components/learn/GlobePanel';
 import { Container, Row } from 'reactstrap';
 
 const LearnPage = () => {
@@ -13,7 +13,7 @@ const LearnPage = () => {
                 <p>Biodiversity supports a healthy and resilient environment. When lots of different types of plants, animals, and microorganisms are present, our environment can better withstand and recover from a variety of shocks and disruptions, including diseases and natural disasters. Plus, a rich variety of species helps humans by providing natural resources such as food, clean water, and medicine.</p>
             </Row>
             <Row>
-                <Globe />
+                <GlobePanel />
             </Row>
         </Container>
     );

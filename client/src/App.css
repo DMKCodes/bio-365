@@ -69,19 +69,3 @@
   transform: translateY(-50%);
   cursor: pointer
 }
-
-.globe-container {
-  position: relative;
-}
-
-.tooltip {
-  width: 100px;
-  height: 50px;
-  position: absolute;
-  z-index: 1000;
-  padding: 10px;
-  color: white;
-  border: 1px solid black;
-  top: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-}
