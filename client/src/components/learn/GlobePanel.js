@@ -1,28 +1,70 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Container,
     Col,
     Row,
-    Card, 
-    CardBody, 
-    CardTitle, 
-    CardSubtitle, 
-    CardText,
-    CardFooter,
     Button
 } from 'reactstrap';
 import InteractiveGlobe from './datavis/InteractiveGlobe';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+import InfoCard from './InfoCard';
+import { SPECIES_COUNTRIES } from '../../datasets/speciesByCountry.js';
+import { ENDANGERED } from '../../datasets/endangeredSpeciesByCountry';
 
 const GlobePanel = () => {
-    const [countryData, setCountryData] = useState(null);
+    const [countryToDisplay, setCountryToDisplay] = useState(null);
+
+    const [speciesData, setSpeciesData] = useState(null);
+    const [endangeredData, setEndangeredData] = useState(null);
     const [viewType, setViewType] = useState('species');
+
+    useEffect(() => {
+        if (countryToDisplay) {
+            if (viewType === 'species') {
+                const data = getSpeciesData(countryToDisplay);
+                setSpeciesData(data[0]);
+            } else if (viewType === 'megadiverse') {
+                
+            } else if (viewType === 'endangered') {
+                const data = getEndangeredData(countryToDisplay);
+                setEndangeredData(data[0]);
+            } else if (viewType === 'hotspots') {
+
+            }
+        }
+    }, [countryToDisplay, viewType]);
+
+    const getSpeciesData = (name) => {
+        const data = SPECIES_COUNTRIES.filter((country) => country.name === name);
+        return data;
+    };
+
+    const getEndangeredData = (name) => {
+        const data = ENDANGERED.filter((country) => country.name === name);
+        return data;
+    }
+
+    let title;
+    switch(viewType) {
+        case 'species':
+            title = 'Species Overview';
+            break;
+        case 'megadiverse':
+            title = 'Megadiverse Countries';
+            break;
+        case 'endangered':
+            title = 'Endangered Species';
+            break;
+        case 'hotspots':
+            title = 'Biodiversity Hotspots';
+            break;
+        default:
+            title = 'Info Panel';
+    }
 
     return (
         <Container fluid>
             <Row className='mb-3'>
-                <h2 className='text-center'>Biodiversity around the world.</h2>
+                <h3 className='text-center'>BIODIVERSITY AROUND THE WORLD</h3>
             </Row>
             <Row>
                 <Col md='8' className='mb-2 d-flex flex-row align-items-center'>
@@ -63,57 +105,19 @@ const GlobePanel = () => {
             </Row>
             <Row>
                 <Col md='8'>
-                    <InteractiveGlobe setCountryData={setCountryData} viewType={viewType} />
+                    <InteractiveGlobe 
+                        setCountryToDisplay={setCountryToDisplay} 
+                        viewType={viewType} 
+                    />
                 </Col>
                 <Col md='4'>
-                    <Card className='globe-data-card rounded-0'>
-                        <CardBody className='text-center'>
-                            <CardTitle>
-                                <h4>{viewType === 
-                                    'species' ? 'Species Overview' :
-                                    'megadiverse' ? 'Megadiverse Countries' :
-                                    'endangered' ? 'Endangered Species' :
-                                    'hotspots' ? 'Biodiversity Hotspots' :
-                                    'Info Panel'
-                                }</h4>
-                            </CardTitle>
-                            {countryData ? (
-                                <CardSubtitle className='text-success'>
-                                    <b>{countryData.name}</b>
-                                </CardSubtitle>
-                            ) : (
-                                <CardSubtitle>
-                                    <small className='text-muted'>
-                                        <i>Choose a country to learn more.</i>
-                                    </small>
-                                </CardSubtitle>
-                            )}
-                            {countryData &&
-                                <CardText>
-                                    <br />Amphibians: {countryData.amphibianSpecies.toLocaleString("en-US")}<br />
-                                    Birds: {countryData.birdSpecies.toLocaleString("en-US")}<br />
-                                    Fishs: {countryData.fishSpecies.toLocaleString("en-US")}<br />
-                                    Mammals: {countryData.mammalSpecies.toLocaleString("en-US")}<br />
-                                    Reptiles: {countryData.reptileSpecies.toLocaleString("en-US")}<br />
-                                    Vascular Plants: {countryData.vascularPlantSpecies.toLocaleString("en-US")}<br />
-                                    Total: {countryData.totalSpecies.toLocaleString("en-US")}<br /><br />
-                                    GBI <FontAwesomeIcon icon={faCircleQuestion} />: {countryData.globalBiodiversityIndex}
-                                </CardText>
-                            }
-                        </CardBody>
-                        <CardFooter>
-                            <p className='text-center'>
-                                <b>Sources: </b><br />
-                                <a href='https://www.iucnredlist.org/'>IUCN Red List</a><br />
-                                <a href='https://theswiftest.com/biodiversity-index/'>The Swiftest</a><br />
-                                <a href='http://datazone.birdlife.org/country'>BirdLife Data Zone</a><br />
-                                <a href='https://amphibiaweb.org/'>AmphibiaWeb</a><br />
-                                <a href='https://www.fishbase.in/search.php'>The Reptile Database</a><br />
-                            </p>
-                        </CardFooter>
-                    </Card>
-                    <p className='mt-4 text-center'><b>Note: </b>All data is estimated.  The map tool is incomplete, particularly in the Caribbean, and will be improved in the future.</p>
-                    <p className='text-center text-muted'>Last updated 18 May 2023.</p>
+                    <InfoCard 
+                        countryToDisplay={countryToDisplay}
+                        speciesData={speciesData}
+                        endangeredData={endangeredData}
+                        viewType={viewType}
+                        title={title}
+                    />
                 </Col>
             </Row>
         </Container>
