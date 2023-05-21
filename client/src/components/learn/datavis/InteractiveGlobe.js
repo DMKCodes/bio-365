@@ -16,6 +16,8 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
             width={800}
             height={650}
             lineHoverPrecision={0}
+            globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
 
             polygonsData={countries.features.filter((d) => d.properties.ISO_A2)}
             polygonAltitude={(d) => d === hover ? 0.12 : 0.06}

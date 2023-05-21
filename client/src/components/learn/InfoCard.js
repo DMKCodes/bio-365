@@ -135,6 +135,18 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                                     The Swiftest
                                 </a>
                             </p>
+                            <br />
+                            <small className='text-muted'>
+                                Map tool created by{' '}
+                                <a 
+                                    href='https://github.com/vasturiano'
+                                    target='blank' 
+                                    rel='noreferrer'
+                                >
+                                    Vasco Asturiano
+                                </a>
+                                .
+                            </small>
                         </AccordionBody>
                     </AccordionItem>
                     <AccordionItem>
