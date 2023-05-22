@@ -15,7 +15,6 @@ import {
 import DefinitionTooltip from './DefinitionTooltip';
 
 const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, title }) => {
-    console.log(countryToDisplay);
     const [accordionOpen, setAccordionOpen] = useState([]);
 
     const toggleAccordion = (id) => {
@@ -36,7 +35,7 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
             <CardHeader className='mb-3'>
                 {countryToDisplay ? (
                     <CardTitle>
-                        <h4 className='mb-0'><b>{countryToDisplay.toUpperCase()}</b></h4>
+                        <h5 className='mb-0'><b>{countryToDisplay.toUpperCase()}</b></h5>
                     </CardTitle>
                 ) : (
                     <CardTitle>
@@ -87,12 +86,11 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                 </CardText>
             ) : viewType === 'megadiverse' ? (
                 <CardText>
-                    <span id='megadiverse-definition' className='definition'>
-                        Megadiverse countries
-                    </span>
-                    {' '}are the world's most biodiversity-rich countries, which together account for more than two-thirds of all non-fish vertebrate species and three quarters of all higher plant species.
+                    The world's most biodiversity-rich countries, which together account for more than two-thirds of all non-fish vertebrate species and three quarters of all higher plant species.
                     <br /><br />
-                    To qualify as megadiverse, a country must have:
+                    To qualify as 
+                        <span id='megadiverse-definition' className='definition'> megadiverse</span>
+                    , a country must have:
                     <br />
                     - at least 5,000 of the world's plants as{' '}
                     <span id='endemics-definition' className='definition'>
@@ -109,7 +107,7 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                         <span id='iucn-definition' className='definition'>
                             IUCN's 
                         </span>
-                    {' '}'doctrine of ultimate responsibility', these 17 countries bear the disproportionate burden of ensuring the survival of their endemic species.
+                    {' '}doctrine of ultimate responsibility, these 17 countries bear the disproportionate burden of ensuring the survival of their endemic species.
                     <DefinitionTooltip term='Endemism' targetId='endemics-definition' />
                     <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
                     <DefinitionTooltip term='IUCN' targetId='iucn-definition' />
@@ -194,9 +192,9 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                             <p className='text-center'>
                                 The map tool is incomplete, particularly in the Caribbean, and will be improved in the future.
                             </p>
-                            <p className='text-center text-muted'>
-                                Last updated 19 May 2023.
-                            </p>
+                            <small className='text-muted'>
+                                Last updated 22 May 2023.
+                            </small>
                         </AccordionBody>
                     </AccordionItem>
                 </Accordion>

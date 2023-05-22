@@ -86,3 +86,8 @@
   color: #198754;
   cursor: pointer;
 }
+
+.spotlight-img {
+  max-height: 300px;
+  object-fit: scale-down;
+}

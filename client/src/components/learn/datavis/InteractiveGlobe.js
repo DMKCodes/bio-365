@@ -16,7 +16,6 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
     const totalSpecies = new Map(
         ENDANGERED_RATIOS.map(({ name, totalSpecies }) => [name, totalSpecies])
     );
-    console.log(totalSpecies);
     const totalSpeciesToColor = scaleLinear().domain([0, 50414]).range(['white', 'green']);
 
     const endangeredRatios = new Map(
