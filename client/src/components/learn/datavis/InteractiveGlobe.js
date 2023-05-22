@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Globe from 'react-globe.gl';
 import countriesData from '../../../datasets/countries.json';
+import { MEGADIVERSE } from '../../../datasets/megadiverseCountries';
 
 const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
     const [countries, setCountries] = useState({ features: [] });
@@ -21,7 +22,13 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
 
             polygonsData={countries.features.filter((d) => d.properties.ISO_A2)}
             polygonAltitude={(d) => d === hover ? 0.12 : 0.06}
-            polygonCapColor={d => d === hover ? 'steelblue' : 'white'}
+            polygonCapColor={d => {
+                if (viewType === 'megadiverse' && MEGADIVERSE.includes(d.properties.NAME_LONG)) {
+                    return 'lightgreen';
+                } else {
+                    return d === hover ? 'steelblue' : 'white'
+                }
+            }}
             polygonSideColor={() => 'rgba(0, 100, 0, 0.15'}
             polygonStrokeColor={() => '#111'}
             polygonsTransitionDuration={300}

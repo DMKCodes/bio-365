@@ -22,13 +22,9 @@ const GlobePanel = () => {
             if (viewType === 'species') {
                 const data = getSpeciesData(countryToDisplay);
                 setSpeciesData(data[0]);
-            } else if (viewType === 'megadiverse') {
-                
             } else if (viewType === 'endangered') {
                 const data = getEndangeredData(countryToDisplay);
                 setEndangeredData(data[0]);
-            } else if (viewType === 'hotspots') {
-
             }
         }
     }, [countryToDisplay, viewType]);
@@ -93,14 +89,7 @@ const GlobePanel = () => {
                     >
                         Endangered
                     </Button>
-                    <Button
-                        type='button'
-                        color={viewType === 'hotspots' ? 'success' : 'secondary'}
-                        className='btn-sm rounded-0 me-2'
-                        onClick={() => setViewType('hotspots')}
-                    >
-                        Hotspots
-                    </Button>
+                    <small className='text-muted'>More views coming soon!</small>
                 </Col>
             </Row>
             <Row>

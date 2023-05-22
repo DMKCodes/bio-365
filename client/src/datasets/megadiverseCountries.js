@@ -1,5 +1,5 @@
 export const MEGADIVERSE = [
-    'United States of America',
+    'United States',
     'Mexico',
     'Colombia',
     'Ecuador',

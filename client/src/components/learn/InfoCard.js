@@ -15,6 +15,7 @@ import {
 import DefinitionTooltip from './DefinitionTooltip';
 
 const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, title }) => {
+    console.log(countryToDisplay);
     const [accordionOpen, setAccordionOpen] = useState([]);
 
     const toggleAccordion = (id) => {
@@ -80,6 +81,36 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                     Vascular Plants: {endangeredData.plants.toLocaleString('en-US')}<br />
                     Fungi: {endangeredData.fungi.toLocaleString('en-US')}<br />
                     Total: {endangeredData.total.toLocaleString('en-US')}
+                </CardText>
+            ) : viewType === 'megadiverse' ? (
+                <CardText>
+                    <span id='megadiverse-definition' className='definition'>
+                        Megadiverse countries
+                    </span>
+                    {' '}are the world's most biodiversity-rich countries, which together account for more than two-thirds of all non-fish vertebrate species and three quarters of all higher plant species.
+                    <br /><br />
+                    To qualify as megadiverse, a country must have:
+                    <br />
+                    - at least 5,000 of the world's plants as{' '}
+                    <span id='endemics-definition' className='definition'>
+                        endemics
+                    </span>
+                    <br />
+                    - marine{' '}
+                    <span id='ecosystem-definition' className='definition'>
+                        ecosystems
+                    </span>
+                    {' '}within its borders
+                    <br /><br />
+                    In accordance with the{' '}
+                        <span id='iucn-definition' className='definition'>
+                            IUCN's 
+                        </span>
+                    {' '}'doctrine of ultimate responsibility', these 17 countries bear the disproportionate burden of ensuring the survival of their endemic species.
+                    <DefinitionTooltip term='Endemism' targetId='endemics-definition' />
+                    <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
+                    <DefinitionTooltip term='IUCN' targetId='iucn-definition' />
+                    <DefinitionTooltip term='Megadiverse Countries' targetId='megadiverse-definition' />
                 </CardText>
             ) : null}
             </CardBody>
