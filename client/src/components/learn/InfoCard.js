@@ -66,6 +66,7 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                         GBI
                     </span>
                     :{' '}{speciesData.globalBiodiversityIndex}
+
                     <DefinitionTooltip term='GBI' targetId='gbi-definition' />
                 </CardText>
             ) : viewType === 'endangered' && endangeredData ? (
@@ -81,6 +82,8 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                     Vascular Plants: {endangeredData.plants.toLocaleString('en-US')}<br />
                     Fungi: {endangeredData.fungi.toLocaleString('en-US')}<br />
                     Total: {endangeredData.total.toLocaleString('en-US')}
+                    <br /><br />
+                    <small className='text-muted'>Color depicts ratio of endangered species to total species. This is not a statement on any country's individual conservation efforts or unique challenges.</small>
                 </CardText>
             ) : viewType === 'megadiverse' ? (
                 <CardText>
