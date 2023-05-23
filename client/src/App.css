@@ -88,6 +88,10 @@
 }
 
 .spotlight-img {
-  max-height: 300px;
+  max-height: 12rem;
   object-fit: scale-down;
+}
+
+.cons-img {
+  max-height: 9rem;
 }

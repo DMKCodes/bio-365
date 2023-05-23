@@ -4,6 +4,9 @@ import DefinitionTooltip from '../components/learn/DefinitionTooltip';
 import { Container, Row, Col } from 'reactstrap';
 import lizard from '../app/media/lizard.jpeg';
 import hummingbird from '../app/media/hummingbird.jpeg';
+import wwf from '../app/media/wwf.png';
+import tnc from '../app/media/tnc.png';
+import ci from '../app/media/conservation.png';
 
 const LearnPage = () => {
     return (
@@ -16,9 +19,9 @@ const LearnPage = () => {
 
                 <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
             </Row>
-            <Row className='text-start my-5'>
+            <Row className='text-center my-5'>
                 <Col md='6'>
-                    <h3 className='text-end'>WHY IS IT IMPORTANT?</h3>
+                    <h3>WHY IS IT IMPORTANT?</h3>
                     <p>
                         Biodiversity plays a crucial role in 
                             <span id='ecosystem-definition' className='definition'> ecosystem </span>
@@ -38,15 +41,15 @@ const LearnPage = () => {
                     <DefinitionTooltip term='Ecology' targetId='ecology-definition' />
                 </Col>
                 <Col md='6'>
-                    <img src={lizard} alt='lizard' className='img-fluid'></img>
+                    <img src={lizard} alt='lizard' className='img-fluid rounded-circle'></img>
                 </Col>
             </Row>
             <Row className='my-5'>
                 <GlobePanel />
             </Row>
-            <Row className='my-5 text-start'>
+            <Row className='my-5 text-center'>
                 <Col md='6'>
-                    <img src={hummingbird} alt='hummingbird' className='img-fluid'></img>
+                    <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
                 </Col>
                 <Col md='6'>
                     <h3>THREATS TO BIODIVERSITY</h3>
@@ -71,52 +74,74 @@ const LearnPage = () => {
                     <DefinitionTooltip term='Invasive Species' targetId='invasive-definition' />
                 </Col>
             </Row>
-            <Row className='my-5'>
-                <h3 className='text-center'>CONSERVATION & PROTECTION</h3>
-                <Col md='6'>
-                    <p>
-                            <span id='conservation-definition' className='definition'>Conservation </span>
-                        and protection strategies for biodiversity are a diverse array of techniques and policies designed to maintain and restore the health and variety of the planet's 
-                            <span id='ecosystem-definition' className='definition'> ecosystems </span>
-                        , species, and genetic diversity. Foremost among these strategies is the establishment of protected areas, such as national parks, wildlife reserves, and marine protected areas. These sites, recognized and managed for their 
-                            <span id='ecology-definition' className='definition'> ecological</span>
-                        , cultural, or recreational value, provide sanctuaries for species and 
-                            <span id='habitat-definition' className='definition'> habitats</span>
-                        , allowing them to flourish with limited human intervention. Internationally, efforts are also made to limit trade in endangered species, with agreements such as the 
-                            <span id='cites-definition' className='definition'> Convention on International Trade in Endangered Species </span>
-                        playing a critical role.
-                        <br /><br />
-                        Complementing these protected areas are landscape and seascape-scale 
-                            <span id='conservation-definition' className='definition'> conservation </span>
-                        strategies, such as 
-                            <span id='corridor-definition' className='definition'> ecological corridors </span>
-                        that connect 
-                            <span id='fragmentation-definition' className='definition'> fragmented habitats</span>
-                        , allowing wildlife to move and interact freely. 
-                            <span id='conservation-definition' className='definition'> Conservation </span> 
-                        efforts are also increasingly recognizing the role of indigenous communities and local populations in preserving biodiversity, with community-based 
-                            <span id='conservation-definition' className='definition'> conservation </span> 
-                        efforts showing great promise.
-                        <br /><br />
-                        Legal measures, both national and international, underpin these efforts, providing the framework and enforcement mechanisms necessary to ensure biodiversity 
-                            <span id='conservation-definition' className='definition'> conservation</span>
-                        . One such international agreement, the 
-                            <span id='cbd-definition' className='definition'> Convention on Biological Diversity</span>
-                        , brings nations together to set targets and report on
-                            <span id='conservation-definition' className='definition'> conservation </span>
-                        progress. Lastly, emerging strategies include the use of innovative technology for biodiversity-friendly farming and fishing practices.
-                    </p>
+            <Row className='my-5 text-center'>
+                <h3 className='mb-3'>CONSERVATION & PROTECTION</h3>
+                <Col md='8'>
+                    <Row>
+                        <p>
+                                <span id='conservation-definition' className='definition'>Conservation </span>
+                            and protection strategies for biodiversity are a diverse array of techniques and policies designed to maintain and restore the health and variety of the planet's 
+                                <span id='ecosystem-definition' className='definition'> ecosystems </span>
+                            and genetic diversity. Foremost among these strategies is the establishment of protected areas, such as national parks, wildlife reserves, and marine protected areas. These sites, recognized and managed for their 
+                                <span id='ecology-definition' className='definition'> ecological</span>
+                            , cultural, or recreational value, provide sanctuaries for species and 
+                                <span id='habitat-definition' className='definition'> habitats</span>
+                            , allowing them to flourish with limited human intervention. Internationally, efforts are also made to limit trade in endangered species, with agreements such as the 
+                                <span id='cites-definition' className='definition'> Convention on International Trade in Endangered Species </span>
+                            playing a critical role.
+                            <br /><br />
+                            Complementing these protected areas are landscape and seascape-scale 
+                                <span id='conservation-definition' className='definition'> conservation </span>
+                            strategies, such as 
+                                <span id='corridor-definition' className='definition'> ecological corridors </span>
+                            that connect 
+                                <span id='fragmentation-definition' className='definition'> fragmented habitats</span>
+                            , allowing wildlife to move and interact freely. 
+                                <span id='conservation-definition' className='definition'> Conservation </span> 
+                            efforts are also increasingly recognizing the role of indigenous communities and local populations in preserving biodiversity, with community-based 
+                                <span id='conservation-definition' className='definition'> conservation </span> 
+                            efforts showing great promise.
+                            <br /><br />
+                            Legal measures, both national and international, underpin these efforts, providing the framework and enforcement mechanisms necessary to ensure biodiversity 
+                                <span id='conservation-definition' className='definition'> conservation</span>
+                            . One such international agreement, the 
+                                <span id='cbd-definition' className='definition'> Convention on Biological Diversity</span>
+                            , brings nations together to set targets and report on
+                                <span id='conservation-definition' className='definition'> conservation </span>
+                            progress. Lastly, emerging strategies include the use of innovative technology for biodiversity-friendly farming and fishing practices.
+                        </p>
 
-                    <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
-                    <DefinitionTooltip term='Conservation' targetId='conservation-definition' />
-                    <DefinitionTooltip term='CBD' targetId='cbd-definition' />
-                    <DefinitionTooltip term='Fragmentation' targetId='fragmentation-definition' />
-                    <DefinitionTooltip term='Wildlife Corridor' targetId='corridor-definition' />
-                    <DefinitionTooltip term='Habitat' targetId='habitat-definition' />
-                    <DefinitionTooltip term='CITES' targetId='cites-definition' />
-                    <DefinitionTooltip term='Ecology' targetId='ecology-definition' />
+                        <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
+                        <DefinitionTooltip term='Conservation' targetId='conservation-definition' />
+                        <DefinitionTooltip term='CBD' targetId='cbd-definition' />
+                        <DefinitionTooltip term='Fragmentation' targetId='fragmentation-definition' />
+                        <DefinitionTooltip term='Wildlife Corridor' targetId='corridor-definition' />
+                        <DefinitionTooltip term='Habitat' targetId='habitat-definition' />
+                        <DefinitionTooltip term='CITES' targetId='cites-definition' />
+                        <DefinitionTooltip term='Ecology' targetId='ecology-definition' />
+                    </Row>
+                    <Row className='mb-3'>
+                        <h4 className='text-center'>CONSERVATION GROUPS</h4>
+                    </Row>
+                    <Row>
+                        <Col md='4' className='d-flex justify-content-center'>
+                            <a href='https://www.nature.org/en-us/' target='_blank' rel='noreferrer'>
+                                <img src={tnc} alt='the nature conservancy' className='img-fluid cons-img' />
+                            </a>
+                        </Col>
+                        <Col md='4' className='d-flex justify-content-center'>
+                            <a href='https://www.worldwildlife.org/' target='_blank' rel='noreferrer'>
+                                <img src={wwf} alt='world wildlife fund' className='img-fluid cons-img' />
+                            </a>
+                        </Col>
+                        <Col md='4' className='d-flex justify-content-center'>
+                            <a href='https://www.conservation.org/' target='_blank' rel='noreferrer'>
+                                <img src={ci} alt='conservation international' className='img-fluid cons-img' />
+                            </a>
+                        </Col>
+                    </Row>
                 </Col>
-                <Col md='6'>
+                <Col md='4'>
                     <SpeciesSpotlightCard />
                 </Col>
             </Row>
