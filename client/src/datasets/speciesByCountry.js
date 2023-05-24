@@ -1,2378 +1,2002 @@
 export const SPECIES_COUNTRIES = [
   {
-    name: 'Brazil',
-    birds: 1816,
-    amphibians: 1141,
-    fish: 4738,
-    mammals: 693,
-    reptiles: 847,
-    vascularPlants: 34387,
-    total: 43622,
-    globalBiodiversityIndex: 512.34
-  },
-  {
-    name: 'Indonesia',
-    birds: 1723,
-    amphibians: 383,
-    fish: 4813,
-    mammals: 729,
-    reptiles: 773,
-    vascularPlants: 19232,
-    total: 27653,
-    globalBiodiversityIndex: 418.78
-  },
-  {
-    name: 'Colombia',
-    birds: 1863,
-    amphibians: 812,
-    fish: 2105,
-    mammals: 477,
-    reptiles: 634,
-    vascularPlants: 24025,
-    total: 29916,
-    globalBiodiversityIndex: 369.76
-  },
-  {
-    name: 'China',
-    birds: 1285,
-    amphibians: 540,
-    fish: 3476,
-    mammals: 622,
-    reptiles: 554,
-    vascularPlants: 31362,
-    total: 37839,
-    globalBiodiversityIndex: 365.84
-  },
-  {
-    name: 'Mexico',
-    birds: 1105,
-    amphibians: 411,
-    fish: 2629,
-    mammals: 533,
-    reptiles: 988,
-    vascularPlants: 23385,
-    total: 29051,
-    globalBiodiversityIndex: 342.47
-  },
-  {
-    name: 'Australia',
-    birds: 725,
-    amphibians: 245,
-    fish: 4992,
-    mammals: 355,
-    reptiles: 1131,
-    vascularPlants: 19324,
-    total: 26772,
-    globalBiodiversityIndex: 337.18
-  },
-  {
-    name: 'Peru',
-    birds: 1861,
-    amphibians: 655,
-    fish: 1583,
-    mammals: 490,
-    reptiles: 510,
-    vascularPlants: 19812,
-    total: 24911,
-    globalBiodiversityIndex: 330.12
-  },
-  {
-    name: 'India',
-    birds: 1212,
-    amphibians: 446,
-    fish: 2601,
-    mammals: 440,
-    reptiles: 715,
-    vascularPlants: 45000,
-    total: 50414,
-    globalBiodiversityIndex: 301.63
-  },
-  {
-    name: 'Ecuador',
-    birds: 1629,
-    amphibians: 659,
-    fish: 1111,
-    mammals: 392,
-    reptiles: 492,
-    vascularPlants: 18466,
-    total: 22749,
-    globalBiodiversityIndex: 291.58
-  },
-  {
-    name: 'United States',
-    birds: 844,
-    amphibians: 326,
-    fish: 3081,
-    mammals: 531,
-    reptiles: 556,
-    vascularPlants: 15500,
-    total: 20838,
-    globalBiodiversityIndex: 280.13
-  },
-  {
-    name: 'Venezuela',
-    birds: 1386,
-    amphibians: 365,
-    fish: 1735,
-    mammals: 376,
-    reptiles: 419,
-    vascularPlants: 30000,
-    total: 34281,
-    globalBiodiversityIndex: 273.39
-  },
-  {
-    name: 'Papua New Guinea',
-    birds: 743,
-    amphibians: 416,
-    fish: 2884,
-    mammals: 282,
-    reptiles: 384,
-    vascularPlants: 13634,
-    total: 18343,
-    globalBiodiversityIndex: 226.57
-  },
-  {
-    name: 'Myanmar',
-    birds: 1034,
-    amphibians: 540,
-    fish: 1088,
-    mammals: 304,
-    reptiles: 364,
-    vascularPlants: 16000,
-    total: 19330,
-    globalBiodiversityIndex: 221.77
-  },
-  {
-    name: 'Vietnam',
-    birds: 835,
-    amphibians: 263,
-    fish: 2423,
-    mammals: 313,
-    reptiles: 512,
-    vascularPlants: 8500,
-    total: 12846,
-    globalBiodiversityIndex: 216.97
-  },
-  {
-    name: 'Malaysia',
-    birds: 721,
-    amphibians: 278,
-    fish: 1951,
-    mammals: 348,
-    reptiles: 502,
-    vascularPlants: 14060,
-    total: 17860,
-    globalBiodiversityIndex: 214.71
-  },
-  {
-    name: 'Democratic Republic of the Congo',
-    birds: 1110,
-    amphibians: 227,
-    fish: 1528,
-    mammals: 465,
-    reptiles: 313,
-    vascularPlants: 8860,
-    total: 12503,
-    globalBiodiversityIndex: 214.43
-  },
-  {
-    name: 'Tanzania',
-    birds: 1074,
-    amphibians: 207,
-    fish: 1773,
-    mammals: 412,
-    reptiles: 346,
-    vascularPlants: 10100,
-    total: 13912,
-    globalBiodiversityIndex: 213.1
-  },
-  {
-    name: 'Bolivia',
-    birds: 1435,
-    amphibians: 259,
-    fish: 407,
-    mammals: 382,
-    reptiles: 315,
-    vascularPlants: 14729,
-    total: 17527,
-    globalBiodiversityIndex: 209.55
-  },
-  {
-    name: 'South Africa',
-    birds: 762,
-    amphibians: 132,
-    fish: 2094,
-    mammals: 331,
-    reptiles: 421,
-    vascularPlants: 21250,
-    total: 24990,
-    globalBiodiversityIndex: 207.94
-  },
-  {
-    name: 'Thailand',
-    birds: 936,
-    amphibians: 153,
-    fish: 2150,
-    mammals: 314,
-    reptiles: 468,
-    vascularPlants: 6600,
-    total: 10621,
-    globalBiodiversityIndex: 200.77
-  },
-  {
-    name: 'Argentina',
-    birds: 1001,
-    amphibians: 174,
-    fish: 1026,
-    mammals: 390,
-    reptiles: 462,
-    vascularPlants: 10221,
-    total: 13274,
-    globalBiodiversityIndex: 198.74
-  },
-  {
-    name: 'Philippines',
-    birds: 594,
-    amphibians: 116,
-    fish: 3369,
-    mammals: 221,
-    reptiles: 365,
-    vascularPlants: 10107,
-    total: 14772,
-    globalBiodiversityIndex: 186.82
-  },
-  {
-    name: 'Kenya',
-    birds: 1057,
-    amphibians: 115,
-    fish: 1060,
-    mammals: 424,
-    reptiles: 272,
-    vascularPlants: 6506,
-    total: 9434,
-    globalBiodiversityIndex: 179.72
-  },
-  {
-    name: 'Cameroon',
-    birds: 888,
-    amphibians: 226,
-    fish: 1064,
-    mammals: 351,
-    reptiles: 288,
-    vascularPlants: 6883,
-    total: 9700,
-    globalBiodiversityIndex: 172.41
-  },
-  {
-    name: 'Panama',
-    birds: 885,
-    amphibians: 228,
-    fish: 1428,
-    mammals: 252,
-    reptiles: 279,
-    vascularPlants: 10462,
-    total: 13534,
-    globalBiodiversityIndex: 170.54
-  },
-  {
-    name: 'Madagascar',
-    birds: 248,
-    amphibians: 377,
-    fish: 1197,
-    mammals: 257,
-    reptiles: 444,
-    vascularPlants: 12000,
-    total: 14523,
-    globalBiodiversityIndex: 162.29
-  },
-  {
-    name: 'Angola',
-    birds: 920,
-    amphibians: 106,
-    fish: 968,
-    mammals: 331,
-    reptiles: 310,
-    vascularPlants: 6735,
-    total: 9370,
-    globalBiodiversityIndex: 160.67
-  },
-  {
-    name: 'Costa Rica',
-    birds: 843,
-    amphibians: 212,
-    fish: 1124,
-    mammals: 240,
-    reptiles: 262,
-    vascularPlants: 11000,
-    total: 13681,
-    globalBiodiversityIndex: 158.43
-  },
-  {
-    name: 'Japan',
-    birds: 447,
-    amphibians: 95,
-    fish: 4098,
-    mammals: 164,
-    reptiles: 97,
-    vascularPlants: 5565,
-    total: 10466,
-    globalBiodiversityIndex: 153.58
-  },
-  {
-    name: 'Guinea',
-    birds: 635,
-    amphibians: 80,
-    fish: 807,
-    mammals: 241,
-    reptiles: 648,
-    vascularPlants: 4000,
-    total: 6411,
-    globalBiodiversityIndex: 153.43
-  },
-  {
-    name: 'Mozambique',
-    birds: 675,
-    amphibians: 90,
-    fish: 1780,
-    mammals: 265,
-    reptiles: 225,
-    vascularPlants: 5692,
-    total: 8727,
-    globalBiodiversityIndex: 144.3
-  },
-  {
-    name: 'Guatemala',
-    birds: 699,
-    amphibians: 165,
-    fish: 905,
-    mammals: 219,
-    reptiles: 284,
-    vascularPlants: 8681,
-    total: 10953,
-    globalBiodiversityIndex: 137.94
-  },
-  {
-    name: 'Uganda',
-    birds: 998,
-    amphibians: 62,
-    fish: 271,
-    mammals: 362,
-    reptiles: 174,
-    vascularPlants: 4932,
-    total: 6799,
-    globalBiodiversityIndex: 136.65
-  },
-  {
-    name: 'Honduras',
-    birds: 711,
-    amphibians: 149,
-    fish: 1032,
-    mammals: 209,
-    reptiles: 282,
-    vascularPlants: 7188,
-    total: 9571,
-    globalBiodiversityIndex: 135.95
-  },
-  {
-    name: 'Nigeria',
-    birds: 864,
-    amphibians: 119,
-    fish: 775,
-    mammals: 294,
-    reptiles: 207,
-    vascularPlants: 3378,
-    total: 5637,
-    globalBiodiversityIndex: 135.87
-  },
-  {
-    name: 'Guyana',
-    birds: 793,
-    amphibians: 135,
-    fish: 996,
-    mammals: 236,
-    reptiles: 175,
-    vascularPlants: 6500,
-    total: 8835,
-    globalBiodiversityIndex: 131.65
-  },
-  {
-    name: 'Russia',
-    birds: 660,
-    amphibians: 31,
-    fish: 966,
-    mammals: 333,
-    reptiles: 88,
-    vascularPlants: 12500,
-    total: 14578,
-    globalBiodiversityIndex: 129.13
-  },
-  {
-    name: 'Ethiopia',
-    birds: 821,
-    amphibians: 78,
-    fish: 173,
-    mammals: 311,
-    reptiles: 244,
-    vascularPlants: 6603,
-    total: 8230,
-    globalBiodiversityIndex: 128.21
-  },
-  {
-    name: 'Sudan',
-    birds: 917,
-    amphibians: 13,
-    fish: 485,
-    mammals: 255,
-    reptiles: 279,
-    vascularPlants: 3137,
-    total: 5086,
-    globalBiodiversityIndex: 124.29
-  },
-  {
-    name: 'Congo',
-    birds: 614,
-    amphibians: 76,
-    fish: 835,
-    mammals: 232,
-    reptiles: 354,
-    vascularPlants: 2403,
-    total: 4514,
-    globalBiodiversityIndex: 122.96
-  },
-  {
-    name: 'Nicaragua',
-    birds: 685,
-    amphibians: 75,
-    fish: 1076,
-    mammals: 200,
-    reptiles: 197,
-    vascularPlants: 5796,
-    total: 8029,
-    globalBiodiversityIndex: 118.18
-  },
-  {
-    name: 'Suriname',
-    birds: 696,
-    amphibians: 114,
-    fish: 1046,
-    mammals: 207,
-    reptiles: 156,
-    vascularPlants: 5100,
-    total: 7319,
-    globalBiodiversityIndex: 117.91
-  },
-  {
-    name: 'Laos',
-    birds: 700,
-    amphibians: 107,
-    fish: 572,
-    mammals: 215,
-    reptiles: 200,
-    vascularPlants: 6200,
-    total: 7994,
-    globalBiodiversityIndex: 114.6
-  },
-  {
-    name: 'Ghana',
-    birds: 681,
-    amphibians: 90,
-    fish: 696,
-    mammals: 262,
-    reptiles: 180,
-    vascularPlants: 2971,
-    total: 4880,
-    globalBiodiversityIndex: 114.56
-  },
-  {
-    name: 'Zambia',
-    birds: 734,
-    amphibians: 88,
-    fish: 412,
-    mammals: 268,
-    reptiles: 190,
-    vascularPlants: 3309,
-    total: 5001,
-    globalBiodiversityIndex: 113.74
-  },
-  {
-    name: 'Namibia',
-    birds: 599,
-    amphibians: 45,
-    fish: 663,
-    mammals: 223,
-    reptiles: 281,
-    vascularPlants: 4334,
-    total: 6145,
-    globalBiodiversityIndex: 111.11
-  },
-  {
-    name: 'Central African Republic',
-    birds: 720,
-    amphibians: 58,
-    fish: 200,
-    mammals: 248,
-    reptiles: 205,
-    vascularPlants: 5000,
-    total: 6431,
-    globalBiodiversityIndex: 107.15
-  },
-  {
-    name: 'Iran',
-    birds: 474,
-    amphibians: 22,
-    fish: 678,
-    mammals: 211,
-    reptiles: 293,
-    vascularPlants: 7500,
-    total: 9178,
-    globalBiodiversityIndex: 106.71
-  },
-  {
-    name: 'Somalia',
-    birds: 571,
-    amphibians: 35,
-    fish: 845,
-    mammals: 194,
-    reptiles: 232,
-    vascularPlants: 4625,
-    total: 6502,
-    globalBiodiversityIndex: 104.49
-  },
-  {
-    name: 'Pakistan',
-    birds: 612,
-    amphibians: 23,
-    fish: 724,
-    mammals: 213,
-    reptiles: 210,
-    vascularPlants: 4950,
-    total: 6732,
-    globalBiodiversityIndex: 104.35
-  },
-  {
-    name: 'Gabon',
-    birds: 604,
-    amphibians: 97,
-    fish: 804,
-    mammals: 202,
-    reptiles: 132,
-    vascularPlants: 5236,
-    total: 7075,
-    globalBiodiversityIndex: 104.02
-  },
-  {
-    name: 'Nepal',
-    birds: 822,
-    amphibians: 58,
-    fish: 203,
-    mammals: 190,
-    reptiles: 148,
-    vascularPlants: 6973,
-    total: 8394,
-    globalBiodiversityIndex: 102.56
-  },
-  {
-    name: 'Paraguay',
-    birds: 690,
-    amphibians: 80,
-    fish: 266,
-    mammals: 181,
-    reptiles: 189,
-    vascularPlants: 7851,
-    total: 9257,
-    globalBiodiversityIndex: 102.33
-  },
-  {
-    name: "Côte d'Ivoire",
-    birds: 671,
-    amphibians: 85,
-    fish: 676,
-    mammals: 265,
-    reptiles: 6,
-    vascularPlants: 3689,
-    total: 5392,
-    globalBiodiversityIndex: 99.25
-  },
-  {
-    name: 'Cambodia',
-    birds: 515,
-    amphibians: 54,
-    fish: 934,
-    mammals: 170,
-    reptiles: 197,
-    vascularPlants: 5000,
-    total: 6870,
-    globalBiodiversityIndex: 99.09
-  },
-  {
-    name: 'Canada',
-    birds: 496,
-    amphibians: 46,
-    fish: 1099,
-    mammals: 254,
-    reptiles: 50,
-    vascularPlants: 3893,
-    total: 5838,
-    globalBiodiversityIndex: 97.59
-  },
-  {
-    name: 'Sri Lanka',
-    birds: 376,
-    amphibians: 121,
-    fish: 1126,
-    mammals: 124,
-    reptiles: 246,
-    vascularPlants: 3314,
-    total: 5307,
-    globalBiodiversityIndex: 96.92
-  },
-  {
-    name: 'Malawi',
-    birds: 634,
-    amphibians: 77,
-    fish: 474,
-    mammals: 211,
-    reptiles: 126,
-    vascularPlants: 3340,
-    total: 4862,
-    globalBiodiversityIndex: 95.22
-  },
-  {
-    name: 'Zimbabwe',
-    birds: 628,
-    amphibians: 57,
-    fish: 144,
-    mammals: 216,
-    reptiles: 186,
-    vascularPlants: 4440,
-    total: 5671,
-    globalBiodiversityIndex: 94.12
-  },
-  {
-    name: 'Turkey',
-    birds: 393,
-    amphibians: 37,
-    fish: 835,
-    mammals: 171,
-    reptiles: 148,
-    vascularPlants: 10001,
-    total: 11585,
-    globalBiodiversityIndex: 92.15
-  },
-  {
-    name: 'Senegal',
-    birds: 558,
-    amphibians: 40,
-    fish: 787,
-    mammals: 196,
-    reptiles: 124,
-    vascularPlants: 2086,
-    total: 3791,
-    globalBiodiversityIndex: 90.11
-  },
-  {
-    name: 'Togo',
-    birds: 573,
-    amphibians: 35,
-    fish: 566,
-    mammals: 173,
-    reptiles: 158,
-    vascularPlants: 3085,
-    total: 4590,
-    globalBiodiversityIndex: 87.35
-  },
-  {
-    name: 'Bangladesh',
-    birds: 604,
-    amphibians: 43,
-    fish: 578,
-    mammals: 132,
-    reptiles: 144,
-    vascularPlants: 6000,
-    total: 7501,
-    globalBiodiversityIndex: 87.33
-  },
-  {
-    name: 'Benin',
-    birds: 551,
-    amphibians: 41,
-    fish: 598,
-    mammals: 175,
-    reptiles: 134,
-    vascularPlants: 2807,
-    total: 4306,
-    globalBiodiversityIndex: 85.08
-  },
-  {
-    name: 'Liberia',
-    birds: 536,
-    amphibians: 60,
-    fish: 612,
-    mammals: 192,
-    reptiles: 107,
-    vascularPlants: 2000,
-    total: 3507,
-    globalBiodiversityIndex: 85
-  },
-  {
-    name: 'Chile',
-    birds: 434,
-    amphibians: 58,
-    fish: 775,
-    mammals: 151,
-    reptiles: 143,
-    vascularPlants: '5,15',
-    total: 1561,
-    globalBiodiversityIndex: 84.76
-  },
-  {
-    name: 'Belize',
-    birds: 531,
-    amphibians: 37,
-    fish: 650,
-    mammals: 148,
-    reptiles: 140,
-    vascularPlants: 4192,
-    total: 5698,
-    globalBiodiversityIndex: 83.54
-  },
-  {
-    name: 'Gambia',
-    birds: 462,
-    amphibians: 28,
-    fish: 580,
-    mammals: 122,
-    reptiles: 88,
-    vascularPlants: 11600,
-    total: 12880,
-    globalBiodiversityIndex: 80.25
-  },
-  {
-    name: 'Rwanda',
-    birds: 636,
-    amphibians: 42,
-    fish: 77,
-    mammals: 221,
-    reptiles: 80,
-    vascularPlants: 2288,
-    total: 3344,
-    globalBiodiversityIndex: 80.08
-  },
-  {
-    name: 'El Salvador',
-    birds: 495,
-    amphibians: 30,
-    fish: 588,
-    mammals: 156,
-    reptiles: 135,
-    vascularPlants: 2911,
-    total: 4315,
-    globalBiodiversityIndex: 78.55
-  },
-  {
-    name: 'Brunei',
-    birds: 415,
-    amphibians: 12,
-    fish: 500,
-    mammals: 135,
-    reptiles: 42,
-    vascularPlants: 15000,
-    total: 16104,
-    globalBiodiversityIndex: 77.39
-  },
-  {
-    name: 'Cuba',
-    birds: 294,
-    amphibians: 71,
-    fish: 1103,
-    mammals: 59,
-    reptiles: 167,
-    vascularPlants: 6522,
-    total: 8216,
-    globalBiodiversityIndex: 76.44
-  },
-  {
-    name: 'Equatorial Guinea',
-    birds: 434,
-    amphibians: 51,
-    fish: 569,
-    mammals: 181,
-    reptiles: 75,
-    vascularPlants: 3049,
-    total: 4359,
-    globalBiodiversityIndex: 75.06
-  },
-  {
-    name: 'Spain',
-    birds: 383,
-    amphibians: 39,
-    fish: 804,
-    mammals: 141,
-    reptiles: 75,
-    vascularPlants: 5800,
-    total: 7242,
-    globalBiodiversityIndex: 74.49
-  },
-  {
-    name: 'Botswana',
-    birds: 535,
-    amphibians: 36,
-    fish: 84,
-    mammals: 173,
-    reptiles: 160,
-    vascularPlants: 920,
-    total: 1908,
-    globalBiodiversityIndex: 72.77
-  },
-  {
-    name: 'Burundi',
-    birds: 597,
-    amphibians: 28,
-    fish: 245,
-    mammals: 159,
-    reptiles: 67,
-    vascularPlants: 2950,
-    total: 4046,
-    globalBiodiversityIndex: 71.43
-  },
-  {
-    name: 'France',
-    birds: 358,
-    amphibians: 43,
-    fish: 803,
-    mammals: 147,
-    reptiles: 51,
-    vascularPlants: 4700,
-    total: 6102,
-    globalBiodiversityIndex: 70.58
-  },
-  {
-    name: 'Bhutan',
-    birds: 618,
-    amphibians: 40,
-    fish: 52,
-    mammals: 111,
-    reptiles: 91,
-    vascularPlants: 5603,
-    total: 6515,
-    globalBiodiversityIndex: 69.14
-  },
-  {
-    name: 'Mali',
-    birds: 566,
-    amphibians: 22,
-    fish: 140,
-    mammals: 148,
-    reptiles: 127,
-    vascularPlants: 1700,
-    total: 2703,
-    globalBiodiversityIndex: 69.12
-  },
-  {
-    name: 'Egypt',
-    birds: 379,
-    amphibians: 10,
-    fish: 946,
-    mammals: 108,
-    reptiles: 110,
-    vascularPlants: 2250,
-    total: 3803,
-    globalBiodiversityIndex: 67.98
-  },
-  {
-    name: 'Italy',
-    birds: 356,
-    amphibians: 48,
-    fish: 621,
-    mammals: 135,
-    reptiles: 60,
-    vascularPlants: 5590,
-    total: 6810,
-    globalBiodiversityIndex: 67.71
-  },
-  {
-    name: 'Morocco',
-    birds: 342,
-    amphibians: 13,
-    fish: 735,
-    mammals: 128,
-    reptiles: 106,
-    vascularPlants: 4200,
-    total: 5524,
-    globalBiodiversityIndex: 67.26
-  },
-  {
-    name: 'Uruguay',
-    birds: 409,
-    amphibians: 50,
-    fish: 725,
-    mammals: 107,
-    reptiles: 79,
-    vascularPlants: 2911,
-    total: 4281,
-    globalBiodiversityIndex: 66.75
-  },
-  {
-    name: 'Mauritania',
-    birds: 472,
-    amphibians: 12,
-    fish: 710,
-    mammals: 109,
-    reptiles: 97,
-    vascularPlants: 1100,
-    total: 2500,
-    globalBiodiversityIndex: 65.74
-  },
-  {
-    name: 'Chad',
-    birds: 526,
-    amphibians: 20,
-    fish: 138,
-    mammals: 140,
-    reptiles: 113,
-    vascularPlants: 2288,
-    total: 3225,
-    globalBiodiversityIndex: 65.27
-  },
-  {
-    name: 'Guinea-Bissau',
-    birds: 453,
-    amphibians: 21,
-    fish: 676,
-    mammals: 127,
-    reptiles: 65,
-    vascularPlants: 1507,
-    total: 2849,
-    globalBiodiversityIndex: 65.06
-  },
-  {
-    name: 'Greece',
-    birds: 347,
-    amphibians: 26,
-    fish: 644,
-    mammals: 119,
-    reptiles: 76,
-    vascularPlants: 4992,
-    total: 6204,
-    globalBiodiversityIndex: 64.11
-  },
-  {
-    name: 'Trinidad and Tobago',
-    birds: 397,
-    amphibians: 40,
-    fish: 988,
-    mammals: 112,
-    reptiles: 5,
-    vascularPlants: 2500,
-    total: 4042,
-    globalBiodiversityIndex: 64.05
-  },
-  {
-    name: 'Saudi Arabia',
-    birds: 391,
-    amphibians: 7,
-    fish: 860,
-    mammals: 84,
-    reptiles: 109,
-    vascularPlants: 2290,
-    total: 3741,
-    globalBiodiversityIndex: 63.32
-  },
-  {
-    name: 'Kazakhstan',
-    birds: 439,
-    amphibians: 15,
-    fish: 116,
-    mammals: 165,
-    reptiles: 52,
-    vascularPlants: 6000,
-    total: 6787,
-    globalBiodiversityIndex: 63.16
-  },
-  {
-    name: 'Israel',
-    birds: 388,
-    amphibians: 10,
-    fish: 701,
-    mammals: 111,
-    reptiles: 93,
-    vascularPlants: 2380,
-    total: 3683,
-    globalBiodiversityIndex: 62.66
-  },
-  {
-    name: 'Eritrea',
-    birds: 544,
-    amphibians: 17,
-    fish: 363,
-    mammals: 65,
-    reptiles: 97,
-    vascularPlants: 4850,
-    total: 5936,
-    globalBiodiversityIndex: 62.51
-  },
-  {
-    name: 'South Korea',
-    birds: 361,
-    amphibians: 20,
-    fish: 1111,
-    mammals: 76,
-    reptiles: 37,
-    vascularPlants: 3632,
-    total: 5237,
-    globalBiodiversityIndex: 62.32
-  },
-  {
-    name: 'Oman',
-    birds: 324,
-    amphibians: 2,
-    fish: 1048,
-    mammals: 88,
-    reptiles: 109,
-    vascularPlants: 1239,
-    total: 2810,
-    globalBiodiversityIndex: 62.07
-  },
-  {
-    name: 'Afghanistan',
-    birds: 392,
-    amphibians: 11,
-    fish: 125,
-    mammals: 139,
-    reptiles: 114,
-    vascularPlants: 5000,
-    total: 5781,
-    globalBiodiversityIndex: 60.93
-  },
-  {
-    name: 'Singapore',
-    birds: 367,
-    amphibians: 29,
-    fish: 720,
-    mammals: 64,
-    reptiles: 132,
-    vascularPlants: 2282,
-    total: 3594,
-    globalBiodiversityIndex: 60.43
-  },
-  {
-    name: 'Solomon Islands',
-    birds: 245,
-    amphibians: 19,
-    fish: 983,
-    mammals: 68,
-    reptiles: 82,
-    vascularPlants: 4500,
-    total: 5897,
-    globalBiodiversityIndex: 57.63
-  },
-  {
-    name: 'Yemen',
-    birds: 344,
-    amphibians: 6,
-    fish: 751,
-    mammals: 94,
-    reptiles: 114,
-    vascularPlants: 400,
-    total: 1709,
-    globalBiodiversityIndex: 57.59
-  },
-  {
-    name: 'Algeria',
-    birds: 319,
-    amphibians: 16,
-    fish: 474,
-    mammals: 111,
-    reptiles: 108,
-    vascularPlants: 3139,
-    total: 4167,
-    globalBiodiversityIndex: 57.36
-  },
-  {
-    name: 'Burkina Faso',
-    birds: 452,
-    amphibians: 23,
-    fish: 122,
-    mammals: 133,
-    reptiles: 80,
-    vascularPlants: 2067,
-    total: 2877,
-    globalBiodiversityIndex: 57.04
-  },
-  {
-    name: 'Niger',
-    birds: 438,
-    amphibians: 11,
-    fish: 107,
-    mammals: 140,
-    reptiles: 105,
-    vascularPlants: 8,
-    total: 809,
-    globalBiodiversityIndex: 55.12
-  },
-  {
-    name: 'Iraq',
-    birds: 375,
-    amphibians: 8,
-    fish: 319,
-    mammals: 83,
-    reptiles: 117,
-    vascularPlants: 3300,
-    total: 4202,
-    globalBiodiversityIndex: 53.75
-  },
-  {
-    name: 'Syria',
-    birds: 348,
-    amphibians: 7,
-    fish: 398,
-    mammals: 95,
-    reptiles: 102,
-    vascularPlants: 3000,
-    total: 3950,
-    globalBiodiversityIndex: 53.68
-  },
-  {
-    name: 'Georgia',
-    birds: 295,
-    amphibians: 12,
-    fish: 133,
-    mammals: 103,
-    reptiles: 153,
-    vascularPlants: 4100,
-    total: 4796,
-    globalBiodiversityIndex: 53.17
-  },
-  {
-    name: 'Haiti',
-    birds: 255,
-    amphibians: 57,
-    fish: 527,
-    mammals: 35,
-    reptiles: 123,
-    vascularPlants: 5242,
-    total: 6239,
-    globalBiodiversityIndex: 52.54
-  },
-  {
-    name: 'Dominican Republic',
-    birds: 245,
-    amphibians: 50,
-    fish: 530,
-    mammals: 42,
-    reptiles: 116,
-    vascularPlants: 5657,
-    total: 6640,
-    globalBiodiversityIndex: 52.39
-  },
-  {
-    name: 'New Zealand',
-    birds: 231,
-    amphibians: 8,
-    fish: 1111,
-    mammals: 44,
-    reptiles: 82,
-    vascularPlants: 2400,
-    total: 3876,
-    globalBiodiversityIndex: 52.13
-  },
-  {
-    name: 'Jordan',
-    birds: 332,
-    amphibians: 5,
-    fish: 557,
-    mammals: 80,
-    reptiles: 115,
-    vascularPlants: 1072,
-    total: 2161,
-    globalBiodiversityIndex: 52.12
-  },
-  {
-    name: 'Portugal',
-    birds: 311,
-    amphibians: 23,
-    fish: 557,
-    mammals: 99,
-    reptiles: 42,
-    vascularPlants: 2800,
-    total: 3832,
-    globalBiodiversityIndex: 51.23
-  },
-  {
-    name: 'Hong Kong',
-    birds: 219,
-    amphibians: 22,
-    fish: 1096,
-    mammals: 31,
-    reptiles: 69,
-    vascularPlants: 3300,
-    total: 4737,
-    globalBiodiversityIndex: 50.79
-  },
-  {
-    name: 'Croatia',
-    birds: 307,
-    amphibians: 18,
-    fish: 420,
-    mammals: 100,
-    reptiles: 39,
-    vascularPlants: 4288,
-    total: 5172,
-    globalBiodiversityIndex: 49.87
-  },
-  {
-    name: 'Eswatini',
-    birds: 464,
-    amphibians: 38,
-    fish: 57,
-    mammals: 107,
-    reptiles: 1,
-    vascularPlants: 3500,
-    total: 4167,
-    globalBiodiversityIndex: 49.23
-  },
-  {
-    name: 'Mongolia',
-    birds: 361,
-    amphibians: 6,
-    fish: 81,
-    mammals: 150,
-    reptiles: 33,
-    vascularPlants: 2850,
-    total: 3481,
-    globalBiodiversityIndex: 49.16
-  },
-  {
-    name: 'Ukraine',
-    birds: 318,
-    amphibians: 22,
-    fish: 239,
-    mammals: 113,
-    reptiles: 26,
-    vascularPlants: 5100,
-    total: 5818,
-    globalBiodiversityIndex: 49
-  },
-  {
-    name: 'Azerbaijan',
-    birds: 348,
-    amphibians: 10,
-    fish: 85,
-    mammals: 108,
-    reptiles: 65,
-    vascularPlants: 4500,
-    total: 5116,
-    globalBiodiversityIndex: 48.36
-  },
-  {
-    name: 'Timor-Leste',
-    birds: 236,
-    amphibians: 6,
-    fish: 1089,
-    mammals: 46,
-    reptiles: 29,
-    vascularPlants: 2500,
-    total: 3906,
-    globalBiodiversityIndex: 47.52
-  },
-  {
-    name: 'Bulgaria',
-    birds: 336,
-    amphibians: 20,
-    fish: 221,
-    mammals: 100,
-    reptiles: 40,
-    vascularPlants: 3750,
-    total: 4467,
-    globalBiodiversityIndex: 46.92
-  },
-  {
-    name: 'Tunisia',
-    birds: 310,
-    amphibians: 8,
-    fish: 364,
-    mammals: 86,
-    reptiles: 73,
-    vascularPlants: 2100,
-    total: 2941,
-    globalBiodiversityIndex: 45.94
-  },
-  {
-    name: 'Puerto Rico',
-    birds: 262,
-    amphibians: 26,
-    fish: 802,
-    mammals: 12,
-    reptiles: 77,
-    vascularPlants: 2912,
-    total: 4091,
-    globalBiodiversityIndex: 45.1
-  },
-  {
-    name: 'Uzbekistan',
-    birds: 353,
-    amphibians: 3,
-    fish: 86,
-    mammals: 90,
-    reptiles: 60,
-    vascularPlants: 4374,
-    total: 4966,
-    globalBiodiversityIndex: 44.94
-  },
-  {
-    name: 'Romania',
-    birds: 322,
-    amphibians: 20,
-    fish: 207,
-    mammals: 100,
-    reptiles: 26,
-    vascularPlants: 3515,
-    total: 4190,
-    globalBiodiversityIndex: 44.31
-  },
-  {
-    name: 'Albania',
-    birds: 299,
-    amphibians: 17,
-    fish: 419,
-    mammals: 80,
-    reptiles: 41,
-    vascularPlants: 2450,
-    total: 3306,
-    globalBiodiversityIndex: 44.09
-  },
-  {
-    name: 'Germany',
-    birds: 312,
-    amphibians: 21,
-    fish: 245,
-    mammals: 109,
-    reptiles: 16,
-    vascularPlants: 2660,
-    total: 3363,
-    globalBiodiversityIndex: 43.73
-  },
-  {
-    name: 'Palau',
-    birds: 114,
-    amphibians: 1,
-    fish: 1552,
-    mammals: 20,
-    reptiles: 34,
-    vascularPlants: 130,
-    total: 1851,
-    globalBiodiversityIndex: 43.24
-  },
-  {
-    name: 'Montenegro',
-    birds: 311,
-    amphibians: 17,
-    fish: 329,
-    mammals: 87,
-    reptiles: 30,
-    vascularPlants: 2550,
-    total: 3324,
-    globalBiodiversityIndex: 43.07
-  },
-  {
-    name: 'Bahamas',
-    birds: 244,
-    amphibians: 5,
-    fish: 886,
-    mammals: 38,
-    reptiles: 46,
-    vascularPlants: 1350,
-    total: 2569,
-    globalBiodiversityIndex: 42.53
-  },
-  {
-    name: 'Serbia',
-    birds: 312,
-    amphibians: 22,
-    fish: 93,
-    mammals: 98,
-    reptiles: 27,
-    vascularPlants: 4000,
-    total: 4552,
-    globalBiodiversityIndex: 42.18
-  },
-  {
-    name: 'Fiji',
-    birds: 108,
-    amphibians: 3,
-    fish: 1304,
-    mammals: 24,
-    reptiles: 43,
-    vascularPlants: 1769,
-    total: 3251,
-    globalBiodiversityIndex: 41.85
-  },
-  {
-    name: 'North Korea',
-    birds: 323,
-    amphibians: 17,
-    fish: 304,
-    mammals: 86,
-    reptiles: 7,
-    vascularPlants: 2898,
-    total: 3635,
-    globalBiodiversityIndex: 41.55
-  },
-  {
-    name: 'United Arab Emirates',
-    birds: 294,
-    amphibians: 2,
-    fish: 517,
-    mammals: 52,
-    reptiles: 74,
-    vascularPlants: 830,
-    total: 1769,
-    globalBiodiversityIndex: 41.2
-  },
-  {
-    name: 'Kyrgyzstan',
-    birds: 329,
-    amphibians: 4,
-    fish: 31,
-    mammals: 80,
-    reptiles: 55,
-    vascularPlants: 4500,
-    total: 4999,
-    globalBiodiversityIndex: 41.01
-  },
-  {
-    name: 'Slovenia',
-    birds: 290,
-    amphibians: 19,
-    fish: 397,
-    mammals: 93,
-    reptiles: 23,
-    vascularPlants: 430,
-    total: 1252,
-    globalBiodiversityIndex: 40.6
-  },
-  {
-    name: 'Libya',
-    birds: 267,
-    amphibians: 3,
-    fish: 283,
-    mammals: 81,
-    reptiles: 68,
-    vascularPlants: 2118,
-    total: 2820,
-    globalBiodiversityIndex: 40.47
-  },
-  {
-    name: 'Armenia',
-    birds: 297,
-    amphibians: 7,
-    fish: 54,
-    mammals: 93,
-    reptiles: 53,
-    vascularPlants: 3600,
-    total: 4104,
-    globalBiodiversityIndex: 40.32
-  },
-  {
-    name: 'Lebanon',
-    birds: 296,
-    amphibians: 6,
-    fish: 326,
-    mammals: 61,
-    reptiles: 56,
-    vascularPlants: 2612,
-    total: 3357,
-    globalBiodiversityIndex: 40.06
-  },
-  {
-    name: 'Jamaica',
-    birds: 184,
-    amphibians: 25,
-    fish: 634,
-    mammals: 44,
-    reptiles: 49,
-    vascularPlants: 3308,
-    total: 4244,
-    globalBiodiversityIndex: 39.95
-  },
-  {
-    name: 'Djibouti',
-    birds: 290,
-    amphibians: 5,
-    fish: 397,
-    mammals: 85,
-    reptiles: 35,
-    vascularPlants: 554,
-    total: 1366,
-    globalBiodiversityIndex: 39.52
-  },
-  {
-    name: 'Tajikistan',
-    birds: 327,
-    amphibians: 5,
-    fish: 4,
-    mammals: 72,
-    reptiles: 54,
-    vascularPlants: 4513,
-    total: 4975,
-    globalBiodiversityIndex: 39.28
-  },
-  {
-    name: 'Micronesia',
-    birds: 128,
-    amphibians: 3,
-    fish: 1238,
-    mammals: 22,
-    reptiles: 41,
-    vascularPlants: 364,
-    total: 1796,
-    globalBiodiversityIndex: 39.11
-  },
-  {
-    name: 'Bosnia and Herzegovina',
-    birds: 281,
-    amphibians: 17,
-    fish: 22,
-    mammals: 88,
-    reptiles: 2,
-    vascularPlants: 1859,
-    total: 2269,
-    globalBiodiversityIndex: 38.3
-  },
-  {
-    name: 'Austria',
-    birds: 302,
-    amphibians: 20,
-    fish: 41,
-    mammals: 92,
-    reptiles: 17,
-    vascularPlants: 2580,
-    total: 3052,
-    globalBiodiversityIndex: 37.7
-  },
-  {
-    name: 'United Kingdom',
-    birds: 267,
-    amphibians: 15,
-    fish: 422,
-    mammals: 81,
-    reptiles: 5,
-    vascularPlants: 1390,
-    total: 2180,
-    globalBiodiversityIndex: 37.67
-  },
-  {
-    name: 'Poland',
-    birds: 291,
-    amphibians: 18,
-    fish: 144,
-    mammals: 92,
-    reptiles: 11,
-    vascularPlants: 2300,
-    total: 2856,
-    globalBiodiversityIndex: 37.02
-  },
-  {
-    name: 'Switzerland',
-    birds: 285,
-    amphibians: 20,
-    fish: 88,
-    mammals: 90,
-    reptiles: 18,
-    vascularPlants: 2590,
-    total: 3091,
-    globalBiodiversityIndex: 36.52
-  },
-  {
-    name: 'Norway',
-    birds: 255,
-    amphibians: 6,
-    fish: 292,
-    mammals: 84,
-    reptiles: 9,
-    vascularPlants: 2800,
-    total: 3446,
-    globalBiodiversityIndex: 36.45
-  },
-  {
-    name: 'North Macedonia',
-    birds: 321,
-    amphibians: 13,
-    fish: 56,
-    mammals: 83,
-    reptiles: 2,
-    vascularPlants: 3200,
-    total: 3675,
-    globalBiodiversityIndex: 35.71
-  },
-  {
-    name: 'Sweden',
-    birds: 278,
-    amphibians: 12,
-    fish: 247,
-    mammals: 80,
-    reptiles: 7,
-    vascularPlants: 2000,
-    total: 2624,
-    globalBiodiversityIndex: 35.42
-  },
-  {
-    name: 'Hungary',
-    birds: 286,
-    amphibians: 17,
-    fish: 83,
-    mammals: 86,
-    reptiles: 16,
-    vascularPlants: 2250,
-    total: 2738,
-    globalBiodiversityIndex: 34.99
-  },
-  {
-    name: 'Kuwait',
-    birds: 293,
-    amphibians: 1,
-    fish: 526,
-    mammals: 31,
-    reptiles: 39,
-    vascularPlants: 234,
-    total: 1124,
-    globalBiodiversityIndex: 34.39
-  },
-  {
-    name: 'Netherlands',
-    birds: 271,
-    amphibians: 17,
-    fish: 211,
-    mammals: 75,
-    reptiles: 18,
-    vascularPlants: 1481,
-    total: 2073,
-    globalBiodiversityIndex: 34.3
-  },
-  {
-    name: 'Slovakia',
-    birds: 294,
-    amphibians: 18,
-    fish: 92,
-    mammals: 93,
-    reptiles: 14,
-    vascularPlants: 713,
-    total: 1224,
-    globalBiodiversityIndex: 34.23
-  },
-  {
-    name: 'Czechia',
-    birds: 287,
-    amphibians: 21,
-    fish: 80,
-    mammals: 80,
-    reptiles: 13,
-    vascularPlants: 2100,
-    total: 2581,
-    globalBiodiversityIndex: 34.03
-  },
-  {
-    name: 'Denmark',
-    birds: 275,
-    amphibians: '15G',
-    fish: 221,
-    mammals: 71,
-    reptiles: 6,
-    vascularPlants: 1583,
-    total: 2156,
-    globalBiodiversityIndex: 33.07
-  },
-  {
-    name: 'Moldova',
-    birds: 236,
-    amphibians: 13,
-    fish: 62,
-    mammals: 63,
-    reptiles: 15,
-    vascularPlants: 5513,
-    total: 5902,
-    globalBiodiversityIndex: 33.03
-  },
-  {
-    name: 'Mauritius',
-    birds: 78,
-    amphibians: 2,
-    fish: 1106,
-    mammals: 19,
-    reptiles: 32,
-    vascularPlants: 685,
-    total: 1922,
-    globalBiodiversityIndex: 32.95
-  },
-  {
-    name: 'Tonga',
-    birds: 51,
-    amphibians: 0,
-    fish: 1143,
-    mammals: 20,
-    reptiles: 30,
-    vascularPlants: 1020,
-    total: 2264,
-    globalBiodiversityIndex: 32.51
-  },
-  {
-    name: 'Maldives',
-    birds: 84,
-    amphibians: 2,
-    fish: 1124,
-    mammals: 24,
-    reptiles: 11,
-    vascularPlants: 583,
-    total: 1828,
-    globalBiodiversityIndex: 32.31
-  },
-  {
-    name: 'Belgium',
-    birds: 264,
-    amphibians: 19,
-    fish: 194,
-    mammals: 70,
-    reptiles: 10,
-    vascularPlants: 1340,
-    total: 1897,
-    globalBiodiversityIndex: 32.16
-  },
-  {
-    name: 'Guam',
-    birds: 107,
-    amphibians: 8,
-    fish: 1009,
-    mammals: 15,
-    reptiles: 22,
-    vascularPlants: 931,
-    total: 2092,
-    globalBiodiversityIndex: 32.01
-  },
-  {
-    name: 'Virgin Islands',
-    birds: 150,
-    amphibians: 7,
-    fish: 569,
-    mammals: 39,
-    reptiles: 37,
-    vascularPlants: 1272,
-    total: 2074,
-    globalBiodiversityIndex: 30.53
-  },
-  {
-    name: 'Ireland',
-    birds: 209,
-    amphibians: 3,
-    fish: 399,
-    mammals: 53,
-    reptiles: 19,
-    vascularPlants: 1309,
-    total: 1992,
-    globalBiodiversityIndex: 30.33
-  },
-  {
-    name: 'Finland',
-    birds: 264,
-    amphibians: 6,
-    fish: 102,
-    mammals: 77,
-    reptiles: 6,
-    vascularPlants: 1300,
-    total: 1755,
-    globalBiodiversityIndex: 29.72
-  },
-  {
-    name: 'Belarus',
-    birds: 263,
-    amphibians: 14,
-    fish: 58,
-    mammals: 73,
-    reptiles: 7,
-    vascularPlants: 1638,
-    total: 2053,
-    globalBiodiversityIndex: 29.52
-  },
-  {
-    name: 'Latvia',
-    birds: 268,
-    amphibians: 12,
-    fish: 114,
-    mammals: 64,
-    reptiles: 7,
-    vascularPlants: 1648,
-    total: 2113,
-    globalBiodiversityIndex: 29.52
-  },
-  {
-    name: 'Cayman Islands',
-    birds: 201,
-    amphibians: 4,
-    fish: 473,
-    mammals: 9,
-    reptiles: 22,
-    vascularPlants: 3602,
-    total: 4311,
-    globalBiodiversityIndex: 29.03
-  },
-  {
-    name: 'Vanuatu',
-    birds: 87,
-    amphibians: 1,
-    fish: 847,
-    mammals: 27,
-    reptiles: 38,
-    vascularPlants: 150,
-    total: 1150,
-    globalBiodiversityIndex: 28.59
-  },
-  {
-    name: 'Cyprus',
-    birds: 276,
-    amphibians: 4,
-    fish: 279,
-    mammals: 32,
-    reptiles: 32,
-    vascularPlants: 256,
-    total: 879,
-    globalBiodiversityIndex: 28.35
-  },
-  {
-    name: 'Saint Lucia',
-    birds: 205,
-    amphibians: 4,
-    fish: 494,
-    mammals: 24,
-    reptiles: 20,
-    vascularPlants: 1300,
-    total: 2047,
-    globalBiodiversityIndex: 28.2
-  },
-  {
-    name: 'Curaçao',
-    birds: 159,
-    amphibians: 3,
-    fish: 617,
-    mammals: 40,
-    reptiles: 8,
-    vascularPlants: 541,
-    total: 1368,
-    globalBiodiversityIndex: 28.14
-  },
-  {
-    name: 'Dominica',
-    birds: 181,
-    amphibians: 4,
-    fish: 500,
-    mammals: 33,
-    reptiles: 19,
-    vascularPlants: 1226,
-    total: 1963,
-    globalBiodiversityIndex: 28.07
-  },
-  {
-    name: 'Qatar',
-    birds: 234,
-    amphibians: 2,
-    fish: 505,
-    mammals: 18,
-    reptiles: 25,
-    vascularPlants: 355,
-    total: 1139,
-    globalBiodiversityIndex: 28.05
-  },
-  {
-    name: 'Lithuania',
-    birds: 243,
-    amphibians: 13,
-    fish: 98,
-    mammals: 65,
-    reptiles: 8,
-    vascularPlants: 1498,
-    total: 1925,
-    globalBiodiversityIndex: 27.95
-  },
-  {
-    name: 'Estonia',
-    birds: 254,
-    amphibians: 12,
-    fish: 72,
-    mammals: 65,
-    reptiles: 6,
-    vascularPlants: 1583,
-    total: 1992,
-    globalBiodiversityIndex: 27.88
-  },
-  {
-    name: 'Lesotho',
-    birds: 249,
-    amphibians: 18,
-    fish: 12,
-    mammals: 62,
-    reptiles: 19,
-    vascularPlants: 1591,
-    total: 1951,
-    globalBiodiversityIndex: 27.68
-  },
-  {
-    name: 'Samoa',
-    birds: 46,
-    amphibians: 1,
-    fish: 966,
-    mammals: 20,
-    reptiles: 22,
-    vascularPlants: 541,
-    total: 1596,
-    globalBiodiversityIndex: 27.38
-  },
-  {
-    name: 'Aruba',
-    birds: 153,
-    amphibians: 3,
-    fish: 573,
-    mammals: 38,
-    reptiles: 15,
-    vascularPlants: 460,
-    total: 1242,
-    globalBiodiversityIndex: 27.16
-  },
-  {
-    name: 'Marshall Islands',
-    birds: 61,
-    amphibians: 1,
-    fish: 959,
-    mammals: 17,
-    reptiles: 9,
-    vascularPlants: 563,
-    total: 1610,
-    globalBiodiversityIndex: 26.52
-  },
-  {
-    name: 'Barbados',
-    birds: 186,
-    amphibians: 2,
-    fish: 527,
-    mammals: 29,
-    reptiles: 11,
-    vascularPlants: 572,
-    total: 1327,
-    globalBiodiversityIndex: 26.5
-  },
-  {
-    name: 'Turks and Caicos Islands',
-    birds: 240,
-    amphibians: 2,
-    fish: 379,
-    mammals: 36,
-    reptiles: 6,
-    vascularPlants: 32,
-    total: 695,
-    globalBiodiversityIndex: 26.17
-  },
-  {
-    name: 'Bahrain',
-    birds: 222,
-    amphibians: 1,
-    fish: 515,
-    mammals: 16,
-    reptiles: 11,
-    vascularPlants: 357,
-    total: 1122,
-    globalBiodiversityIndex: 26.01
-  },
-  {
-    name: 'Palestine',
-    birds: 263,
-    amphibians: 8,
-    fish: 1,
-    mammals: 49,
-    reptiles: 4,
-    vascularPlants: 2780,
-    total: 3105,
-    globalBiodiversityIndex: 25.96
-  },
-  {
-    name: 'Grenada',
-    birds: 114,
-    amphibians: 5,
-    fish: 496,
-    mammals: 34,
-    reptiles: 33,
-    vascularPlants: 1000,
-    total: 1682,
-    globalBiodiversityIndex: 25.53
-  },
-  {
-    name: 'Antigua and Barbuda',
-    birds: 177,
-    amphibians: 3,
-    fish: 501,
-    mammals: 26,
-    reptiles: 4,
-    vascularPlants: 1158,
-    total: 1869,
-    globalBiodiversityIndex: 25.4
-  },
-  {
-    name: 'Saint Vincent and the Grenadines',
-    birds: 170,
-    amphibians: 5,
-    fish: 484,
-    mammals: 29,
-    reptiles: 5,
-    vascularPlants: 1150,
-    total: 1843,
-    globalBiodiversityIndex: 25.35
-  },
-  {
-    name: 'Saint Kitts and Nevis',
-    birds: 194,
-    amphibians: 3,
-    fish: 460,
-    mammals: 24,
-    reptiles: 3,
-    vascularPlants: 926,
-    total: 1610,
-    globalBiodiversityIndex: 24.79
-  },
-  {
-    name: 'Comoros',
-    birds: 101,
-    amphibians: 1,
-    fish: 563,
-    mammals: 31,
-    reptiles: 9,
-    vascularPlants: 1000,
-    total: 1705,
-    globalBiodiversityIndex: 23.29
-  },
-  {
-    name: 'Malta',
-    birds: 205,
-    amphibians: 2,
-    fish: 321,
-    mammals: 22,
-    reptiles: 10,
-    vascularPlants: 1000,
-    total: 1560,
-    globalBiodiversityIndex: 22.97
-  },
-  {
-    name: 'Bermuda',
-    birds: 127,
-    amphibians: 1,
-    fish: 467,
-    mammals: 24,
-    reptiles: 10,
-    vascularPlants: 1500,
-    total: 2129,
-    globalBiodiversityIndex: 22.62
-  },
-  {
-    name: 'Cabo Verde',
-    birds: 86,
-    amphibians: 1,
-    fish: 629,
-    mammals: 26,
-    reptiles: 2,
-    vascularPlants: 240,
-    total: 984,
-    globalBiodiversityIndex: 21.4
-  },
-  {
-    name: 'Liechtenstein',
-    birds: 176,
-    amphibians: 9,
-    fish: 14,
-    mammals: 52,
-    reptiles: 8,
-    vascularPlants: 1600,
-    total: 1859,
-    globalBiodiversityIndex: 20.68
-  },
-  {
-    name: 'Luxembourg',
-    birds: 187,
-    amphibians: 16,
-    fish: 14,
-    mammals: 54,
-    reptiles: 7,
-    vascularPlants: 295,
-    total: 573,
-    globalBiodiversityIndex: 20.18
-  },
-  {
-    name: 'Macao',
-    birds: 40,
-    amphibians: 5,
-    fish: 148,
-    mammals: 83,
-    reptiles: 3,
-    vascularPlants: 'No Data',
-    total: 279,
-    globalBiodiversityIndex: 17.2
-  },
-  {
-    name: 'Sao Tome and Principe',
-    birds: 90,
-    amphibians: 9,
-    fish: 353,
-    mammals: 12,
-    reptiles: 17,
-    vascularPlants: 895,
-    total: 1376,
-    globalBiodiversityIndex: 17.14
-  },
-  {
-    name: 'Andorra',
-    birds: 126,
-    amphibians: 2,
-    fish: 7,
-    mammals: 46,
-    reptiles: 10,
-    vascularPlants: 1595,
-    total: 1786,
-    globalBiodiversityIndex: 16.59
-  },
-  {
-    name: 'Kiribati',
-    birds: 39,
-    amphibians: 4,
-    fish: 535,
-    mammals: 19,
-    reptiles: 3,
-    vascularPlants: 290,
-    total: 890,
-    globalBiodiversityIndex: 16.45
-  },
-  {
-    name: 'Iceland',
-    birds: 109,
-    amphibians: 'No Data',
-    fish: 299,
-    mammals: 24,
-    reptiles: 1,
-    vascularPlants: 490,
-    total: 923,
-    globalBiodiversityIndex: 15.93
-  },
-  {
-    name: 'Monaco',
-    birds: 24,
-    amphibians: 2,
-    fish: 287,
-    mammals: 32,
-    reptiles: 3,
-    vascularPlants: 347,
-    total: 695,
-    globalBiodiversityIndex: 12.37
-  },
-  {
-    name: 'Sint Maarten',
-    birds: 141,
-    amphibians: 2,
-    fish: 4,
-    mammals: 8,
-    reptiles: 2,
-    vascularPlants: 522,
-    total: 679,
-    globalBiodiversityIndex: 9.86
-  },
-  {
-    name: 'Tuvalu',
-    birds: 18,
-    amphibians: 'No Data',
-    fish: 196,
-    mammals: 8,
-    reptiles: 6,
-    vascularPlants: 362,
-    total: 590,
-    globalBiodiversityIndex: 7.05
-  },
-  {
-    name: 'Nauru',
-    birds: 20,
-    amphibians: 'No Data',
-    fish: 86,
-    mammals: 14,
-    reptiles: 10,
-    vascularPlants: 573,
-    total: 703,
-    globalBiodiversityIndex: 6.43
-  },
-  {
-    name: 'San Marino',
-    birds: 18,
-    amphibians: 1,
-    fish: 'No Data',
-    mammals: 24,
-    reptiles: 1,
-    vascularPlants: 714,
-    total: 758,
-    globalBiodiversityIndex: 5.47
-  },
-  {
-    name: 'Turkmenistan',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Taiwan',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'New Caledonia',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Greenland',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Falkland Islands',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
     name: 'Antarctica',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
+    animalSpecies: 211,
+    plantSpecies: 0,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 212
   },
   {
-    name: 'Republic of the Congo',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Somaliland',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'South Sudan',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Western Sahara',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Sierra Leone',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Northern Cyprus',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Caledonia',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  },
-  {
-    name: 'Kosovo',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
+    name: 'Bouvet Island',
+    animalSpecies: 99,
+    plantSpecies: 1,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 100
   },
   {
     name: 'French Southern and Antarctic Lands',
-    birds: 'No Data',
-    amphibians: 'No Data',
-    fish: 'No Data',
-    mammals: 'No Data',
-    reptiles: 'No Data',
-    vascularPlants: 'No Data',
-    total: 'No Data',
-    globalBiodiversityIndex: 'No Data'
-  }
+    animalSpecies: 1103,
+    plantSpecies: 13,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1117
+  },
+  {
+    name: 'Heard Island and McDonald Islands',
+    animalSpecies: 149,
+    plantSpecies: 1,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 150
+  },
+  {
+    name: 'South Georgia and the South Sandwich Islands',
+    animalSpecies: 221,
+    plantSpecies: 15,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 237
+  },
+  {
+    name: 'Anguilla',
+    animalSpecies: 1311,
+    plantSpecies: 164,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1476
+  },
+  {
+    name: 'Antigua and Barbuda',
+    animalSpecies: 1427,
+    plantSpecies: 271,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1699
+  },
+  {
+    name: 'Aruba',
+    animalSpecies: 1289,
+    plantSpecies: 100,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1390
+  },
+  {
+    name: 'Bahamas',
+    animalSpecies: 1976,
+    plantSpecies: 389,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 2366
+  },
+  {
+    name: 'Barbados',
+    animalSpecies: 1433,
+    plantSpecies: 215,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1649
+  },
+  {
+    name: 'Bermuda',
+    animalSpecies: 1099,
+    plantSpecies: 135,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1235
+  },
+  {
+    name: 'Bonaire, Sint Eustatius and Saba',
+    animalSpecies: 1424,
+    plantSpecies: 239,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1664
+  },
+  {
+    name: 'Cayman Islands',
+    animalSpecies: 1338,
+    plantSpecies: 252,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1591
+  },
+  {
+    name: 'Cuba',
+    animalSpecies: 2231,
+    plantSpecies: 972,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 3208
+  },
+  {
+    name: 'Curaçao',
+    animalSpecies: 1316,
+    plantSpecies: 127,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 1445
+  },
+  {
+    name: 'Dominica',
+    animalSpecies: 1468,
+    plantSpecies: 363,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1832
+  },
+  {
+    name: 'Dominican Republic',
+    animalSpecies: 1815,
+    plantSpecies: 789,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 2606
+  },
+  {
+    name: 'Grenada',
+    animalSpecies: 1430,
+    plantSpecies: 266,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1697
+  },
+  {
+    name: 'Guadeloupe',
+    animalSpecies: 1432,
+    plantSpecies: 387,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1820
+  },
+  {
+    name: 'Haiti',
+    animalSpecies: 1762,
+    plantSpecies: 898,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 2662
+  },
+  {
+    name: 'Jamaica',
+    animalSpecies: 1606,
+    plantSpecies: 852,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 2461
+  },
+  {
+    name: 'Martinique',
+    animalSpecies: 1397,
+    plantSpecies: 364,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 1763
+  },
+  {
+    name: 'Montserrat',
+    animalSpecies: 1301,
+    plantSpecies: 257,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1559
+  },
+  {
+    name: 'Puerto Rico',
+    animalSpecies: 1767,
+    plantSpecies: 649,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 2420
+  },
+  {
+    name: 'Saint Barthélemy',
+    animalSpecies: 928,
+    plantSpecies: 149,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1078
+  },
+  {
+    name: 'Saint Kitts and Nevis',
+    animalSpecies: 1363,
+    plantSpecies: 213,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1577
+  },
+  {
+    name: 'Saint Lucia',
+    animalSpecies: 1415,
+    plantSpecies: 313,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1729
+  },
+  {
+    name: 'Sint Maarten',
+    animalSpecies: 1193,
+    plantSpecies: 195,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1389
+  },
+  {
+    name: 'Saint Vincent and the Grenadines',
+    animalSpecies: 1447,
+    plantSpecies: 322,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1770
+  },
+  {
+    name: 'Sint Maarten',
+    animalSpecies: 1162,
+    plantSpecies: 126,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1289
+  },
+  {
+    name: 'Trinidad and Tobago',
+    animalSpecies: 2189,
+    plantSpecies: 690,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 2880
+  },
+  {
+    name: 'Turks and Caicos Islands',
+    animalSpecies: 1332,
+    plantSpecies: 174,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1507
+  },
+  {
+    name: 'Virgin Islands',
+    animalSpecies: 1446,
+    plantSpecies: 311,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1758
+  },
+  {
+    name: 'Virgin Islands',
+    animalSpecies: 1475,
+    plantSpecies: 337,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1813
+  },
+  {
+    name: 'China',
+    animalSpecies: 6868,
+    plantSpecies: 3650,
+    fungusSpecies: 36,
+    chromistSpecies: 0,
+    totalSpecies: 10554
+  },
+  {
+    name: 'Hong Kong',
+    animalSpecies: 1268,
+    plantSpecies: 341,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1610
+  },
+  {
+    name: 'Japan',
+    animalSpecies: 5122,
+    plantSpecies: 891,
+    fungusSpecies: 54,
+    chromistSpecies: 0,
+    totalSpecies: 6067
+  },
+  {
+    name: 'North Korea',
+    animalSpecies: 994,
+    plantSpecies: 322,
+    fungusSpecies: 16,
+    chromistSpecies: 0,
+    totalSpecies: 1332
+  },
+  {
+    name: 'South Korea',
+    animalSpecies: 1675,
+    plantSpecies: 416,
+    fungusSpecies: 29,
+    chromistSpecies: 0,
+    totalSpecies: 2120
+  },
+  {
+    name: 'Macao',
+    animalSpecies: 521,
+    plantSpecies: 31,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 552
+  },
+  {
+    name: 'Mongolia',
+    animalSpecies: 656,
+    plantSpecies: 238,
+    fungusSpecies: 12,
+    chromistSpecies: 0,
+    totalSpecies: 906
+  },
+  {
+    name: 'Taiwan',
+    animalSpecies: 4251,
+    plantSpecies: 773,
+    fungusSpecies: 12,
+    chromistSpecies: 0,
+    totalSpecies: 5036
+  },
+  {
+    name: 'Åland Islands',
+    animalSpecies: 24,
+    plantSpecies: 13,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 38
+  },
+  {
+    name: 'Albania',
+    animalSpecies: 1376,
+    plantSpecies: 536,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 1915
+  },
+  {
+    name: 'Andorra',
+    animalSpecies: 366,
+    plantSpecies: 133,
+    fungusSpecies: 26,
+    chromistSpecies: 0,
+    totalSpecies: 525
+  },
+  {
+    name: 'Austria',
+    animalSpecies: 1209,
+    plantSpecies: 561,
+    fungusSpecies: 118,
+    chromistSpecies: 0,
+    totalSpecies: 1888
+  },
+  {
+    name: 'Belgium',
+    animalSpecies: 900,
+    plantSpecies: 391,
+    fungusSpecies: 72,
+    chromistSpecies: 0,
+    totalSpecies: 1363
+  },
+  {
+    name: 'Bosnia and Herzegovina',
+    animalSpecies: 1237,
+    plantSpecies: 406,
+    fungusSpecies: 9,
+    chromistSpecies: 0,
+    totalSpecies: 1652
+  },
+  {
+    name: 'Bulgaria',
+    animalSpecies: 1278,
+    plantSpecies: 585,
+    fungusSpecies: 30,
+    chromistSpecies: 0,
+    totalSpecies: 1893
+  },
+  {
+    name: 'Croatia',
+    animalSpecies: 1684,
+    plantSpecies: 576,
+    fungusSpecies: 56,
+    chromistSpecies: 0,
+    totalSpecies: 2316
+  },
+  {
+    name: 'Czechia',
+    animalSpecies: 916,
+    plantSpecies: 473,
+    fungusSpecies: 91,
+    chromistSpecies: 0,
+    totalSpecies: 1480
+  },
+  {
+    name: 'Denmark',
+    animalSpecies: 862,
+    plantSpecies: 338,
+    fungusSpecies: 84,
+    chromistSpecies: 0,
+    totalSpecies: 1284
+  },
+  {
+    name: 'Estonia',
+    animalSpecies: 597,
+    plantSpecies: 265,
+    fungusSpecies: 86,
+    chromistSpecies: 0,
+    totalSpecies: 948
+  },
+  {
+    name: 'Faroe Islands',
+    animalSpecies: 375,
+    plantSpecies: 90,
+    fungusSpecies: 13,
+    chromistSpecies: 0,
+    totalSpecies: 478
+  },
+  {
+    name: 'Finland',
+    animalSpecies: 663,
+    plantSpecies: 347,
+    fungusSpecies: 86,
+    chromistSpecies: 0,
+    totalSpecies: 1096
+  },
+  {
+    name: 'France',
+    animalSpecies: 2842,
+    plantSpecies: 968,
+    fungusSpecies: 130,
+    chromistSpecies: 0,
+    totalSpecies: 3940
+  },
+  {
+    name: 'Germany',
+    animalSpecies: 1339,
+    plantSpecies: 578,
+    fungusSpecies: 125,
+    chromistSpecies: 0,
+    totalSpecies: 2042
+  },
+  {
+    name: 'Gibraltar',
+    animalSpecies: 651,
+    plantSpecies: 43,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 694
+  },
+  {
+    name: 'Greece',
+    animalSpecies: 2522,
+    plantSpecies: 813,
+    fungusSpecies: 29,
+    chromistSpecies: 0,
+    totalSpecies: 3364
+  },
+  {
+    name: 'Greenland',
+    animalSpecies: 275,
+    plantSpecies: 125,
+    fungusSpecies: 7,
+    chromistSpecies: 0,
+    totalSpecies: 407
+  },
+  {
+    name: 'Guernsey',
+    animalSpecies: 231,
+    plantSpecies: 66,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 298
+  },
+  {
+    name: 'Holy See (Vatican City State)',
+    animalSpecies: 30,
+    plantSpecies: 12,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 42
+  },
+  {
+    name: 'Hungary',
+    animalSpecies: 916,
+    plantSpecies: 479,
+    fungusSpecies: 55,
+    chromistSpecies: 0,
+    totalSpecies: 1450
+  },
+  {
+    name: 'Iceland',
+    animalSpecies: 444,
+    plantSpecies: 148,
+    fungusSpecies: 31,
+    chromistSpecies: 0,
+    totalSpecies: 623
+  },
+  {
+    name: 'Ireland',
+    animalSpecies: 972,
+    plantSpecies: 335,
+    fungusSpecies: 56,
+    chromistSpecies: 0,
+    totalSpecies: 1363
+  },
+  {
+    name: 'Isle of Man',
+    animalSpecies: 97,
+    plantSpecies: 74,
+    fungusSpecies: 20,
+    chromistSpecies: 0,
+    totalSpecies: 191
+  },
+  {
+    name: 'Italy',
+    animalSpecies: 2551,
+    plantSpecies: 1066,
+    fungusSpecies: 113,
+    chromistSpecies: 0,
+    totalSpecies: 3730
+  },
+  {
+    name: 'Jersey',
+    animalSpecies: 239,
+    plantSpecies: 70,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 311
+  },
+  {
+    name: 'Latvia',
+    animalSpecies: 667,
+    plantSpecies: 247,
+    fungusSpecies: 27,
+    chromistSpecies: 0,
+    totalSpecies: 941
+  },
+  {
+    name: 'Liechtenstein',
+    animalSpecies: 460,
+    plantSpecies: 218,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 683
+  },
+  {
+    name: 'Lithuania',
+    animalSpecies: 638,
+    plantSpecies: 252,
+    fungusSpecies: 35,
+    chromistSpecies: 0,
+    totalSpecies: 925
+  },
+  {
+    name: 'Luxembourg',
+    animalSpecies: 516,
+    plantSpecies: 245,
+    fungusSpecies: 34,
+    chromistSpecies: 0,
+    totalSpecies: 795
+  },
+  {
+    name: 'Malta',
+    animalSpecies: 703,
+    plantSpecies: 188,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 894
+  },
+  {
+    name: 'Monaco',
+    animalSpecies: 478,
+    plantSpecies: 43,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 521
+  },
+  {
+    name: 'Montenegro',
+    animalSpecies: 1368,
+    plantSpecies: 406,
+    fungusSpecies: 12,
+    chromistSpecies: 0,
+    totalSpecies: 1786
+  },
+  {
+    name: 'Netherlands',
+    animalSpecies: 941,
+    plantSpecies: 358,
+    fungusSpecies: 73,
+    chromistSpecies: 0,
+    totalSpecies: 1372
+  },
+  {
+    name: 'North Macedonia',
+    animalSpecies: 1004,
+    plantSpecies: 420,
+    fungusSpecies: 12,
+    chromistSpecies: 0,
+    totalSpecies: 1436
+  },
+  {
+    name: 'Norway',
+    animalSpecies: 854,
+    plantSpecies: 409,
+    fungusSpecies: 112,
+    chromistSpecies: 0,
+    totalSpecies: 1375
+  },
+  {
+    name: 'Poland',
+    animalSpecies: 965,
+    plantSpecies: 463,
+    fungusSpecies: 87,
+    chromistSpecies: 0,
+    totalSpecies: 1515
+  },
+  {
+    name: 'Portugal',
+    animalSpecies: 2596,
+    plantSpecies: 833,
+    fungusSpecies: 47,
+    chromistSpecies: 0,
+    totalSpecies: 3476
+  },
+  {
+    name: 'Romania',
+    animalSpecies: 1282,
+    plantSpecies: 527,
+    fungusSpecies: 32,
+    chromistSpecies: 0,
+    totalSpecies: 1841
+  },
+  {
+    name: 'San Marino',
+    animalSpecies: 77,
+    plantSpecies: 31,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 108
+  },
+  {
+    name: 'Serbia',
+    animalSpecies: 1082,
+    plantSpecies: 475,
+    fungusSpecies: 39,
+    chromistSpecies: 0,
+    totalSpecies: 1596
+  },
+  {
+    name: 'Slovakia',
+    animalSpecies: 944,
+    plantSpecies: 405,
+    fungusSpecies: 87,
+    chromistSpecies: 0,
+    totalSpecies: 1436
+  },
+  {
+    name: 'Slovenia',
+    animalSpecies: 1452,
+    plantSpecies: 500,
+    fungusSpecies: 74,
+    chromistSpecies: 0,
+    totalSpecies: 2026
+  },
+  {
+    name: 'Spain',
+    animalSpecies: 3525,
+    plantSpecies: 1293,
+    fungusSpecies: 113,
+    chromistSpecies: 0,
+    totalSpecies: 4931
+  },
+  {
+    name: 'Svalbard and Jan Mayen',
+    animalSpecies: 100,
+    plantSpecies: 43,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 148
+  },
+  {
+    name: 'Sweden',
+    animalSpecies: 877,
+    plantSpecies: 441,
+    fungusSpecies: 120,
+    chromistSpecies: 0,
+    totalSpecies: 1438
+  },
+  {
+    name: 'Switzerland',
+    animalSpecies: 1100,
+    plantSpecies: 514,
+    fungusSpecies: 104,
+    chromistSpecies: 0,
+    totalSpecies: 1718
+  },
+  {
+    name: 'United Kingdom',
+    animalSpecies: 1273,
+    plantSpecies: 508,
+    fungusSpecies: 96,
+    chromistSpecies: 0,
+    totalSpecies: 1877
+  },
+  {
+    name: 'Belize',
+    animalSpecies: 2366,
+    plantSpecies: 1205,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3572
+  },
+  {
+    name: 'Costa Rica',
+    animalSpecies: 4159,
+    plantSpecies: 2720,
+    fungusSpecies: 19,
+    chromistSpecies: 0,
+    totalSpecies: 6898
+  },
+  {
+    name: 'El Salvador',
+    animalSpecies: 1860,
+    plantSpecies: 1032,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 2895
+  },
+  {
+    name: 'Guatemala',
+    animalSpecies: 3456,
+    plantSpecies: 2108,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 5567
+  },
+  {
+    name: 'Honduras',
+    animalSpecies: 3613,
+    plantSpecies: 1807,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 5424
+  },
+  {
+    name: 'Mexico',
+    animalSpecies: 6880,
+    plantSpecies: 4996,
+    fungusSpecies: 44,
+    chromistSpecies: 0,
+    totalSpecies: 11920
+  },
+  {
+    name: 'Nicaragua',
+    animalSpecies: 3411,
+    plantSpecies: 1831,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 5243
+  },
+  {
+    name: 'Panama',
+    animalSpecies: 4339,
+    plantSpecies: 2733,
+    fungusSpecies: 6,
+    chromistSpecies: 0,
+    totalSpecies: 7078
+  },
+  {
+    name: 'Algeria',
+    animalSpecies: 1310,
+    plantSpecies: 533,
+    fungusSpecies: 6,
+    chromistSpecies: 0,
+    totalSpecies: 1849
+  },
+  {
+    name: 'Egypt',
+    animalSpecies: 2403,
+    plantSpecies: 352,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 2757
+  },
+  {
+    name: 'Libya',
+    animalSpecies: 901,
+    plantSpecies: 245,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 1148
+  },
+  {
+    name: 'Morocco',
+    animalSpecies: 1958,
+    plantSpecies: 608,
+    fungusSpecies: 14,
+    chromistSpecies: 0,
+    totalSpecies: 2580
+  },
+  {
+    name: 'Tunisia',
+    animalSpecies: 1149,
+    plantSpecies: 361,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 1514
+  },
+  {
+    name: 'Western Sahara',
+    animalSpecies: 1180,
+    plantSpecies: 35,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1215
+  },
+  {
+    name: 'Canada',
+    animalSpecies: 2267,
+    plantSpecies: 1069,
+    fungusSpecies: 152,
+    chromistSpecies: 0,
+    totalSpecies: 3488
+  },
+  {
+    name: 'Saint Pierre and Miquelon',
+    animalSpecies: 440,
+    plantSpecies: 50,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 490
+  },
+  {
+    name: 'United States',
+    animalSpecies: 8273,
+    plantSpecies: 2963,
+    fungusSpecies: 278,
+    chromistSpecies: 0,
+    totalSpecies: 11514
+  },
+  {
+    name: 'Belarus',
+    animalSpecies: 565,
+    plantSpecies: 262,
+    fungusSpecies: 16,
+    chromistSpecies: 0,
+    totalSpecies: 843
+  },
+  {
+    name: 'Moldova',
+    animalSpecies: 520,
+    plantSpecies: 229,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 752
+  },
+  {
+    name: 'Russia',
+    animalSpecies: 2483,
+    plantSpecies: 849,
+    fungusSpecies: 120,
+    chromistSpecies: 0,
+    totalSpecies: 3452
+  },
+  {
+    name: 'Ukraine',
+    animalSpecies: 1168,
+    plantSpecies: 526,
+    fungusSpecies: 42,
+    chromistSpecies: 0,
+    totalSpecies: 1736
+  },
+  {
+    name: 'American Samoa',
+    animalSpecies: 1606,
+    plantSpecies: 109,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1715
+  },
+  {
+    name: 'Australia',
+    animalSpecies: 8554,
+    plantSpecies: 4195,
+    fungusSpecies: 32,
+    chromistSpecies: 0,
+    totalSpecies: 12781
+  },
+  {
+    name: 'Christmas Island',
+    animalSpecies: 1144,
+    plantSpecies: 60,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1204
+  },
+  {
+    name: 'Cocos (Keeling) Islands',
+    animalSpecies: 1022,
+    plantSpecies: 25,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1047
+  },
+  {
+    name: 'Cook Islands',
+    animalSpecies: 1286,
+    plantSpecies: 83,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1369
+  },
+  {
+    name: 'Fiji',
+    animalSpecies: 2558,
+    plantSpecies: 436,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2994
+  },
+  {
+    name: 'French Polynesia',
+    animalSpecies: 1801,
+    plantSpecies: 248,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2049
+  },
+  {
+    name: 'Guam',
+    animalSpecies: 1654,
+    plantSpecies: 64,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1718
+  },
+  {
+    name: 'Kiribati',
+    animalSpecies: 1679,
+    plantSpecies: 42,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1721
+  },
+  {
+    name: 'Marshall Islands',
+    animalSpecies: 1729,
+    plantSpecies: 44,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1773
+  },
+  {
+    name: 'Micronesia',
+    animalSpecies: 2254,
+    plantSpecies: 148,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2402
+  },
+  {
+    name: 'Nauru',
+    animalSpecies: 1345,
+    plantSpecies: 28,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1373
+  },
+  {
+    name: 'New Caledonia',
+    animalSpecies: 3053,
+    plantSpecies: 1652,
+    fungusSpecies: 6,
+    chromistSpecies: 0,
+    totalSpecies: 4711
+  },
+  {
+    name: 'New Zealand',
+    animalSpecies: 1651,
+    plantSpecies: 182,
+    fungusSpecies: 41,
+    chromistSpecies: 0,
+    totalSpecies: 1874
+  },
+  {
+    name: 'Niue',
+    animalSpecies: 1103,
+    plantSpecies: 66,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1169
+  },
+  {
+    name: 'Norfolk Island',
+    animalSpecies: 772,
+    plantSpecies: 26,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 798
+  },
+  {
+    name: 'Northern Mariana Islands',
+    animalSpecies: 1682,
+    plantSpecies: 80,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1762
+  },
+  {
+    name: 'Palau',
+    animalSpecies: 2569,
+    plantSpecies: 132,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2701
+  },
+  {
+    name: 'Papua New Guinea',
+    animalSpecies: 5744,
+    plantSpecies: 3285,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 9034
+  },
+  {
+    name: 'Pitcairn',
+    animalSpecies: 658,
+    plantSpecies: 37,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 695
+  },
+  {
+    name: 'Samoa',
+    animalSpecies: 1741,
+    plantSpecies: 159,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1900
+  },
+  {
+    name: 'Solomon Islands',
+    animalSpecies: 3061,
+    plantSpecies: 601,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3662
+  },
+  {
+    name: 'Tokelau',
+    animalSpecies: 1114,
+    plantSpecies: 19,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1133
+  },
+  {
+    name: 'Tonga',
+    animalSpecies: 1813,
+    plantSpecies: 151,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1964
+  },
+  {
+    name: 'Tuvalu',
+    animalSpecies: 1434,
+    plantSpecies: 29,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1463
+  },
+  {
+    name: 'United States Minor Outlying Islands',
+    animalSpecies: 1457,
+    plantSpecies: 26,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1483
+  },
+  {
+    name: 'Vanuatu',
+    animalSpecies: 2370,
+    plantSpecies: 241,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2611
+  },
+  {
+    name: 'Wallis and Futuna',
+    animalSpecies: 1539,
+    plantSpecies: 88,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1627
+  },
+  {
+    name: 'Argentina',
+    animalSpecies: 3006,
+    plantSpecies: 1035,
+    fungusSpecies: 66,
+    chromistSpecies: 0,
+    totalSpecies: 4107
+  },
+  {
+    name: 'Bolivia',
+    animalSpecies: 2931,
+    plantSpecies: 2929,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 5863
+  },
+  {
+    name: 'Brazil',
+    animalSpecies: 8873,
+    plantSpecies: 6948,
+    fungusSpecies: 57,
+    chromistSpecies: 0,
+    totalSpecies: 15878
+  },
+  {
+    name: 'Chile',
+    animalSpecies: 1786,
+    plantSpecies: 389,
+    fungusSpecies: 56,
+    chromistSpecies: 0,
+    totalSpecies: 2231
+  },
+  {
+    name: 'Colombia',
+    animalSpecies: 7403,
+    plantSpecies: 5624,
+    fungusSpecies: 22,
+    chromistSpecies: 0,
+    totalSpecies: 13049
+  },
+  {
+    name: 'Ecuador',
+    animalSpecies: 5031,
+    plantSpecies: 5412,
+    fungusSpecies: 8,
+    chromistSpecies: 15,
+    totalSpecies: 10466
+  },
+  {
+    name: 'Falkland Islands',
+    animalSpecies: 332,
+    plantSpecies: 28,
+    fungusSpecies: 7,
+    chromistSpecies: 0,
+    totalSpecies: 367
+  },
+  {
+    name: 'French Guiana',
+    animalSpecies: 2535,
+    plantSpecies: 1520,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 4057
+  },
+  {
+    name: 'Guyana',
+    animalSpecies: 2849,
+    plantSpecies: 1858,
+    fungusSpecies: 13,
+    chromistSpecies: 0,
+    totalSpecies: 4720
+  },
+  {
+    name: 'Paraguay',
+    animalSpecies: 1396,
+    plantSpecies: 751,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 2151
+  },
+  {
+    name: 'Peru',
+    animalSpecies: 5347,
+    plantSpecies: 3940,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 9291
+  },
+  {
+    name: 'Suriname',
+    animalSpecies: 2665,
+    plantSpecies: 1436,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 4101
+  },
+  {
+    name: 'Uruguay',
+    animalSpecies: 1295,
+    plantSpecies: 333,
+    fungusSpecies: 7,
+    chromistSpecies: 0,
+    totalSpecies: 1635
+  },
+  {
+    name: 'Venezuela',
+    animalSpecies: 5176,
+    plantSpecies: 3960,
+    fungusSpecies: 9,
+    chromistSpecies: 0,
+    totalSpecies: 9145
+  },
+  {
+    name: 'Bangladesh',
+    animalSpecies: 2104,
+    plantSpecies: 741,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2845
+  },
+  {
+    name: 'Bhutan',
+    animalSpecies: 918,
+    plantSpecies: 745,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 1667
+  },
+  {
+    name: 'British Indian Ocean Territory',
+    animalSpecies: 1390,
+    plantSpecies: 24,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1414
+  },
+  {
+    name: 'Brunei',
+    animalSpecies: 2142,
+    plantSpecies: 842,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2984
+  },
+  {
+    name: 'Cambodia',
+    animalSpecies: 2954,
+    plantSpecies: 784,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3738
+  },
+  {
+    name: 'Disputed Territory',
+    animalSpecies: 1276,
+    plantSpecies: 9,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1285
+  },
+  {
+    name: 'India',
+    animalSpecies: 6848,
+    plantSpecies: 2603,
+    fungusSpecies: 21,
+    chromistSpecies: 0,
+    totalSpecies: 9472
+  },
+  {
+    name: 'Indonesia',
+    animalSpecies: 10408,
+    plantSpecies: 4538,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 14948
+  },
+  {
+    name: 'Laos',
+    animalSpecies: 2124,
+    plantSpecies: 987,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3112
+  },
+  {
+    name: 'Malaysia',
+    animalSpecies: 6232,
+    plantSpecies: 3911,
+    fungusSpecies: 7,
+    chromistSpecies: 0,
+    totalSpecies: 10150
+  },
+  {
+    name: 'Maldives',
+    animalSpecies: 1730,
+    plantSpecies: 58,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1788
+  },
+  {
+    name: 'Myanmar',
+    animalSpecies: 4494,
+    plantSpecies: 1603,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 6097
+  },
+  {
+    name: 'Nepal',
+    animalSpecies: 1588,
+    plantSpecies: 822,
+    fungusSpecies: 6,
+    chromistSpecies: 0,
+    totalSpecies: 2416
+  },
+  {
+    name: 'Philippines',
+    animalSpecies: 5858,
+    plantSpecies: 2249,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 8111
+  },
+  {
+    name: 'Singapore',
+    animalSpecies: 2705,
+    plantSpecies: 641,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3347
+  },
+  {
+    name: 'Sri Lanka',
+    animalSpecies: 3107,
+    plantSpecies: 1009,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 4118
+  },
+  {
+    name: 'Thailand',
+    animalSpecies: 5694,
+    plantSpecies: 2017,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 7716
+  },
+  {
+    name: 'Timor-Leste',
+    animalSpecies: 1818,
+    plantSpecies: 238,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2056
+  },
+  {
+    name: 'Vietnam',
+    animalSpecies: 5202,
+    plantSpecies: 2075,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 7278
+  },
+  {
+    name: 'Angola',
+    animalSpecies: 3382,
+    plantSpecies: 1590,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 4973
+  },
+  {
+    name: 'Benin',
+    animalSpecies: 2187,
+    plantSpecies: 937,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 3127
+  },
+  {
+    name: 'Botswana',
+    animalSpecies: 1402,
+    plantSpecies: 652,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2054
+  },
+  {
+    name: 'Burkina Faso',
+    animalSpecies: 998,
+    plantSpecies: 646,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1644
+  },
+  {
+    name: 'Burundi',
+    animalSpecies: 1298,
+    plantSpecies: 913,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 2214
+  },
+  {
+    name: 'Cabo Verde',
+    animalSpecies: 1119,
+    plantSpecies: 155,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1275
+  },
+  {
+    name: 'Cameroon',
+    animalSpecies: 3588,
+    plantSpecies: 2832,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 6425
+  },
+  {
+    name: 'Central African Republic',
+    animalSpecies: 1731,
+    plantSpecies: 1174,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 2910
+  },
+  {
+    name: 'Chad',
+    animalSpecies: 1030,
+    plantSpecies: 603,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1634
+  },
+  {
+    name: 'Comoros',
+    animalSpecies: 1808,
+    plantSpecies: 203,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2011
+  },
+  {
+    name: 'Congo',
+    animalSpecies: 2525,
+    plantSpecies: 1364,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 3891
+  },
+  {
+    name: 'Democratic Republic of the Congo',
+    animalSpecies: 4902,
+    plantSpecies: 2546,
+    fungusSpecies: 12,
+    chromistSpecies: 0,
+    totalSpecies: 7460
+  },
+  {
+    name: "Côte d'Ivoire",
+    animalSpecies: 2643,
+    plantSpecies: 1456,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 4099
+  },
+  {
+    name: 'Djibouti',
+    animalSpecies: 1931,
+    plantSpecies: 137,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2068
+  },
+  {
+    name: 'Equatorial Guinea',
+    animalSpecies: 1975,
+    plantSpecies: 1046,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3022
+  },
+  {
+    name: 'Eritrea',
+    animalSpecies: 2170,
+    plantSpecies: 307,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2477
+  },
+  {
+    name: 'Eswatini',
+    animalSpecies: 1165,
+    plantSpecies: 590,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1755
+  },
+  {
+    name: 'Ethiopia',
+    animalSpecies: 1896,
+    plantSpecies: 1145,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3042
+  },
+  {
+    name: 'Gabon',
+    animalSpecies: 2610,
+    plantSpecies: 1912,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 4523
+  },
+  {
+    name: 'Gambia',
+    animalSpecies: 1937,
+    plantSpecies: 392,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2329
+  },
+  {
+    name: 'Ghana',
+    animalSpecies: 2718,
+    plantSpecies: 1350,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 4068
+  },
+  {
+    name: 'Guinea',
+    animalSpecies: 2641,
+    plantSpecies: 1312,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3953
+  },
+  {
+    name: 'Guinea-Bissau',
+    animalSpecies: 1894,
+    plantSpecies: 597,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2491
+  },
+  {
+    name: 'Kenya',
+    animalSpecies: 4543,
+    plantSpecies: 1981,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 6529
+  },
+  {
+    name: 'Lesotho',
+    animalSpecies: 531,
+    plantSpecies: 207,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 738
+  },
+  {
+    name: 'Liberia',
+    animalSpecies: 2275,
+    plantSpecies: 1018,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3293
+  },
+  {
+    name: 'Madagascar',
+    animalSpecies: 4256,
+    plantSpecies: 4781,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 9039
+  },
+  {
+    name: 'Malawi',
+    animalSpecies: 2025,
+    plantSpecies: 1189,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3214
+  },
+  {
+    name: 'Mali',
+    animalSpecies: 1152,
+    plantSpecies: 720,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1872
+  },
+  {
+    name: 'Mauritania',
+    animalSpecies: 1795,
+    plantSpecies: 251,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 2047
+  },
+  {
+    name: 'Mauritius',
+    animalSpecies: 2099,
+    plantSpecies: 278,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 2378
+  },
+  {
+    name: 'Mayotte',
+    animalSpecies: 1578,
+    plantSpecies: 135,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1713
+  },
+  {
+    name: 'Mozambique',
+    animalSpecies: 4439,
+    plantSpecies: 1826,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 6267
+  },
+  {
+    name: 'Namibia',
+    animalSpecies: 2379,
+    plantSpecies: 814,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3194
+  },
+  {
+    name: 'Niger',
+    animalSpecies: 885,
+    plantSpecies: 405,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1290
+  },
+  {
+    name: 'Nigeria',
+    animalSpecies: 3157,
+    plantSpecies: 1846,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 5004
+  },
+  {
+    name: 'Réunion',
+    animalSpecies: 1759,
+    plantSpecies: 142,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1901
+  },
+  {
+    name: 'Rwanda',
+    animalSpecies: 1277,
+    plantSpecies: 871,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 2150
+  },
+  {
+    name: 'Saint Helena, Ascension and Tristan da Cunha',
+    animalSpecies: 858,
+    plantSpecies: 88,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 947
+  },
+  {
+    name: 'Sao Tome and Principe',
+    animalSpecies: 957,
+    plantSpecies: 286,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1243
+  },
+  {
+    name: 'Senegal',
+    animalSpecies: 2391,
+    plantSpecies: 831,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3222
+  },
+  {
+    name: 'Seychelles',
+    animalSpecies: 2434,
+    plantSpecies: 213,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2647
+  },
+  {
+    name: 'Sierra Leone',
+    animalSpecies: 2353,
+    plantSpecies: 1114,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3467
+  },
+  {
+    name: 'Somalia',
+    animalSpecies: 3112,
+    plantSpecies: 604,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 3716
+  },
+  {
+    name: 'South Africa',
+    animalSpecies: 5261,
+    plantSpecies: 2115,
+    fungusSpecies: 9,
+    chromistSpecies: 0,
+    totalSpecies: 7385
+  },
+  {
+    name: 'South Sudan',
+    animalSpecies: 1371,
+    plantSpecies: 684,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2055
+  },
+  {
+    name: 'Sudan',
+    animalSpecies: 2769,
+    plantSpecies: 716,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3486
+  },
+  {
+    name: 'Tanzania',
+    animalSpecies: 5606,
+    plantSpecies: 3227,
+    fungusSpecies: 6,
+    chromistSpecies: 0,
+    totalSpecies: 8839
+  },
+  {
+    name: 'Togo',
+    animalSpecies: 2178,
+    plantSpecies: 804,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 2983
+  },
+  {
+    name: 'Uganda',
+    animalSpecies: 2494,
+    plantSpecies: 1428,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 3923
+  },
+  {
+    name: 'Zambia',
+    animalSpecies: 2348,
+    plantSpecies: 1353,
+    fungusSpecies: 4,
+    chromistSpecies: 0,
+    totalSpecies: 3705
+  },
+  {
+    name: 'Zimbabwe',
+    animalSpecies: 1843,
+    plantSpecies: 1338,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 3184
+  },
+  {
+    name: 'Afghanistan',
+    animalSpecies: 756,
+    plantSpecies: 387,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 1145
+  },
+  {
+    name: 'Armenia',
+    animalSpecies: 579,
+    plantSpecies: 389,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 973
+  },
+  {
+    name: 'Azerbaijan',
+    animalSpecies: 738,
+    plantSpecies: 369,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 1112
+  },
+  {
+    name: 'Bahrain',
+    animalSpecies: 824,
+    plantSpecies: 29,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 853
+  },
+  {
+    name: 'Cyprus',
+    animalSpecies: 851,
+    plantSpecies: 279,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 1135
+  },
+  {
+    name: 'Georgia',
+    animalSpecies: 740,
+    plantSpecies: 445,
+    fungusSpecies: 17,
+    chromistSpecies: 0,
+    totalSpecies: 1202
+  },
+  {
+    name: 'Iran',
+    animalSpecies: 2250,
+    plantSpecies: 514,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 2766
+  },
+  {
+    name: 'Iraq',
+    animalSpecies: 1212,
+    plantSpecies: 287,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1500
+  },
+  {
+    name: 'Israel',
+    animalSpecies: 2220,
+    plantSpecies: 351,
+    fungusSpecies: 6,
+    chromistSpecies: 0,
+    totalSpecies: 2577
+  },
+  {
+    name: 'Jordan',
+    animalSpecies: 1706,
+    plantSpecies: 222,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1928
+  },
+  {
+    name: 'Kazakhstan',
+    animalSpecies: 960,
+    plantSpecies: 391,
+    fungusSpecies: 9,
+    chromistSpecies: 0,
+    totalSpecies: 1360
+  },
+  {
+    name: 'Kuwait',
+    animalSpecies: 956,
+    plantSpecies: 33,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 990
+  },
+  {
+    name: 'Kyrgyzstan',
+    animalSpecies: 554,
+    plantSpecies: 260,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 816
+  },
+  {
+    name: 'Lebanon',
+    animalSpecies: 945,
+    plantSpecies: 455,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1400
+  },
+  {
+    name: 'Oman',
+    animalSpecies: 2068,
+    plantSpecies: 183,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 2251
+  },
+  {
+    name: 'Pakistan',
+    animalSpecies: 2265,
+    plantSpecies: 590,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 2860
+  },
+  {
+    name: 'Palestine',
+    animalSpecies: 474,
+    plantSpecies: 256,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 731
+  },
+  {
+    name: 'Qatar',
+    animalSpecies: 853,
+    plantSpecies: 34,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 888
+  },
+  {
+    name: 'Saudi Arabia',
+    animalSpecies: 2230,
+    plantSpecies: 291,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 2522
+  },
+  {
+    name: 'Syria',
+    animalSpecies: 1158,
+    plantSpecies: 403,
+    fungusSpecies: 1,
+    chromistSpecies: 0,
+    totalSpecies: 1562
+  },
+  {
+    name: 'Tajikistan',
+    animalSpecies: 567,
+    plantSpecies: 261,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 831
+  },
+  {
+    name: 'Turkey',
+    animalSpecies: 1939,
+    plantSpecies: 900,
+    fungusSpecies: 24,
+    chromistSpecies: 0,
+    totalSpecies: 2863
+  },
+  {
+    name: 'Turkmenistan',
+    animalSpecies: 734,
+    plantSpecies: 225,
+    fungusSpecies: 3,
+    chromistSpecies: 0,
+    totalSpecies: 962
+  },
+  {
+    name: 'United Arab Emirates',
+    animalSpecies: 1346,
+    plantSpecies: 60,
+    fungusSpecies: 0,
+    chromistSpecies: 0,
+    totalSpecies: 1406
+  },
+  {
+    name: 'Uzbekistan',
+    animalSpecies: 635,
+    plantSpecies: 274,
+    fungusSpecies: 5,
+    chromistSpecies: 0,
+    totalSpecies: 914
+  },
+  {
+    name: 'Yemen',
+    animalSpecies: 2609,
+    plantSpecies: 678,
+    fungusSpecies: 2,
+    chromistSpecies: 0,
+    totalSpecies: 3289
+  },
 ]

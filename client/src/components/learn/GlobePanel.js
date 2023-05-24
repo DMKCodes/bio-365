@@ -59,9 +59,6 @@ const GlobePanel = () => {
 
     return (
         <Container fluid>
-            <Row className='mb-3'>
-                <h3 className='text-center'>BIODIVERSITY AROUND THE WORLD</h3>
-            </Row>
             <Row>
                 <Col md='8' className='mb-2 d-flex flex-row align-items-center'>
                     <h5 className='me-3'>View:</h5>

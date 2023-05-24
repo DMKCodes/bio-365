@@ -11,8 +11,7 @@ import {
     AccordionBody,
     AccordionHeader,
     AccordionItem,
-    Row,
-    Col
+    Row
 } from 'reactstrap';
 import giantpanda from '../../../app/media/giant-panda.jpeg';
 
@@ -75,7 +74,7 @@ const SpeciesSpotlightCard = () => {
                         Status
                     </AccordionHeader>
                     <AccordionBody accordionId='3'>
-                        Despite their status as a national treasure in China and their protected status under Chinese law, giant pandas were classified as endangered for decades due to habitat loss and low birth rates. However, dedicated conservation efforts have had a positive impact, improving their status to "vulnerable" in 2016.
+                        Despite their status as a national treasure in China and their protected status under Chinese law, giant pandas were classified as endangered for decades due to habitat loss, poaching, and low birth rates. However, dedicated conservation efforts have had a positive impact, improving their status to "vulnerable" in 2016.
                     </AccordionBody>
                 </AccordionItem>
                 <AccordionItem>

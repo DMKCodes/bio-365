@@ -1,10 +1,5 @@
 export const GLOSSARY = [
     {
-        term: 'GBI',
-        definition: 'Global Biodiversity Index: A proprietary rating of the biodiversity of a country, ranging from Brazil (512.34) to San Marino (5.47).',
-        source: 'The Swiftest'
-    },
-    {
         term: 'Ecosystem',
         definition: 'Ecosystem: A geographic area where plants, animals, and other organisms, as well as weather and landscape, work together to form a bubble of life. Ecosystems contain biotic, or living, parts as well as abiotic factors, or nonliving parts. Biotic factors include plants, animals, and other organisms. Abiotic factors include rocks, temperature, and humidity.',
         source: 'National Geographic'
@@ -61,12 +56,17 @@ export const GLOSSARY = [
     },
     {
         term: 'CITES',
-        definition: 'An international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten the survival of the species.',
+        definition: 'The Convention on International Trade in Endangered Species: An international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten the survival of the species.',
         source: 'CITES'
     },
     {
         term: 'Invasive Species',
         definition: "Invasive Species: Non-native plants, animals and other living organisms that thrive in areas where they don't naturally live and cause (or are likely to cause) economic or environmental harm, or harm to human, animal or plant health.",
         source: 'U.S. Fish & Wildlife Service'
+    },
+    {
+        term: 'Chromista',
+        definition: 'Chromista: A biological kingdom comprised of unicellular or multicellular eukaryotic species such as algae, diatoms, oomycetes, and protozoans.',
+        source: 'ScienceDirect'
     }
 ];

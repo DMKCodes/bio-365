@@ -32,7 +32,11 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
     return (
         <Card className='globe-data-card rounded-0'>
             <CardBody className='text-center'>
-                <CardHeader className='mb-3'>
+                    <CardHeader className='mb-3 rounded-0 border'>
+                        <h4>{title}</h4>
+
+                    </CardHeader>
+                <CardSubtitle>
                     {countryToDisplay ? (
                         <CardTitle>
                             <h5 className='mb-0'><b>{countryToDisplay.toUpperCase()}</b></h5>
@@ -44,29 +48,20 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                             </small>
                         </CardTitle>
                     )}
-                </CardHeader>
-                <CardSubtitle>
-                    <h4>{title}</h4>
                 </CardSubtitle>
                 {viewType === 'species' && speciesData ? (
                     <CardText>
                         <br />
-                        Amphibians: {speciesData.amphibians.toLocaleString('en-US')}<br />
-                        Birds: {speciesData.birds.toLocaleString('en-US')}<br />
-                        Fish: {speciesData.fish.toLocaleString('en-US')}<br />
-                        Mammals: {speciesData.mammals.toLocaleString('en-US')}<br />
-                        Reptiles: {speciesData.reptiles.toLocaleString('en-US')}<br />
-                        Vascular Plants: {speciesData.vascularPlants.toLocaleString('en-US')}<br />
-                        Total: {speciesData.total.toLocaleString('en-US')}<br /><br />
-                        <span
-                            className='definition'
-                            id='gbi-definition'
-                        >
-                            GBI
-                        </span>
-                        :{' '}{speciesData.globalBiodiversityIndex}
+                        Animals: {speciesData.animalSpecies.toLocaleString('en-US')}<br />
+                        Plants: {speciesData.plantSpecies.toLocaleString('en-US')}<br />
+                        Fungi: {speciesData.fungusSpecies.toLocaleString('en-US')}<br />
+                            <span id='chromista-definition' className='definition'>
+                                Chromists
+                            </span>
+                        : {speciesData.chromistSpecies.toLocaleString('en-US')}<br /><br />
+                        Total: {speciesData.totalSpecies.toLocaleString('en-US')}<br /><br />
 
-                        <DefinitionTooltip term='GBI' targetId='gbi-definition' />
+                        <DefinitionTooltip term='Chromista' targetId='chromista-definition' />
                     </CardText>
                 ) : viewType === 'endangered' && endangeredData ? (
                     <CardText>
@@ -79,7 +74,7 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                         Molluscs: {endangeredData.molluscs.toLocaleString('en-US')}<br />
                         Other Invertebrates: {endangeredData.otherInvertebrates.toLocaleString('en-US')}<br />
                         Vascular Plants: {endangeredData.plants.toLocaleString('en-US')}<br />
-                        Fungi: {endangeredData.fungi.toLocaleString('en-US')}<br />
+                        Fungi: {endangeredData.fungi.toLocaleString('en-US')}<br /><br />
                         Total: {endangeredData.total.toLocaleString('en-US')}
                         <br /><br />
                         <small className='text-muted'>Color depicts ratio of endangered species to total species. This is not a statement on any country's individual conservation efforts or unique challenges.</small>

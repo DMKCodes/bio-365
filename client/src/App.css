@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   font-family: 'Anuphan', sans-serif;
   padding-top: 1.5rem;
@@ -98,8 +102,7 @@
 
 .video-background {
   position: relative;
-  width: 100vw;
-  height: 80vh;  /* change to desired height */
+  height: 75vh;
   overflow: hidden;
 }
 
@@ -120,10 +123,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff; /* or any color you prefer for the text */
-  background: rgba(0,0,0,0.6);  /* optional: only if you want a semi-transparent backdrop */
+  color: #fff;
+  background: rgba(0,0,0,0.5);
 }
 
 .video-overlay-body {
-  width: 50%;
+  width: 40%;
+}
+
+.podcast-img {
+  max-width: 100%;
+}
+
+.learn-navigation {
+  transition: all 0.5s;
+  background-color: #198754;
+}
+
+.learn-navigation a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
 }
