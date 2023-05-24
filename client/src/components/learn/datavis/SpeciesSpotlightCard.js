@@ -34,9 +34,9 @@ const SpeciesSpotlightCard = () => {
     return (
         <Card>
             <img src={giantpanda} alt='giant panda' className='img-fluid mb-1' />
-            <small className='text-muted'>Photo Credit: Cyrill Bambilla</small>
+            <small className='text-muted text-center'>Photo Credit: Cyrill Bambilla</small>
             <CardBody className='text-center'>
-                <CardHeader className='mb-3'>
+                <CardHeader className='mb-3 rounded-0 border'>
                     <CardTitle>
                         <h5>CONSERVATION SPOTLIGHT</h5>
                     </CardTitle>
