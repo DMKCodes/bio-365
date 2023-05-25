@@ -1,14 +1,9 @@
 import { Row, Col } from 'reactstrap';
-import PodcastSpotlight from './PodcastSpotlight';
 import { PODCASTS } from '../../datasets/podcasts';
 
-const PodcastPanel = () => {
-    
+const PodcastList = () => {
     return (
         <Row>
-            <Col md='6'>
-                <PodcastSpotlight />
-            </Col>
             {PODCASTS.map((podcast, idx) => {
                 return (
                     <Col md='2' key={idx} className='text-center fs-6'>
@@ -28,4 +23,4 @@ const PodcastPanel = () => {
     );
 };
 
-export default PodcastPanel;
+export default PodcastList;

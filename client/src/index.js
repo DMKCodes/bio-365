@@ -6,7 +6,6 @@ import { store } from './app/store';
 import App from './App';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { disableReactDevTools} from '@fvilers/disable-react-devtools';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

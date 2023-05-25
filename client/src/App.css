@@ -145,3 +145,13 @@ html {
   color: white;
   width: 100%;
 }
+
+.learn-navigation a:hover {
+  font-weight: bold;
+  color: white;
+}
+
+.learn-section {
+  padding-top: 50px;
+  margin-top: -50px;
+}

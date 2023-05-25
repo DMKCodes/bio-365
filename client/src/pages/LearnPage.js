@@ -1,7 +1,8 @@
 import LearnNavigation from '../components/learn/LearnNavigation';
 import GlobePanel from '../components/learn/GlobePanel';
 import SpeciesSpotlightCard from '../components/learn/datavis/SpeciesSpotlightCard';
-import PodcastPanel from '../components/learn/PodcastPanel';
+import PodcastSpotlight from '../components/learn/PodcastSpotlight';
+import PodcastList from '../components/learn/PodcastList';
 import DefinitionTooltip from '../components/learn/DefinitionTooltip';
 import { 
     Container, 
@@ -34,9 +35,9 @@ const LearnPage = () => {
 
             <LearnNavigation />
 
-            <hr id='important-section' />
+            <hr id='important-section' className='learn-section' />
 
-            <Row className='mt-5'>
+            <Row className='mt-5 text-center'>
                 <Col md='6'>
                     <h3 className='mb-3'>WHY IS IT IMPORTANT?</h3>
                     <p>
@@ -62,48 +63,54 @@ const LearnPage = () => {
                 </Col>
             </Row>
 
-            <hr id='globe-section' className='my-5' />
+            <hr id='globe-section' className='my-5 learn-section' />
 
             <Row>
                 <h3 className='text-center mb-3'>BIODIVERSITY AROUND THE WORLD</h3>
                 <GlobePanel />
             </Row>
 
-            <hr id='threats-section' className='my-5' />
+            <hr id='threats-section' className='my-5 learn-section' />
 
-            <Row className='text-end'>
+            <Row className='text-center'>
                 <Col md='6'>
                     <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
                 </Col>
                 <Col md='6'>
                     <h3 className='mb-3'>THREATS TO BIODIVERSITY</h3>
                     <p>                        
-                        <b>Human:</b> As human populations continue to expand, we are constantly encroaching upon natural 
-                            <span id='habitat-definition' className='definition'> habitats </span>
-                        for agriculture, urbanization, and industrial development. Deforestation, in particular, is a major concern, particularly in the world's most biologically rich 
-                            <span id='ecosystem-definition' className='definition'> ecosystems </span> 
-                        such as the Amazon Rainforest and Southeast Asian rainforests. Aquatic environments are not exempt either, with wetlands, coral reefs, and other marine 
-                        <span id='habitat-definition' className='definition'> habitats </span> 
-                        suffering destruction and degradation due to human activities such as overfishing and plastic pollution.
+                        There are many threats to biodiversity today, but the most critical can be remembered by the acronym H.I.P.P.O., coined by E.O. Wilson in 2005.
                         <br /><br />
-                        <b>Climate Change:</b> Rising temperatures and changing weather patterns disrupt the delicate balance of 
-                            <span id='ecosystem-definition' className='definition'> ecosystems</span>
-                        , making survival difficult for species that are highly adapted to particular environmental conditions. In some cases, this can result in mass migrations, altered behaviors, and reduced populations. Climate change also accelerates the spread of 
-                            <span id='invasive-definition' className='definition'> invasive species </span>
-                        and pathogens, further threatening biodiversity.
+                        <b>Habitat Loss</b>: As human interference and the effects of global climate change continue to intensify, the areas wildlife needs to survive and reproduce become more and more compromised. An estimated{' '}
+                            <a href='https://www.sciencedaily.com/releases/2020/11/201106093027.htm' target='_blank' rel='noreferrer'>
+                                23% of natural habitats
+                            </a> 
+                        {' '}are projected to be lost by the year 2100.
+                        <br /><br />
+                        <b>Invasive Species</b>: Non-native plants, animals, and other organisms, most often introduced by humans through travel or trade, can wreak havoc on native wildlife by causing disease or competing for resources.
+                        <br /><br />
+                        <b>Pollution</b>: When more of a compound enters an ecosystem than can be cycled out, it affects how (or whether) that system can function. One such example is the build up of nutrients like nitrogen in water, which causes a spike in plant growth and starves native wildlife of oxygen, a process known as eutrophication.
+                        <br /><br />
+                        <b>Human Population</b>: The human population continues to expand, increasing the demand for resources. Urbanization, agriculture, and resource extraction have radically altered global ecosystems, affecting{' '}
+                            <a 
+                                href='https://www.nature.com/articles/s41467-021-22702-2' 
+                                target='blank' 
+                                rel='noreferrer'
+                            >
+                                almost a third of the world's land surface
+                            </a>
+                        {' '}since 1960.
+                        <br /><br />
+                        <b>Overharvesting</b>: When more of a species is harvested than it can reproduce, such as through overfishing or deforestation, the entire species can be wiped out. This results in major disturbances in ecosystem services and predator-prey dynamics.
                     </p>
-
-                    <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
-                    <DefinitionTooltip term='Habitat' targetId='habitat-definition' />
-                    <DefinitionTooltip term='Invasive Species' targetId='invasive-definition' />
                 </Col>
             </Row>
 
-            <hr id='conservation-section' className='my-5' />
+            <hr id='conservation-section' className='my-5 learn-section' />
 
-            <Row>
+            <Row className='text-center'>
                 <Col md='8'>
-                    <h3 className='mb-3 text-start'>CONSERVATION STRATEGIES</h3>
+                    <h3 className='mb-3'>CONSERVATION STRATEGIES</h3>
                     <Row>
                         <p>
                                 <span id='conservation-definition' className='definition'>Conservation </span>
@@ -173,12 +180,13 @@ const LearnPage = () => {
                 </Col>
             </Row>
 
-            <hr id='listen-section' className='my-5' />
+            <hr id='listen-section' className='my-5 learn-section' />
 
-            <Row className='text-end'>
+            <Row className='text-center'>
                 <h3 className='mb-4'>LISTEN & LEARN</h3>
             </Row>
-            <PodcastPanel />
+            <PodcastSpotlight />
+            <PodcastList />
 
             <hr className='my-5' />
         </Container>

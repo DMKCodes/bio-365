@@ -68,5 +68,15 @@ export const GLOSSARY = [
         term: 'Chromista',
         definition: 'Chromista: A biological kingdom comprised of unicellular or multicellular eukaryotic species such as algae, diatoms, oomycetes, and protozoans.',
         source: 'ScienceDirect'
+    },
+    {
+        term: 'Pollution',
+        definition: 'Pollution: The introduction of harmful materials into the environment.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'Eutrophication',
+        definition: 'Eutrophication: An overabundance of nutrients, primarily nitrogen and phosphorus, in an aquatic ecosystem.',
+        source: 'NOAA'
     }
 ];
