@@ -1,39 +1,26 @@
-import LearnNavigation from '../components/learn/LearnNavigation';
-import GlobePanel from '../components/learn/GlobePanel';
-import ThreatsAccordion from '../components/learn/ThreatsAccordion';
-import SpeciesSpotlightCard from '../components/learn/datavis/SpeciesSpotlightCard';
-import PodcastSpotlight from '../components/learn/PodcastSpotlight';
-import PodcastList from '../components/learn/PodcastList';
-import DefinitionTooltip from '../components/learn/DefinitionTooltip';
-import { 
-    Container, 
-    Row, 
+import {
+    Container,
+    Row,
     Col
 } from 'reactstrap';
-import bgvid from '../app/media/learnpagevideo.mp4';
+import VideoBackground from '../components/learn/VideoBackground';
+import LearnNavigation from '../components/learn/LearnNavigation';
+import GlobePanel from '../components/learn/sections/interactive-globe/GlobePanel';
+import ThreatsAccordion from '../components/learn/sections/threats/ThreatsAccordion';
+import ConservationGroupList from '../components/learn/sections/conservation/ConservationGroupList';
+import SpeciesSpotlightCard from '../components/learn/datavis/SpeciesSpotlightCard';
+import PodcastSpotlight from '../components/learn/sections/listen-and-learn/PodcastSpotlight';
+import PodcastList from '../components/learn/sections/listen-and-learn/PodcastList';
+import DefinitionTooltip from '../components/learn/DefinitionTooltip';
 import lizard from '../app/media/lizard.jpeg';
 import hummingbird from '../app/media/hummingbird.jpeg';
-import wwf from '../app/media/wwf.png';
-import tnc from '../app/media/tnc.png';
-import ci from '../app/media/conservation.png';
 
 const LearnPage = () => {
     return (
         <Container>
             <Row className='text-center m-0'>
-                <div className='video-background'>
-                    <video playsInline autoPlay muted loop>
-                        <source src={bgvid} type='video/mp4' />
-                    </video>
-                    <div className='video-overlay'>
-                        <h2 className='video-overlay-header'>WHAT IS BIODIVERSITY?</h2>
-                        <p className='video-overlay-body'>
-                            Biodiversity is the term we use to describe all the different kinds of life you can find in one area—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. Each of these species and organisms work together in ecosystems, like an intricate web, to maintain balance and support life.
-                        </p>
-                    </div>
-                </div>
+                <VideoBackground />
             </Row>
-
             <LearnNavigation />
 
             <hr id='important-section' className='learn-section' />
@@ -42,24 +29,23 @@ const LearnPage = () => {
                 <Col md='6'>
                     <h3 className='mb-3'>WHY IS IT IMPORTANT?</h3>
                     <p>
-                        Biodiversity plays a crucial role in 
+                        Biodiversity plays a crucial role in
                             <span id='ecosystem-definition' className='definition'> ecosystem </span>
-                        health and functionality. Plants and animals participate in the cycling of nutrients, regulation of climate, and purification of air and water. Furthermore, healthy 
+                        health and functionality. Plants and animals participate in the cycling of nutrients, regulation of climate, and purification of air and water. Healthy
                             <span id='ecosystem-definition' className='definition'> ecosystems </span>
-                        with high biodiversity are more resilient, able to recover from disturbances such as natural disasters or human-induced changes. A diverse forest can withstand pests or diseases much better than a 
+                        with high biodiversity are more resilient—better able to recover from disturbances such as natural disasters or human-induced change. A diverse forest can withstand pests or diseases much better than a
                             <span id='monoculture-definition' className='definition'> monoculture </span>
                         plantation, as the latter may be wiped out if susceptible to a particular threat.
-                        <br /><br />
-                        Beyond its 
+                            <br /><br />
+                        Beyond its
                             <span id='ecology-definition' className='definition'> ecological </span>
                         importance, biodiversity holds immense economic and cultural value. A vast number of industries, including agriculture, pharmaceuticals, and tourism, rely directly or indirectly on biodiversity. Many of our foods, medicines, and industrial materials come from nature. Culturally, numerous societies value biodiversity for spiritual, aesthetic, and recreational reasons, deriving from it identity, inspiration, and wellbeing. Every species is a product of millions of years of evolution and represents a unique piece of life's complex puzzle. Thus, preserving biodiversity is also a moral obligation, emphasizing our responsibility as stewards of the planet.
                     </p>
-
                     <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
                     <DefinitionTooltip term='Monoculture' targetId='monoculture-definition' />
                     <DefinitionTooltip term='Ecology' targetId='ecology-definition' />
                 </Col>
-                <Col md='6'>
+                <Col md='6' className='d-flex align-items-center'>
                     <img src={lizard} alt='lizard' className='img-fluid rounded-circle'></img>
                 </Col>
             </Row>
@@ -76,19 +62,18 @@ const LearnPage = () => {
             <Row className='text-center'>
                 <Col md='6'>
                     <h3 className='mb-3'>THREATS TO BIODIVERSITY</h3>
-                    <p>                        
-                        There are many threats to biodiversity today, but the most critical can be remembered by the acronym 
+                    <p>
+                        There are many threats to biodiversity today, but the most critical can be remembered by the acronym
                             <span id='hippo-definition' className='definition'> H.I.P.P.O.</span>
                         , coined by biologist
                             <span id='eo-wilson-definition' className='definition'> E.O. Wilson</span>
-                        . 
+                        .
                     </p>
                     <ThreatsAccordion />
-
                     <DefinitionTooltip term='E.O. Wilson' targetId='eo-wilson-definition' />
                     <DefinitionTooltip term='HIPPO' targetId='hippo-definition' />
                 </Col>
-                <Col md='6'>
+                <Col md='6' className='d-flex align-items-center'>
                     <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
                 </Col>
             </Row>
@@ -104,40 +89,39 @@ const LearnPage = () => {
                     <Row>
                         <p>
                                 <span id='conservation-definition' className='definition'>Conservation </span>
-                            and protection strategies for biodiversity are a diverse array of techniques and policies designed to maintain and restore the health and variety of the planet's 
-                                <span id='ecosystem-definition' className='definition'> ecosystems </span>
-                            and genetic diversity. Foremost among these strategies is the establishment of protected areas, such as national parks, wildlife reserves, and marine protected areas. These sites, recognized for their 
+                            and protection strategies for biodiversity are a diverse array of techniques and policies designed to maintain and restore the health and variety of the planet's
+                                <span id='ecosystem-definition' className='definition'> ecosystems</span>
+                            . Foremost among these strategies is the establishment of protected areas, such as national parks, wildlife reserves, and marine protected areas. These sites, recognized for their
                                 <span id='ecology-definition' className='definition'> ecological</span>
-                            , cultural, and recreational value, provide sanctuaries for species and 
+                            , cultural, and recreational value, provide sanctuaries for species and
                                 <span id='habitat-definition' className='definition'> habitats</span>
                             , allowing them to flourish with limited human intervention.
-                            <br /><br />
-                            Complementing these protected areas are landscape and seascape-scale 
+                                <br /><br />
+                            Complementing these protected areas are landscape and seascape-scale
                                 <span id='conservation-definition' className='definition'> conservation </span>
-                            strategies, such as 
+                            strategies, such as
                                 <span id='corridor-definition' className='definition'> ecological corridors </span>
-                            that connect 
+                            that connect
                                 <span id='fragmentation-definition' className='definition'> fragmented habitats</span>
                             , allowing wildlife to move and interact freely. Experts are also increasingly recognizing the role of indigenous communities and local populations in preserving biodiversity, with community-based efforts{' '}
-                                <a 
-                                    href='https://www.thegef.org/sites/default/files/publications/indigenous-community-biodiversity_0.pdf' 
-                                    target='_blank' 
-                                    rel='noreferrer'
-                                    >
-                                    showing great promise.
-                                    </a>
+                            <a
+                                href='https://www.thegef.org/sites/default/files/publications/indigenous-community-biodiversity_0.pdf'
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                showing great promise.
+                            </a>
                             <br /><br />
-                            Legal measures, both national and international, underpin these efforts, providing the framework and enforcement mechanisms necessary to ensure biodiversity 
+                            Legal measures, both national and international, underpin these efforts, providing the framework and enforcement mechanisms necessary to ensure biodiversity
                                 <span id='conservation-definition' className='definition'> conservation</span>
-                            . One such international agreement, the 
+                            . One such international agreement, the
                                 <span id='cbd-definition' className='definition'> Convention on Biological Diversity</span>
                             , brings nations together to set targets and report on
                                 <span id='conservation-definition' className='definition'> conservation </span>
-                            progress.  Internationally, efforts are also made to limit trade in endangered species, with agreements such as the 
+                            progress.  Internationally, efforts are also made to limit trade in endangered species, with agreements such as the
                                 <span id='cites-definition' className='definition'> Convention on International Trade in Endangered Species </span>
                             playing a critical role.
                         </p>
-
                         <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
                         <DefinitionTooltip term='Conservation' targetId='conservation-definition' />
                         <DefinitionTooltip term='CBD' targetId='cbd-definition' />
@@ -150,23 +134,7 @@ const LearnPage = () => {
                     <Row className='my-3'>
                         <h4 className='text-center'>CONSERVATION GROUPS</h4>
                     </Row>
-                    <Row>
-                        <Col md='4' className='d-flex justify-content-center'>
-                            <a href='https://www.nature.org/en-us/' target='_blank' rel='noreferrer'>
-                                <img src={tnc} alt='the nature conservancy' className='img-fluid cons-img' />
-                            </a>
-                        </Col>
-                        <Col md='4' className='d-flex justify-content-center'>
-                            <a href='https://www.worldwildlife.org/' target='_blank' rel='noreferrer'>
-                                <img src={wwf} alt='world wildlife fund' className='img-fluid cons-img' />
-                            </a>
-                        </Col>
-                        <Col md='4' className='d-flex justify-content-center'>
-                            <a href='https://www.conservation.org/' target='_blank' rel='noreferrer'>
-                                <img src={ci} alt='conservation international' className='img-fluid cons-img' />
-                            </a>
-                        </Col>
-                    </Row>
+                    <ConservationGroupList />
                 </Col>
             </Row>
 

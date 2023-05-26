@@ -5,7 +5,7 @@ import {
     AccordionHeader,
     AccordionItem
 } from 'reactstrap';
-import DefinitionTooltip from './DefinitionTooltip';
+import DefinitionTooltip from '../../DefinitionTooltip';
 
 const ThreatsAccordion = () => {
     const [accordionOpen, setAccordionOpen] = useState([]);
@@ -31,13 +31,13 @@ const ThreatsAccordion = () => {
                 <AccordionBody accordionId='1'>
                     <p className='mb-0'>
                         As the effects of global climate change and human interference continue to intensify, the areas wildlife needs to survive and reproduce become more and more compromised. An estimated{' '}
-                            <a 
-                                href='https://www.sciencedaily.com/releases/2020/11/201106093027.htm' 
-                                target='_blank' 
-                                rel='noreferrer'
-                            >
-                                23% of natural habitats
-                            </a> 
+                        <a
+                            href='https://www.sciencedaily.com/releases/2020/11/201106093027.htm'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            23% of natural habitats
+                        </a>
                         {' '}are projected to be lost by the year 2100.
                     </p>
                 </AccordionBody>
@@ -58,10 +58,10 @@ const ThreatsAccordion = () => {
                 </AccordionHeader>
                 <AccordionBody accordionId='3'>
                     <p className='mb-0'>
-                        When more of a compound enters an 
-                            <span id='ecosystem-definition' className='definition'> ecosystem </span>  
-                        than can be cycled out, it affects how (or whether) that system can function. One such example is the build up of nutrients like nitrogen and phosphorus in water, which causes a spike in plant growth and starves native wildlife of oxygen, a process known as 
-                            <span id='eutrophication-definition' className='definition'> eutrophication</span>
+                        When more of a compound enters an
+                        <span id='ecosystem-definition' className='definition'> ecosystem </span>
+                        than can be cycled out, it affects how (or whether) that system can function. One such example is the build up of nutrients like nitrogen and phosphorus in water, which causes a spike in plant growth and starves native wildlife of oxygen, a process known as
+                        <span id='eutrophication-definition' className='definition'> eutrophication</span>
                         .
                     </p>
 
@@ -75,16 +75,16 @@ const ThreatsAccordion = () => {
                 </AccordionHeader>
                 <AccordionBody accordionId='4'>
                     <p className='mb-0'>
-                        The human population continues to expand, increasing its demand for resources. 
-                            <span id='urbanization-definition' className='definition'> Urbanization</span>
+                        The human population continues to expand, increasing its demand for resources.
+                        <span id='urbanization-definition' className='definition'> Urbanization</span>
                         , agriculture, and resource extraction have radically altered the global landscape, affecting{' '}
-                            <a 
-                                href='https://www.nature.com/articles/s41467-021-22702-2' 
-                                target='blank' 
-                                rel='noreferrer'
-                            >
-                                almost a third of the world's land surface
-                            </a>
+                        <a
+                            href='https://www.nature.com/articles/s41467-021-22702-2'
+                            target='blank'
+                            rel='noreferrer'
+                        >
+                            almost a third of the world's land surface
+                        </a>
                         {' '}since 1960.
                     </p>
 
@@ -97,10 +97,10 @@ const ThreatsAccordion = () => {
                 </AccordionHeader>
                 <AccordionBody accordionId='5'>
                     <p className='mb-0'>
-                        When more of a species is harvested than it can reproduce, such as through overfishing or 
-                            <span id='deforestation-definition' className='definition'> deforestation</span>
-                        , the entire species can be wiped out. This results in major disturbances in 
-                            <span id='ecosystem-services-definition' className='definition'> ecosystem services </span>
+                        When more of a species is harvested than it can reproduce, such as through overfishing or
+                        <span id='deforestation-definition' className='definition'> deforestation</span>
+                        , the entire species can be wiped out. This results in major disturbances in
+                        <span id='ecosystem-services-definition' className='definition'> ecosystem services </span>
                         and predator-prey dynamics.
                     </p>
 

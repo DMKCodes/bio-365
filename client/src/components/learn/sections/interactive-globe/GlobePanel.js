@@ -5,10 +5,10 @@ import {
     Row,
     Button
 } from 'reactstrap';
-import InteractiveGlobe from './datavis/InteractiveGlobe';
+import InteractiveGlobe from '../../datavis/InteractiveGlobe';
 import InfoCard from './InfoCard';
-import { SPECIES_COUNTRIES } from '../../datasets/speciesByCountry.js';
-import { ENDANGERED } from '../../datasets/endangeredSpeciesByCountry';
+import { SPECIES_COUNTRIES } from '../../../../datasets/speciesByCountry.js';
+import { ENDANGERED } from '../../../../datasets/endangeredSpeciesByCountry';
 
 const GlobePanel = () => {
     const [countryToDisplay, setCountryToDisplay] = useState(null);
@@ -40,7 +40,7 @@ const GlobePanel = () => {
     }
 
     let title;
-    switch(viewType) {
+    switch (viewType) {
         case 'species':
             title = 'Species Overview';
             break;
@@ -91,13 +91,13 @@ const GlobePanel = () => {
             </Row>
             <Row>
                 <Col md='8'>
-                    <InteractiveGlobe 
-                        setCountryToDisplay={setCountryToDisplay} 
-                        viewType={viewType} 
+                    <InteractiveGlobe
+                        setCountryToDisplay={setCountryToDisplay}
+                        viewType={viewType}
                     />
                 </Col>
                 <Col md='4'>
-                    <InfoCard 
+                    <InfoCard
                         countryToDisplay={countryToDisplay}
                         speciesData={speciesData}
                         endangeredData={endangeredData}
