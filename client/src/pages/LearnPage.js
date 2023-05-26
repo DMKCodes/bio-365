@@ -1,5 +1,6 @@
 import LearnNavigation from '../components/learn/LearnNavigation';
 import GlobePanel from '../components/learn/GlobePanel';
+import ThreatsAccordion from '../components/learn/ThreatsAccordion';
 import SpeciesSpotlightCard from '../components/learn/datavis/SpeciesSpotlightCard';
 import PodcastSpotlight from '../components/learn/PodcastSpotlight';
 import PodcastList from '../components/learn/PodcastList';
@@ -51,7 +52,7 @@ const LearnPage = () => {
                         <br /><br />
                         Beyond its 
                             <span id='ecology-definition' className='definition'> ecological </span>
-                        importance, biodiversity holds immense economic and cultural value. A vast number of industries, including agriculture, pharmaceuticals, and tourism, rely directly or indirectly on biodiversity. Many of our foods, medicines, and industrial materials come from nature. Culturally, numerous societies value biodiversity for spiritual, aesthetic, and recreational reasons, deriving identity, inspiration, and wellbeing from it. Every species is a product of millions of years of evolution and represents a unique piece of life's complex puzzle. Thus, preserving biodiversity is a moral obligation, emphasizing our responsibility as stewards of the planet.
+                        importance, biodiversity holds immense economic and cultural value. A vast number of industries, including agriculture, pharmaceuticals, and tourism, rely directly or indirectly on biodiversity. Many of our foods, medicines, and industrial materials come from nature. Culturally, numerous societies value biodiversity for spiritual, aesthetic, and recreational reasons, deriving from it identity, inspiration, and wellbeing. Every species is a product of millions of years of evolution and represents a unique piece of life's complex puzzle. Thus, preserving biodiversity is also a moral obligation, emphasizing our responsibility as stewards of the planet.
                     </p>
 
                     <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
@@ -74,41 +75,30 @@ const LearnPage = () => {
 
             <Row className='text-center'>
                 <Col md='6'>
-                    <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
-                </Col>
-                <Col md='6'>
                     <h3 className='mb-3'>THREATS TO BIODIVERSITY</h3>
                     <p>                        
-                        There are many threats to biodiversity today, but the most critical can be remembered by the acronym H.I.P.P.O., coined by E.O. Wilson in 2005.
-                        <br /><br />
-                        <b>Habitat Loss</b>: As human interference and the effects of global climate change continue to intensify, the areas wildlife needs to survive and reproduce become more and more compromised. An estimated{' '}
-                            <a href='https://www.sciencedaily.com/releases/2020/11/201106093027.htm' target='_blank' rel='noreferrer'>
-                                23% of natural habitats
-                            </a> 
-                        {' '}are projected to be lost by the year 2100.
-                        <br /><br />
-                        <b>Invasive Species</b>: Non-native plants, animals, and other organisms, most often introduced by humans through travel or trade, can wreak havoc on native wildlife by causing disease or competing for resources.
-                        <br /><br />
-                        <b>Pollution</b>: When more of a compound enters an ecosystem than can be cycled out, it affects how (or whether) that system can function. One such example is the build up of nutrients like nitrogen in water, which causes a spike in plant growth and starves native wildlife of oxygen, a process known as eutrophication.
-                        <br /><br />
-                        <b>Human Population</b>: The human population continues to expand, increasing the demand for resources. Urbanization, agriculture, and resource extraction have radically altered global ecosystems, affecting{' '}
-                            <a 
-                                href='https://www.nature.com/articles/s41467-021-22702-2' 
-                                target='blank' 
-                                rel='noreferrer'
-                            >
-                                almost a third of the world's land surface
-                            </a>
-                        {' '}since 1960.
-                        <br /><br />
-                        <b>Overharvesting</b>: When more of a species is harvested than it can reproduce, such as through overfishing or deforestation, the entire species can be wiped out. This results in major disturbances in ecosystem services and predator-prey dynamics.
+                        There are many threats to biodiversity today, but the most critical can be remembered by the acronym 
+                            <span id='hippo-definition' className='definition'> H.I.P.P.O.</span>
+                        , coined by biologist
+                            <span id='eo-wilson-definition' className='definition'> E.O. Wilson</span>
+                        . 
                     </p>
+                    <ThreatsAccordion />
+
+                    <DefinitionTooltip term='E.O. Wilson' targetId='eo-wilson-definition' />
+                    <DefinitionTooltip term='HIPPO' targetId='hippo-definition' />
+                </Col>
+                <Col md='6'>
+                    <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
                 </Col>
             </Row>
 
             <hr id='conservation-section' className='my-5 learn-section' />
 
             <Row className='text-center'>
+                <Col md='4'>
+                    <SpeciesSpotlightCard />
+                </Col>
                 <Col md='8'>
                     <h3 className='mb-3'>CONSERVATION STRATEGIES</h3>
                     <Row>
@@ -116,13 +106,11 @@ const LearnPage = () => {
                                 <span id='conservation-definition' className='definition'>Conservation </span>
                             and protection strategies for biodiversity are a diverse array of techniques and policies designed to maintain and restore the health and variety of the planet's 
                                 <span id='ecosystem-definition' className='definition'> ecosystems </span>
-                            and genetic diversity. Foremost among these strategies is the establishment of protected areas, such as national parks, wildlife reserves, and marine protected areas. These sites, recognized and managed for their 
+                            and genetic diversity. Foremost among these strategies is the establishment of protected areas, such as national parks, wildlife reserves, and marine protected areas. These sites, recognized for their 
                                 <span id='ecology-definition' className='definition'> ecological</span>
-                            , cultural, or recreational value, provide sanctuaries for species and 
+                            , cultural, and recreational value, provide sanctuaries for species and 
                                 <span id='habitat-definition' className='definition'> habitats</span>
-                            , allowing them to flourish with limited human intervention. Internationally, efforts are also made to limit trade in endangered species, with agreements such as the 
-                                <span id='cites-definition' className='definition'> Convention on International Trade in Endangered Species </span>
-                            playing a critical role.
+                            , allowing them to flourish with limited human intervention.
                             <br /><br />
                             Complementing these protected areas are landscape and seascape-scale 
                                 <span id='conservation-definition' className='definition'> conservation </span>
@@ -130,11 +118,14 @@ const LearnPage = () => {
                                 <span id='corridor-definition' className='definition'> ecological corridors </span>
                             that connect 
                                 <span id='fragmentation-definition' className='definition'> fragmented habitats</span>
-                            , allowing wildlife to move and interact freely. 
-                                <span id='conservation-definition' className='definition'> Conservation </span> 
-                            efforts are also increasingly recognizing the role of indigenous communities and local populations in preserving biodiversity, with community-based 
-                                <span id='conservation-definition' className='definition'> conservation </span> 
-                            efforts showing great promise.
+                            , allowing wildlife to move and interact freely. Experts are also increasingly recognizing the role of indigenous communities and local populations in preserving biodiversity, with community-based efforts{' '}
+                                <a 
+                                    href='https://www.thegef.org/sites/default/files/publications/indigenous-community-biodiversity_0.pdf' 
+                                    target='_blank' 
+                                    rel='noreferrer'
+                                    >
+                                    showing great promise.
+                                    </a>
                             <br /><br />
                             Legal measures, both national and international, underpin these efforts, providing the framework and enforcement mechanisms necessary to ensure biodiversity 
                                 <span id='conservation-definition' className='definition'> conservation</span>
@@ -142,7 +133,9 @@ const LearnPage = () => {
                                 <span id='cbd-definition' className='definition'> Convention on Biological Diversity</span>
                             , brings nations together to set targets and report on
                                 <span id='conservation-definition' className='definition'> conservation </span>
-                            progress. Lastly, emerging strategies include the use of innovative technology for biodiversity-friendly farming and fishing practices.
+                            progress.  Internationally, efforts are also made to limit trade in endangered species, with agreements such as the 
+                                <span id='cites-definition' className='definition'> Convention on International Trade in Endangered Species </span>
+                            playing a critical role.
                         </p>
 
                         <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
@@ -174,9 +167,6 @@ const LearnPage = () => {
                             </a>
                         </Col>
                     </Row>
-                </Col>
-                <Col md='4'>
-                    <SpeciesSpotlightCard />
                 </Col>
             </Row>
 

@@ -154,13 +154,6 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                                 >
                                     The Reptile Database
                                 </a><br />
-                                <a 
-                                    href='https://theswiftest.com/biodiversity-index/'
-                                    target='blank' 
-                                    rel='noreferrer'
-                                >
-                                    The Swiftest
-                                </a>
                             </p>
                             <br />
                             <small className='text-muted'>
