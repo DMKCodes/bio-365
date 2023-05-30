@@ -19,17 +19,21 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                         <h4>{title}</h4>
                     </CardHeader>
                 <CardSubtitle>
-                    {countryToDisplay ? (
-                        <CardTitle>
-                            <h5 className='mb-0'><b>{countryToDisplay.toUpperCase()}</b></h5>
-                        </CardTitle>
-                    ) : (
-                        <CardTitle>
-                            <small className='text-muted'>
-                                <i>Choose a country to learn more.</i>
-                            </small>
-                        </CardTitle>
-                    )}
+                    {viewType !== 'megadiverse' &&
+                        <>
+                            {countryToDisplay ? (
+                                <CardTitle>
+                                    <h5 className='mb-0'><b>{countryToDisplay.toUpperCase()}</b></h5>
+                                </CardTitle>
+                            ) : (
+                                <CardTitle>
+                                    <small className='text-muted'>
+                                        <i>Choose a country to learn more.</i>
+                                    </small>
+                                </CardTitle>
+                            )}
+                        </>
+                    }
                 </CardSubtitle>
                 {viewType === 'species' && speciesData ? (
                     <CardText>

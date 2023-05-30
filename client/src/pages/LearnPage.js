@@ -48,6 +48,15 @@ const LearnPage = () => {
                 <Col md='6' className='d-flex align-items-center'>
                     <img src={lizard} alt='lizard' className='img-fluid rounded-circle'></img>
                 </Col>
+                <small className='text-muted text-start'>
+                    <a
+                        href='https://www.nrdc.org/stories/biodiversity-101'
+                        target='_blank'
+                        rel='noreferrer'
+                    >
+                        Read more at NRDC...
+                    </a>
+                </small>
             </Row>
 
             <hr id='globe-section' className='my-5 learn-section' />
@@ -76,6 +85,15 @@ const LearnPage = () => {
                 <Col md='6' className='d-flex align-items-center'>
                     <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
                 </Col>
+                <small className='text-muted mt-3 text-start'>
+                    <a 
+                        href='https://livingplanet.panda.org/en-US/' 
+                        target='_blank' 
+                        rel='noreferrer'
+                    >
+                        Explore WWF's Living Planet Report 2022...
+                    </a>
+                </small>
             </Row>
 
             <hr id='conservation-section' className='my-5 learn-section' />
@@ -112,7 +130,7 @@ const LearnPage = () => {
                                 showing great promise.
                             </a>
                             <br /><br />
-                            Legal measures, both national and international, underpin these efforts, providing the framework and enforcement mechanisms necessary to ensure biodiversity
+                            Legal measures, both national and international, underpin these tactics, providing the framework and enforcement mechanisms necessary to ensure biodiversity
                                 <span id='conservation-definition' className='definition'> conservation</span>
                             . One such international agreement, the
                                 <span id='cbd-definition' className='definition'> Convention on Biological Diversity</span>

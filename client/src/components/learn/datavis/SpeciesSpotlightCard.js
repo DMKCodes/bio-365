@@ -88,7 +88,15 @@ const SpeciesSpotlightCard = () => {
             </Accordion>
             <CardFooter>
                 <Row>
-                    <a href='https://www.worldwildlife.org/species/giant-panda' target='_blank' rel='noreferrer'>Read more at WWF...</a><br />
+                    <small className='text-muted text-start'>
+                        <a 
+                            href='https://www.worldwildlife.org/species/giant-panda' 
+                            target='_blank' 
+                            rel='noreferrer'
+                        >
+                            Read more at WWF...
+                        </a>
+                    </small>
                 </Row>
             </CardFooter>
         </Card>

@@ -7,6 +7,7 @@ import DashboardPage from './pages/DashboardPage';
 import AdminPage from './pages/AdminPage';
 import NewsPage from './pages/NewsPage';
 import LearnPage from './pages/LearnPage';
+import DataPage from './pages/DataPage';
 import AboutPage from './pages/AboutPage';
 import Footer from './components/utils/Footer';
 
@@ -21,6 +22,7 @@ function App() {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/news' element={<NewsPage />} />
                 <Route path='/learn' element={<LearnPage />} />
+                <Route path='/data' element={<DataPage />} />
                 <Route path='/about' element={<AboutPage />} />
             </Routes>
             <Footer />

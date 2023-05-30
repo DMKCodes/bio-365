@@ -6,7 +6,7 @@ import {
     Button
 } from 'reactstrap';
 import InteractiveGlobe from '../../datavis/InteractiveGlobe';
-import InfoCard from './InfoCard';
+import GlobeInfoCard from './GlobeInfoCard';
 import { SPECIES_COUNTRIES } from '../../../../datasets/speciesByCountry.js';
 import { ENDANGERED } from '../../../../datasets/endangeredSpeciesByCountry';
 
@@ -97,7 +97,7 @@ const GlobePanel = () => {
                     />
                 </Col>
                 <Col md='4'>
-                    <InfoCard
+                    <GlobeInfoCard
                         countryToDisplay={countryToDisplay}
                         speciesData={speciesData}
                         endangeredData={endangeredData}

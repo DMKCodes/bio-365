@@ -9,7 +9,7 @@ const VideoBackground = () => {
             <div className='video-overlay'>
                 <h2 className='video-overlay-header'>WHAT IS BIODIVERSITY?</h2>
                 <p className='video-overlay-body'>
-                    Biodiversity is the term we use to describe all the different kinds of life you can find in one area—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. Each of these species and organisms work together in ecosystems, like an intricate web, to maintain balance and support life.
+                    Biodiversity is the term we use to describe all the different kinds of life on Earth—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. These species work together in ecosystems, like an intricate web, to maintain balance and support life.
                 </p>
             </div>
         </div>
