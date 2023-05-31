@@ -22,7 +22,7 @@ const Header = () => {
             <Navbar sticky='top' expand='md'>
                 <NavLink className='nav-link' to='/'>
                     <h2 className='logo'>
-                        Bio<span className='text-success'>diversity </span>365
+                        Bio<span className='text-success'>diversity</span>365
                     </h2>
                 </NavLink>
                 <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
@@ -39,18 +39,13 @@ const Header = () => {
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link' to='/data'>
-                                Data
+                            <NavLink className='nav-link' to='/stories'>
+                                Stories
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link' to='/resources'>
+                            <NavLink className='nav-link me-3' to='/resources'>
                                 Resources
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className='nav-link me-3' to='/about'>
-                                About
                             </NavLink>
                         </NavItem>
                     </Nav>

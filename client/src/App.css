@@ -159,3 +159,22 @@ html {
 #important-section {
   margin-top: 50px;
 }
+
+.story-card-img {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.story-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.story-card-btn {
+  width: 10%;
+}

@@ -14,7 +14,7 @@ const PodcastSpotlight = () => {
                     />
                 </Row>
                 <Row className='text-center mb-4'>
-                    <h5>EPISODE SPOTLIGHT</h5>
+                    <h5 className='text-uppercase'>Episode Spotlight</h5>
                     <p className='mb-0'>
                         An Economics Approach to Human-Wildlife Conflict
                     </p>

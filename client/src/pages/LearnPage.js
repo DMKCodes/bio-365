@@ -27,7 +27,7 @@ const LearnPage = () => {
 
             <Row className='mt-5 text-center'>
                 <Col md='6'>
-                    <h3 className='mb-3'>WHY IS IT IMPORTANT?</h3>
+                    <h3 className='mb-3 text-uppercase'>Why is it important?</h3>
                     <p>
                         Biodiversity plays a crucial role in
                             <span id='ecosystem-definition' className='definition'> ecosystem </span>
@@ -62,7 +62,7 @@ const LearnPage = () => {
             <hr id='globe-section' className='my-5 learn-section' />
 
             <Row>
-                <h3 className='text-center mb-3'>BIODIVERSITY AROUND THE WORLD</h3>
+                <h3 className='text-center mb-3 text-uppercase'>Biodiversity Around the World</h3>
                 <GlobePanel />
             </Row>
 
@@ -70,7 +70,7 @@ const LearnPage = () => {
 
             <Row className='text-center'>
                 <Col md='6'>
-                    <h3 className='mb-3'>THREATS TO BIODIVERSITY</h3>
+                    <h3 className='mb-3 text-uppercase'>Threats to Biodiversity</h3>
                     <p>
                         There are many threats to biodiversity today, but the most critical can be remembered by the acronym
                             <span id='hippo-definition' className='definition'> H.I.P.P.O.</span>
@@ -103,7 +103,7 @@ const LearnPage = () => {
                     <SpeciesSpotlightCard />
                 </Col>
                 <Col md='8'>
-                    <h3 className='mb-3'>CONSERVATION STRATEGIES</h3>
+                    <h3 className='mb-3 text-uppercase'>Conservation Strategies</h3>
                     <Row>
                         <p>
                                 <span id='conservation-definition' className='definition'>Conservation </span>
@@ -150,7 +150,7 @@ const LearnPage = () => {
                         <DefinitionTooltip term='Ecology' targetId='ecology-definition' />
                     </Row>
                     <Row className='my-3'>
-                        <h4 className='text-center'>CONSERVATION GROUPS</h4>
+                        <h4 className='text-center text-uppercase'>Conservation Groups</h4>
                     </Row>
                     <ConservationGroupList />
                 </Col>
@@ -159,7 +159,7 @@ const LearnPage = () => {
             <hr id='listen-section' className='my-5 learn-section' />
 
             <Row className='text-center'>
-                <h3 className='mb-4'>LISTEN & LEARN</h3>
+                <h3 className='mb-4'>Listen & Learn</h3>
             </Row>
             <PodcastSpotlight />
             <PodcastList />

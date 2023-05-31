@@ -37,7 +37,7 @@ const SpeciesSpotlightCard = () => {
             <CardBody className='text-center'>
                 <CardHeader className='mb-3 rounded-0 border'>
                     <CardTitle>
-                        <h5>CONSERVATION SPOTLIGHT</h5>
+                        <h5 className='text-uppercase'>Conservation Spotlight</h5>
                     </CardTitle>
                     <CardSubtitle>
                         Giant Panda<br />
