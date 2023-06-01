@@ -4,7 +4,7 @@ import {
     filterDisplayArticles, 
     searchDisplayArticles,
     resetDisplayArticles
-} from '../../features/news/newsSlice';
+} from './newsSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { 

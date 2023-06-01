@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Row, Col, Collapse, Button } from 'reactstrap';
 import StoryCard from './StoryCard';
-import { STORIES } from '../../datasets/stories';
+import { STORIES } from '../../app/shared/STORIES';
 
 const StoriesList = ({ setActiveStory }) => {
     const [collapsed, setCollapsed] = useState(false);

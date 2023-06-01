@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../../features/users/userSlice';
+import { selectCurrentUser } from '../features/users/userSlice';
 import { NavLink } from 'react-router-dom';
 import {
     Container,
@@ -10,8 +10,8 @@ import {
     NavItem,
     Collapse
 } from 'reactstrap';
-import RegisterLoginModal from '../users/RegisterLoginModal';
-import UserDropdown from '../users/UserDropdown';
+import RegisterLoginModal from '../features/users/RegisterLoginModal';
+import UserDropdown from '../features/users/UserDropdown';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);

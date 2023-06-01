@@ -3,15 +3,15 @@ import {
     Row,
     Col
 } from 'reactstrap';
-import VideoBackground from '../components/learn/VideoBackground';
-import LearnNavigation from '../components/learn/LearnNavigation';
-import GlobePanel from '../components/learn/sections/interactive-globe/GlobePanel';
-import ThreatsAccordion from '../components/learn/sections/threats/ThreatsAccordion';
-import ConservationGroupList from '../components/learn/sections/conservation/ConservationGroupList';
-import SpeciesSpotlightCard from '../components/learn/datavis/SpeciesSpotlightCard';
-import PodcastSpotlight from '../components/learn/sections/listen-and-learn/PodcastSpotlight';
-import PodcastList from '../components/learn/sections/listen-and-learn/PodcastList';
-import DefinitionTooltip from '../components/learn/DefinitionTooltip';
+import VideoBackground from '../features/learn/VideoBackground';
+import LearnNavigation from '../features/learn/LearnNavigation';
+import GlobePanel from '../features/learn/sections/interactive-globe/GlobePanel';
+import ThreatsAccordion from '../features/learn/sections/threats/ThreatsAccordion';
+import ConservationGroupList from '../features/learn/sections/conservation/ConservationGroupList';
+import SpeciesSpotlightCard from '../features/learn/datavis/SpeciesSpotlightCard';
+import PodcastSpotlight from '../features/learn/sections/listen-and-learn/PodcastSpotlight';
+import PodcastList from '../features/learn/sections/listen-and-learn/PodcastList';
+import DefinitionTooltip from '../features/learn/DefinitionTooltip';
 import lizard from '../app/media/lizard.jpeg';
 import hummingbird from '../app/media/hummingbird.jpeg';
 

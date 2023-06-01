@@ -7,8 +7,8 @@ import {
 } from 'reactstrap';
 import InteractiveGlobe from '../../datavis/InteractiveGlobe';
 import GlobeInfoCard from './GlobeInfoCard';
-import { SPECIES_COUNTRIES } from '../../../../datasets/speciesByCountry.js';
-import { ENDANGERED } from '../../../../datasets/endangeredSpeciesByCountry';
+import { SPECIES_COUNTRIES } from '../../../../app/shared/SPECIES_COUNTRIES.js';
+import { ENDANGERED_SPECIES } from '../../../../app/shared/ENDANGERED_SPECIES';
 
 const GlobePanel = () => {
     const [countryToDisplay, setCountryToDisplay] = useState(null);
@@ -35,7 +35,7 @@ const GlobePanel = () => {
     };
 
     const getEndangeredData = (name) => {
-        const data = ENDANGERED.filter((country) => country.name === name);
+        const data = ENDANGERED_SPECIES.filter((country) => country.name === name);
         return data;
     }
 

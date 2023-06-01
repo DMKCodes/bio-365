@@ -7,8 +7,8 @@ import {
     selectDisplayArticles
 } from '../features/news/newsSlice';
 import { useArticlesQuery } from '../features/news/newsApiSlice';
-import NewsList from '../components/news/NewsList';
-import NewsFilter from '../components/news/NewsFilter';
+import NewsList from '../features/news/NewsList';
+import NewsFilter from '../features/news/NewsFilter';
 import { Container, Row } from 'reactstrap';
 
 const NewsPage = () => {

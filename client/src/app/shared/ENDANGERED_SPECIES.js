@@ -1,4 +1,4 @@
-export const ENDANGERED = [
+export const ENDANGERED_SPECIES = [
     {
       name: 'Antarctica',
       mammals: 2,

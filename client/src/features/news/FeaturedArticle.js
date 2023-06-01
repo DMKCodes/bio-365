@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { 
+import {
     selectCurrentUser,
     checkSavedArticles,
     addSavedArticle,
-    removeSavedArticle } from '../../features/users/userSlice';
+    removeSavedArticle
+} from '../users/userSlice';
 import { Row, Col, Button } from 'reactstrap';
-import { 
+import {
     useAddArticleMutation,
     useDeleteArticleMutation,
-} from '../../features/users/articlesApiSlice';
+} from '../users/articlesApiSlice';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
 import SciDaily from '../../app/media/sciencedaily.jpg';
@@ -22,12 +23,12 @@ const FeaturedArticle = ({ article, dashboard }) => {
 
     const currentUser = useSelector(selectCurrentUser);
 
-    const { 
-        title, 
-        link, 
-        pubDate, 
-        author, 
-        snippet, 
+    const {
+        title,
+        link,
+        pubDate,
+        author,
+        snippet,
         publisher,
         source,
         category
@@ -36,7 +37,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
     const [isSaved, setIsSaved] = useState(false);
 
     const checkSaved = useSelector((state) => checkSavedArticles(state, title));
-    
+
     useEffect(() => {
         setIsSaved(checkSaved);
     }, [checkSaved]);
@@ -78,11 +79,11 @@ const FeaturedArticle = ({ article, dashboard }) => {
 
     const delArticle = async () => {
         const { _id } = currentUser;
-        
+
         try {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();
-            
+
             dispatch(removeSavedArticle(title));
         } catch (error) {
             console.log(error);
@@ -108,7 +109,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                 <Row>
                     <Col className='d-flex justify-content-center'>
                         <Button
-                            type='link' 
+                            type='link'
                             color='success'
                             className='me-2 rounded-0 btn-sm'
                             href={link}
@@ -128,7 +129,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
 
                         {currentUser && isSaved && dashboard ? (
                             <Button
-                                type='button' 
+                                type='button'
                                 color='danger'
                                 className='rounded-0 btn-sm'
                                 onClick={() => {
@@ -140,8 +141,8 @@ const FeaturedArticle = ({ article, dashboard }) => {
                             </Button>
                         ) : currentUser && isSaved && !dashboard ? (
                             <NavLink
-                                className='nav-link d-inline-block' 
-                                to='/dashboard' 
+                                className='nav-link d-inline-block'
+                                to='/dashboard'
                             >
                                 <Button
                                     type='link'
@@ -153,7 +154,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                             </NavLink>
                         ) : currentUser && !isSaved ? (
                             <Button
-                                type='button' 
+                                type='button'
                                 color='secondary'
                                 className='rounded-0 btn-sm'
                                 onClick={() => {
@@ -163,7 +164,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                             >
                                 Add Bookmark
                             </Button>
-                        ) : null }
+                        ) : null}
 
                     </Col>
                 </Row>

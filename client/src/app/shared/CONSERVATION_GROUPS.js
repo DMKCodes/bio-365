@@ -1,6 +1,6 @@
-import wwf from '../app/media/wwf.png';
-import tnc from '../app/media/tnc.png';
-import ci from '../app/media/conservation.png';
+import wwf from '../media/wwf.png';
+import tnc from '../media/tnc.png';
+import ci from '../media/conservation.png';
 
 export const CONSERVATION_GROUPS = [
     {

@@ -26,6 +26,15 @@ html {
   letter-spacing: 1px;
 }
 
+.accordion {
+  --bs-accordion-active-color: white !important;
+  --bs-accordion-active-bg: #198754 !important;
+  --bs-accordion-btn-focus-box-shadow: none !important;
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+/* News & Articles */
+
 .article-card {
   text-align: center;
 }
@@ -62,6 +71,8 @@ html {
   object-fit: scale-down;
 }
 
+/* News Filter */
+
 .searchbar {
   padding-right: 40px;
 }
@@ -74,31 +85,7 @@ html {
   cursor: pointer
 }
 
-.accordion {
-  --bs-accordion-active-color: white !important;
-  --bs-accordion-active-bg: #198754 !important;
-  --bs-accordion-btn-focus-box-shadow: none !important;
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
-}
-
-.definition {
-  font-weight: bold;
-  color: #198754;
-}
-
-.definition:hover {
-  color: #198754;
-  cursor: pointer;
-}
-
-.spotlight-img {
-  max-height: 12rem;
-  object-fit: scale-down;
-}
-
-.cons-img {
-  max-height: 9rem;
-}
+/* Learn Section */
 
 .video-background {
   position: relative;
@@ -131,6 +118,34 @@ html {
   width: 40%;
 }
 
+.learn-section {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+#important-section {
+  margin-top: 50px;
+}
+
+.definition {
+  font-weight: bold;
+  color: #198754;
+}
+
+.definition:hover {
+  color: #198754;
+  cursor: pointer;
+}
+
+.spotlight-img {
+  max-height: 12rem;
+  object-fit: scale-down;
+}
+
+.cons-img {
+  max-height: 9rem;
+}
+
 .podcast-img {
   max-width: 100%;
 }
@@ -151,14 +166,7 @@ html {
   color: white;
 }
 
-.learn-section {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-
-#important-section {
-  margin-top: 50px;
-}
+/* Stories Section */
 
 .story-card-img {
   max-height: 200px;

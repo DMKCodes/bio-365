@@ -1,5 +1,5 @@
 import { Row, Col } from 'reactstrap';
-import { PODCASTS } from '../../../../datasets/podcasts';
+import { PODCASTS } from '../../../../app/shared/PODCASTS';
 
 const PodcastList = () => {
     return (

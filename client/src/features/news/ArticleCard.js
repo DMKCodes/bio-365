@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { 
+import {
     selectCurrentUser,
     checkSavedArticles,
     addSavedArticle,
     removeSavedArticle
-} from '../../features/users/userSlice';
-import { 
+} from '../users/userSlice';
+import {
     useAddArticleMutation,
     useDeleteArticleMutation
-} from '../../features/users/articlesApiSlice';
+} from '../users/articlesApiSlice';
 import {
     Row,
     Col,
-    Button, 
-    Card, 
+    Button,
+    Card,
     CardImg,
-    CardBody, 
-    CardTitle, 
-    CardSubtitle, 
-    CardText 
+    CardBody,
+    CardTitle,
+    CardSubtitle,
+    CardText
 } from 'reactstrap';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
@@ -33,12 +33,12 @@ const ArticleCard = ({ article, dashboard }) => {
 
     const currentUser = useSelector(selectCurrentUser);
 
-    const { 
-        title, 
-        link, 
-        pubDate, 
-        author, 
-        snippet, 
+    const {
+        title,
+        link,
+        pubDate,
+        author,
+        snippet,
         publisher,
         source,
         category
@@ -47,11 +47,11 @@ const ArticleCard = ({ article, dashboard }) => {
     const [isSaved, setIsSaved] = useState(false);
 
     const checkSaved = useSelector((state) => checkSavedArticles(state, title));
-    
+
     useEffect(() => {
         setIsSaved(checkSaved);
     }, [checkSaved]);
-    
+
     const [expanded, setExpanded] = useState(false);
 
     const [image, setImage] = useState(null);
@@ -89,7 +89,7 @@ const ArticleCard = ({ article, dashboard }) => {
 
     const delArticle = async () => {
         const { _id } = currentUser;
-        
+
         try {
             const articleId = article._id;
             await deleteArticle({ _id, articleId }).unwrap();
@@ -111,13 +111,13 @@ const ArticleCard = ({ article, dashboard }) => {
                 <CardSubtitle>
                     <small className='text-muted'>
                         Author: {author}, {pubDate}
-                    </small><br/>
+                    </small><br />
                 </CardSubtitle>
                 <CardTitle tag='h5' className='article-title fw-bold px-1'>
                     {title}
                 </CardTitle>
                 <Button
-                    type='link' 
+                    type='link'
                     color='success'
                     className='me-2 rounded-0 btn-sm'
                     href={link}
@@ -137,7 +137,7 @@ const ArticleCard = ({ article, dashboard }) => {
 
                 {currentUser && isSaved && dashboard ? (
                     <Button
-                        type='button' 
+                        type='button'
                         color='danger'
                         className='rounded-0 btn-sm'
                         onClick={() => {
@@ -149,8 +149,8 @@ const ArticleCard = ({ article, dashboard }) => {
                     </Button>
                 ) : currentUser && isSaved && !dashboard ? (
                     <NavLink
-                        className='nav-link d-inline-block' 
-                        to='/dashboard' 
+                        className='nav-link d-inline-block'
+                        to='/dashboard'
                     >
                         <Button
                             type='link'
@@ -162,7 +162,7 @@ const ArticleCard = ({ article, dashboard }) => {
                     </NavLink>
                 ) : currentUser && !isSaved ? (
                     <Button
-                        type='button' 
+                        type='button'
                         color='secondary'
                         className='rounded-0 btn-sm'
                         onClick={() => {
@@ -172,7 +172,7 @@ const ArticleCard = ({ article, dashboard }) => {
                     >
                         Add Bookmark
                     </Button>
-                ) : null }
+                ) : null}
 
                 <CardText className='mt-3'>
                     {(expanded && snippet.length > 0) &&

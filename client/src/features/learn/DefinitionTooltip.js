@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Tooltip } from 'reactstrap';
-import { GLOSSARY } from '../../datasets/glossary';
+import { GLOSSARY } from '../../app/shared/GLOSSARY';
 
 const DefinitionTooltip = ({ term, targetId }) => {
     const [open, setOpen] = useState(false);

@@ -1,4 +1,4 @@
-import impervious from '../app/media/impervioussurfaces.jpg';
+import impervious from '../media/impervioussurfaces.jpg';
 
 export const STORIES = [
     {

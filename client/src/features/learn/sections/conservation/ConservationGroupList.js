@@ -1,5 +1,5 @@
 import { Row, Col } from 'reactstrap';
-import { CONSERVATION_GROUPS } from '../../../../datasets/conservationGroups';
+import { CONSERVATION_GROUPS } from '../../../../app/shared/CONSERVATION_GROUPS';
 
 const ConservationGroupList = () => {
     return (

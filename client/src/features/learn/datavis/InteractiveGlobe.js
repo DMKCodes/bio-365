@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import Globe from 'react-globe.gl';
 import { scaleLinear } from 'd3-scale';
-import countriesData from '../../../datasets/countries.json';
-import { ENDANGERED_RATIOS } from '../../../datasets/endangeredRatios';
-import { MEGADIVERSE } from '../../../datasets/megadiverseCountries';
+import COUNTRIES from '../../../app/shared/COUNTRIES';
+import { ENDANGERED_RATIOS } from '../../../app/shared/ENDANGERED_RATIOS';
+import { MEGADIVERSE_COUNTRIES } from '../../../app/shared/MEGADIVERSE_COUNTRIES';
 
 const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
     const [countries, setCountries] = useState({ features: [] });
     const [hover, setHover] = useState();
 
     useEffect(() => {
-        setCountries(countriesData);
+        setCountries(COUNTRIES);
     }, []);
 
     const totalSpecies = new Map(
@@ -35,7 +35,7 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
             polygonsData={countries.features.filter((d) => d.properties.ISO_A2)}
             polygonAltitude={(d) => d === hover ? 0.12 : 0.06}
             polygonCapColor={d => {
-                if (viewType === 'megadiverse' && MEGADIVERSE.includes(d.properties.NAME_LONG)) {
+                if (viewType === 'megadiverse' && MEGADIVERSE_COUNTRIES.includes(d.properties.NAME_LONG)) {
                     return 'steelblue';
                 } else if (viewType === 'endangered') {
                     return endangeredRatioToColor(endangeredRatios.get(d.properties.NAME_LONG) || 0);

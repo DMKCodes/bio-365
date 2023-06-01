@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../features/users/userSlice';
 import { useGetArticlesQuery } from '../features/users/articlesApiSlice';
 import { Container, Row, Col } from 'reactstrap';
-import UserPanel from '../components/users/UserPanel';
-import NewsList from '../components/news/NewsList';
+import UserPanel from '../features/users/UserPanel';
+import NewsList from '../features/news/NewsList';
 
 const DashboardPage = () => {
     const currentUser = useSelector(selectCurrentUser);

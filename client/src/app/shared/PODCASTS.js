@@ -1,9 +1,9 @@
-import allcreatures from '../app/media/allcreaturespodcast.png';
-import businessofbio from '../app/media/businessofbiodiversitypodcast.jpg';
-import consconv from '../app/media/conservationconversationspodcast.png';
-import lifeinthesoil from '../app/media/lifeinthesoilpodcast.jpg';
-import biodiversityspeaks from '../app/media/biodiversityspeakspodcast.jpg';
-import noaa from '../app/media/noaapodcast.jpg';
+import allcreatures from '../media/allcreaturespodcast.png';
+import businessofbio from '../media/businessofbiodiversitypodcast.jpg';
+import consconv from '../media/conservationconversationspodcast.png';
+import lifeinthesoil from '../media/lifeinthesoilpodcast.jpg';
+import biodiversityspeaks from '../media/biodiversityspeakspodcast.jpg';
+import noaa from '../media/noaapodcast.jpg';
 
 export const PODCASTS = [
     {

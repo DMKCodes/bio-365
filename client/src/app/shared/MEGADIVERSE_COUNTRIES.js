@@ -1,4 +1,4 @@
-export const MEGADIVERSE = [
+export const MEGADIVERSE_COUNTRIES = [
     'United States',
     'Mexico',
     'Colombia',

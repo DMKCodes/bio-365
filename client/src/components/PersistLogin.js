@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectToken } from '../../features/users/userSlice';
-import { useRefreshMutation } from '../../features/users/authApiSlice';
-import usePersist from '../../hooks/usePersist';
+import { selectToken } from '../features/users/userSlice';
+import { useRefreshMutation } from '../features/users/authApiSlice';
+import usePersist from '../hooks/usePersist';
 
 const PersistLogin = () => {
     const [persist, ] = usePersist();

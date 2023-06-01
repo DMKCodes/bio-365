@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { checkAdmin, selectCurrentUser } from '../features/users/userSlice';
 import { Container, Row, Col } from 'reactstrap';
-import AdminPanel from '../components/users/AdminPanel';
+import AdminPanel from '../features/users/AdminPanel';
 
 const AdminPage = () => {
     const currentUser = useSelector(selectCurrentUser);
