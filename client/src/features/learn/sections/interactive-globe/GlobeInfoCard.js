@@ -8,10 +8,14 @@ import {
     CardFooter
 } from 'reactstrap';
 import InfoAccordion from './InfoAccordion';
-import DefinitionTooltip from '../../DefinitionTooltip';
+import defineKeywords from '../../../../utils/defineKeywords';
+import { 
+    MEGADIVERSE_CONTENT, 
+    SPECIES_CONTENT, 
+    ENDANGERED_CONTENT 
+} from '../../../../app/shared/GLOBE_CONTENT';
 
 const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, title }) => {
-
     return (
         <Card className='globe-data-card rounded-0'>
             <CardBody className='text-center'>
@@ -37,21 +41,24 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                 </CardSubtitle>
                 {viewType === 'species' && speciesData ? (
                     <CardText>
-                        <br />
+                        {SPECIES_CONTENT.map((text, index) => {
+                            const textWithKeywords = defineKeywords(text);
+                            return <p key={index}>{textWithKeywords}</p>;
+                        })}
+
                         Animals: {speciesData.animalSpecies.toLocaleString('en-US')}<br />
                         Plants: {speciesData.plantSpecies.toLocaleString('en-US')}<br />
                         Fungi: {speciesData.fungusSpecies.toLocaleString('en-US')}<br />
-                            <span id='chromista-definition' className='definition'>
-                                Chromists
-                            </span>
-                        : {speciesData.chromistSpecies.toLocaleString('en-US')}<br /><br />
+                        Chromists: {speciesData.chromistSpecies.toLocaleString('en-US')}<br /><br />
                         Total: {speciesData.totalSpecies.toLocaleString('en-US')}<br /><br />
-
-                        <DefinitionTooltip term='Chromista' targetId='chromista-definition' />
                     </CardText>
                 ) : viewType === 'endangered' && endangeredData ? (
                     <CardText>
-                        <br />
+                        {ENDANGERED_CONTENT.map((text, index) => {
+                            const textWithKeywords = defineKeywords(text);
+                            return <p key={index}>{textWithKeywords}</p>;
+                        })}
+
                         Amphibians: {endangeredData.amphibians.toLocaleString('en-US')}<br />
                         Birds: {endangeredData.birds.toLocaleString('en-US')}<br />
                         Fish: {endangeredData.fish.toLocaleString('en-US')}<br />
@@ -67,32 +74,10 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                     </CardText>
                 ) : viewType === 'megadiverse' ? (
                     <CardText>
-                        The world's most biodiversity-rich countries, which together account for more than two-thirds of all non-fish vertebrate species and three quarters of all higher plant species.
-                        <br /><br />
-                        To qualify as 
-                            <span id='megadiverse-definition' className='definition'> megadiverse</span>
-                        , a country must have:
-                        <br />
-                        - at least 5,000 of the world's plants as{' '}
-                        <span id='endemics-definition' className='definition'>
-                            endemics
-                        </span>
-                        <br />
-                        - marine{' '}
-                        <span id='ecosystem-definition' className='definition'>
-                            ecosystems
-                        </span>
-                        {' '}within its borders
-                        <br /><br />
-                        In accordance with the{' '}
-                            <span id='iucn-definition' className='definition'>
-                                IUCN's 
-                            </span>
-                        {' '}doctrine of ultimate responsibility, these 17 countries bear the disproportionate burden of ensuring the survival of their endemic species.
-                        <DefinitionTooltip term='Endemism' targetId='endemics-definition' />
-                        <DefinitionTooltip term='Ecosystem' targetId='ecosystem-definition' />
-                        <DefinitionTooltip term='IUCN' targetId='iucn-definition' />
-                        <DefinitionTooltip term='Megadiverse Countries' targetId='megadiverse-definition' />
+                        {MEGADIVERSE_CONTENT.map((text, index) => {
+                            const textWithKeywords = defineKeywords(text);
+                            return <p key={index}>{textWithKeywords}</p>;
+                        })}
                     </CardText>
                 ) : null}
             </CardBody>

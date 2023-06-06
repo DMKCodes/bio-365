@@ -8,6 +8,7 @@ import AdminPage from './pages/AdminPage';
 import NewsPage from './pages/NewsPage';
 import LearnPage from './pages/LearnPage';
 import StoriesPage from './pages/StoriesPage';
+import StoryPage from './pages/StoryPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Route path='/news' element={<NewsPage />} />
                 <Route path='/learn' element={<LearnPage />} />
                 <Route path='/stories' element={<StoriesPage />} />
+                <Route path='/stories/:storyName' element={<StoryPage />} />
             </Routes>
             <Footer />
         </div>

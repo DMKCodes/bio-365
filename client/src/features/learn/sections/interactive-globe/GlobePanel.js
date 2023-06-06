@@ -42,7 +42,7 @@ const GlobePanel = () => {
     let title;
     switch (viewType) {
         case 'species':
-            title = 'Species Overview';
+            title = 'Species Richness';
             break;
         case 'megadiverse':
             title = 'Megadiverse Countries';

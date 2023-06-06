@@ -9,13 +9,13 @@ export const PODCASTS = [
     {
         name: 'Business of Biodiversity (AU)',
         link: 'https://www.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/saving-our-species-program/business-of-biodiversity-podcast',
-        description: 'The Business of Biodiversity aims to prove that biodiversity is not just good for the environment - but good for business too.',
+        description: 'Biodiversity is not just good for the environment, but good for business too.',
         image: businessofbio
     },
     {
         name: 'All Creatures',
         link: 'https://www.allcreaturespod.com/episode_type/all/',
-        description: 'An animal podcast covering hundreds of species, including interviews with conservation experts from all around the world.',
+        description: 'An animal podcast covering hundreds of species, featuring experts from all around the world.',
         image: allcreatures
     },
     {
@@ -27,13 +27,13 @@ export const PODCASTS = [
     {
         name: 'Life in the Soil',
         link: 'https://rilliglab.org/podcast/',
-        description: "Learn from some of the world's best soil scientists about soil biodiversity, why it matters, and how we can protect it.",
+        description: "Learn from soil scientists about soil biodiversity, why it matters, and how we can protect it.",
         image: lifeinthesoil
     },
     {
         name: 'Biodiversity Speaks',
         link: 'https://ibios.ubc.ca/events/the-podcast/',
-        description: 'The conversation with each speaker involves a brief peek into their personal and professional journey in the field of biodiversity conservation.',
+        description: 'A brief peek into the personal and professional journeys of experts in the field of biodiversity conservation.',
         image: biodiversityspeaks
     },
     {

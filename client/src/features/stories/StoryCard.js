@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { 
     Card, 
     CardImg, 
@@ -10,7 +11,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const StoryCard = ({ story, setCollapsed, setActiveStory }) => {
+const StoryCard = ({ story }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -19,35 +20,40 @@ const StoryCard = ({ story, setCollapsed, setActiveStory }) => {
             onMouseEnter={() => setIsHovered(true)} 
             onMouseLeave={() => setIsHovered(false)}
         >
-            <CardImg src={story.image} alt='impervious surfaces' className='story-card-img' />
+            <CardImg 
+                src={story.cardImage} 
+                alt='impervious surfaces' 
+                className='story-card-img' 
+            />
             <div className='story-card-overlay'>
                 <CardBody>
                     {isHovered ? (
                         <>
                             <CardTitle>
                                 <h2 className='text-uppercase fw-bold'>
-                                    {story.title[0]}<br />
-                                    {story.title[1]}
+                                    {story.titleSplit[0]}<br />
+                                    {story.titleSplit[1]}
                                 </h2>
                             </CardTitle>
                             <CardText>{story.description}</CardText>
-                            <Button
-                                type='button'
-                                color='success'
-                                onClick={() => {
-                                    setActiveStory(story);
-                                    setCollapsed(true);
-                                }}
-                                className='rounded-0 btn-sm story-card-btn'
+                            <NavLink 
+                                className='nav-link' 
+                                to={`/stories/${story.name}`}
                             >
-                                <FontAwesomeIcon icon={faArrowRight} />
-                            </Button>
+                                <Button
+                                    type='button'
+                                    color='success'
+                                    className='rounded-0 btn-sm story-card-btn'
+                                >
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </Button>
+                            </NavLink>
                         </>
                     ) : (
                         <CardTitle>
                             <h2 className='text-uppercase fw-bold'>
-                                {story.title[0]}<br />
-                                {story.title[1]}
+                                {story.titleSplit[0]}<br />
+                                {story.titleSplit[1]}
                             </h2>
                         </CardTitle>
                     )}
