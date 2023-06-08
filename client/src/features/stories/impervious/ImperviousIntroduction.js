@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
 import { Row, Col } from 'reactstrap';
-import DefinitionTooltip from '../../../components/DefinitionTooltip';
+import defineKeywords from '../../../utils/defineKeywords';
+import { IMPERVIOUS_STORY_MAIN_CONTENT } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 
 const ImperviousIntroduction = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -10,13 +11,13 @@ const ImperviousIntroduction = () => {
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
 
-        if (currentStepIndex === 4) {
+        if (currentStepIndex === 3) {
             setShowMain(true);
         }
     };
 
     const onStepExit = ({ direction }) => {
-        if (currentStepIndex === 4 && direction === 'down') {
+        if (currentStepIndex === 3 && direction === 'down') {
             setShowMain(false);
         } else return;
     };
@@ -31,6 +32,38 @@ const ImperviousIntroduction = () => {
                         onStepExit={onStepExit} 
                         debug
                     >
+                        {IMPERVIOUS_STORY_MAIN_CONTENT &&
+                            IMPERVIOUS_STORY_MAIN_CONTENT.map((content, index) => {
+                                return (
+                                    <Step data={index}>
+                                        <div className='story-step py-3 text-center'>
+                                            <h5 className='text-uppercase fw-bold'>
+                                                {content.header}
+                                            </h5>
+                                            {content.body.map((text, index) => {
+                                                const textWithKeywords = defineKeywords(text);
+                                                return (
+                                                    <p className='mx-5' key={index}>
+                                                        {textWithKeywords}
+                                                    </p>
+                                                )
+                                            })}
+                                            {content.link &&
+                                                <small className='text-muted'>
+                                                    <a 
+                                                        href={content.link}
+                                                        target='_blank'
+                                                        rel='noreferrer'
+                                                    >
+                                                        Read more...
+                                                    </a>
+                                                </small>
+                                            }
+                                        </div>
+                                    </Step>
+                                );
+                            })
+                        }
                         <Step data={1}>
                             <div className='story-step'>
                                 <h5 className='text-center text-uppercase fw-bold mt-5'>
@@ -38,45 +71,6 @@ const ImperviousIntroduction = () => {
                                 </h5>
                                 <p className='text-center mx-5 mb-5'>
                                     Impervious surfaces are human-made, artificial structures covered by impenetrable materials, such as asphalt, concrete, brick, or stone.
-                                </p>
-                            </div>
-                        </Step>
-                        <Step data={2}>
-                            <div className='story-step'>
-                                <h5 className='text-center text-uppercase fw-bold mt-5'>
-                                    Examples
-                                </h5>
-                                <p className='text-center mx-5 mb-5'></p>
-                            </div>
-                        </Step>
-                        <Step data={3}>
-                            <div className='story-step'>
-                                <h5 className='text-center text-uppercase fw-bold mt-5'>
-                                    What makes them impervious?
-                                </h5>
-                                <p className='text-center mx-5 mb-5'>
-                                    These surfaces are so named because they cannot absorb water. When it rains, water typically infiltrates the soil, is stored as groundwater, and is slowly discharged into nearby bodies of water. Impervious surfaces prevent infiltration and instead trap water above ground, leading to a host of problems including reduced groundwater recharge, increased water pollution, and localized flooding.
-                                </p>
-                            </div>
-                        </Step>
-                        <Step data={4}>
-                            <div className='story-step'>
-                                <h5 className='text-center text-uppercase fw-bold mt-5'>
-                                    Culprit: Urban sprawl
-                                </h5>
-                                <p className='text-center mx-5 mb-5'>
-                                    The expansion of cities and towns requires construction of new roads, neighborhoods, commercial buildings, and walkways. These suburban areas are often characterized by low-density housing, increased reliance on automobiles for transportation, and the destruction and fragmentation of wildlife habitat.
-                                </p>
-                                <p className='text-center mx-5 mb-5'>
-                                    The simple fact is we are developing more land than we can afford.{' '}
-                                        <a
-                                            href='https://www.frontiersin.org/articles/10.3389/fenvs.2019.00029/full'
-                                            target='_blank'
-                                            rel='noreferrer'
-                                        >
-                                            A 2019 study
-                                        </a> 
-                                    {' '}of population and land-use dynamics found that in Lower Saxony, Germany, even municipalities that experienced population decline increased their urban land consumption. The corresponding increase in impervious surface cover reduced infiltration rates and increased evaporation and surface runoff.
                                 </p>
                             </div>
                         </Step>
