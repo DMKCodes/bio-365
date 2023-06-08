@@ -1,3 +1,6 @@
 node_modules
 bin
 .env
+
+# media
+client/src/app/media
