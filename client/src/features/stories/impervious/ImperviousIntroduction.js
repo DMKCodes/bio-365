@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
 import { Row, Col } from 'reactstrap';
+import ChartLine from '../../../components/ChartLine';
 import defineKeywords from '../../../utils/defineKeywords';
 import { IMPERVIOUS_STORY_MAIN_CONTENT } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
+import { URBAN_RURAL_POPULATIONS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
 
 const ImperviousIntroduction = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -35,7 +37,7 @@ const ImperviousIntroduction = () => {
                         {IMPERVIOUS_STORY_MAIN_CONTENT &&
                             IMPERVIOUS_STORY_MAIN_CONTENT.map((content, index) => {
                                 return (
-                                    <Step data={index}>
+                                    <Step data={index} key={index}>
                                         <div className='story-step py-3 text-center'>
                                             <h5 className='text-uppercase fw-bold'>
                                                 {content.header}
@@ -64,23 +66,19 @@ const ImperviousIntroduction = () => {
                                 );
                             })
                         }
-                        <Step data={1}>
-                            <div className='story-step'>
-                                <h5 className='text-center text-uppercase fw-bold mt-5'>
-                                    What are impervious surfaces?
-                                </h5>
-                                <p className='text-center mx-5 mb-5'>
-                                    Impervious surfaces are human-made, artificial structures covered by impenetrable materials, such as asphalt, concrete, brick, or stone.
-                                </p>
-                            </div>
-                        </Step>
                     </Scrollama>
                 </div>
             </Col>
             <Col md='7'>
                 {showMain &&
                     <div className='story-main-content'>
-
+                        <h3 className='text-center'>
+                            Urban & Rural Population Distribution (1960-2020)
+                        </h3>
+                        <ChartLine data={URBAN_RURAL_POPULATIONS} />
+                        <small className='text-muted'>
+                            Source: World Bank, based on data from the UN Population Division
+                        </small>
                     </div>
                 }
             </Col>

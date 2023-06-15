@@ -154,7 +154,7 @@ const ArticleCard = ({ article, dashboard }) => {
                     >
                         <Button
                             type='link'
-                            color='dark'
+                            color='primary'
                             className='rounded-0 btn-sm'
                         >
                             Dashboard

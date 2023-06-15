@@ -208,7 +208,6 @@ html {
   position: sticky;
   top: 25vh; 
   margin: 25vh 0; 
-  border: 2px dashed red;
   height: 50vh;
 }
 
@@ -219,4 +218,13 @@ html {
 
 .story-step {
     margin: 50vh 0;
+}
+
+.chart-tooltip {
+  background-color: #fff;
+}
+
+.recharts-legend-wrapper {
+  display: flex !important;
+  justify-content: center;
 }

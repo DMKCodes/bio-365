@@ -37,19 +37,19 @@ const LearnPage = () => {
                         const textWithKeywords = defineKeywords(text);
                         return <p key={index}>{textWithKeywords}</p>;
                     })}
+                    <small className='text-muted text-center'>
+                        <a
+                            href='https://www.nrdc.org/stories/biodiversity-101'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            Read more at NRDC...
+                        </a>
+                    </small>
                 </Col>
                 <Col md='6' className='d-flex align-items-center'>
                     <img src={lizard} alt='lizard' className='img-fluid rounded-circle'></img>
                 </Col>
-                <small className='text-muted text-start'>
-                    <a
-                        href='https://www.nrdc.org/stories/biodiversity-101'
-                        target='_blank'
-                        rel='noreferrer'
-                    >
-                        Read more at NRDC...
-                    </a>
-                </small>
             </Row>
 
             <hr id='globe-section' className='my-5 learn-section' />
@@ -61,27 +61,27 @@ const LearnPage = () => {
 
             <hr id='threats-section' className='my-5 learn-section' />
 
-            <Row className='text-center'>
+            <Row className=''>
                 <Col md='6'>
-                    <h3 className='mb-3 text-uppercase'>Threats to Biodiversity</h3>
+                    <h3 className='mb-3 text-uppercase text-center'>Threats to Biodiversity</h3>
                     {THREATS_MAIN_CONTENT.map((text, index) => {
                         const textWithKeywords = defineKeywords(text);
-                        return <p key={index}>{textWithKeywords}</p>;
+                        return <p key={index} className='text-center'>{textWithKeywords}</p>;
                     })}
                     <ThreatsAccordion />
+                    <small className='text-muted mt-3 text-start'>
+                        <a 
+                            href='https://livingplanet.panda.org/en-US/' 
+                            target='_blank' 
+                            rel='noreferrer'
+                        >
+                            Explore WWF's Living Planet Report 2022...
+                        </a>
+                    </small>
                 </Col>
                 <Col md='6' className='d-flex align-items-center'>
                     <img src={hummingbird} alt='hummingbird' className='img-fluid rounded-circle'></img>
                 </Col>
-                <small className='text-muted mt-3 text-start'>
-                    <a 
-                        href='https://livingplanet.panda.org/en-US/' 
-                        target='_blank' 
-                        rel='noreferrer'
-                    >
-                        Explore WWF's Living Planet Report 2022...
-                    </a>
-                </small>
             </Row>
 
             <hr id='conservation-section' className='my-5 learn-section' />
@@ -108,7 +108,7 @@ const LearnPage = () => {
             <hr id='listen-section' className='my-5 learn-section' />
 
             <Row className='text-center'>
-                <h3 className='mb-4'>Listen & Learn</h3>
+                <h3 className='mb-4 text-uppercase'>Listen & Learn</h3>
             </Row>
             <PodcastSpotlight />
             <PodcastList />

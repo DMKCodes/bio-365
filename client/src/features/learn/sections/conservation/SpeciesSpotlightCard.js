@@ -58,7 +58,7 @@ const SpeciesSpotlightCard = () => {
             </video>
             <Row className='mt-1'>
                 <Col xs='6' className='ps-3 text-start'>
-                    <FontAwesomeIcon icon={faArrowUp} size='xs' bounce light />
+                    <FontAwesomeIcon icon={faArrowUp} size='xs' bounce />
                     <small className='text-muted ms-1'>Hover me!</small>
                 </Col>
                 <Col xs='6' className='pe-3 text-end'>
@@ -86,10 +86,10 @@ const SpeciesSpotlightCard = () => {
                     const textWithKeywords = defineKeywords(text.body);
                     return (
                         <AccordionItem key={`${index}`}>
-                            <AccordionHeader targetId={index}>
+                            <AccordionHeader targetId={`${index}`}>
                                 {text.header}
                             </AccordionHeader>
-                            <AccordionBody accordionId={index}>
+                            <AccordionBody accordionId={`${index}`}>
                                 {textWithKeywords}
                             </AccordionBody>
                         </AccordionItem>

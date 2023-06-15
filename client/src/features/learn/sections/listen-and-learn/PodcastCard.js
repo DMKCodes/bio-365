@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { 
     Card, 
     CardImg, 
-    CardBody, 
-    CardTitle, 
+    CardBody,
     CardText, 
     Button 
 } from 'reactstrap';

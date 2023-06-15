@@ -122,12 +122,12 @@ export const GLOSSARY = [
     {
         term: 'service',
         definition: 'Any positive benefit that wildlife or ecosystems provide to people, such as clean air and water, pollination, or fertile soil for crop production.',
-        source: 'United States Environmental Protetion Agency'
+        source: 'U.S. Environmental Protetion Agency'
     },
     {
         term: 'services',
         definition: 'Any positive benefit that wildlife or ecosystems provide to people, such as clean air and water, pollination, or fertile soil for crop production.',
-        source: 'United States Environmental Protetion Agency'
+        source: 'U.S. Environmental Protetion Agency'
     },
     {
         term: 'hotspot',
@@ -138,6 +138,26 @@ export const GLOSSARY = [
         term: 'hotspots',
         definition: 'Regions characterized both by exceptional levels of plant endemism and serious levels of habitat loss.',
         source: 'National Geographic'
+    },
+    {
+        term: 'extinction',
+        definition: 'The dying out or extermination of a species. Extinction occurs when species are diminished because of environmental forces such as habitat fragmentation, climate change, natural disaster, overexploitation by humans, and pollution, or because of evolutionary changes in their members (genetic inbreeding, poor reproduction, decline in population numbers).',
+        source: 'Encyclopædia Britannica'
+    },
+    {
+        term: 'runoff',
+        definition: 'The part of the water cycle that flows over land as surface water instead of being absorbed into groundwater or evaporating.',
+        source: 'U.S. Geological Survey'
+    },
+    {
+        term: 'groundwater',
+        definition: 'Water that exists underground in saturated zones beneath the land surface.  The upper surface of the saturated zone is called the water table.',
+        source: 'U.S. Geological Survey'
+    },
+    {
+        term: 'infiltration',
+        definition: 'The flow of water from above ground into the subsurface.',
+        source: 'Encyclopedia of Soils in the Environment'
     }
 ];
 

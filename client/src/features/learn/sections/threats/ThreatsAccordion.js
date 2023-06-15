@@ -24,15 +24,15 @@ const ThreatsAccordion = () => {
     };
 
     return (
-        <Accordion flush open={accordionOpen} toggle={toggleAccordion}>
+        <Accordion flush open={accordionOpen} toggle={toggleAccordion} className='mb-2 text-center'>
             {THREATS_ACCORDION_CONTENT.map((text, index) => {
                 const textWithKeywords = defineKeywords(text.body);
                 return (
                     <AccordionItem key={`${index}`}>
-                        <AccordionHeader targetId={index}>
+                        <AccordionHeader targetId={`${index}`}>
                             {text.header}
                         </AccordionHeader>
-                        <AccordionBody accordionId={index}>
+                        <AccordionBody accordionId={`${index}`}>
                             {textWithKeywords}
                             {text.link &&
                                 <a

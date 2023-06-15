@@ -7,7 +7,7 @@ export const MEGADIVERSE_CONTENT = [
 ];
 
 export const SPECIES_CONTENT = [
-    'Species richness is the number of unique species found in a given location.  This differs from endemism, which is when a species is only found in a single location (i.e., kangaroos are endemic to Australia).'
+    'Species richness is the number of unique species found in a given location.  This differs from endemism, which is when a species is only found in a single location (e.g., kangaroos are endemic to Australia).'
 ];
 
 export const ENDANGERED_CONTENT = [

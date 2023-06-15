@@ -97,14 +97,14 @@ const FeaturedArticle = ({ article, dashboard }) => {
             </Col>
             <Col md='6' className='d-flex flex-column justify-content-center'>
                 <Row>
-                    <small className='text-muted text-center'>
-                        Author: {author}, {pubDate}
-                    </small>
-                </Row>
-                <Row>
                     <h5 className='article-title fw-bold text-center'>
                         {title}
                     </h5>
+                </Row>
+                <Row>
+                    <small className='text-muted text-center'>
+                        Author: {author}, {pubDate}
+                    </small>
                 </Row>
                 <Row>
                     <Col className='d-flex justify-content-center'>
@@ -146,7 +146,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                             >
                                 <Button
                                     type='link'
-                                    color='dark'
+                                    color='primary'
                                     className='rounded-0 btn-sm'
                                 >
                                     Dashboard

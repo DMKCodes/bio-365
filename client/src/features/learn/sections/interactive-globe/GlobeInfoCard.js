@@ -19,9 +19,9 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
     return (
         <Card className='globe-data-card rounded-0'>
             <CardBody className='text-center'>
-                    <CardHeader className='mb-3 rounded-0 border'>
-                        <h4>{title}</h4>
-                    </CardHeader>
+                <CardHeader className='mb-3 rounded-0 border'>
+                    <h4 className='mb-0'>{title}</h4>
+                </CardHeader>
                 <CardSubtitle>
                     {viewType !== 'megadiverse' &&
                         <>
@@ -41,24 +41,18 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                 </CardSubtitle>
                 {viewType === 'species' && speciesData ? (
                     <CardText>
-                        {SPECIES_CONTENT.map((text, index) => {
-                            const textWithKeywords = defineKeywords(text);
-                            return <p key={index}>{textWithKeywords}</p>;
-                        })}
-
                         Animals: {speciesData.animalSpecies.toLocaleString('en-US')}<br />
                         Plants: {speciesData.plantSpecies.toLocaleString('en-US')}<br />
                         Fungi: {speciesData.fungusSpecies.toLocaleString('en-US')}<br />
                         Chromists: {speciesData.chromistSpecies.toLocaleString('en-US')}<br /><br />
                         Total: {speciesData.totalSpecies.toLocaleString('en-US')}<br /><br />
+                        {SPECIES_CONTENT.map((text, index) => {
+                            const textWithKeywords = defineKeywords(text);
+                            return <span key={index}>{textWithKeywords}</span>;
+                        })}
                     </CardText>
                 ) : viewType === 'endangered' && endangeredData ? (
                     <CardText>
-                        {ENDANGERED_CONTENT.map((text, index) => {
-                            const textWithKeywords = defineKeywords(text);
-                            return <p key={index}>{textWithKeywords}</p>;
-                        })}
-
                         Amphibians: {endangeredData.amphibians.toLocaleString('en-US')}<br />
                         Birds: {endangeredData.birds.toLocaleString('en-US')}<br />
                         Fish: {endangeredData.fish.toLocaleString('en-US')}<br />
@@ -68,8 +62,13 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                         Other Invertebrates: {endangeredData.otherInvertebrates.toLocaleString('en-US')}<br />
                         Vascular Plants: {endangeredData.plants.toLocaleString('en-US')}<br />
                         Fungi: {endangeredData.fungi.toLocaleString('en-US')}<br /><br />
-                        Total: {endangeredData.total.toLocaleString('en-US')}
-                        <br /><br />
+                        Total: {endangeredData.total.toLocaleString('en-US')}<br /><br />
+                        
+                        {ENDANGERED_CONTENT.map((text, index) => {
+                            const textWithKeywords = defineKeywords(text);
+                            return <p key={index}>{textWithKeywords}</p>;
+                        })}
+
                         <small className='text-muted'>Color depicts ratio of endangered species to total species. This is not a statement on any country's individual conservation efforts or unique challenges.</small>
                     </CardText>
                 ) : viewType === 'megadiverse' ? (

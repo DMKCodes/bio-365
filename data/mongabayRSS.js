@@ -6,9 +6,9 @@ const url = 'https://news.mongabay.com/feed/?post_type=post&feedtype=bulletpoint
 const fetchMongabayArticles = async () => {
     try {
         const feed = await parser.parseURL(url);
+        console.log(feed);
 
         const abbrArticles = feed.items.map((item) => {
-            
             const abbrArticle = {
                 title: item.title,
                 link: item.link,

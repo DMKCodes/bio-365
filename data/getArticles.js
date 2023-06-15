@@ -64,6 +64,12 @@ const fetchArticles = async () => {
     for (const func of funcList) {
         try {
             const articles = await func();
+
+            if (!articles) {
+                console.log(`Error: No articles fetched from ${func.name}.`);
+                return;
+            }
+
             articles.map((article) => {
                 const formatted = formatDate(article.pubDate);
                 article.pubDate = formatted;
@@ -81,8 +87,10 @@ const fetchArticles = async () => {
             });
 
             allArticles.push(...articles);
+            
         } catch (err) {
             console.log('Error fetching articles from', func, err);
+            return;
         }
     };
 

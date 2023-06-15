@@ -4,18 +4,18 @@ import ci from '../media/conservation.png';
 
 export const CONSERVATION_GROUPS = [
     {
-        name: '',
-        link: '',
+        name: 'The Nature Conservancy',
+        link: 'https://www.nature.org/en-us/',
         image: tnc
     },
     {
-        name: '',
-        link: '',
+        name: 'World Wildlife Fund',
+        link: 'https://www.worldwildlife.org/',
         image: wwf
     },
     {
-        name: '',
-        link: '',
+        name: 'Conservation International',
+        link: 'https://www.conservation.org/',
         image: ci
     }
 ];

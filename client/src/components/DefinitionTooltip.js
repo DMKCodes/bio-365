@@ -15,8 +15,7 @@ const DefinitionTooltip = ({ term, targetId }) => {
             target={`${targetId}`}
             toggle={toggle}
         >
-            {term.definition}
-            <br /><br />
+            {term.definition}<br />
             - {term.source}
         </Tooltip>
     );
