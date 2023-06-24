@@ -1,5 +1,6 @@
+export const CHART_YEARS = [1960, 1970, 1980, 1990, 2000, 2007, 2010, 2020];
+
 export const URBAN_RURAL_POPULATIONS = [
-    [1960, 1970, 1980, 1990, 2000, 2010, 2020],
     {
       name: 1960,
       urbanPopulation: 1019029723,

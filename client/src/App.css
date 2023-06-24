@@ -211,9 +211,12 @@ html {
   height: 50vh;
 }
 
+.story-main-image {
+  max-height: 100%;
+}
+
 .story-side-content {
   margin: 25vh 0 50vh 0; 
-  border: 2px dashed skyblue;
 }
 
 .story-step {

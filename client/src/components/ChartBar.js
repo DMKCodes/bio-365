@@ -1,15 +1,15 @@
 import { 
-    LineChart,
+    BarChart,
     CartesianGrid,
     XAxis,
     YAxis,
     Tooltip,
     Legend,
-    Line,
+    Bar,
     ResponsiveContainer
 } from 'recharts';
 
-const ChartLine = ({ data, ticks }) => {
+const ChartBar = ({ data }) => {
     const keys = data[0] && Object.keys(data[0]).filter(key => key !== 'name');
 
     const formatCamelCase = (string) => {
@@ -48,23 +48,23 @@ const ChartLine = ({ data, ticks }) => {
 
     return (
         <ResponsiveContainer width='100%' height='100%'>
-            <LineChart data={data} margin={{ top: 15, right: 30, left: 60, bottom: 15 }}>
+            <BarChart data={data} width='100%'>
                 <CartesianGrid strokeDasharray='3 3' />
-                <XAxis dataKey='name' ticks={ticks} />
-                <YAxis tickFormatter={tick => tick.toLocaleString()} />
+                <XAxis dataKey='name' />
+                <YAxis />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend content={<CustomLegend />} />
                 {keys.map((key, index) => (
-                    <Line
+                    <Bar
                         key={index}
                         type='monotone'
                         dataKey={key}
-                        stroke={index === 0 ? '#FB8F67' : '#00c49a'}
+                        fill={index === 0 ? '#FB8F67' : 1 ? '#00c49a' : 2 ? '#8884d8' : 3 ? '#82ca9d' : null}
                     />
                 ))}
-            </LineChart>
+            </BarChart>
         </ResponsiveContainer>
     );
 };
 
-export default ChartLine;
+export default ChartBar;

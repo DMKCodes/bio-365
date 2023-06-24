@@ -11,6 +11,7 @@ const ImperviousVideoBackground = () => {
                 <h5 className='video-overlay-body text-center'>
                     How our sprawling cities lead the attack on wildlife.
                 </h5>
+                <p>Created by Douglas Kissack</p>
             </div>
         </div>
     );

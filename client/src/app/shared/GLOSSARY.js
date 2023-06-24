@@ -57,7 +57,7 @@ export const GLOSSARY = [
     {
         term: 'conservation',
         definition: "The study of the loss of Earth's biodiversity and the ways this loss can be prevented.",
-        source: 'Encyclopædia Britannica'
+        source: 'Encyclopedia Britannica'
     },
     {
         term: 'corridor',
@@ -100,6 +100,11 @@ export const GLOSSARY = [
         source: 'National Geographic'
     },
     {
+        term: 'pollutants',
+        definition: 'Harmful materials introduced into the environment, most often by human activities.',
+        source: 'National Geographic'
+    },
+    {
         term: 'eutrophication',
         definition: 'An overabundance of nutrients, primarily nitrogen and phosphorus, in an aquatic ecosystem.',
         source: 'NOAA'
@@ -112,7 +117,7 @@ export const GLOSSARY = [
     {
         term: 'urbanization',
         definition: 'The process by which large numbers of people become permanently concentrated in areas, forming cities.',
-        source: 'Encyclopædia Britannica'
+        source: 'Encyclopedia Britannica'
     },
     {
         term: 'deforestation',
@@ -142,7 +147,7 @@ export const GLOSSARY = [
     {
         term: 'extinction',
         definition: 'The dying out or extermination of a species. Extinction occurs when species are diminished because of environmental forces such as habitat fragmentation, climate change, natural disaster, overexploitation by humans, and pollution, or because of evolutionary changes in their members (genetic inbreeding, poor reproduction, decline in population numbers).',
-        source: 'Encyclopædia Britannica'
+        source: 'Encyclopedia Britannica'
     },
     {
         term: 'runoff',
@@ -155,9 +160,79 @@ export const GLOSSARY = [
         source: 'U.S. Geological Survey'
     },
     {
+        term: 'water table',
+        definition: 'Also called groundwater table - the upper level of an underground surface in which the soil or rocks are permanently saturated with water.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
         term: 'infiltration',
         definition: 'The flow of water from above ground into the subsurface.',
         source: 'Encyclopedia of Soils in the Environment'
+    },
+    {
+        term: 'sequester',
+        definition: 'Most often carbon sequestration, which is the process of capturing and storing atmospheric carbon dioxide.',
+        source: 'U.S. Geological Survey'
+    },
+    {
+        term: 'sequestration',
+        definition: 'Most often carbon sequestration - the process of capturing and storing atmospheric carbon dioxide.',
+        source: 'U.S. Geological Survey'
+    },
+    {
+        term: 'erosion',
+        definition: 'The geological process by which earthen materials are worn away and transported by natural forces such as wind or water.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'sediment',
+        definiton: 'Solid materials moved and deposited in a new location. Sediment can consist of rocks and minerals, as well as the remains of plants and animals.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'turbidity',
+        definition: 'The quality of being cloudy, opaque, or thick with suspended matter.',
+        source: 'U.S. Geological Survey'
+    },
+    {
+        term: 'autotroph',
+        definition: 'An organism that serves as a primary producer in a food chain. Autotrophs obtain energy and nutrients through photosynthesis (photoautotrophs) or, more rarely, obtain chemical energy through oxidation (chemoautotrophs) to make organic substances from inorganic ones.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'autotrophs',
+        definition: 'An organism that serves as a primary producer in a food chain. Autotrophs obtain energy and nutrients through photosynthesis (photoautotrophs) or, more rarely, obtain chemical energy through oxidation (chemoautotrophs) to make organic substances from inorganic ones.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'heterotroph',
+        definition: 'An organism that serves as a secondary producer in a food chain. Heterotrophs consumes other organisms to gain nutrients and produce energy.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'heterotrophs',
+        definition: 'An organism that serves as a secondary producer in a food chain. Heterotrophs consumes other organisms to gain nutrients and produce energy.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'evapotranspiration',
+        definition: 'The process by which water is transferred from the land to the atmosphere by evaporation from the soil and other surfaces and by transpiration from plants.',
+        source: 'Oxford Languages'
+    },
+    {
+        term: 'subsidence',
+        definition: 'The sinking of the ground because of underground material movement, most often caused by the removal of water, oil, natural gas, or mineral resources out of the ground.',
+        source: 'National Ocean Service'
+    },
+    {
+        term: 'aquifer',
+        definition: 'A body of porous rock or sediment saturated with groundwater. Groundwater enters an aquifer as precipitation seeps through the soil.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'microclimate',
+        definition: "Any climatic condition in a relatively small area near the Earth's surface, such as a garden, park, or cave, especially one that differs from the conditions of the wider area.",
+        source: 'Encyclopedia Britannica'
     }
 ];
 

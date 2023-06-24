@@ -2,26 +2,34 @@ import { useState } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
 import { Row, Col } from 'reactstrap';
 import ChartLine from '../../../components/ChartLine';
+import ChartBar from '../../../components/ChartBar';
 import defineKeywords from '../../../utils/defineKeywords';
 import { IMPERVIOUS_STORY_MAIN_CONTENT } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
-import { URBAN_RURAL_POPULATIONS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
+import { URBAN_RURAL_POPULATIONS, CHART_YEARS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
+import { METRO_POPULATIONS } from '../../../app/shared/METRO_POPULATIONS';
+import imperviousInfographic from '../../../app/media/impervious-surfaces.png';
+import cityPeople from '../../../app/media/city-people.jpg';
+import suburbPopulations from '../../../app/media/suburban-population-share.webp';
 
 const ImperviousIntroduction = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
-    const [showMain, setShowMain] = useState(true);
+    const [chartData, setChartData] = useState(URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960));
 
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
+        console.log(currentStepIndex);
 
         if (currentStepIndex === 3) {
-            setShowMain(true);
+            setChartData((URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960)));
+        } else if (currentStepIndex === 4) {
+            setChartData(URBAN_RURAL_POPULATIONS.filter((item) => item.name <= 2007));
+        } else if (currentStepIndex === 5) {
+            setChartData(URBAN_RURAL_POPULATIONS);
         }
     };
 
-    const onStepExit = ({ direction }) => {
-        if (currentStepIndex === 3 && direction === 'down') {
-            setShowMain(false);
-        } else return;
+    const onStepExit = () => {
+        return;
     };
 
     return (
@@ -31,7 +39,7 @@ const ImperviousIntroduction = () => {
                     <Scrollama 
                         offset={0.5} 
                         onStepEnter={onStepEnter} 
-                        onStepExit={onStepExit} 
+                        onStepExit={onStepExit}
                         debug
                     >
                         {IMPERVIOUS_STORY_MAIN_CONTENT &&
@@ -69,18 +77,49 @@ const ImperviousIntroduction = () => {
                     </Scrollama>
                 </div>
             </Col>
-            <Col md='7'>
-                {showMain &&
-                    <div className='story-main-content'>
-                        <h3 className='text-center'>
-                            Urban & Rural Population Distribution (1960-2020)
-                        </h3>
-                        <ChartLine data={URBAN_RURAL_POPULATIONS} />
-                        <small className='text-muted'>
-                            Source: World Bank, based on data from the UN Population Division
-                        </small>
-                    </div>
-                }
+            <Col md='7' className='story-main px-0'>
+                <div className='story-main-content d-flex justify-content-center'>
+                    {currentStepIndex <= 2 ? (
+                        <span className='d-flex flex-column'>
+                            <img 
+                                src={imperviousInfographic} 
+                                alt='impervious infographic' 
+                                className='story-main-image mb-1' 
+                            />
+                            <small className='text-muted text-center'>
+                                Image Source: Stormwater Shepherds
+                            </small>
+                        </span>
+                    ) : currentStepIndex <= 5 ? (
+                        <span className='d-flex flex-column'>
+                            <h3 className='text-center'>
+                                Urban & Rural Population Distribution (1960-2020)
+                            </h3>
+                            <ChartLine data={chartData} ticks={CHART_YEARS} />
+                            <small className='text-muted text-center'>
+                                Source: World Bank, based on data from the UN Population Division
+                            </small>
+                        </span>
+                    ) : currentStepIndex === 6 ? (
+                        <span className='d-flex flex-column'>
+                            <img
+                                src={cityPeople}
+                                alt='city people'
+                                className='story-main-image mb-1'
+                            />
+                            <small className='text-muted text-center'>
+                                Image Source: Christopher Burns
+                            </small>
+                        </span>
+                    ) : currentStepIndex === 7 ? (
+                        <span className='d-flex flex-column'>
+                            <ChartBar data={METRO_POPULATIONS} />
+                            <small className='text-muted text-center'>
+                                Source: Pew Research Center
+                            </small>
+                        </span>
+                    ) : null}
+                </div>
             </Col>
         </Row>
     );
