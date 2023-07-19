@@ -113,7 +113,7 @@ const LearnPage = () => {
             <PodcastSpotlight />
             <PodcastList />
 
-            <hr className='my-5' />
+            <div className='my-5'></div>
         </Container>
     );
 };
