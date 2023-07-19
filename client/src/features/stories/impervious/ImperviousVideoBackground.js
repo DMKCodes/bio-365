@@ -7,7 +7,7 @@ const ImperviousVideoBackground = () => {
                 <source src={bgvid} type='video/mp4' />
             </video>
             <div className='video-overlay'>
-                <h1 className='video-overlay-header'>IMPERVIOUS SURFACES</h1>
+                <h1 className='video-overlay-header'>IMPERVIOUS</h1>
                 <h5 className='video-overlay-body text-center'>
                     How our sprawling cities lead the attack on wildlife.
                 </h5>

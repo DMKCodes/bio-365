@@ -2,7 +2,8 @@ export const IMPERVIOUS_STORY_MAIN_CONTENT = [
     {
         header: 'What are impervious surfaces?',
         body: [
-            'Impervious surfaces are the hard, often artificial, almost always humanmade surfaces and structures that provide us with shelter and let us travel from place to place. Concrete and asphalt pavement, from superhighways all the way down to driveways and sidewalks, are impervious surfaces. So are the roofs of our homes and the commercial buildings where we work, eat, sleep, shop, and learn. Even swimming pools are impervious surfaces.'
+            'Impervious (or impermeable) surfaces are the hard, often artificial, almost always humanmade surfaces and structures that provide us with shelter and let us travel from place to place.',
+            'Concrete and asphalt pavement, from superhighways all the way down to driveways and sidewalks, are impervious surfaces. So are the roofs of our homes and the commercial buildings where we work, eat, shop, and learn. Even swimming pools are impervious surfaces.'
         ]
     },
     {
@@ -33,22 +34,22 @@ export const IMPERVIOUS_STORY_MAIN_CONTENT = [
     {
         header: '',
         body: [
-            'And since then the urban population has skyrocketed, and the area dedicated to impervious surfaces has increased in kind.',
-            'Note: While the exact figures are often disputed in the research community, the data shown here is widely considered to be a conservative estimate. The consensus is that the true distribution is likely to be even more in favor of urban populations.'
+            'And since then the urban population has skyrocketed, and the area dedicated to impervious surfaces has increased in kind.'
         ],
+        note: 'While the exact figures are often disputed in the research community, the data shown here is widely considered to be a conservative estimate. The consensus is that the true distribution is likely to be even further in favor of urban populations.',
         link: 'https://ourworldindata.org/urbanization'
     },
     {
         header: 'The benefits of urbanization',
         body: [
-            "This isn't necessarily a bad thing.  Living in an urban area has many advantages: better access to essentials like healthcare and education, job opportunities, public transportation, recreation, cultural diversity, and more."
+            "This isn't necessarily a bad thing.  Living in an urban area has many advantages: better access to essential resources like healthcare and education, job opportunities, public transportation, recreation, cultural diversity, and more."
         ]
     },
     {
         header: '',
         body: [
             "For many, the suburban areas at the outskirts of cities offer the best of both worlds. Suburbs are quieter and more spacious than city centers while still connecting residents to the amenities a city offers.", 
-            'An analysis of metro areas in the United States shows that for the past 40 years, a steadily higher share of the population has moved to suburban counties while urban cores have seen virtually no growth. This phenomenon is referred to as suburbanization.'
+            'An analysis of metro areas in the United States shows that for the past 50 years, a steadily higher share of the population has moved to suburban counties while urban cores have seen virtually no growth. This phenomenon is referred to as suburbanization.'
         ],
         link: 'https://www.pewresearch.org/social-trends/2020/07/29/prior-to-covid-19-urban-core-counties-in-the-u-s-were-gaining-vitality-on-key-measures/'
     },
@@ -77,21 +78,21 @@ export const IMPERVIOUS_STORY_THREATS_CONTENT = [
         header: 'Spotlight: Groundwater',
         body: [
             'In some parts of the world, especially rural and arid regions, groundwater is the only reliable source of fresh water. In the United States alone, groundwater provides roughly half of the population with drinking water.',
-            "There are cultural benefits as well. Society values groundwater not just for practical uses, but for its cultural and recreational contributions. If you've ever spent a day at the lake or gone whitewater rafting, you have groundwater to thank."
+            'As an ecosystem service, groundwater performs several important functions. It feeds water into streams, wetlands, and lakes, sustaining both aquatic environments and the wildlife that depend on them, particularly during periods of low rainfall. These ecosystems in turn help to filter pollutants from water and sequester carbon, among other benefits.'
         ]
     },
     {
         header: '',
         body: [
-            'As an ecosystem service, groundwater performs several important functions. It feeds water into streams, wetlands, and lakes, sustaining both aquatic ecosystems and the wildlife that depend on them, particularly during periods of low rainfall. These ecosystems in turn help to filter pollutants from water and sequester carbon, among other benefits.'
+            "There are cultural benefits as well. Society values groundwater not just for practical uses, but for its religious and recreational contributions. If you've ever spent a day at the lake or gone whitewater rafting, you have groundwater to thank."
         ]
     },
     {
         header: '',
         body: [
             'Groundwater is also used extensively in agriculture. The ability to extract groundwater for irrigation can be the difference between a reliable harvest or crop failure due to drought. This becomes increasingly important as the global population, and thus our dietary needs, continue to expand.',
-            "Note: While agriculture is essential to keeping us fed, the agricultural industry's use of water is itself worthy of scrutiny. Irrigation accounts for roughly 70% of of water use worldwide, but of that 70%, about 40% is wasted by poor water management."
         ],
+        note: "While agriculture is essential to keeping us fed, the agricultural industry's use of water is itself worthy of scrutiny. Irrigation accounts for roughly 70% of of water use worldwide, but of that 70%, about 40% is wasted by poor water management.",
         link: 'https://www.oecd.org/agriculture/topics/water-and-agriculture/'
     },
     {
@@ -100,18 +101,23 @@ export const IMPERVIOUS_STORY_THREATS_CONTENT = [
             'So how do impervious surfaces fit in?',
             "When rainfall can't infiltrate the soil and reach the water table, groundwater recharge is disrupted. As groundwater levels drop, the water table can drop as well. This leads to soil, wetlands, and residential wells drying up, and can even cause land subsidence, damaging infrastructure such as roads and buildings.",
             'Without a steady rate of replenishment, rivers and streams experience unpredictable flow rates, becoming more likely to flood and more susceptible to drought and erosion. In coastal areas, it can allow saltwater to intrude into freshwater aquifers, contaminating soil and drinking water.'
-        ]
+        ],
+        link: 'https://www.usgs.gov/special-topics/water-science-school/science/groundwater-decline-and-depletion'
     },
     {
         header: 'Runoff',
         body: [
-            "Water that can't penetrate impervious surfaces is trapped above ground as surface runoff. This runoff, instead of being released slowly into rivers and streams via groundwater, flows rapidly through stormwater systems before being discharged into bodies of water. Both aquatic ecosystems and human infrastructure are often ill-equipped to handle this sudden influx of water."
-        ]
+            "Water that can't penetrate impervious surfaces is trapped above ground as surface runoff. This runoff, instead of being released slowly into rivers and streams via groundwater, flows rapidly through stormwater systems before being discharged into bodies of water. Both aquatic ecosystems and human infrastructure are often ill-equipped to handle this sudden influx of water.",
+            'One way to view how impervious surfaces affect runoff is the Rational Method. An essential component of stormwater drainage design, this method seeks to determine the peak rate of runoff flow to ensure drainage systems can handle a worst case scenario. A runoff coefficient is assigned to different urbanized areas, which measures the ratio of runoff to total rainfall.',
+            "The Iowa Department of Transportation has used the Rational Method to inform their stormwater drainage design for several decades. As you can see in the table, in an area comprised purely of impervious surfaces, they determined that about 94% of rainfall becomes runoff. Conversely, in an area that's only 8% impervious, that number drops to 21%.",
+            "Impervious surfaces don't tell the whole runoff story, but they are a very important piece of the puzzle. To learn more about the Rational Method and Iowa's approach, click the link below."
+        ],
+        link: 'https://www.iowadot.gov/design/dmanual/04a-05.pdf'
     },
     {
         header: 'Water pollution',
         body: [
-            'Above ground, runoff water picks up pollutants such as pesticides, oils, and heavy metals as it flows over impervious surfaces. The contaminated water harms aquatic life by affecting reproduction, introducing disease, or even leading to death. For humans, this poses a threat as well in the form of contaminated drinking water.',
+            'Above ground, runoff water picks up pollutants such as pesticides, oils, and heavy metals as it flows over impervious surfaces. The contaminated water harms aquatic life by affecting reproduction, introducing disease, and even leading to death. For humans, this poses a threat as well in the form of contaminated drinking water.',
             "Runoff can also contain excessive nutrients, like nitrogen and phosphorus, from fertilizers and other sources. When these nutrients enter water bodies they cause harmful algal blooms (HABs), which consume large amounts of oxygen as they decompose.  This process, called eutrophication, creates 'dead zones' where oxygen levels are too low to support marine wildlife.",
             'One of the most infamous HABs is the Florida red tide, which occurs in the Gulf of Mexico. This phenomenon, caused by a neurotoxic algae called Kerenia brevis, has been connected to human respiratory infections and the mass deaths of aquatic species.'
         ],
@@ -295,7 +301,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
     {
         header: '6. You (yes, you!)',
         body: [
-            "As you've now seen, there are many ways to mitigate the impact of impervious surfaces. Urban planners, developers, manufacturers, and governments both local and national are all important cogs in the machine of biodiversity conservation. But there's one stakeholder in the future of our planet who we haven't discussed: YOU."
+            "As you've now seen, there are many ways to mitigate the impact of impervious surfaces. Urban planners, developers, scientists, and governments both local and national are all important cogs in the machine of biodiversity conservation. But there's one stakeholder in the future of our planet who we haven't discussed: YOU."
         ]
     },
     {
@@ -308,7 +314,8 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
     {
         header: 'Education and awareness',
         body: [
-            'Educate your community about the importance of biodiversity and the impact of impervious surfaces. Start a club, organize an informational event, or plan a nature walk that highlights how developed areas fragment or incur on wildlife habitats. When our communities understand the significance of these issues, they are more likely to support conservation efforts or roll up their sleeves and get to work themselves.'
+            'Educate your community about the importance of biodiversity and the impact of impervious surfaces. Start a club, organize an informational event, or plan a nature walk that highlights how developed areas fragment or incur on wildlife habitats.',
+            'When our communities understand the significance of these issues, they are more likely to support conservation efforts or roll up their sleeves and get to work themselves.'
         ]
     },
     {
@@ -357,8 +364,8 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
     {
         header: '',
         body: [
-            'In the ensuing years, residents of the Love Canal area, now an established suburban community, complained about suspicious black fluids and foul odors in their yards and public playgrounds. In 1977, after a winter storm raised the water table and brought the buried contaminants to the surface, a study by the State Departments of Health and Environmental Conservation was conducted. It found toxic vapors from more than 80 compounds in many Love Canal homes, the result of groundwater leaching into basements and evaporating into the air.',
-            'By 1979, subsequent studies has discovered leukemia, miscarriages, birth defects, and more.'
+            'In the ensuing years, residents of the Love Canal area, by then an established suburban community, complained about suspicious black fluids and foul odors in their yards and public playgrounds. In 1977, after a winter storm raised the water table and brought the buried contaminants to the surface, a study by the State Departments of Health and Environmental Conservation was conducted. It found toxic vapors from more than 80 compounds in many Love Canal homes, the result of groundwater leaching into basements and evaporating into the air.',
+            'By 1979, subsequent studies has discovered leukemia, miscarriages, birth defects, and more among residents.'
         ]
     },
     {
@@ -374,7 +381,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
     {
         header: '',
         body: [
-            'The Love Canal tragedy has nothing to do with impervious surfaces, of course. But it does illustrate how concerned citizens, through grassroots activism and advocacy, can significantly influence environmental legislation.',
+            'The Love Canal tragedy has very little to do with impervious surfaces, of course. But it does illustrate how concerned citizens, through grassroots activism and advocacy, can significantly influence environmental legislation.',
             'Passing laws that protect biodiversity are a collaboration between individuals and organizations at all levels of our society, but the initial spark can come from anywhere, even you.'
         ],
         link: 'https://www.nytimes.com/2013/11/25/booming/love-canal-and-its-mixed-legacy.html'

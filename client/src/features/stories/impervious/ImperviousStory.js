@@ -13,15 +13,11 @@ const ImperviousStory = () => {
             </Row>
             <ImperviousIntroduction />
             <Row className='mt-5'>
-                <h2 className='text-uppercase text-center fw-bold'>2. Threats</h2>
+                <h2 className='text-uppercase text-center fw-bold'>2. Threats to Biodiversity</h2>
             </Row>
             <ImperviousThreats />
             <Row className='mt-5'>
-                <h2 className='text-uppercase text-center fw-bold'>3. Case Study: </h2>
-            </Row>
-            
-            <Row className='mt-5'>
-                <h2 className='text-uppercase text-center fw-bold'>4. Solutions</h2>
+                <h2 className='text-uppercase text-center fw-bold'>3. Solutions</h2>
             </Row>
             <ImperviousSolutions />
         </>

@@ -3,7 +3,7 @@ import impervious from '../media/impervioussurfaces.jpg';
 export const STORIES = [
     {
         name: 'impervious',
-        titleSplit: ['Impervious', 'Surfaces'],
+        titleSplit: ['Impervious'],
         description: 'How our sprawling cities lead the attack on wildlife.',
         cardImage: impervious,
         scrollSections: [

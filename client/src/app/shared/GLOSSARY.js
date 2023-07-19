@@ -71,7 +71,7 @@ export const GLOSSARY = [
     },
     {
         term: 'fragmentation',
-        definition: 'The breaking apart of continuous habitat into distinct pieces.',
+        definition: 'The breaking apart of continuous habitat into distinct pieces (e.g., a road bisecting a forest).',
         source: 'Biodiversity A-Z'
     },
     {
@@ -111,7 +111,7 @@ export const GLOSSARY = [
     },
     {
         term: 'HIPPO',
-        definition: 'In 2005, E.O. Wilson coined the acronym HIPPO to summarize threats to biodiversity. H=Habitat Loss, I=Invasive Species, P=Pollution, P=Human Population, and O=Overharvesting.',
+        definition: 'In 2005, E.O. Wilson coined the acronym HIPPO to summarize threats to biodiversity. Habitat Loss, Invasive Species, Pollution, (Human) Population, and Overharvesting.',
         source: 'National Park Service'
     },
     {
@@ -126,17 +126,17 @@ export const GLOSSARY = [
     },
     {
         term: 'service',
-        definition: 'Any positive benefit that wildlife or ecosystems provide to people, such as clean air and water, pollination, or fertile soil for crop production.',
+        definition: '(of ecosystems) Any positive benefit that wildlife or ecosystems provide to people, such as clean air and water, pollination, or fertile soil for crop production.',
         source: 'U.S. Environmental Protetion Agency'
     },
     {
         term: 'services',
-        definition: 'Any positive benefit that wildlife or ecosystems provide to people, such as clean air and water, pollination, or fertile soil for crop production.',
+        definition: '(of ecosystems) Any positive benefit that wildlife or ecosystems provide to people, such as clean air and water, pollination, or fertile soil for crop production.',
         source: 'U.S. Environmental Protetion Agency'
     },
     {
         term: 'hotspot',
-        definition: 'Regions characterized both by exceptional levels of plant endemism and serious levels of habitat loss.',
+        definition: '(of biodiversity) Regions characterized both by exceptional levels of plant endemism and serious levels of habitat loss.',
         source: 'National Geographic'
     },
     {
@@ -186,7 +186,7 @@ export const GLOSSARY = [
     },
     {
         term: 'sediment',
-        definiton: 'Solid materials moved and deposited in a new location. Sediment can consist of rocks and minerals, as well as the remains of plants and animals.',
+        definition: 'Solid materials moved and deposited in a new location. Sediment can consist of rocks and minerals as well as the remains of plants and animals.',
         source: 'National Geographic'
     },
     {
@@ -233,6 +233,11 @@ export const GLOSSARY = [
         term: 'microclimate',
         definition: "Any climatic condition in a relatively small area near the Earth's surface, such as a garden, park, or cave, especially one that differs from the conditions of the wider area.",
         source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'suburbanization',
+        definition: 'A term used to describe the growth of areas on the fringes of major cities.',
+        source: 'ScienceDirect'
     }
 ];
 
