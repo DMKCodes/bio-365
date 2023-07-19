@@ -19,7 +19,12 @@ const RegisterLoginModal = ({ currentUser }) => {
 
     return (
         <>       
-            <Button outline onClick={() => setModalOpen(true)}>
+            <Button 
+                outline
+                color='success'
+                className='rounded-0' 
+                onClick={() => setModalOpen(true)}
+            >
                 Log In
             </Button>
             <Modal isOpen={modalOpen}>

@@ -1,17 +1,25 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { Row, Col, Button } from 'reactstrap';
 import {
     selectCurrentUser,
     checkSavedArticles,
     addSavedArticle,
     removeSavedArticle
 } from '../users/userSlice';
-import { Row, Col, Button } from 'reactstrap';
 import {
     useAddArticleMutation,
     useDeleteArticleMutation,
 } from '../users/articlesApiSlice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faPlus, 
+    faMinus, 
+    faArrowUpRightFromSquare, 
+    faBookmark, 
+    faBook 
+} from '@fortawesome/free-solid-svg-icons';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
 import SciDaily from '../../app/media/sciencedaily.jpg';
@@ -91,18 +99,18 @@ const FeaturedArticle = ({ article, dashboard }) => {
     };
 
     return (
-        <Row className='py-3 mb-3'>
+        <Row className='d-flex justify-content-center my-5'>
             <Col md='6'>
                 <img src={image} alt='' className='featured-article-image w-100' />
             </Col>
-            <Col md='6' className='d-flex flex-column justify-content-center'>
+            <Col md='4' className='d-flex flex-column justify-content-center'>
                 <Row>
                     <h5 className='article-title fw-bold text-center'>
                         {title}
                     </h5>
                 </Row>
                 <Row>
-                    <small className='text-muted text-center'>
+                    <small className='text-muted text-center mb-4'>
                         Author: {author}, {pubDate}
                     </small>
                 </Row>
@@ -110,27 +118,39 @@ const FeaturedArticle = ({ article, dashboard }) => {
                     <Col className='d-flex justify-content-center'>
                         <Button
                             type='link'
-                            color='success'
+                            outline
+                            color='dark'
                             className='me-2 rounded-0 btn-sm'
                             href={link}
                             target='_blank'
                             rel='noreferrer noopener'
                         >
-                            Full Article
+                            <span className='me-2'>
+                                Full Article
+                            </span> 
+                            <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
                         </Button>
                         <Button
                             type='button'
+                            outline
                             color='dark'
                             className='me-2 rounded-0 btn-sm'
                             onClick={() => setExpanded(!expanded)}
                         >
-                            Preview [{!expanded ? '+' : '-'}]
+                            <span className='me-2'>Preview</span>
+                            <span>
+                                {!expanded ? 
+                                    <FontAwesomeIcon icon={faPlus} /> : 
+                                    <FontAwesomeIcon icon={faMinus} />
+                                }
+                            </span>
                         </Button>
 
                         {currentUser && isSaved && dashboard ? (
                             <Button
                                 type='button'
                                 color='danger'
+                                outline
                                 className='rounded-0 btn-sm'
                                 onClick={() => {
                                     delArticle();
@@ -146,23 +166,29 @@ const FeaturedArticle = ({ article, dashboard }) => {
                             >
                                 <Button
                                     type='link'
-                                    color='primary'
+                                    outline
+                                    color='success'
                                     className='rounded-0 btn-sm'
                                 >
-                                    Dashboard
+                                    <span className='me-2'>Reading List</span>
+                                    <FontAwesomeIcon icon={faBook} />
                                 </Button>
                             </NavLink>
                         ) : currentUser && !isSaved ? (
                             <Button
                                 type='button'
-                                color='secondary'
+                                outline
+                                color='dark'
                                 className='rounded-0 btn-sm'
                                 onClick={() => {
                                     addArticle();
                                     setIsSaved(true);
                                 }}
                             >
-                                Add Bookmark
+                                <span className='me-2'>Add Bookmark</span>
+                                <span>
+                                    <FontAwesomeIcon icon={faBookmark} />
+                                </span>
                             </Button>
                         ) : null}
 

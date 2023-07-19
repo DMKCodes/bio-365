@@ -22,6 +22,14 @@ import {
     CardSubtitle,
     CardText
 } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faPlus, 
+    faMinus, 
+    faArrowUpRightFromSquare, 
+    faBookmark, 
+    faBook 
+} from '@fortawesome/free-solid-svg-icons';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
 import SciDaily from '../../app/media/sciencedaily.jpg';
@@ -101,10 +109,10 @@ const ArticleCard = ({ article, dashboard }) => {
     };
 
     return (
-        <Card className='article-card mb-4'>
+        <Card className='article-card mb-5 rounded-0'>
             <CardImg
                 alt='Article Image'
-                className='article-image'
+                className='article-image rounded-0'
                 src={image}
             />
             <CardBody>
@@ -118,27 +126,39 @@ const ArticleCard = ({ article, dashboard }) => {
                 </CardTitle>
                 <Button
                     type='link'
-                    color='success'
+                    outline
+                    color='dark'
                     className='me-2 rounded-0 btn-sm'
                     href={link}
                     target='_blank'
                     rel='noreferrer noopener'
                 >
-                    Full Article
+                    <span className='me-2'>
+                        Full Article
+                    </span> 
+                    <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
                 </Button>
                 <Button
                     type='button'
+                    outline
                     color='dark'
                     className='me-2 rounded-0 btn-sm'
                     onClick={() => setExpanded(!expanded)}
                 >
-                    Preview [{!expanded ? '+' : '-'}]
+                    <span className='me-2'>Preview</span>
+                    <span>
+                        {!expanded ? 
+                            <FontAwesomeIcon icon={faPlus} /> : 
+                            <FontAwesomeIcon icon={faMinus} />
+                        }
+                    </span>
                 </Button>
 
                 {currentUser && isSaved && dashboard ? (
                     <Button
                         type='button'
                         color='danger'
+                        outline
                         className='rounded-0 btn-sm'
                         onClick={() => {
                             delArticle();
@@ -154,23 +174,29 @@ const ArticleCard = ({ article, dashboard }) => {
                     >
                         <Button
                             type='link'
-                            color='primary'
+                            outline
+                            color='success'
                             className='rounded-0 btn-sm'
                         >
-                            Dashboard
+                            <span className='me-2'>Reading List</span>
+                            <FontAwesomeIcon icon={faBook} />
                         </Button>
                     </NavLink>
                 ) : currentUser && !isSaved ? (
                     <Button
                         type='button'
-                        color='secondary'
+                        outline
+                        color='dark'
                         className='rounded-0 btn-sm'
                         onClick={() => {
                             addArticle();
                             setIsSaved(true);
                         }}
                     >
-                        Add Bookmark
+                        <span className='me-2'>Add Bookmark</span>
+                        <span className='border-start border-success ps-2'>
+                            <FontAwesomeIcon icon={faBookmark} />
+                        </span>
                     </Button>
                 ) : null}
 

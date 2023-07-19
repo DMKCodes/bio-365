@@ -21,6 +21,10 @@ html {
   margin-top: auto;
 }
 
+.form-field {
+  height: 2rem;
+}
+
 .logo {
   font-weight: bold;
   letter-spacing: 1px;
@@ -48,10 +52,6 @@ html {
   -webkit-box-orient: vertical;
 }
 
-.article-preview {
-  cursor: pointer;
-}
-
 .toggle-read-more {
   cursor: pointer;
 }
@@ -69,6 +69,27 @@ html {
 .featured-article-image {
   max-height: 700px;
   object-fit: scale-down;
+}
+
+.news-pagination .page-link {
+  color: black !important;
+  background-color: white;
+  border-color: black;
+  --bs-pagination-focus-box-shadow: none !important;
+  min-width: 35px;
+}
+
+.news-pagination .page-link:hover {
+  color: black;
+  background-color: white;
+  border-color: black;
+  background: rgba(0,0,0,0.1);
+}
+
+.news-pagination .page-item.active .page-link {
+  color: white !important;
+  background-color: black;
+  border-color: black;
 }
 
 /* News Filter */
@@ -160,7 +181,7 @@ html {
 }
 
 .podcast-card-overlay:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .podcast-card-btn {
@@ -213,6 +234,7 @@ html {
 
 .story-main-image {
   max-height: 100%;
+  max-width: 100%;
 }
 
 .story-side-content {

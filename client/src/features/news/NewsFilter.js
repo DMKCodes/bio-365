@@ -147,7 +147,7 @@ const NewsFilter = () => {
                             value={searchQuery}
                             onChange={handleSearchChange}
                             onKeyPress={handleSearchSubmit}
-                            className='searchbar'
+                            className='searchbar rounded-0 border-dark'
                         />
                         <span 
                             className='searchbar-icons'

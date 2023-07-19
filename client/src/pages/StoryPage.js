@@ -4,7 +4,6 @@ import ImperviousStory from '../features/stories/impervious/ImperviousStory';
 
 const StoryPage = () => {
     const { storyName } = useParams();
-    console.log(storyName);
 
     return (
         <Container className='mt-3'>

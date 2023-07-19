@@ -11,6 +11,7 @@ import {
 
 const ChartLine = ({ data, ticks }) => {
     const keys = data[0] && Object.keys(data[0]).filter(key => key !== 'name');
+    const colors = ['#791E94', '#136F63', '#F34213', '#2EC4B6'];
 
     const formatCamelCase = (string) => {
         string = string.replace(/([A-Z])/g, ' $1');
@@ -59,7 +60,7 @@ const ChartLine = ({ data, ticks }) => {
                         key={index}
                         type='monotone'
                         dataKey={key}
-                        stroke={index === 0 ? '#FB8F67' : '#00c49a'}
+                        stroke={colors[index % colors.length]}
                     />
                 ))}
             </LineChart>
