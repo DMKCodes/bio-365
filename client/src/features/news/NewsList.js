@@ -22,7 +22,7 @@ const NewsList = ({ articles, dashboard }) => {
         return (
             <Row>
                 <div className='d-flex justify-content-end'>
-                    <Pagination size='sm' aria-label='pagination' className='news-pagination mt-5'>
+                    <Pagination size='sm' aria-label='pagination' className='pagination mt-5'>
                         <PaginationItem disabled={currentPage <= 0}>
                             <PaginationLink
                                 first
@@ -112,7 +112,7 @@ const NewsList = ({ articles, dashboard }) => {
                     })
                 ))}
                 <div className='d-flex justify-content-end mb-5'>
-                    <Pagination size='sm' aria-label='pagination' className='news-pagination'>
+                    <Pagination size='sm' aria-label='pagination' className='pagination'>
                         <PaginationItem disabled={currentPage <= 0}>
                             <PaginationLink
                                 first
