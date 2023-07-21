@@ -11,6 +11,7 @@ import StoriesPage from './pages/StoriesPage';
 import StoryPage from './pages/StoryPage';
 import Footer from './components/Footer';
 import GlossaryPage from './pages/GlossaryPage';
+import ResourcesPage from './pages/ResourcesPage';
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/stories' element={<StoriesPage />} />
                 <Route path='/stories/:storyName' element={<StoryPage />} />
                 <Route path='/glossary' element={<GlossaryPage />} />
+                <Route path='/resources' element={<ResourcesPage />} />
             </Routes>
             <Footer />
         </div>
