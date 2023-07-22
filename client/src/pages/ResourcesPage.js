@@ -13,9 +13,9 @@ const ResourcesPage = () => {
             </Row>
             <Row className='text-center mb-5'>
                 <h4>External Resources</h4>
-                {RESOURCES.map((resource) => {
+                {RESOURCES.map((resource, index) => {
                     return (
-                        <Col md='6' lg='4'>
+                        <Col md='6' lg='4' key={index}>
                             <Card>
                                 <CardHeader>
                                     {resource.name}

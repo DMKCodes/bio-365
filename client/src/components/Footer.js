@@ -1,13 +1,14 @@
 import { Container, Row, Col, Nav, NavItem, Navbar } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import ContactForm from './ContactForm';
+import Donations from './Donations';
 
 const Footer = () => {
     return (
         <footer className='footer'>
             <Container className='p-2 border-top border-5 border-dark'>
                 <Row className='mt-3'>
-                    <Col md='4' xs='6' className='text-center'>
+                    <Col md='4' xs='4' className='text-center'>
                         <h5 className='mb-2 fw-bold'>
                             Explore
                         </h5>
@@ -36,24 +37,17 @@ const Footer = () => {
                             </Nav>
                         </Navbar>
                     </Col>
-                    <Col md='4' xs='6' className='text-center'>
-                        <h5 className='mb-2 fw-bold'>
-                            Contact
+                    <Col md='4' xs='8' className='text-center d-flex flex-column'>
+                        <h5 className='mb-4 fw-bold'>
+                            Support Biodiversity
                         </h5>
-                        <div>
-                            <p className='my-4'>
-                                Em:{' '}
-                                <a href='mailto:admin@biodiversity365.org'>
-                                    admin@biodiversity365.org
-                                </a>
-                            </p>
-                            <small className='text-muted'>
-                                Socials coming soon!
-                            </small>
-                        </div>
+                        <Donations/>
+                        <small className='text-muted'>
+                            100% of proceeds keep this platform online, with any excess donated to biodiversity conservation and research.
+                        </small>
                     </Col>
                     <Col md='4' xs='12' className='text-center'>
-                        <h5 className='mb-2 fw-bold'>
+                        <h5 className='mb-4 fw-bold'>
                             Feedback
                         </h5>
                         <ContactForm />

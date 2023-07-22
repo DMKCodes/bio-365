@@ -20,11 +20,14 @@ const Header = () => {
     return (
         <Container className='header px-0 mb-5 border-bottom border-5 border-dark'>
             <Navbar sticky='top' expand='md'>
-                <NavLink className='nav-link' to='/'>
-                    <h2 className='logo'>
-                        Bio<span className='text-success'>diversity</span>365
-                    </h2>
-                </NavLink>
+                <div className='d-flex flex-row'>
+                    <NavLink className='nav-link' to='/'>
+                        <h2 className='logo me-1'>
+                            Bio<span className='text-success'>diversity</span>365
+                        </h2>
+                    </NavLink>
+                    <p>[BETA]</p>
+                </div>
                 <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
                 <Collapse isOpen={menuOpen} navbar>
                     <Nav className='ms-auto' navbar>

@@ -26,12 +26,12 @@ export const GLOSSARY = [
     },
     {
         term: 'megadiverse',
-        definition: '17 countries which have been identified as the most biodiversity-rich countries of the world, with a particular focus on endemic biodiversity: United States of America, Mexico, Colombia, Ecuador, Peru, Venezuela, Brazil, Democratic Republic of Congo, South Africa, Madagascar, India, Malaysia, Indonesia, Philippines, Papua New Guinea, China, and Australia.',
+        definition: '(of countries) 17 countries identified as the most biodiversity-rich countries of the world, with a particular focus on endemic biodiversity: United States of America, Mexico, Colombia, Ecuador, Peru, Venezuela, Brazil, Democratic Republic of Congo, South Africa, Madagascar, India, Malaysia, Indonesia, Philippines, Papua New Guinea, China, and Australia.',
         source: 'Biodiversity A-Z'
     },
     {
         term: 'monoculture',
-        definition: 'The cultivation of a single crop in a given area.',
+        definition: '(in agriculture) The cultivation of a single crop in a given area.',
         source: 'Oxford Languages'
     },
     {
@@ -226,7 +226,7 @@ export const GLOSSARY = [
     },
     {
         term: 'aquifer',
-        definition: 'A body of porous rock or sediment saturated with groundwater. Groundwater enters an aquifer as precipitation seeps through the soil.',
+        definition: 'A body of porous rock or sediment saturated with groundwater. Groundwater enters an aquifer as precipitation seeps down through the soil.',
         source: 'National Geographic'
     },
     {
@@ -238,6 +238,61 @@ export const GLOSSARY = [
         term: 'suburbanization',
         definition: 'A term used to describe the growth of areas on the fringes of major cities.',
         source: 'ScienceDirect'
+    },
+    {
+        term: 'photosynthesis',
+        definition: 'The process by which plants use sunlight, water, and carbon dioxide to create oxygen and energy in the form of sugar.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'porous',
+        definition: '(of rock or other material) Having minute spaces or holes through which liquid or air may pass.',
+        source: 'Oxford Languages'
+    },
+    {
+        term: 'oxidation',
+        definition: 'A biological process that involves the loss of electrons as opposed to the reduction process where there is a gain of electrons. Oxidation and reduction, however, are coupled together as a redox reaction, an energy-producing reaction within a cell. ',
+        source: 'BiologyOnline'
+    },
+    {
+        term: 'organic',
+        definition: 'Relating to or derived from living matter.',
+        source: 'Oxford Languages'
+    },
+    {
+        term: 'inorganic',
+        definition: 'Relating to or derived from non-living matter.',
+        source: 'Oxford Languages'
+    },
+    {
+        term: 'eukaryote',
+        definition: 'Any cell or organism that possesses a clearly defined nucleus.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'eukaryotic',
+        definition: 'Any cell or organism that possesses a clearly defined nucleus.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'migratory',
+        definition: '(of a species) The regular, usually seasonal, movement of all or part of an animal population to and from a given area.',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'transpiration',
+        definition: 'The process of water movemet through a plant and evaporation from aerial parts, such as leaves, stems, and flowers',
+        source: 'Encyclopedia Britannica'
+    },
+    {
+        term: 'guttation',
+        definition: 'The secretion of droplets of water from the pores of plants.',
+        source: 'Oxford Languages'
+    },
+    {
+        term: 'biology',
+        definition: 'The study of living organisms, divided into many specialized fields that cover their morphology, physiology, anatomy, behavior, origin, and distribution.',
+        source: 'Oxford Languages'
     }
 ];
 
