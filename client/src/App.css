@@ -17,6 +17,11 @@ html {
   font-weight: bold;
 }
 
+.logo {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 .footer {
   margin-top: auto;
 }
@@ -25,9 +30,17 @@ html {
   height: 2rem;
 }
 
-.logo {
-  font-weight: bold;
-  letter-spacing: 1px;
+.no-resize {
+  resize: none;
+}
+
+.btn {
+  box-shadow: 2px 2px black;
+}
+
+.bmc-button {
+  box-shadow: 3px 3px black;
+  background-color: #ffdd00;
 }
 
 .accordion {
@@ -226,7 +239,7 @@ html {
 }
 
 .story-card-btn {
-  width: 10%;
+  width: 15%;
 }
 
 .story-main-content {
@@ -241,12 +254,20 @@ html {
   max-width: 100%;
 }
 
+.story-caption {
+  max-width: 60%;
+}
+
 .story-side-content {
   margin: 25vh 0 50vh 0; 
 }
 
 .story-step {
-    margin: 50vh 0;
+    margin: 100vh 0;
+}
+
+.blockquote {
+  font-size: 1rem !important;
 }
 
 .chart-tooltip {

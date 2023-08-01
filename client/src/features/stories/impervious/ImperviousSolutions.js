@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
+import Quote from '../../../components/Quote';
 import defineKeywords from '../../../utils/defineKeywords';
-import { IMPERVIOUS_STORY_SOLUTIONS_CONTENT } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
+import ChartBar from '../../../components/ChartBar';
+import { 
+    IMPERVIOUS_STORY_SOLUTIONS_CONTENT, 
+    IMPERVIOUS_STORY_SOLUTIONS_MEDIA 
+} from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const ImperviousSolutions = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -17,22 +24,12 @@ const ImperviousSolutions = () => {
 
     return (
         <Row>
-            <Col md='7' className='story-main'>
-                <div className='story-main-content d-flex justify-content-center'>
-                    <span className='d-flex flex-column'>
-                        <small className='text-muted text-center'>
-                            Image Source: Stormwater Shepherds
-                        </small>
-                    </span>
-                </div>
-            </Col>
             <Col md='5'>
                 <div className='story-side-content'>
                     <Scrollama 
                         offset={0.5} 
                         onStepEnter={onStepEnter} 
                         onStepExit={onStepExit}
-                        debug
                     >
                         {IMPERVIOUS_STORY_SOLUTIONS_CONTENT &&
                             IMPERVIOUS_STORY_SOLUTIONS_CONTENT.map((content, index) => {
@@ -51,15 +48,24 @@ const ImperviousSolutions = () => {
                                                 )
                                             })}
                                             {content.link &&
-                                                <small className='text-muted'>
-                                                    <a 
-                                                        href={content.link}
-                                                        target='_blank'
-                                                        rel='noreferrer'
+                                                <a 
+                                                    href={content.link}
+                                                    target='_blank'
+                                                    rel='noreferrer'
+                                                >
+                                                    <Button 
+                                                        color='success'
+                                                        className='btn-sm rounded-0'
                                                     >
-                                                        Read more...
-                                                    </a>
-                                                </small>
+                                                        <span className='me-2'>
+                                                            Read More
+                                                        </span> 
+                                                        <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
+                                                    </Button>
+                                                </a>
+                                            }
+                                            {content.quote &&
+                                                <Quote quote={content.quote} source={content.quoteSource} />
                                             }
                                         </div>
                                     </Step>
@@ -67,6 +73,46 @@ const ImperviousSolutions = () => {
                             })
                         }
                     </Scrollama>
+                </div>
+            </Col>
+            <Col md='7' className='story-main'>
+                <div className='story-main-content d-flex justify-content-center'>
+                    {IMPERVIOUS_STORY_SOLUTIONS_MEDIA &&
+                        IMPERVIOUS_STORY_SOLUTIONS_MEDIA.filter((content) => currentStepIndex === content.index)
+                        .map((content) => {
+                            return (
+                                <Fragment key={content.index}>
+                                    {currentStepIndex === content.index ? (
+                                        <span className='d-flex flex-column align-items-center'>
+                                                {content.image ? (
+                                                    <img
+                                                        src={content.image}
+                                                        alt={content.alt}
+                                                        className='story-main-image mb-2'
+                                                    />
+                                                ) : content.video ? (
+                                                    <iframe width='560' height='315' src={content.video} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen />
+                                                ) : content.chart && content.chartType === 'bar' ? (
+                                                    <Fragment>
+                                                        <h3 className='text-center'>{content.chartTitle}</h3>
+                                                        <ChartBar data={content.chartData} />
+                                                    </Fragment>
+                                                ) : null}
+                
+                                                <small className='text-muted text-center mb-2'>
+                                                    Source: {content.source}
+                                                </small>
+                                                {content.caption &&
+                                                    <small className='text-center story-caption'>
+                                                        {content.caption}
+                                                    </small>
+                                                }
+                                        </span>
+                                    ) : null}
+                                </Fragment>
+                            );
+                        })
+                    }
                 </div>
             </Col>
         </Row>

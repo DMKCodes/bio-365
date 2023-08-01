@@ -1,5 +1,10 @@
 export const GLOSSARY = [
     {
+        term: 'biodiversity',
+        definition: 'The term we use to describe all the different kinds of life on Earth—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. These species work together in ecosystems, like an intricate web, to maintain balance and support life.',
+        source: 'Biodiversity365'
+    },
+    {
         term: 'ecosystem',
         definition: 'A geographic area where plants, animals, and other organisms, as well as weather and landscape, work together to form a bubble of life. Ecosystems contain biotic, or living parts as well as abiotic, or nonliving parts. Biotic factors include plants, animals, and other organisms. Abiotic factors include rocks, temperature, and humidity.',
         source: 'National Geographic'
@@ -86,7 +91,7 @@ export const GLOSSARY = [
     },
     {
         term: 'invasive',
-        definition: "Non-native plants, animals and other living organisms that thrive in areas where they don't naturally live and cause (or are likely to cause) economic or environmental harm, or harm to human, animal or plant health.",
+        definition: "(of species) Non-native plants, animals and other living organisms that thrive in areas where they don't naturally live and cause (or are likely to cause) economic or environmental harm, or harm to human, animal or plant health.",
         source: 'U.S. Fish & Wildlife Service'
     },
     {
@@ -276,7 +281,7 @@ export const GLOSSARY = [
     },
     {
         term: 'migratory',
-        definition: '(of a species) The regular, usually seasonal, movement of all or part of an animal population to and from a given area.',
+        definition: '(of a species) The regular, usually seasonal, movement of all or part of an population to and from a given area.',
         source: 'Encyclopedia Britannica'
     },
     {
@@ -293,6 +298,21 @@ export const GLOSSARY = [
         term: 'biology',
         definition: 'The study of living organisms, divided into many specialized fields that cover their morphology, physiology, anatomy, behavior, origin, and distribution.',
         source: 'Oxford Languages'
+    },
+    {
+        term: 'wetland',
+        definition: 'An area where water covers the soil, or is present either at or near the surface of the soil all year or for varying periods of time during the year, including during the growing season.',
+        source: 'U.S. Environmental Protection Agency'
+    },
+    {
+        term: 'wetlands',
+        definition: 'Areas where water covers the soil, or is present either at or near the surface of the soil all year or for varying periods of time during the year, including during the growing season.',
+        source: 'U.S. Environmental Protection Agency'
+    },
+    {
+        term: 'rainscaping',
+        definition: 'Any combination of plantings, water features, catch basins, permeable pavement and other activities that manage stormwater as close as possible to where it falls, rather than moving it someplace else.',
+        source: 'Missouri Botanical Garden'
     }
 ];
 

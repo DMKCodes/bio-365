@@ -1,5 +1,3 @@
-
-
 export const METRO_POPULATIONS = [
     {
         name: 1970,

@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import ChartLine from '../../../components/ChartLine';
 import ChartBar from '../../../components/ChartBar';
 import defineKeywords from '../../../utils/defineKeywords';
-import { IMPERVIOUS_STORY_MAIN_CONTENT } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
+import { 
+    IMPERVIOUS_STORY_INTRO_CONTENT, 
+    IMPERVIOUS_STORY_INTRO_MEDIA 
+} from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 import { URBAN_RURAL_POPULATIONS, CHART_YEARS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
-import { METRO_POPULATIONS } from '../../../app/shared/METRO_POPULATIONS';
-import impervious from '../../../app/media/impervious.jpg';
-import cityPeople from '../../../app/media/city-people.jpg';
-import greenCity from '../../../app/media/green-city.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+
 
 const ImperviousIntroduction = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -34,11 +36,10 @@ const ImperviousIntroduction = () => {
                 <div className='story-side-content'>
                     <Scrollama 
                         offset={0.5} 
-                        onStepEnter={onStepEnter} 
-                        debug
+                        onStepEnter={onStepEnter}
                     >
-                        {IMPERVIOUS_STORY_MAIN_CONTENT &&
-                            IMPERVIOUS_STORY_MAIN_CONTENT.map((content, index) => {
+                        {IMPERVIOUS_STORY_INTRO_CONTENT &&
+                            IMPERVIOUS_STORY_INTRO_CONTENT.map((content, index) => {
                                 return (
                                     <Step 
                                         data={index} 
@@ -56,21 +57,22 @@ const ImperviousIntroduction = () => {
                                                     </p>
                                                 )
                                             })}
-                                            {content.note &&
-                                                <small className='text-muted'>
-                                                    Note: {content.note}<br /><br />
-                                                </small>
-                                            }
                                             {content.link &&
-                                                <small className='text-muted'>
-                                                    <a 
-                                                        href={content.link}
-                                                        target='_blank'
-                                                        rel='noreferrer'
+                                                <a 
+                                                    href={content.link}
+                                                    target='_blank'
+                                                    rel='noreferrer'
+                                                >
+                                                    <Button 
+                                                        color='success'
+                                                        className='btn-sm rounded-0'
                                                     >
-                                                        Read more...
-                                                    </a>
-                                                </small>
+                                                        <span className='me-2'>
+                                                            Read More
+                                                        </span> 
+                                                        <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
+                                                    </Button>
+                                                </a>
                                             }
                                         </div>
                                     </Step>
@@ -82,68 +84,47 @@ const ImperviousIntroduction = () => {
             </Col>
             <Col md='7' className='story-main px-0'>
                 <div className='story-main-content d-flex justify-content-center'>
-                    { currentStepIndex <= 1 ? (
-                        <span className='d-flex flex-column align-items-center'>
-                            <iframe width='560' height='315' src='https://www.youtube.com/embed/EbAoOQPNsu8' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen />
-                            <small className='text-muted text-center mt-2'>
-                                Video Source: PennState Extension
-                            </small>
-                        </span>
-                    ) : currentStepIndex === 2 ? (
-                        <span className='d-flex flex-column align-items-center'>
-                            <img 
-                                src={impervious} 
-                                alt='impervious infographic' 
-                                className='story-main-image mb-2' 
-                            />
-                            <small className='text-muted text-center'>
-                                Image Source: Raphaël Biscaldi
-                            </small>
-                        </span>
-                    ) : currentStepIndex <= 5 ? (
-                        <span className='d-flex flex-column align-items-center'>
-                            <h3 className='align-self-center'>
-                                Urban & Rural Population Distribution (1960-2020)
-                            </h3>
-                            <ChartLine data={chartData} ticks={CHART_YEARS} />
-                            <small className='text-muted text-center'>
-                                Source: World Bank, based on data from the UN Population Division
-                            </small>
-                        </span>
-                    ) : currentStepIndex === 6 ? (
-                        <span className='d-flex flex-column align-items-center'>
-                            <img
-                                src={cityPeople}
-                                alt='city people'
-                                className='story-main-image mb-2'
-                            />
-                            <small className='text-muted text-center'>
-                                Image Source: Christopher Burns
-                            </small>
-                        </span>
-                    ) : currentStepIndex === 7 ? (
-                        <span className='d-flex flex-column align-items-center'>
-                            <h3 className='text-center'>
-                                Urban & Rural Population Distribution (1960-2020)
-                            </h3>
-                            <ChartBar data={METRO_POPULATIONS} />
-                            <small className='text-muted text-center'>
-                                Source: Pew Research Center<br />
-                                Note: 'Smaller metropolitan' refers to counties in metros with fewer than 1 million residents.
-                            </small>
-                        </span>
-                    ) : currentStepIndex === 8 || 9 ? (
-                        <span className='d-flex flex-column align-items-center'>
-                            <img
-                                src={greenCity}
-                                alt='green city'
-                                className='story-main-image mb-2'
-                            />
-                            <small className='text-muted text-center'>
-                                Image Source: CHUTTERSNAP
-                            </small>
-                        </span>
-                    ) : null}
+                    {IMPERVIOUS_STORY_INTRO_MEDIA &&
+                        IMPERVIOUS_STORY_INTRO_MEDIA.filter((content) => currentStepIndex === content.index)
+                        .map((content) => {
+                            return (
+                                <Fragment key={content.index}>
+                                    {currentStepIndex === content.index ? (
+                                        <span className='d-flex flex-column align-items-center'>
+                                            {content.image ? (
+                                                <img
+                                                    src={content.image}
+                                                    alt={content.alt}
+                                                    className='story-main-image mb-2'
+                                                />
+                                            ) : content.video ? (
+                                                <iframe width='560' height='315' src={content.video} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen />
+                                            ) : content.chart && content.chartType === 'line' ? (
+                                                <Fragment>
+                                                    <h3 className='text-center'>{content.chartTitle}</h3>
+                                                    <ChartLine data={chartData} ticks={CHART_YEARS} />
+                                                </Fragment>
+                                            ) : content.chart && content.chartType === 'bar' ? (
+                                                <Fragment>
+                                                    <h3 className='text-center'>{content.chartTitle}</h3>
+                                                    <ChartBar data={content.chartData} />
+                                                </Fragment>
+                                            ) : null}
+            
+                                            <small className='text-muted text-center mb-2'>
+                                                Source: {content.source}
+                                            </small>
+                                            {content.caption &&
+                                                <small className='text-center story-caption'>
+                                                    {content.caption}
+                                                </small>
+                                            }
+                                        </span>
+                                    ) : null}
+                                </Fragment>
+                            );
+                        })
+                    }
                 </div>
             </Col>
         </Row>

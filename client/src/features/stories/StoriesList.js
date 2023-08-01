@@ -4,7 +4,7 @@ import { STORIES } from '../../app/shared/STORIES';
 
 const StoriesList = () => {
     return (
-        <Row className='mb-5'>
+        <Row className='my-5'>
             {STORIES.map((story, index) => {
                 return (
                     <Col lg='4' md='6' key={index}>

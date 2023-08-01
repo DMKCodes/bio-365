@@ -51,7 +51,7 @@ const ContactForm = () => {
                             as='textarea'
                             placeholder='Your message here!'
                             rows='4'
-                            className='form-control rounded-0'
+                            className='form-control no-resize rounded-0'
                             aria-label='message'
                         />
                         <ErrorMessage name='message' className='mb-0'>

@@ -26,28 +26,39 @@ const StoryCard = ({ story }) => {
                 className='story-card-img' 
             />
             <div className='story-card-overlay'>
-                <CardBody>
+                <CardBody className='d-flex flex-column justify-content-center h-100'>
                     {isHovered ? (
                         <>
-                            <CardTitle>
+                            <CardTitle className='mb-0'>
                                 <h2 className='text-uppercase fw-bold'>
                                     {story.titleSplit[0]}<br />
                                     {story.titleSplit[1]}
                                 </h2>
                             </CardTitle>
                             <CardText>{story.description}</CardText>
-                            <NavLink 
-                                className='nav-link' 
-                                to={`/stories/${story.name}`}
-                            >
+                            {!story.comingSoon ? (
+                                <NavLink 
+                                    className='nav-link' 
+                                    to={`/stories/${story.name}`}
+                                >
+                                    <Button
+                                        type='button'
+                                        color='success'
+                                        className='rounded-0 btn-sm story-card-btn'
+                                    >
+                                        <FontAwesomeIcon icon={faArrowRight} />
+                                    </Button>
+                                </NavLink>
+                            ) : (
                                 <Button
                                     type='button'
-                                    color='success'
-                                    className='rounded-0 btn-sm story-card-btn'
+                                    color='secondary'
+                                    disabled
+                                    className='rounded-0 btn-sm col-4'
                                 >
-                                    <FontAwesomeIcon icon={faArrowRight} />
+                                    Coming Soon
                                 </Button>
-                            </NavLink>
+                            )}
                         </>
                     ) : (
                         <CardTitle>

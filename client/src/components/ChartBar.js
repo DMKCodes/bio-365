@@ -11,7 +11,7 @@ import {
 
 const ChartBar = ({ data }) => {
     const keys = data[0] && Object.keys(data[0]).filter(key => key !== 'name');
-    const colors = ['#ff595e', '#f5b700', '#8ac926', '#1982c4', '#6a4c93'];
+    const colors = ['#791E94', '#136F63', '#F34213', '#2EC4B6', '#6a4c93'];
 
     const formatCamelCase = (string) => {
         string = string.replace(/([A-Z])/g, ' $1');
@@ -48,7 +48,7 @@ const ChartBar = ({ data }) => {
     };
 
     return (
-        <ResponsiveContainer width='100%' height='100%' className='bar-chart'>
+        <ResponsiveContainer width='100%' height={400} className='bar-chart'>
             <BarChart data={data}>
                 <CartesianGrid strokeDasharray='3 3' />
                 <XAxis dataKey='name' />

@@ -13,7 +13,7 @@ const Footer = () => {
                             Explore
                         </h5>
                         <Navbar>
-                            <Nav navbar className='w-100'>
+                            <Nav navbar className='w-100 fw-bold'>
                                 <NavItem>
                                     <NavLink className='nav-link' to='/news'>
                                         News
