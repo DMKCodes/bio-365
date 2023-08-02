@@ -98,7 +98,7 @@ const ImperviousIntroduction = () => {
                                                     className='story-main-image mb-2'
                                                 />
                                             ) : content.video ? (
-                                                <iframe width='560' height='315' src={content.video} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen />
+                                                <iframe width='560' height='315' src={content.video} title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullscreen />
                                             ) : content.chart && content.chartType === 'line' ? (
                                                 <Fragment>
                                                     <h3 className='text-center'>{content.chartTitle}</h3>

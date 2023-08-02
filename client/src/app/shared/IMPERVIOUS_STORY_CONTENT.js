@@ -496,7 +496,8 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
         header: 'Wildlife corridors',
         body: [
             'Designing urban spaces with wildlife corridors allows animals to move between habitats and mitigates fragmentation. This may involve overpasses, underpasses, or green bridges, enabling wildlife to safely cross roads.'
-        ]
+        ],
+        link: 'https://largelandscapes.org/'
     },
     {
         header: 'Rain gardens and bioswales',
@@ -1106,7 +1107,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
         image: loveCanal,
         video: null,
         alt: "A sign posted in Love Canal during the environmental tragedy, decrying the government's inaction.",
-        source: '',
+        source: 'Public Domain',
         caption: '',
         chart: null,
         chartTitle: null,
@@ -1145,7 +1146,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
         image: superfundAct,
         video: null,
         alt: 'Jimmy Carter signing the Superfund Act in the Oval Office.',
-        source: 'AP/Dennis Cook',
+        source: 'Dennis Cook',
         caption: 'Jimmy Carter signed the Comprehensive Environmental Response, Compensation, and Liability Act, commonly known as the Superfund Act, in 1980. The program has gone on to restore nearly 400 sites affected by hazardous waste in the wake of hurricanes, oil spills, train derailments, and corporate malfeasance.',
         chart: null,
         chartTitle: null,
@@ -1198,6 +1199,149 @@ export const IMPERVIOUS_STORY_SUMMARY = [
             'Lobby the local or federal government to overhaul regulations and implement sustainable urban planning.',
             'Participate in Citizen Science programs to support scientific research.',
             'Donate to conservation groups.'
+        ]
+    }
+];
+
+export const IMPERVIOUS_STORY_SOURCES = [
+    {
+        category: 'Organizations',
+        sources: [
+            {
+                name: 'Center for Large Landscape Conservation',
+                link: 'https://largelandscapes.org/'
+            },
+            {
+                name: 'Climate Central',
+                link: 'https://www.climatecentral.org/'
+            },
+            {
+                name: 'dotDK Media',
+                link: 'https://www.dotdkmedia.dk/'
+            },
+            {
+                name: 'Environmental Social Science Research Group',
+                link: 'https://www.essrg.hu/en/'
+            },
+            {
+                name: 'Food & Agriculture Organization of the U.N.',
+                link: 'https://www.fao.org/home/en'
+            },
+            {
+                name: 'Gallup',
+                link: 'https://www.gallup.com/home.aspx'
+            },
+            {
+                name: 'Missouri Botanical Garden',
+                link: 'https://www.missouribotanicalgarden.org/'
+            },
+            {
+                name: 'Mobilisation Lab',
+                link: 'https://mobilisationlab.org/'
+            },
+            {
+                name: 'National Environmental Education Foundation',
+                link: 'https://www.neefusa.org/'
+            },
+            {
+                name: 'National Geographic Education',
+                link: 'https://education.nationalgeographic.org/'
+            },
+            {
+                name: 'Natural Capital Ireland',
+                link: 'https://www.naturalcapitalireland.com/'
+            },
+            {
+                name: 'OECD Environment',
+                link: 'https://www.oecd.org/environment/'
+            },
+            {
+                name: 'PennState Extension',
+                link: 'https://extension.psu.edu/'
+            },
+            {
+                name: 'Pew Research Center',
+                link: 'https://www.pewresearch.org/'
+            },
+            {
+                name: 'Pheasants Forever',
+                link: 'https://www.pheasantsforever.org/'
+            },
+            {
+                name: 'PwC Green Taxes & Incentives Tracker',
+                link: 'https://www.pwc.com/gx/en/services/tax/green-tax-and-incentives-tracker.html#:~:text=Green%20incentives%20are%20financial%20benefits,investments%20that%20mitigate%20environmental%20impact.'
+            },
+            {
+                name: 'State Government of Victoria',
+                link: 'https://www.vic.gov.au/'
+            },
+            {
+                name: 'State of Green',
+                link: 'https://stateofgreen.com/en/'
+            },
+            {
+                name: 'The Conversation',
+                link: 'https://theconversation.com/us'
+            },
+            {
+                name: 'U.N. System of Environmental Economic Accounting',
+                link: 'https://seea.un.org/'
+            },
+            {
+                name: 'U.S. Agency for International Development',
+                link: 'https://www.usaid.gov/'
+            },
+            {
+                name: 'U.S. Environmental Protection Agency',
+                link: 'https://www.epa.gov/'
+            },
+            {
+                name: 'U.S. Fish & Wildlife Service',
+                link: 'https://www.fws.gov/'
+            },
+            {
+                name: 'U.S. General Services Administration',
+                link: 'https://www.citizenscience.gov/#'
+            },
+            {
+                name: 'U.S. Geological Survey',
+                link: 'https://www.usgs.gov/'
+            },
+            {
+                name: 'U.S. Green Building Council',
+                link: 'https://www.usgbc.org/'
+            },
+            {
+                name: 'Wetland-based Solutions',
+                link: 'https://www.wetlandbasedsolutions.org/'
+            },
+            {
+                name: 'World Bank',
+                link: 'https://www.worldbank.org/en/home'
+            }
+        ]
+    },
+    {
+        category: 'Studies',
+        sources: [
+            {
+                authors: 'Jin-Ling Yang & Gan-Lin Zhang',
+                name: 'Formation, characteristics and eco-environmental implications of urban soils - A review',
+                link: 'https://doi.org/10.1080/00380768.2015.1035622',
+                year: '2015'
+            },
+            {
+                authors: 'Thomas Edwards, Christopher B. Jones, Sarah E. Perkins & Padraig Corcoran',
+                name: 'Passive citizen science: The role of social media in wildlife observations',
+                link: 'https://doi.org/10.1371/journal.pone.0255416',
+                year: '2021'
+            }
+        ]
+    },
+    {
+        category: 'Photography',
+        sources: [
+            'Ashwini Chaudhary', 'Atelier Groenblauw', 'Bettmann Archive/United Press International', 'Christopher Burns', 'CHUTTERSNAP', 'Clark Tibbs', 'Dennis Cook', 'E.H. Butler Library, SUNY Buffalo State', 'Erica Fischer', 'Florida Guidebook', 'Justin Wilkens', 'jwvaneck', 'Li-An Lim', 'Markus Spiske', 'Matt Palmer', 'pxfuel', 'Raphaël Biscaldi', 'Sophie N', 'Steve Adams', 'Roman Kraft', 'Terence Starkey', 'Virendar Bhardwaj', 'Wikimedia Commons', 'wilsanphotography'
         ]
     }
 ];

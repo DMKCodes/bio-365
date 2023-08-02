@@ -19,7 +19,7 @@ const ImperviousThreats = () => {
 
     return (
         <Row>
-            <Col md='7' className='story-main px-0'>
+            <Col md='7' className='story-main px-5'>
                 <div className='story-main-content d-flex justify-content-center'>
                     {IMPERVIOUS_STORY_THREATS_MEDIA &&
                         IMPERVIOUS_STORY_THREATS_MEDIA.filter((content) => currentStepIndex === content.index)
@@ -43,7 +43,7 @@ const ImperviousThreats = () => {
                                                     </Fragment>
                                                 ) : null}
                 
-                                                <small className='text-muted text-center mb-2'>
+                                                <small className='text-muted mb-2'>
                                                     Source: {content.source}
                                                 </small>
                                                 {content.caption &&

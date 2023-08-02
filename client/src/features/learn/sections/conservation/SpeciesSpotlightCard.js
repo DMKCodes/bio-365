@@ -85,11 +85,11 @@ const SpeciesSpotlightCard = () => {
                 {SPECIES_SPOTLIGHT_CONTENT.map((text, index) => {
                     const textWithKeywords = defineKeywords(text.body);
                     return (
-                        <AccordionItem key={`${index}`}>
-                            <AccordionHeader targetId={`${index}`}>
+                        <AccordionItem key={index}>
+                            <AccordionHeader targetId={index}>
                                 {text.header}
                             </AccordionHeader>
-                            <AccordionBody accordionId={`${index}`}>
+                            <AccordionBody accordionId={index}>
                                 {textWithKeywords}
                             </AccordionBody>
                         </AccordionItem>
