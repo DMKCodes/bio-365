@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { selectCurrentUser, clearCurrentUser, checkAdmin } from '../../features/users/userSlice';
@@ -27,6 +28,8 @@ const UserDropdown = () => {
         navigate('/');
     };
 
+    const location = useLocation();
+
     return (
         <div>
             <Dropdown 
@@ -36,17 +39,16 @@ const UserDropdown = () => {
             >   
                 <DropdownToggle 
                     caret
-                    color='success' 
+                    color={`${location.pathname === '/' ? 'light' : 'success'}`} 
                     className='rounded-0'
                 >
                     {currentUser.username}
                 </DropdownToggle>
-                <DropdownMenu>
+                <DropdownMenu className='rounded-0 mt-1'>
                     <DropdownItem>
                         <NavLink 
                             className='nav-link' 
-                            to='/dashboard' 
-                            style={{ color: 'black' }}
+                            to='/dashboard'
                         >
                             User Dashboard
                         </NavLink>
@@ -56,12 +58,20 @@ const UserDropdown = () => {
                             <NavLink 
                                 className='nav-link' 
                                 to='/admin' 
-                                style={{ color: 'black' }}
                             >
                                 Admin Dashboard
                             </NavLink>
                         </DropdownItem>
                     }
+                    <DropdownItem>
+                        <NavLink 
+                            className='nav-link' 
+                            to='/readinglist' 
+                        >
+                            Reading List
+                        </NavLink>
+                    </DropdownItem>
+                    <hr className='my-2'/>
                     <DropdownItem>
                         <NavItem onClick={() => logout()}>
                             Logout

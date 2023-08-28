@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Input, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { 
+    Container, 
+    Row, 
+    Col, 
+    Form, 
+    Input, 
+    Pagination, 
+    PaginationItem, 
+    PaginationLink 
+} from 'reactstrap';
+import Header from '../components/Header';
+import VideoBackground from '../components/VideoBackground';
+import { GLOSSARY_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { GLOSSARY } from '../app/shared/GLOSSARY';
@@ -88,91 +100,86 @@ const GlossaryPage = () => {
     };
 
     return (
-        <Container>
-            <Row className='text-center'>
-                <h3>Glossary</h3>
-                <small className='text-muted mb-4'>
-                    Visit{' '}
-                    <a href='https://www.biodiversitya-z.org/' target='_blank' rel='noreferrer'>
-                        Biodiversity A-Z
-                    </a>
-                    {' '}for a more comprehensive glossary.
-                </small>
-            </Row>
-            <Row className='d-flex justify-content-center'>
-                <Col lg='6' md='8' xs='10'>
-                    <Form>
-                        <div style={{ position: 'relative' }}>
-                            <Input
-                                type='text'
-                                placeholder='Search...'
-                                value={searchQuery}
-                                className='searchbar rounded-0 border-dark'
-                                onChange={handleSearchChange}
-                                onKeyDown={handleSearchSubmit}
-                            />
-                            <span 
-                                className='searchbar-icons'
-                                onClick={searchPerformed ? handleSearchReset : handleSearchSubmit}
-                            >
-                                {searchPerformed ? (
-                                    <FontAwesomeIcon icon={faTimes} />
-                                ) : (
-                                    <FontAwesomeIcon icon={faSearch} />
-                                )}
-                            </span>
-                        </div>
-                    </Form>
-                </Col>
-            </Row>
-            
-            <Row className='mt-3 d-flex justify-content-center'>
-                <Col lg='6' md='8' xs='10' className='d-flex justify-content-center'>
-                    <Pagination className='pagination'>
-                        {Object.keys(items).map((letter) => (
-                            <PaginationItem 
-                                key={letter} 
-                                active={currentLetter === letter}
-                            >
-                                <PaginationLink 
-                                    onClick={() => handleLetterClick(letter)} 
-                                    className='rounded-0'
-                                >
-                                    {letter}
-                                </PaginationLink>
-                            </PaginationItem>
-                        ))}
-                    </Pagination>
-                </Col>
-            </Row>
+        <Container fluid className='p-0'>
+            <VideoBackground video={GLOSSARY_PAGE_VIDEO_BG} />
+            <Header />
 
-            <Row className='mb-5'>
-                {noResults ? (
-                    <div className='text-center'>
-                        <h5>No results...</h5>
-                    </div>
-                ) : searchPerformed ? (
-                    searchResults.map((item, index) => {
-                        return (
-                            <div key={index}>
-                                <h2>{item.term}</h2>
-                                <p>{item.definition}</p>
-                                <p>- {item.source}</p>
+            <Container className='my-5'>
+                <Row className='d-flex justify-content-center'>
+                    <Col lg='6' md='8' xs='10'>
+                        <Form>
+                            <div style={{ position: 'relative' }}>
+                                <Input
+                                    type='text'
+                                    placeholder='Search...'
+                                    value={searchQuery}
+                                    className='searchbar rounded-0 border-dark'
+                                    onChange={handleSearchChange}
+                                    onKeyDown={handleSearchSubmit}
+                                />
+                                <span 
+                                    className='searchbar-icons'
+                                    onClick={searchPerformed ? handleSearchReset : handleSearchSubmit}
+                                >
+                                    {searchPerformed ? (
+                                        <FontAwesomeIcon icon={faTimes} />
+                                    ) : (
+                                        <FontAwesomeIcon icon={faSearch} />
+                                    )}
+                                </span>
                             </div>
-                        );
-                    })
-                ) : items[currentLetter] ? (
-                    items[currentLetter].map((item, index) => {
-                        return (
-                            <div key={index} className='my-3'>
-                                <h2>{item.term}</h2>
-                                <p>{item.definition}</p>
-                                <p>- {item.source}</p>
-                            </div>
-                        );
-                    })
-                ) : null}
-            </Row>
+                        </Form>
+                    </Col>
+                </Row>
+                
+                <Row className='mt-3 d-flex justify-content-center'>
+                    <Col lg='6' md='8' xs='10' className='d-flex justify-content-center'>
+                        <Pagination className='pagination'>
+                            {Object.keys(items).map((letter) => (
+                                <PaginationItem 
+                                    key={letter} 
+                                    active={currentLetter === letter}
+                                >
+                                    <PaginationLink 
+                                        onClick={() => handleLetterClick(letter)} 
+                                        className='rounded-0'
+                                    >
+                                        {letter}
+                                    </PaginationLink>
+                                </PaginationItem>
+                            ))}
+                        </Pagination>
+                    </Col>
+                </Row>
+
+                <Row className='mb-5'>
+                    {noResults ? (
+                        <div className='text-center'>
+                            <h5>No results...</h5>
+                        </div>
+                    ) : searchPerformed ? (
+                        searchResults.map((item, index) => {
+                            return (
+                                <div key={index}>
+                                    <h2>{item.term}</h2>
+                                    <p className='mb-0'>{item.definition}</p>
+                                    <p>- {item.source}</p>
+                                </div>
+                            );
+                        })
+                    ) : items[currentLetter] ? (
+                        items[currentLetter].map((item, index) => {
+                            return (
+                                <div key={index} className='my-3'>
+                                    <h2>{item.term}</h2>
+                                    <p className='mb-2'>{item.definition}</p>
+                                    <p>- {item.source}</p>
+                                </div>
+                            );
+                        })
+                    ) : null}
+                </Row>
+            </Container>
         </Container>
     );
 };

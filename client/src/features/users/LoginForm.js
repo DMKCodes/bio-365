@@ -78,15 +78,15 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 const { errors, touched } = formik;
                 return (
                     <Form className='p-3'>
-                        <FormGroup row>
+                        <FormGroup row className='d-flex align-items-center'>
                             <Label htmlFor='username' md='4'>
                                 Username:
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='username'
                                     autoComplete='off'
-                                    className={`form-control${errors.username && touched.username ? ' is-invalid' : ''}`}
+                                    className={`form-control${errors.username && touched.username ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
                                 />
                                 {errors.username && touched.username ? (
                                     <ErrorMessage
@@ -101,12 +101,12 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             <Label htmlFor='password' md='4'>
                                 Password:
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='password'
                                     type='password'
                                     autoComplete='off'
-                                    className={`form-control${errors.password && touched.password ? ' is-invalid' : ''}`}
+                                    className={`form-control${errors.password && touched.password ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
                                 />
                                 {errors.password && touched.password ? (
                                     <ErrorMessage
@@ -121,11 +121,11 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             <Label check htmlFor='remember' md='4'>
                                 Remember me?
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='remember'
                                     type='checkbox'
-                                    className='form-check-input mt-2'
+                                    className='form-check-input rounded-0 border-dark'
                                 />
                             </Col>
                         </FormGroup>
@@ -134,14 +134,15 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                                 <Button 
                                     type='submit' 
                                     color='success' 
-                                    className='me-3'
+                                    className='me-3 rounded-0'
                                 >
-                                    Login
+                                    Log in
                                 </Button>
                                 <Button 
                                     type='button' 
                                     color='secondary' 
                                     onClick={() => setModalOpen(false)}
+                                    className='rounded-0'
                                 >
                                     Cancel
                                 </Button>

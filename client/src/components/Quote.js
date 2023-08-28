@@ -5,7 +5,7 @@ const StoryQuote = ({ quote, source }) => {
         <Card className='quote-card my-3 rounded-0'>
             <CardBody>
                 <blockquote className='blockquote mb-0'>
-                    "{quote}"
+                    <i>"{quote}"</i>
                 </blockquote>
                 <figcaption className='blockquote-footer mb-0 mt-2'>
                     {source}

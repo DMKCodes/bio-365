@@ -50,9 +50,8 @@ const NewsFilter = () => {
     };
 
     return (
-        <Row className='mb-3 news-filter'>
+        <Row className='mb-3 news-filter p-0'>
             <Col md='6' className='d-flex align-items-center'>
-                <h5 className='mb-0'>Filter By: </h5>
                 <Dropdown 
                     isOpen={categoryDropdownOpen} 
                     toggle={() => setCategoryDropdownOpen(!categoryDropdownOpen)}
@@ -138,9 +137,9 @@ const NewsFilter = () => {
                     </DropdownMenu>
                 </Dropdown>
             </Col>
-            <Col md='6'>
+            <Col md='6' className='p-0'>
                 <Form>
-                    <div style={{ position: 'relative' }}>
+                    <div className='news-search'>
                         <Input
                             type='text'
                             placeholder='Search...'

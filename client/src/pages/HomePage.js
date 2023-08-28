@@ -1,13 +1,37 @@
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import Header from '../components/Header';
+import VideoBackground from '../components/VideoBackground';
+import FeaturedContent from '../components/FeaturedContent';
+import YoutubeEmbed from '../components/YoutubeEmbed';
+import { HOME_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
+import { IPBES_REPORT } from '../app/shared/FEATURES';
+import puffins from '../app/media/puffins.jpg';
 
 const HomePage = () => {
     return (
-        <Container>
-            <p>Welcome to Biodiversity 365! This platform is a one-stop shop for policy, news, and data concerning biodiversity and conservation.</p>
-            <p>Featured: IPBES Global Assessment Report on Biodiversity and Ecosystem Services</p>
-            <a href='https://www.un.org/sustainabledevelopment/blog/2019/05/nature-decline-unprecedented-report/'>Read the report...</a>
-            <p>'The overwhelming evidence of the IPBES Global Assessment, from a wide range of different fields of knowledge, presents an ominous picture. The health of ecosystems on which we and all other species depend is deteriorating more rapidly than ever. We are eroding the very foundations of our economies, livelihoods, food security, health and quality of life worldwide.</p>
-            <p>- Sir Robert Watson, IPBES Chair</p>
+        <Container fluid className='p-0'>
+            <VideoBackground video={HOME_PAGE_VIDEO_BG} />
+            <Header />
+
+            <Container className='my-5'>
+                <Row>
+                    <Col lg='7' className='p-0 bg-warning'></Col>
+                    <Col lg='5' className='p-0'>
+                        <YoutubeEmbed id='GlWNuzrqe7U' />
+                    </Col>
+                </Row>
+                
+                <Row>
+                    <Col lg='5' className='p-0'>
+                        <img src={puffins} alt='puffins in the wild' className='img-fluid' />
+                    </Col>
+                    <Col lg='7' className='p-0 bg-success'>
+                        
+                    </Col>
+                </Row>
+                
+                <FeaturedContent feature={IPBES_REPORT} />
+            </Container>
         </Container>
     );
 };

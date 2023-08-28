@@ -99,11 +99,11 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='username' md='4'>
                                 Username:
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='username'
                                     autoComplete='off'
-                                    className={`form-control${errors.username && touched.username ? ' is-invalid' : ''}`}
+                                    className={`form-control${errors.username && touched.username ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
                                 />
                                 {errors.username && touched.username ? (
                                     <ErrorMessage
@@ -118,12 +118,12 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='password' md='4'>
                                 Password:
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='password'
                                     type='password'
                                     autoComplete='off'
-                                    className={`form-control${errors.password && touched.password ? ' is-invalid' : ''}`}
+                                    className={`form-control${errors.password && touched.password ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
                                 />
                                 {errors.password && touched.password ? (
                                     <ErrorMessage
@@ -138,12 +138,12 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='confirmPassword' md='4'>
                                 Confirm Password:
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='confirmPassword'
                                     type='password'
                                     autoComplete='off'
-                                    className={`form-control${errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : ''}`}
+                                    className={`form-control${errors.confirmPassword && touched.confirmPassword ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
                                 />
                                 {errors.confirmPassword && touched.confirmPassword ? (
                                     <ErrorMessage
@@ -158,11 +158,11 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='email' md='4'>
                                 Email:
                             </Label>
-                            <Col md='8'>
+                            <Col md='8' className='d-flex align-items-center'>
                                 <Field
                                     name='email'
                                     autoComplete='off'
-                                    className={`form-control${errors.email && touched.email ? ' is-invalid' : ''}`}
+                                    className={`form-control${errors.email && touched.email ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
                                 />
                                 {errors.email && touched.email ? (
                                     <ErrorMessage
@@ -175,10 +175,19 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                         </FormGroup>
                         <FormGroup row>
                             <Col className='d-flex justify-content-center'>
-                                <Button type='submit' color='success' className='me-3'>
+                                <Button 
+                                    type='submit' 
+                                    color='success' 
+                                    className='me-3 rounded-0'
+                                >
                                     Register
                                 </Button>
-                                <Button type='button' color='secondary' onClick={() => setModalOpen(false)}>
+                                <Button 
+                                    type='button' 
+                                    color='secondary' 
+                                    onClick={() => setModalOpen(false)}
+                                    className='rounded-0'
+                                >
                                     Cancel
                                 </Button>
                             </Col>

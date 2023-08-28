@@ -61,6 +61,7 @@ const ImperviousSummary = () => {
                     <small className='text-center mb-5 w-75'>
                         You can also donate directly to <a href='https://www.charitynavigator.org/discover-charities/best-charities/protect-environment/' target='_blank' rel='noreferrer'>conservation groups</a>.
                     </small>
+
                     <h3 className='fw-bold mb-3'>Sources</h3>
                     {IMPERVIOUS_STORY_SOURCES &&
                         <Accordion 
@@ -77,25 +78,40 @@ const ImperviousSummary = () => {
                                         </AccordionHeader>
                                         <AccordionBody accordionId={index}>
                                             {item.category === 'Photography' &&
-                                                <div>And a special thanks to the public domain and creative commons photographers whose work helps bring this story to life...</div>
+                                                <>
+                                                    <div className='mb-3'>
+                                                        <small>
+                                                            <i>And a special thanks to the public domain and creative commons photographers and resources whose work helps bring this story to life.</i>
+                                                        </small>
+                                                    </div>
+                                                    {item.sources.map((source, index) => {
+                                                        return (
+                                                            <div key={index} className='mb-2'>
+                                                                <small>{source}</small>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </>
                                             }
                                             {item.sources.map((source, index) => {
                                                 return (
-                                                    <Fragment key={index} className='mb-3'>
-                                                        {source.authors &&
-                                                            <small>{source.authors}</small>
+                                                    <div key={index} className='mb-3'>
+                                                        {source.name &&
+                                                            <small className='mb-1'>
+                                                                <a
+                                                                    href={source.link}
+                                                                    target='_blank'
+                                                                    rel='noreferrer'
+                                                                    key={index}
+                                                                >
+                                                                    {source.name}<br />
+                                                                </a>
+                                                            </small>
                                                         }
-                                                        <small className='mb-1'>
-                                                            <a
-                                                                href={source.link}
-                                                                target='_blank'
-                                                                rel='noreferrer'
-                                                                key={index}
-                                                            >
-                                                                {source.name}<br />
-                                                            </a>
-                                                        </small>
-                                                    </Fragment>
+                                                        {source.authors &&
+                                                            <small>Authors: <i>{source.authors}</i></small>
+                                                        }
+                                                    </div>
                                                 );
                                             })}
                                         </AccordionBody>

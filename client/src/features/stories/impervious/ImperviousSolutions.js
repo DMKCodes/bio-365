@@ -2,14 +2,14 @@ import { useState, Fragment } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
 import { Row, Col, Button } from 'reactstrap';
 import Quote from '../../../components/Quote';
-import defineKeywords from '../../../utils/defineKeywords';
+import ExternalButton from '../../../components/ExternalButton';
 import ChartBar from '../../../components/ChartBar';
+import defineKeywords from '../../../utils/defineKeywords';
 import { 
     IMPERVIOUS_STORY_SOLUTIONS_CONTENT, 
     IMPERVIOUS_STORY_SOLUTIONS_MEDIA 
 } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+
 
 const ImperviousSolutions = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
@@ -48,21 +48,7 @@ const ImperviousSolutions = () => {
                                                 )
                                             })}
                                             {content.link &&
-                                                <a 
-                                                    href={content.link}
-                                                    target='_blank'
-                                                    rel='noreferrer'
-                                                >
-                                                    <Button 
-                                                        color='success'
-                                                        className='btn-sm rounded-0'
-                                                    >
-                                                        <span className='me-2'>
-                                                            Read More
-                                                        </span> 
-                                                        <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
-                                                    </Button>
-                                                </a>
+                                                <ExternalButton link={content.link} />
                                             }
                                             {content.quote &&
                                                 <Quote quote={content.quote} source={content.quoteSource} />

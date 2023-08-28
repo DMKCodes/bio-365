@@ -6,7 +6,7 @@ import Donations from './Donations';
 const Footer = () => {
     return (
         <footer className='footer'>
-            <Container className='p-2 border-top border-5 border-dark'>
+            <Container fluid className='p-2 mt-5 border-top border-5 border-dark'>
                 <Row className='mt-3'>
                     <Col md='4' xs='4' className='text-center'>
                         <h5 className='mb-2 fw-bold'>
@@ -16,7 +16,7 @@ const Footer = () => {
                             <Nav navbar className='w-100 fw-bold'>
                                 <NavItem>
                                     <NavLink className='nav-link' to='/news'>
-                                        News
+                                        News & Research
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -41,12 +41,13 @@ const Footer = () => {
                         <h5 className='mb-4 fw-bold'>
                             Support Biodiversity
                         </h5>
-                        <Donations/>
-                        <small className='text-muted'>
-                            100% of proceeds keep this platform online, with any excess donated to biodiversity conservation and research.
-                        </small>
+                        <Donations />
+                        <h5 className='my-4 fw-bold'>
+                            Socials
+                        </h5>
+                        <small className='text-muted'>Coming soon!</small>
                     </Col>
-                    <Col md='4' xs='12' className='text-center'>
+                    <Col md='4' xs='12' className='d-flex flex-column align-items-center'>
                         <h5 className='mb-4 fw-bold'>
                             Feedback
                         </h5>

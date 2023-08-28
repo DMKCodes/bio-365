@@ -12,7 +12,7 @@ export const STORIES = [
     {
         name: 'cultured',
         titleSplit: ['Cultured'],
-        description: 'The benefits and future of lab-grown meat.',
+        description: 'The wildlife benefits and future of lab-grown meat.',
         cardImage: cultured,
         comingSoon: true
     }

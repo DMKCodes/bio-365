@@ -100,7 +100,7 @@ export const RESOURCES = [
         category: 'News'
     },
     {
-        name: 'The Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services',
+        name: 'Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services',
         link: 'https://www.ipbes.net/',
         category: 'Organization'
     },
@@ -134,25 +134,4 @@ export const RESOURCES = [
         link: 'https://www.nature.org/en-us/',
         category: 'Organization'
     },
-    {
-        name: '',
-        link: '',
-        category: ''
-    },
-    {
-        name: '',
-        link: '',
-        category: ''
-    },
-    {
-        name: '',
-        link: '',
-        category: ''
-    },
-    {
-        name: '',
-        link: '',
-        category: ''
-    },
-
 ];

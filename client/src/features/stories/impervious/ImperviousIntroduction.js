@@ -3,14 +3,13 @@ import { Scrollama, Step } from 'react-scrollama';
 import { Row, Col, Button } from 'reactstrap';
 import ChartLine from '../../../components/ChartLine';
 import ChartBar from '../../../components/ChartBar';
+import ExternalButton from '../../../components/ExternalButton';
 import defineKeywords from '../../../utils/defineKeywords';
 import { 
     IMPERVIOUS_STORY_INTRO_CONTENT, 
     IMPERVIOUS_STORY_INTRO_MEDIA 
 } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 import { URBAN_RURAL_POPULATIONS, CHART_YEARS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 const ImperviousIntroduction = () => {
@@ -58,21 +57,7 @@ const ImperviousIntroduction = () => {
                                                 )
                                             })}
                                             {content.link &&
-                                                <a 
-                                                    href={content.link}
-                                                    target='_blank'
-                                                    rel='noreferrer'
-                                                >
-                                                    <Button 
-                                                        color='success'
-                                                        className='btn-sm rounded-0'
-                                                    >
-                                                        <span className='me-2'>
-                                                            Read More
-                                                        </span> 
-                                                        <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
-                                                    </Button>
-                                                </a>
+                                                <ExternalButton link={content.link} />
                                             }
                                         </div>
                                     </Step>

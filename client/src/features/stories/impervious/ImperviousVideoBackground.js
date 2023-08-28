@@ -1,4 +1,4 @@
-import bgvid from '../../../app/media/citytraffic.mp4';
+import bgvid from '../../../app/media/impervious-video.mp4';
 
 const ImperviousVideoBackground = () => {
     return (

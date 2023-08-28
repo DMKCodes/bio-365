@@ -109,7 +109,7 @@ const ArticleCard = ({ article, dashboard }) => {
     };
 
     return (
-        <Card className='article-card mb-5 rounded-0'>
+        <Card className='article-card my-2 rounded-0'>
             <CardImg
                 alt='Article Image'
                 className='article-image rounded-0'
@@ -121,7 +121,7 @@ const ArticleCard = ({ article, dashboard }) => {
                         Author: {author}, {pubDate}
                     </small><br />
                 </CardSubtitle>
-                <CardTitle tag='h5' className='article-title fw-bold px-1'>
+                <CardTitle tag='h5' className='article-title fw-bold px-1 mb-4'>
                     {title}
                 </CardTitle>
                 <Button
@@ -205,7 +205,7 @@ const ArticleCard = ({ article, dashboard }) => {
                         snippet
                     }
                 </CardText>
-                <Row className='mt-3'>
+                <Row className='mt-4'>
                     <Col xs='3'>
                         <CardText>
                             <small className='text-success fw-bold float-start ms-2'>

@@ -7,9 +7,13 @@ import {
     selectDisplayArticles
 } from '../features/news/newsSlice';
 import { useArticlesQuery } from '../features/news/newsApiSlice';
+import { Container, Row } from 'reactstrap';
 import NewsList from '../features/news/NewsList';
 import NewsFilter from '../features/news/NewsFilter';
-import { Container, Row } from 'reactstrap';
+import VideoBackground from '../components/VideoBackground';
+import Header from '../components/Header';
+import { NEWS_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
+
 
 const NewsPage = () => {
     const dispatch = useDispatch();
@@ -31,20 +35,25 @@ const NewsPage = () => {
     }, [data]);
 
     return (
-        <Container>
-            <NewsFilter />
-            <Row>
-                {isError ? (
-                    <p>Error retrieving articles. Please refresh and try again.</p>
-                ) : isLoading ? (
-                    <p>Fetching the latest articles...</p>
-                ) : displayArticles ? (
-                    <NewsList 
-                        articles={displayArticles}
-                        dashboard={false} 
-                    />
-                ) : null}
-            </Row>
+        <Container fluid className='p-0'>
+            <VideoBackground video={NEWS_PAGE_VIDEO_BG} />
+            <Header />
+
+            <Container className='my-5'>
+                <Row>
+                    <NewsFilter />
+                    {isError ? (
+                        <p>Error retrieving articles. Please refresh and try again.</p>
+                    ) : isLoading ? (
+                        <p>Fetching the latest articles...</p>
+                    ) : displayArticles ? (
+                        <NewsList 
+                            articles={displayArticles}
+                            dashboard={false} 
+                        />
+                    ) : null}
+                </Row>
+            </Container>
         </Container>
     );
 };  

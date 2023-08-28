@@ -61,8 +61,8 @@ export const GLOSSARY = [
     },
     {
         term: 'conservation',
-        definition: "The study of the loss of Earth's biodiversity and the ways this loss can be prevented.",
-        source: 'Encyclopedia Britannica'
+        definition: "The management of a natural resource to prevent exploitation, destruction, or neglect.",
+        source: 'National Geographic'
     },
     {
         term: 'corridor',
@@ -141,18 +141,18 @@ export const GLOSSARY = [
     },
     {
         term: 'hotspot',
-        definition: '(of biodiversity) Regions characterized both by exceptional levels of plant endemism and serious levels of habitat loss.',
+        definition: '(of biodiversity) Regions characterized both by exceptional levels of species endemism and serious levels of habitat loss.',
         source: 'National Geographic'
     },
     {
         term: 'hotspots',
-        definition: 'Regions characterized both by exceptional levels of plant endemism and serious levels of habitat loss.',
+        definition: 'Regions characterized both by exceptional levels of species endemism and serious levels of habitat loss.',
         source: 'National Geographic'
     },
     {
         term: 'extinction',
-        definition: 'The dying out or extermination of a species. Extinction occurs when species are diminished because of environmental forces such as habitat fragmentation, climate change, natural disaster, overexploitation by humans, and pollution, or because of evolutionary changes in their members (genetic inbreeding, poor reproduction, decline in population numbers).',
-        source: 'Encyclopedia Britannica'
+        definition: 'The process of complete disappearance of a species from Earth.',
+        source: 'National Geographic'
     },
     {
         term: 'runoff',
@@ -313,6 +313,26 @@ export const GLOSSARY = [
         term: 'rainscaping',
         definition: 'Any combination of plantings, water features, catch basins, permeable pavement and other activities that manage stormwater as close as possible to where it falls, rather than moving it someplace else.',
         source: 'Missouri Botanical Garden'
+    },
+    {
+        term: 'diversity',
+        definition: '(of species) difference or variety of units of inheritance (genes) in a species.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'organism',
+        definition: 'A living or once-living thing.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'species',
+        definition: 'A group of similar organisms that can reproduce with each other.',
+        source: 'National Geographic'
+    },
+    {
+        term: 'evolution',
+        definition: 'The change in the heritable traits of a population over time.',
+        source: 'National Geographic'
     }
 ];
 
