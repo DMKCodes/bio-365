@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import {
     Button,
     Modal,
@@ -18,13 +17,11 @@ const RegisterLoginModal = ({ currentUser }) => {
     const [error, setError] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
 
-    const location = useLocation();
-
     return (
         <>       
             <Button 
                 outline
-                color={`${location.pathname === '/' ? 'light' : 'success'}`}
+                color='light'
                 className='rounded-0' 
                 onClick={() => setModalOpen(true)}
             >

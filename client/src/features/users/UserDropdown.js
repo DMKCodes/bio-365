@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { selectCurrentUser, clearCurrentUser, checkAdmin } from '../../features/users/userSlice';
@@ -28,8 +27,6 @@ const UserDropdown = () => {
         navigate('/');
     };
 
-    const location = useLocation();
-
     return (
         <div>
             <Dropdown 
@@ -39,7 +36,7 @@ const UserDropdown = () => {
             >   
                 <DropdownToggle 
                     caret
-                    color={`${location.pathname === '/' ? 'light' : 'success'}`} 
+                    color='light' 
                     className='rounded-0'
                 >
                     {currentUser.username}

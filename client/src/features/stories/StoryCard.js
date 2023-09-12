@@ -26,7 +26,7 @@ const StoryCard = ({ story }) => {
                 className='story-card-img' 
             />
             <div className='story-card-overlay'>
-                <CardBody className='d-flex flex-column justify-content-center h-100'>
+                <CardBody className='d-flex flex-column justify-content-center align-items-center h-100'>
                     {isHovered ? (
                         <>
                             <CardTitle className='mb-0'>

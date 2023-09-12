@@ -12,8 +12,16 @@ const StoriesPage = () => {
             </Row>
             <Header />
 
-            <Container>
+            <Container className='mb-5'>
+                <h2 className='text-center fw-bold'>Our Stories</h2>
+                <p className='text-center'>
+                    If you have your own story to tell, get in touch via our feedback form to collaborate!
+                </p>
                 <StoriesList />
+                <h2 className='text-center fw-bold'>User Stories</h2>
+                <p className='text-center'>
+                    If you have your own story to tell, get in touch via our feedback form to collaborate!
+                </p>
             </Container>
         </Container>
     );
