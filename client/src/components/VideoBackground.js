@@ -5,7 +5,9 @@ const VideoBackground = ({ video }) => {
                 <source src={video.video} type='video/mp4' />
             </video>
             <div className='video-overlay'>
-                <h1 className='video-overlay-header mb-3 fw-bold'>{video.title}</h1>
+                <h1 className='video-overlay-header mt-5 mb-3 fw-bold'>
+                    {video.title}
+                </h1>
                 {video.content.map((content, index) => {
                     return (
                         <h5 key={index} className='video-overlay-body text-center mb-4'>

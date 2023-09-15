@@ -16,7 +16,7 @@ const StoryCard = ({ story }) => {
 
     return (
         <Card 
-            className='story-card' 
+            className='story-card mb-3' 
             onMouseEnter={() => setIsHovered(true)} 
             onMouseLeave={() => setIsHovered(false)}
         >

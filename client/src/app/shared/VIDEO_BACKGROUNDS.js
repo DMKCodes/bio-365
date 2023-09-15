@@ -74,7 +74,7 @@ export const STORY_PAGE_VIDEO_BG = {
     videoSource: 'dabatepatvideos',
     title: 'STORIES',
     content: [
-        'Bite-sized, scrollable looks into the challenges facing biodiversity around the world.'
+        'Bite-sized, scrollable looks at the challenges facing biodiversity around the world.'
     ],
     author: null,
     button: null,

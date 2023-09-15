@@ -19,14 +19,14 @@ const HomeNav = () => {
     const currentUser = useSelector(selectCurrentUser);
 
     return (
-        <Container className='home-nav p-4'>
+        <Container className='header-nav p-4'>
             <Navbar expand='md' className='p-0'>
                 <div>
                     <NavLink className='nav-link' to='/'>
                         <img 
                             src={logo} 
                             alt='Biodiversity365 logo' 
-                            className='home-logo' 
+                            className='header-logo' 
                         />
                     </NavLink>
                 </div>
@@ -34,22 +34,22 @@ const HomeNav = () => {
                 <Collapse isOpen={menuOpen} navbar>
                     <Nav className='ms-auto p-0' navbar>
                         <NavItem>
-                            <NavLink className='home-nav-link' to='/news'>
-                                News & Research
+                            <NavLink className='header-nav-link' to='/news'>
+                                Articles
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='home-nav-link' to='/learn'>
+                            <NavLink className='header-nav-link' to='/learn'>
                                 Learn
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='home-nav-link' to='/stories'>
+                            <NavLink className='header-nav-link' to='/stories'>
                                 Stories
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='home-nav-link' to='/resources'>
+                            <NavLink className='header-nav-link' to='/resources'>
                                 Resources
                             </NavLink>
                         </NavItem>

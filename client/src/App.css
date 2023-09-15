@@ -115,9 +115,42 @@ html {
   height: 3rem;
 }
 
+/* Video Backgrounds */
+
+.video-background {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+}
+
+.video-overlay-body {
+  width: 50%;
+}
+
 /* Home Page */
 
-.home-nav {
+.header-nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -125,34 +158,34 @@ html {
   --bs-navbar-color: white !important;
 }
 
-.home-logo {
+.header-logo {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.home-nav .container-fluid {
+.header .container-fluid {
   padding: 0;
 }
 
-.home-nav .navbar-toggler {
+.header .navbar-toggler {
   color: white !important;
   --bs-navbar-toggler-border-color: white;
   margin-right: 0.5rem;
 }
 
-.home-nav .navbar-toggler-icon {
+.header-nav .navbar-toggler-icon {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27white%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
 }
 
-.home-nav-link {
+.header-nav-link {
   color: white;
   text-decoration: none;
   padding-right: 1.5rem;
 }
 
 @media (max-width:768px) {
-  .home-nav .navbar-collapse {
+  .header-nav .navbar-collapse {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,24 +193,24 @@ html {
     text-align: center;
   }
 
-  .home-nav .nav-item {
+  .header-nav .nav-item {
     margin-bottom: 1rem;
   }
 
-  .home-nav-link {
+  .header-nav-link {
     padding-right: 0;
   }
 }
 
-.home-nav-link:hover {
+.header-nav-link:hover {
   color: white;
   text-decoration: underline;
   text-decoration-thickness: 0.3em;
   text-decoration-color: #fff;
 }
 
-.home-logo {
-  height: 12rem;
+.header-logo {
+  height: 18vh;
   
 }
 
@@ -256,37 +289,6 @@ html {
 }
 
 /* Learn Section */
-
-.video-background {
-  position: relative;
-  height: 75vh;
-  overflow: hidden;
-}
-
-.video-background video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  background: rgba(0,0,0,0.6);
-}
-
-.video-overlay-body {
-  width: 40%;
-}
 
 .learn-section {
   padding-top: 50px;
