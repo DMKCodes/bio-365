@@ -173,8 +173,8 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                                 ) : null}
                             </Col>
                         </FormGroup>
-                        <FormGroup row>
-                            <Col className='d-flex justify-content-center'>
+                        <FormGroup row className='mt-4'>
+                            <Col className='d-flex justify-content-around'>
                                 <Button 
                                     type='submit' 
                                     color='success' 

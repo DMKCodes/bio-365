@@ -22,12 +22,12 @@ const ChangeUsernameForm = ({ setChangeUsername, putUser }) => {
             {(formik) => {
                 const { errors, touched } = formik;
                 return (
-                    <Form className='p-2'>
+                    <Form className='p-2 pt-4'>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='newUsername'>
+                            <Label htmlFor='newUsername' md='2'>
                                 New Username:
                             </Label>
-                            <Col xs='8'>
+                            <Col xs='8' md='6'>
                                 <Field 
                                     name='newUsername'
                                     autoComplete='off'
@@ -43,7 +43,7 @@ const ChangeUsernameForm = ({ setChangeUsername, putUser }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Col className='d-flex justify-content-center'>
+                            <Col className='mt-3 d-flex justify-content-center'>
                                 <Button 
                                     type='submit' 
                                     color='success' 

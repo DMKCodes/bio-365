@@ -44,7 +44,7 @@ const StoryCard = ({ story }) => {
                                     <Button
                                         type='button'
                                         color='success'
-                                        className='rounded-0 btn-sm story-card-btn'
+                                        className='story-card-btn rounded-0 btn-sm story-card-btn'
                                     >
                                         <FontAwesomeIcon icon={faArrowRight} />
                                     </Button>
@@ -54,7 +54,7 @@ const StoryCard = ({ story }) => {
                                     type='button'
                                     color='secondary'
                                     disabled
-                                    className='rounded-0 btn-sm col-4'
+                                    className='story-card-btn rounded-0 btn-sm col-4'
                                 >
                                     Coming Soon
                                 </Button>

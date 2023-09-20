@@ -118,10 +118,10 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label check htmlFor='remember' md='4'>
+                            <Label check htmlFor='remember' xs='5'>
                                 Remember me?
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col xs='7' className='d-flex align-items-center'>
                                 <Field
                                     name='remember'
                                     type='checkbox'
@@ -130,11 +130,11 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Col className='d-flex justify-content-center'>
+                            <Col className='d-flex justify-content-around'>
                                 <Button 
                                     type='submit' 
                                     color='success' 
-                                    className='me-3 rounded-0'
+                                    className='rounded-0'
                                 >
                                     Log in
                                 </Button>

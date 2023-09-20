@@ -109,48 +109,48 @@ const UserPanel = () => {
                 </Col>
             </Row>
             <Row className='d-flex justify-content-center py-3 border border-top-0'>
-                    {changeUsername ? (
-                        <ChangeUsernameForm
-                            putUser={updateUserDetails}
-                            setChangeUsername={setChangeUsername}
-                        />
-                    ) : changePassword ? (
-                        <ChangePasswordForm 
-                            putUser={updateUserDetails} 
-                            setChangePassword={setChangePassword} 
-                        />
-                    ) : changeEmail ? (
-                        <ChangeEmailForm 
-                            putUser={updateUserDetails}
-                            setChangeEmail={setChangeEmail}
-                        />
-                    ) : deleteAccount ? (
-                        <>
-                            <div className='mb-3'>
-                                Are you sure you want to delete your account?{' '}
-                                This operation is <b style={{ color: 'red' }}>permanent</b>.
-                            </div>
-                            <Col md='6'>
-                                <Button 
-                                    color='danger' 
-                                    className='me-5 rounded-0 btn-sm' 
-                                    type='submit' 
-                                    onClick={() => delUser(_id)}
-                                >
-                                    Delete
-                                </Button>
-                                <Button 
-                                    type='button'
-                                    className='rounded-0 btn-sm' 
-                                    onClick={() => setDeleteAccount(false)}
-                                >
-                                    Cancel
-                                </Button>
-                            </Col>
-                        </>
-                    ) : accountDeleted ? (
-                        <div>Your account has been deleted.  Redirecting...</div>
-                    ) : null}
+                {changeUsername ? (
+                    <ChangeUsernameForm
+                        putUser={updateUserDetails}
+                        setChangeUsername={setChangeUsername}
+                    />
+                ) : changePassword ? (
+                    <ChangePasswordForm 
+                        putUser={updateUserDetails} 
+                        setChangePassword={setChangePassword} 
+                    />
+                ) : changeEmail ? (
+                    <ChangeEmailForm 
+                        putUser={updateUserDetails}
+                        setChangeEmail={setChangeEmail}
+                    />
+                ) : deleteAccount ? (
+                    <>
+                        <div className='mb-3'>
+                            Are you sure you want to delete your account?{' '}
+                            This operation is <b style={{ color: 'red' }}>permanent</b>.
+                        </div>
+                        <Col md='6'>
+                            <Button 
+                                color='danger' 
+                                className='me-5 rounded-0 btn-sm' 
+                                type='submit' 
+                                onClick={() => delUser(_id)}
+                            >
+                                Delete
+                            </Button>
+                            <Button 
+                                type='button'
+                                className='rounded-0 btn-sm' 
+                                onClick={() => setDeleteAccount(false)}
+                            >
+                                Cancel
+                            </Button>
+                        </Col>
+                    </>
+                ) : accountDeleted ? (
+                    <div>Your account has been deleted.  Redirecting...</div>
+                ) : null}
             </Row>
         </Container>
     );

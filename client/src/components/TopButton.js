@@ -9,7 +9,7 @@ const TopButton = () => {
         <Button 
             outline
             className='top-button rounded-0'
-            color='dark'
+            color='success'
             onClick={() => scrollToTop()}
         >
             Back to top

@@ -29,12 +29,12 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
             {(formik) => {
                 const { errors, touched } = formik;
                 return (
-                    <Form className='p-2'>
-                        <FormGroup row>
+                    <Form className='p-2 pt-4'>
+                        <FormGroup row className='justify-content-center'>
                             <Label htmlFor='currentPassword' md='3'>
                                 Current Password: 
                             </Label>
-                            <Col md='9'>
+                            <Col md='6'>
                                 <Field 
                                     name='currentPassword'
                                     type='password'
@@ -50,11 +50,11 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                                 ) : null}
                             </Col>
                         </FormGroup>
-                        <FormGroup row>
+                        <FormGroup row className='justify-content-center'>
                             <Label htmlFor='newPassword' md='3'>
                                 New Password: 
                             </Label>
-                            <Col md='9'>
+                            <Col md='6'>
                                 <Field 
                                     name='newPassword'
                                     type='password'
@@ -70,11 +70,11 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                                 ) : null}
                             </Col>
                         </FormGroup>
-                        <FormGroup row>
+                        <FormGroup row className='justify-content-center'>
                             <Label htmlFor='confirmNewPassword' md='3'>
                                 Confirm New Password: 
                             </Label>
-                            <Col md='9'>
+                            <Col md='6'>
                                 <Field 
                                     name='confirmNewPassword'
                                     type='password'
@@ -91,7 +91,7 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Col className='d-flex justify-content-center'>
+                            <Col className='mt-3 d-flex justify-content-center'>
                                 <Button 
                                     type='submit' 
                                     color='success' 

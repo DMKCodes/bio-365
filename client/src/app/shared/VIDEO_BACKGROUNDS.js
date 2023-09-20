@@ -37,7 +37,7 @@ export const NEWS_PAGE_VIDEO_BG = {
     videoSource: 'Nicky Pe',
     title: 'NEWS & RESEARCH',
     content: [
-        ''
+        'The latest in biodiversity news and scientific research, updated daily.'
     ],
     author: null,
     button: null,

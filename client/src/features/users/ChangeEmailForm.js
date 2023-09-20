@@ -32,12 +32,12 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
             {(formik) => {
                 const { errors, touched } = formik;
                 return (
-                    <Form className='p-2'>
-                        <FormGroup row>
-                            <Label htmlFor='currentEmail' md='3'>
+                    <Form className='p-2 pt-4'>
+                        <FormGroup row className='justify-content-center'>
+                            <Label htmlFor='currentEmail' md='2'>
                                 Current Email: 
                             </Label>
-                            <Col md='9'>
+                            <Col md='6'>
                                 <Field 
                                     name='currentEmail'
                                     type='email'
@@ -53,11 +53,11 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
                                 ) : null}
                             </Col>
                         </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor='newEmail' md='3'>
+                        <FormGroup row className='justify-content-center'>
+                            <Label htmlFor='newEmail' md='2'>
                                 New Email: 
                             </Label>
-                            <Col md='9'>
+                            <Col md='6'>
                                 <Field 
                                     name='newEmail'
                                     type='email'
@@ -73,11 +73,11 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
                                 ) : null}
                             </Col>
                         </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor='confirmNewEmail' md='3'>
+                        <FormGroup row className='justify-content-center'>
+                            <Label htmlFor='confirmNewEmail' md='2'>
                                 Confirm New Email: 
                             </Label>
-                            <Col md='9'>
+                            <Col md='6'>
                                 <Field 
                                     name='confirmNewEmail'
                                     type='password'
@@ -94,7 +94,7 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Col className='d-flex justify-content-center'>
+                            <Col className='mt-3 d-flex justify-content-center'>
                                 <Button 
                                     type='submit' 
                                     color='success' 

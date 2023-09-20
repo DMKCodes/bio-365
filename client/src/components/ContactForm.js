@@ -18,7 +18,7 @@ const ContactForm = () => {
             onSubmit={handleSubmit}
             validate={validateContactForm}
         >
-            <Form className='contact-form'>
+            <Form className='contact-form mb-3'>
                 <FormGroup row>
                     <Col xs='6' className='pe-1'>
                         <Field
@@ -59,7 +59,7 @@ const ContactForm = () => {
                         </ErrorMessage>
                     </Col>
                 </FormGroup>
-                <FormGroup row>
+                <FormGroup row className='text-center'>
                     <Col md='12'>
                         <Button 
                             type='submit' 

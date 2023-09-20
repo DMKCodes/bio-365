@@ -33,6 +33,7 @@ const UserDropdown = () => {
                 isOpen={dropdownOpen} 
                 toggle={() => setDropdownOpen(!dropdownOpen)}
                 group
+                className='mx-0 mx-md-3 my-3 my-md-0'
             >   
                 <DropdownToggle 
                     caret
@@ -41,8 +42,8 @@ const UserDropdown = () => {
                 >
                     {currentUser.username}
                 </DropdownToggle>
-                <DropdownMenu className='rounded-0 mt-1'>
-                    <DropdownItem>
+                <DropdownMenu className='rounded-0 mt-1 text-center'>
+                    <DropdownItem className='p-0'>
                         <NavLink 
                             className='nav-link' 
                             to='/dashboard'
@@ -51,7 +52,7 @@ const UserDropdown = () => {
                         </NavLink>
                     </DropdownItem>
                     { currentUser && isAdmin &&
-                        <DropdownItem>
+                        <DropdownItem className='p-0'>
                             <NavLink 
                                 className='nav-link' 
                                 to='/admin' 
@@ -60,7 +61,7 @@ const UserDropdown = () => {
                             </NavLink>
                         </DropdownItem>
                     }
-                    <DropdownItem>
+                    <DropdownItem className='p-0'>
                         <NavLink 
                             className='nav-link' 
                             to='/readinglist' 
@@ -69,7 +70,7 @@ const UserDropdown = () => {
                         </NavLink>
                     </DropdownItem>
                     <hr className='my-2'/>
-                    <DropdownItem>
+                    <DropdownItem className='p-0 text-muted'>
                         <NavItem onClick={() => logout()}>
                             Logout
                         </NavItem>

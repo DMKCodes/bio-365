@@ -22,7 +22,7 @@ const RegisterLoginModal = ({ currentUser }) => {
             <Button 
                 outline
                 color='light'
-                className='rounded-0' 
+                className='rounded-0 w-50 ms-auto ms-md-0 me-0 me-md-3 my-3 my-md-0' 
                 onClick={() => setModalOpen(true)}
             >
                 Log in

@@ -1,7 +1,30 @@
+import { useState, useRef } from 'react';
+import { Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+
 const VideoBackground = ({ video }) => {
+    const [isPaused, setIsPaused] = useState(false);
+
+    const videoRef = useRef(null);
+
+    const handlePause = () => {
+        if (videoRef.current && isPaused === false) {
+            setIsPaused(true);
+            videoRef.current.pause();
+        }
+    };
+
+    const handlePlay = () => {
+        if (videoRef.current && isPaused === true) {
+            setIsPaused(false);
+            videoRef.current.play();
+        }
+    };
+
     return (
         <div className='video-background'>
-            <video playsInline autoPlay muted loop>
+            <video ref={videoRef} playsInline autoPlay muted loop>
                 <source src={video.video} type='video/mp4' />
             </video>
             <div className='video-overlay'>
@@ -21,6 +44,27 @@ const VideoBackground = ({ video }) => {
                     </h5>
                 }
             </div>
+            {!isPaused ? (
+                <Button
+                    outline
+                    color='secondary'
+                    className='video-background-btn btn-sm rounded-0 mb-3 me-4'
+                    onClick={() => handlePause()}
+                >
+                    <FontAwesomeIcon icon={faPause} className='me-2' />
+                    Pause
+                </Button>
+            ) : (
+                <Button
+                    outline
+                    color='secondary'
+                    className='video-background-btn btn-sm rounded-0 mb-3 me-4'
+                    onClick={() => handlePlay()}
+                >
+                    <FontAwesomeIcon icon={faPlay} className='me-2' />
+                    Play
+                </Button>
+            )}
         </div>
     );
 };

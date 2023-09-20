@@ -12,54 +12,15 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.header {
-  font-weight: bold;
-}
-
-.header .nav-link {
-  color: black;
-  display: inline-block;
-  position: relative;
-}
-
-.header .nav-main .nav-link.active {
-  text-decoration: underline;
-  text-decoration-thickness: 0.3em;
-  text-decoration-color: #198754;
-}
-
-.header .nav-main .nav-link:hover {
-  color: black;
-  text-decoration: underline;
-  text-decoration-thickness: 0.3em;
-  text-decoration-color: #198754;
-}
-
-.logo {
-  max-height: 150px;
-}
-
-.footer {
-  margin-top: auto;
-}
-
-.footer .nav-link.active {
-  text-decoration: underline;
-  text-decoration-thickness: 0.3em;
-  text-decoration-color: #198754;
-}
-
-.footer .nav-link:hover {
-  color: black;
-  text-decoration: underline;
-  text-decoration-thickness: 0.3em;
-  text-decoration-color: #198754;
+  overflow-x: hidden;
 }
 
 .form-field {
   height: 2rem;
+}
+
+.form-control {
+  border-radius: 0 !important;
 }
 
 .no-resize {
@@ -91,24 +52,6 @@ html {
 
 .modal-content {
   border-radius: 0 !important;
-}
-
-.nav-tabs {
-  --bs-nav-tabs-border-radius: 0 !important;
-}
-
-.nav-tabs .nav-link {
-  color: black;
-}
-
-.nav-tabs .nav-link.active {
-  color: black;
-  font-weight: bold;
-}
-
-.nav-tabs .nav-link:hover {
-  color: black;
-  font-weight: bold;
 }
 
 .donations {
@@ -144,13 +87,24 @@ html {
   background: rgba(0,0,0,0.6);
 }
 
-.video-overlay-body {
-  width: 50%;
+.video-overlay-header {
+  font-size: 1.5rem;
 }
 
-/* Home Page */
+.video-overlay-body {
+  font-size: 1rem;
+  width: 70%;
+}
 
-.header-nav {
+.video-background-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* Header */
+
+.header {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,10 +112,12 @@ html {
   --bs-navbar-color: white !important;
 }
 
-.header-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
+.header-logo-full {
+  height: 18vh;
+}
+
+.header-logo-bare {
+  height: 10vh;
 }
 
 .header .container-fluid {
@@ -170,48 +126,69 @@ html {
 
 .header .navbar-toggler {
   color: white !important;
-  --bs-navbar-toggler-border-color: white;
+  --bs-navbar-toggler-border-color: rgba(0,0,0,0);
+  --bs-navbar-toggler-focus-width: 0rem;
   margin-right: 0.5rem;
 }
 
-.header-nav .navbar-toggler-icon {
+.header .navbar-toggler-icon {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27white%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
 }
 
-.header-nav-link {
-  color: white;
-  text-decoration: none;
-  padding-right: 1.5rem;
-}
-
-@media (max-width:768px) {
-  .header-nav .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    text-align: center;
-  }
-
-  .header-nav .nav-item {
-    margin-bottom: 1rem;
-  }
-
-  .header-nav-link {
-    padding-right: 0;
-  }
-}
-
-.header-nav-link:hover {
-  color: white;
+.header .nav-link.active {
   text-decoration: underline;
   text-decoration-thickness: 0.3em;
-  text-decoration-color: #fff;
+  text-decoration-color: #198754;
 }
 
-.header-logo {
-  height: 18vh;
-  
+.header .nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3em;
+  text-decoration-color: #198754;
+}
+
+.header-row {
+  min-height: 30vh;
+}
+
+.header-menu {
+  z-index: 100;
+}
+
+.menu-bg {
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #198754, #198754);
+  transform: translate(50%, -10%);
+  border-radius: 50%;
+}
+
+.collapsing {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+/* Footer */
+
+.footer {
+  margin-top: auto;
+}
+
+.footer .nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3em;
+  text-decoration-color: #198754;
+}
+
+.footer .nav-link:hover {
+  color: black;
+  text-decoration: underline;
+  text-decoration-thickness: 0.3em;
+  text-decoration-color: #198754;
 }
 
 /* News & Articles */
@@ -360,6 +337,10 @@ html {
 .story-card-img {
   max-height: 200px;
   object-fit: cover;
+}
+
+.story-card-btn {
+  min-width: 40px;
 }
 
 .story-card-overlay {
