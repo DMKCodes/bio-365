@@ -11,7 +11,6 @@ export const HOME_PAGE_VIDEO_BG = {
     videoSource: null,
     title: 'BIODIVERSITY MADE SIMPLE',
     content: [
-        "Our planet's wildlife faces unprecedented risk, and human activity is to blame.",
         'Dive in to learn more about our incredible natural world, the challenges it faces, and what we can do to help.',
         'Explore, learn, protect — today and every day.'
     ],

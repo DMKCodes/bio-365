@@ -50,12 +50,36 @@ const NewsFilter = () => {
     };
 
     return (
-        <Row className='mb-3 news-filter p-0'>
-            <Col md='6' className='d-flex align-items-center'>
+        <Row className='mb-md-3 news-filter p-0'>
+            <Col md='6' className='p-0 mb-3 mb-md-0'>
+                <Form className='mx-4 mx-md-0'>
+                    <div className='news-search'>
+                        <Input
+                            type='text'
+                            placeholder='Search...'
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                            onKeyPress={handleSearchSubmit}
+                            className='searchbar rounded-0 border-dark'
+                        />
+                        <span 
+                            className='searchbar-icons'
+                            onClick={searchPerformed ? handleSearchReset : handleSearchSubmit}
+                        >
+                            {searchPerformed ? (
+                                <FontAwesomeIcon icon={faTimes} />
+                            ) : (
+                                <FontAwesomeIcon icon={faSearch} />
+                            )}
+                        </span>
+                    </div>
+                </Form>
+            </Col>
+            <Col xs='12' md='6' className='d-flex justify-content-center justify-content-md-end text-md-start'>
                 <Dropdown 
                     isOpen={categoryDropdownOpen} 
                     toggle={() => setCategoryDropdownOpen(!categoryDropdownOpen)}
-                    className='mx-3'
+                    className='me-3'
                 >
                     <DropdownToggle 
                         caret 
@@ -64,7 +88,7 @@ const NewsFilter = () => {
                     >
                         Category
                     </DropdownToggle>
-                    <DropdownMenu>
+                    <DropdownMenu className='rounded-0 mt-1'>
                         <DropdownItem
                             onClick={() => handleFilterChange('category', null)}
                         >
@@ -93,7 +117,7 @@ const NewsFilter = () => {
                     >
                         Publisher
                     </DropdownToggle>
-                    <DropdownMenu>
+                    <DropdownMenu className='rounded-0 mt-1'>
                         <DropdownItem
                             onClick={() => handleFilterChange('publisher', null)}
                         >
@@ -136,30 +160,6 @@ const NewsFilter = () => {
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
-            </Col>
-            <Col md='6' className='p-0'>
-                <Form>
-                    <div className='news-search'>
-                        <Input
-                            type='text'
-                            placeholder='Search...'
-                            value={searchQuery}
-                            onChange={handleSearchChange}
-                            onKeyPress={handleSearchSubmit}
-                            className='searchbar rounded-0 border-dark'
-                        />
-                        <span 
-                            className='searchbar-icons'
-                            onClick={searchPerformed ? handleSearchReset : handleSearchSubmit}
-                        >
-                            {searchPerformed ? (
-                                <FontAwesomeIcon icon={faTimes} />
-                            ) : (
-                                <FontAwesomeIcon icon={faSearch} />
-                            )}
-                        </span>
-                    </div>
-                </Form>
             </Col>
         </Row>
     );

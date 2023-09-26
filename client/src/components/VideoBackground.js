@@ -33,7 +33,7 @@ const VideoBackground = ({ video }) => {
                 </h1>
                 {video.content.map((content, index) => {
                     return (
-                        <h5 key={index} className='video-overlay-body text-center mb-4'>
+                        <h5 key={index} className='video-overlay-body text-center mb-3'>
                             {content}
                         </h5>
                     );

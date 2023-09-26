@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../features/users/userSlice';
 import { useGetArticlesQuery } from '../features/users/articlesApiSlice';
 import NewsList from '../features/news/NewsList';
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 const ReadingListPage = () => {
     const currentUser = useSelector(selectCurrentUser);

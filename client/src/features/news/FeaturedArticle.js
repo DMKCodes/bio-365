@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
 import {
     selectCurrentUser,
@@ -13,7 +12,7 @@ import {
     useDeleteArticleMutation,
 } from '../users/articlesApiSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
+import {
     faPlus, 
     faMinus, 
     faArrowUpRightFromSquare, 
@@ -42,6 +41,8 @@ const FeaturedArticle = ({ article, dashboard }) => {
         category
     } = article;
 
+    const [expanded, setExpanded] = useState(false);
+
     const [isSaved, setIsSaved] = useState(false);
 
     const checkSaved = useSelector((state) => checkSavedArticles(state, title));
@@ -50,14 +51,12 @@ const FeaturedArticle = ({ article, dashboard }) => {
         setIsSaved(checkSaved);
     }, [checkSaved]);
 
-    const [expanded, setExpanded] = useState(false);
-
     const [image, setImage] = useState(null);
 
     useEffect(() => {
         if (article.image) {
             setImage(article.image);
-        } else if (article.publisher === 'Frontiers in Conservation Science') {
+        } else if (article.publisher === 'Frontiers') {
             setImage(Frontiers);
         } else if (article.publisher === 'PLOS ONE Biodiversity') {
             setImage(Plos);
@@ -99,107 +98,101 @@ const FeaturedArticle = ({ article, dashboard }) => {
     };
 
     return (
-        <Row className='d-flex justify-content-center my-5'>
-            <Col md='6'>
+        <Row className='featured-article m-0 my-0 my-md-5 p-0 border'>
+            <Col xs='12' md='6' className='p-0'>
                 <img src={image} alt='' className='featured-article-image w-100' />
             </Col>
-            <Col md='4' className='d-flex flex-column justify-content-center'>
-                <Row>
-                    <h5 className='article-title fw-bold text-center'>
-                        {title}
-                    </h5>
-                </Row>
-                <Row>
-                    <small className='text-muted text-center mb-4'>
-                        Author: {author}, {pubDate}
-                    </small>
-                </Row>
-                <Row>
-                    <Col className='d-flex justify-content-center'>
-                        <Button
-                            type='link'
-                            outline
-                            color='dark'
-                            className='me-2 rounded-0 btn-sm'
-                            href={link}
-                            target='_blank'
-                            rel='noreferrer noopener'
-                        >
-                            <span className='me-2'>
-                                Full Article
-                            </span> 
-                            <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
-                        </Button>
-                        <Button
-                            type='button'
-                            outline
-                            color='dark'
-                            className='me-2 rounded-0 btn-sm'
-                            onClick={() => setExpanded(!expanded)}
-                        >
-                            <span className='me-2'>Preview</span>
-                            <span>
-                                {!expanded ? 
-                                    <FontAwesomeIcon icon={faPlus} /> : 
-                                    <FontAwesomeIcon icon={faMinus} />
-                                }
-                            </span>
-                        </Button>
+            <Col xs='12' md='6' className='p-5'>
+                <div className='d-flex flex-column justify-content-center h-100'>
+                    <Row>
+                        <h5 className='fw-bold text-center'>
+                            {title}
+                        </h5>
+                    </Row>
 
-                        {currentUser && isSaved && dashboard ? (
+                    <Row>
+                        <small className='text-muted text-center'>
+                            Author: {author}, {pubDate}
+                        </small>
+                    </Row>
+
+                    <Row className='my-3'>
+                        <Col xs='4' className='d-flex justify-content-center'>
                             <Button
-                                type='button'
-                                color='danger'
+                                type='link'
                                 outline
+                                color='dark'
                                 className='rounded-0 btn-sm'
-                                onClick={() => {
-                                    delArticle();
-                                    setIsSaved(false);
-                                }}
+                                href={link}
+                                target='_blank'
+                                rel='noreferrer noopener'
                             >
-                                Remove Bookmark
+                                <span className='d-none d-sm-inline-block me-2'>
+                                    Full Article
+                                </span>
+                                <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
                             </Button>
-                        ) : currentUser && isSaved && !dashboard ? (
-                            <NavLink
-                                className='nav-link d-inline-block'
-                                to='/dashboard'
-                            >
-                                <Button
-                                    type='link'
-                                    outline
-                                    color='success'
-                                    className='rounded-0 btn-sm'
-                                >
-                                    <span className='me-2'>Reading List</span>
-                                    <FontAwesomeIcon icon={faBook} />
-                                </Button>
-                            </NavLink>
-                        ) : currentUser && !isSaved ? (
+                        </Col>
+                        <Col xs='4' className='d-flex justify-content-center'>
                             <Button
                                 type='button'
                                 outline
                                 color='dark'
                                 className='rounded-0 btn-sm'
-                                onClick={() => {
-                                    addArticle();
-                                    setIsSaved(true);
-                                }}
+                                onClick={() => setExpanded(!expanded)}
                             >
-                                <span className='me-2'>Add Bookmark</span>
+                                <span className='d-none d-sm-inline-block me-2'>Preview</span>
                                 <span>
-                                    <FontAwesomeIcon icon={faBookmark} />
+                                    {!expanded ? 
+                                        <FontAwesomeIcon icon={faPlus} /> : 
+                                        <FontAwesomeIcon icon={faMinus} />
+                                    }
                                 </span>
                             </Button>
-                        ) : null}
+                        </Col>
+                        <Col xs='4' className='d-flex justify-content-center'>
+                            {currentUser && isSaved ? (
+                                <Button
+                                    type='button'
+                                    color='danger'
+                                    outline
+                                    className='rounded-0 btn-sm'
+                                    onClick={() => {
+                                        delArticle();
+                                        setIsSaved(false);
+                                    }}
+                                >
+                                    <span className='d-none d-sm-inline-block me-2'>Remove</span>
+                                    <FontAwesomeIcon icon={faBook} />
+                                </Button>
+                            ) : currentUser && !isSaved ? (
+                                <Button
+                                    type='button'
+                                    outline
+                                    color='dark'
+                                    className='rounded-0 btn-sm'
+                                    onClick={() => {
+                                        addArticle();
+                                        setIsSaved(true);
+                                    }}
+                                >
+                                    <span className='d-none d-sm-inline-block me-2'>Bookmark</span>
+                                    <span>
+                                        <FontAwesomeIcon icon={faBookmark} />
+                                    </span>
+                                </Button>
+                            ) : null}
+                        </Col>
+                    </Row>
 
-                    </Col>
-                </Row>
-                <Row className='text-center mt-3'>
-                    {(expanded && snippet.length > 0) &&
-                        <p>{snippet}</p>
-                    }
-                </Row>
-                <Row className='mt-3'>
+                    <Row className='featured-article-preview text-center'>
+                        {(expanded && snippet.length > 0) &&
+                            <p>{snippet}</p>
+                        }
+                    </Row>
+                </div>
+
+                <Row className='float-bottom'>
                     <Col xs='3'>
                         <p>
                             <small className='text-success fw-bold float-start ms-2'>

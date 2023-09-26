@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import PersistLogin from './components/PersistLogin';
 import HomePage from './pages/HomePage';
@@ -14,8 +14,6 @@ import GlossaryPage from './pages/GlossaryPage';
 import ResourcesPage from './pages/ResourcesPage';
 
 function App() {
-    const location = useLocation();
-
     return (
         <div className='App'>
             <PersistLogin />

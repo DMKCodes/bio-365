@@ -8,7 +8,7 @@ const NewsList = ({ articles, dashboard }) => {
 
     const pageSize = 16;
     const pagesCount = Math.ceil(articles.length / pageSize);
-    const pagesToShow = 5;
+    const pagesToShow = 3;
     const pagesOffset = Math.max(0, Math.min(pagesCount - pagesToShow, currentPage - Math.floor(pagesToShow / 2)));
 
     const handleClick = (e, index) => {
@@ -21,9 +21,9 @@ const NewsList = ({ articles, dashboard }) => {
     } else {
         return (
             <Container>
-                <Row>
-                    <div className='d-flex justify-content-end'>
-                        <Pagination size='sm' aria-label='pagination' className='pagination mt-5'>
+                <Row className='my-4 my-md-5'>
+                    <div className='d-flex justify-content-center justify-content-md-end'>
+                        <Pagination size='sm' aria-label='pagination' className='pagination p-0'>
                             <PaginationItem disabled={currentPage <= 0}>
                                 <PaginationLink
                                     first
@@ -86,8 +86,9 @@ const NewsList = ({ articles, dashboard }) => {
                         </Pagination>
                     </div>
                 </Row>
+
                 <Row>
-                    {(!dashboard ? (
+                    {(!dashboard && window.innerWidth >= 800 ? (
                         articles.slice(currentPage * pageSize, (currentPage + 1) * pageSize).map((article, index) => {
                             if (index === 0) {
                                 return (
@@ -99,7 +100,7 @@ const NewsList = ({ articles, dashboard }) => {
                                 );
                             } else {
                                 return (
-                                    <Col lg='4' md='6' key={index} className='mb-5'>
+                                    <Col xs='12' md='6' lg='4' key={index} className='mb-0 mb-md-5'>
                                         <ArticleCard article={article} dashboard={dashboard} />
                                     </Col>
                                 );
@@ -108,14 +109,17 @@ const NewsList = ({ articles, dashboard }) => {
                     ) : (
                         articles.slice(currentPage * pageSize, (currentPage + 1) * pageSize).map((article, index) => {
                             return (
-                                <Col lg='4' md='6' key={index}>
+                                <Col xs='12' md='6' lg='4' key={index}>
                                     <ArticleCard article={article} dashboard={dashboard} />
                                 </Col>
                             );
                         })
                     ))}
-                    <div className='d-flex justify-content-end mb-5'>
-                        <Pagination size='sm' aria-label='pagination' className='pagination'>
+                </Row>
+
+                <Row className='my-5'>
+                    <div className='d-flex justify-content-center justify-content-md-end'>
+                        <Pagination size='sm' aria-label='pagination' className='pagination p-0'>
                             <PaginationItem disabled={currentPage <= 0}>
                                 <PaginationLink
                                     first

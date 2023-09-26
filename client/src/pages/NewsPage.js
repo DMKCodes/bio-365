@@ -40,12 +40,12 @@ const NewsPage = () => {
             <Header />
 
             <Container className='my-5'>
+                <NewsFilter />
                 <Row>
-                    <NewsFilter />
                     {isError ? (
-                        <p>Error retrieving articles. Please refresh and try again.</p>
+                        <h3 className='mt-5 text-center'>Error retrieving articles. Please refresh and try again.</h3>
                     ) : isLoading ? (
-                        <p>Fetching the latest articles...</p>
+                        <h3 className='mt-5 text-center'>Fetching the latest articles...</h3>
                     ) : displayArticles ? (
                         <NewsList 
                             articles={displayArticles}

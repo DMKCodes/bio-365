@@ -39,7 +39,7 @@ const HomeNav = () => {
                     className='ms-auto border-light rounded-0' 
                 />
                 <Collapse isOpen={menuOpen} navbar>
-                    <Nav className='fw-bold text-end p-2' navbar>
+                    <Nav className='fw-bold text-end pe-2 pe-sm-0 pt-3 pt-sm-0' navbar>
                         <NavItem>
                             <NavLink className='nav-link text-light' to='/news'>
                                 Articles

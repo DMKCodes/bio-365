@@ -15,7 +15,7 @@ const fetchFrontierArticles = async () => {
                 author: item.author,
                 snippet: item.contentSnippet,
                 category: 'Research',
-                publisher: 'Frontiers in Conservation Science',
+                publisher: 'Frontiers',
                 source: 'https://www.frontiersin.org/journals/conservation-science'
             };
 

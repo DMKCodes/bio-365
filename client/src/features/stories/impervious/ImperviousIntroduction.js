@@ -1,6 +1,6 @@
 import { useState, Fragment } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import ChartLine from '../../../components/ChartLine';
 import ChartBar from '../../../components/ChartBar';
 import ExternalButton from '../../../components/ExternalButton';
