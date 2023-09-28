@@ -39,8 +39,14 @@ html {
 .top-button {
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 20px;
   z-index: 99;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.top-button:hover {
+  opacity: 1;
 }
 
 .accordion {
@@ -56,6 +62,16 @@ html {
 
 .donations {
   height: 3rem;
+}
+
+.definition {
+  font-weight: bold;
+  color: #198754;
+}
+
+.definition:hover {
+  color: #198754;
+  cursor: pointer;
 }
 
 /* Video Backgrounds */
@@ -279,22 +295,25 @@ html {
 /* Learn Section */
 
 .learn-section {
-  padding-top: 50px;
-  margin-top: -50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-#important-section {
-  margin-top: 50px;
+.globe-notes {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 
-.definition {
-  font-weight: bold;
-  color: #198754;
+@media (max-width: 576px) {
+  .globe-notes {
+    right: 24px;
+  }
 }
 
-.definition:hover {
-  color: #198754;
-  cursor: pointer;
+.learn-img {
+  max-height: 420px;
+  overflow: hidden;
 }
 
 .spotlight-img {
@@ -308,6 +327,11 @@ html {
 
 .podcast-img {
   max-width: 100%;
+}
+
+.podcast-card {
+  max-height: 250px;
+  max-width: 250px;
 }
 
 .podcast-card-overlay {

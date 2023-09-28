@@ -25,6 +25,11 @@ export const GLOSSARY = [
         source: 'International Finance Corporation (IFC)'
     },
     {
+        term: 'endemics',
+        definition: 'The ecological state of being unique to a particular geographic location, such as a specific island, habitat type, nation or other defined zone.',
+        source: 'International Finance Corporation (IFC)'
+    },
+    {
         term: 'IUCN',
         definition: 'A membership Union uniquely composed of both government and civil society organisations. IUCN is the global authority on the status of the natural world and the measures needed to safeguard it.',
         source: 'International Union for Conservation of Nature'
@@ -333,6 +338,11 @@ export const GLOSSARY = [
         term: 'evolution',
         definition: 'The change in the heritable traits of a population over time.',
         source: 'National Geographic'
+    },
+    {
+        term: 'vertebrate',
+        definition: 'An animal distinguished by possession of a backbone or spinal column.',
+        source: 'Oxford Languages'
     }
 ];
 

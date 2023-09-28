@@ -1,13 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Globe from 'react-globe.gl';
 import { scaleLinear } from 'd3-scale';
-import COUNTRIES from '../../../app/shared/COUNTRIES';
-import { ENDANGERED_RATIOS } from '../../../app/shared/ENDANGERED_RATIOS';
-import { MEGADIVERSE_COUNTRIES } from '../../../app/shared/MEGADIVERSE_COUNTRIES';
+import COUNTRIES from '../../../../app/shared/COUNTRIES';
+import { ENDANGERED_RATIOS } from '../../../../app/shared/ENDANGERED_RATIOS';
+import { MEGADIVERSE_COUNTRIES } from '../../../../app/shared/MEGADIVERSE_COUNTRIES';
 
-const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
+const InteractiveGlobe = ({ setCountryToDisplay, viewType, width }) => {
     const [countries, setCountries] = useState({ features: [] });
     const [hover, setHover] = useState();
+
+    if (width) {
+        console.log(width);
+    }
+
+    const globeRef = useRef(null);
 
     useEffect(() => {
         setCountries(COUNTRIES);
@@ -23,15 +29,34 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
     );
     const endangeredRatioToColor = scaleLinear().domain([0, 0.258]).range(['white', 'red']);
 
-    return (
-        <>
-        <Globe
-            width={800}
-            height={650}
-            lineHoverPrecision={0}
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+    useEffect(() => {
+        const windowWidth = window.innerWidth;
 
+        if (windowWidth < 800) {
+            const newAltitude = 4;
+            const { lat, lng } = globeRef.current.pointOfView();
+            globeRef.current.pointOfView({ lat, lng, altitude: newAltitude });
+        } else {
+            return;
+        }
+    }, []);
+
+    return (
+        <Globe
+            ref={globeRef}
+
+            // Container Layer
+            width={width}
+            height={window.innerHeight * 0.8}
+            lineHoverPrecision={0}
+            globeImageUrl='//unpkg.com/three-globe/example/img/earth-night.jpg'
+            backgroundImageUrl='//unpkg.com/three-globe/example/img/night-sky.png'
+            waitForGlobeReady={true}
+
+            // Render Control
+            atmosphereAltitude={0.25}
+
+            // Polygons Layer
             polygonsData={countries.features.filter((d) => d.properties.ISO_A2)}
             polygonAltitude={(d) => d === hover ? 0.12 : 0.06}
             polygonCapColor={d => {
@@ -48,13 +73,11 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType }) => {
             polygonSideColor={() => 'rgba(0, 100, 0, 0.15'}
             polygonStrokeColor={() => '#111'}
             polygonsTransitionDuration={300}
-
             onPolygonHover={setHover}
-            onPolygonClick={(polygonData, polygonIndex) => 
+            onPolygonClick={(polygonData, polygonIndex) =>
                 setCountryToDisplay(polygonData.properties.NAME_LONG)
             }
         />
-        </>
     );
 };
 

@@ -4,7 +4,7 @@ export const IMPORTANT_CONTENT = [
 ];
 
 export const THREATS_MAIN_CONTENT = [
-    'There are many threats to biodiversity today, but the most critical can be remembered by the acronym HIPPO, coined by biologist E.O. Wilson.',
+    'There are many threats to biodiversity today, but the most critical can be remembered by the acronym HIPPO, coined by biologist E.O. Wilson in 2005.',
 ];
 
 export const THREATS_ACCORDION_CONTENT = [

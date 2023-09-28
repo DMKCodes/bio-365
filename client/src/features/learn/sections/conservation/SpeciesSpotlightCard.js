@@ -3,7 +3,6 @@ import {
     Card, 
     CardBody, 
     CardTitle, 
-    CardSubtitle,
     CardHeader,
     CardFooter,
     Accordion,
@@ -11,6 +10,7 @@ import {
     AccordionHeader,
     AccordionItem
 } from 'reactstrap';
+import ExternalButton from '../../../../components/ExternalButton';
 import defineKeywords from '../../../../utils/defineKeywords';
 import { SPECIES_SPOTLIGHT_CONTENT } from '../../../../app/shared/LEARN_CONTENT';
 
@@ -31,48 +31,39 @@ const SpeciesSpotlightCard = () => {
 
     return (
         <Card className='rounded-0'>
-            <iframe width={'100%'} height='233' src='https://www.youtube.com/embed/_cBgz2eud64' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullscreen />
-            <CardBody className='text-center'>
-                <CardHeader className='mb-0 rounded-0 border'>
-                    <CardTitle>
-                        <h5 className='text-uppercase'>Conservation Spotlight</h5>
-                    </CardTitle>
-                    <CardSubtitle>
-                        Giant Panda<br />
+            <iframe width={'100%'} height='250' src='https://www.youtube.com/embed/_cBgz2eud64' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
+            <CardBody className='d-flex justify-content-center'>
+                <CardHeader className='mb-0 rounded-0 border w-75'>
+                    <CardTitle className='mb-0'>
+                        <h5 className='mb-0 fw-bold'>Giant Panda</h5>
                         <small className='text-muted'>(Ailuropoda melanoleuca)</small>
-                    </CardSubtitle>
+                    </CardTitle>
                 </CardHeader>
             </CardBody>
+
             <Accordion 
                 flush 
                 open={accordionOpen} 
                 toggle={toggleAccordion} 
-                className='border-top'
+                className='border-top text-start'
             >
                 {SPECIES_SPOTLIGHT_CONTENT.map((text, index) => {
                     const textWithKeywords = defineKeywords(text.body);
                     return (
                         <AccordionItem key={index}>
-                            <AccordionHeader targetId={index}>
+                            <AccordionHeader targetId={`${index}`}>
                                 {text.header}
                             </AccordionHeader>
-                            <AccordionBody accordionId={index}>
+                            <AccordionBody accordionId={`${index}`}>
                                 {textWithKeywords}
                             </AccordionBody>
                         </AccordionItem>
                     );
                 })}
             </Accordion>
-            <CardFooter>
-                <small className='text-muted'>
-                    <a 
-                        href='https://www.worldwildlife.org/species/giant-panda' 
-                        target='_blank' 
-                        rel='noreferrer'
-                    >
-                        Read more at WWF...
-                    </a>
-                </small>
+
+            <CardFooter className='py-3'>
+                <ExternalButton link={'https://www.worldwildlife.org/species/giant-panda'} />
             </CardFooter>
         </Card>
     );

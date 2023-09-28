@@ -1,9 +1,9 @@
 export const MEGADIVERSE_CONTENT = [
-    'These are the countries with the highest species richness, which together account for more than two-thirds of all non-fish vertebrate species and three quarters of all higher plant species.',
+    'These are the 17 countries with the highest species richness, which together account for more than two-thirds of all non-fish vertebrate species and three quarters of all higher plant species.',
     'To qualify as megadiverse, a country must have:',
     "- at least 5,000 of the world's plants as endemics",
     '- marine ecosystems within its borders',
-    'In accordance with the IUCN doctrine of ultimate responsibility, these 17 countries bear the disproportionate burden of ensuring the survival of their endemic species.'
+    'In accordance with the IUCN doctrine of ultimate responsibility, these countries bear the disproportionate burden of ensuring the survival of their endemic species.'
 ];
 
 export const SPECIES_CONTENT = [

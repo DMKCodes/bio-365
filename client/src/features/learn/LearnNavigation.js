@@ -2,7 +2,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 
 const LearnNavigation = () => {
     return (
-        <Nav className='navbar learn-navigation sticky-top mx-0 justify-content-around p-0'>
+        <Nav className='navbar learn-navigation sticky-top mx-0 justify-content-around p-0 d-none d-md-flex'>
             <NavItem>
                 <NavLink href='#important-section'>
                     WHY IS IT IMPORTANT?
@@ -10,17 +10,17 @@ const LearnNavigation = () => {
             </NavItem>
             <NavItem>
                 <NavLink href='#globe-section'>
-                    BIODIVERSITY AROUND THE WORLD
+                    AROUND THE GLOBE
                 </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href='#threats-section'>
-                    THREATS TO BIODIVERSITY
+                    UNDER THREAT
                 </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href='#conservation-section'>
-                    CONSERVATION
+                    CONSERVATION STRATEGIES
                 </NavLink>
             </NavItem>
             <NavItem>

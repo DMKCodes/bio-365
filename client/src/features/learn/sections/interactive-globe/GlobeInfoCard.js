@@ -17,10 +17,10 @@ import {
 
 const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, title }) => {
     return (
-        <Card className='globe-data-card rounded-0'>
+        <Card className='globe-data-card rounded-0 mt-3 mt-lg-0'>
             <CardBody className='text-center'>
                 <CardHeader className='mb-3 rounded-0 border'>
-                    <h4 className='mb-0'>{title}</h4>
+                    <h5 className='mb-0 fw-bold'>{title}</h5>
                 </CardHeader>
                 <CardSubtitle>
                     {viewType !== 'megadiverse' &&
@@ -32,7 +32,7 @@ const InfoCard = ({ countryToDisplay, speciesData, endangeredData, viewType, tit
                             ) : (
                                 <CardTitle>
                                     <small className='text-muted'>
-                                        <i>Choose a country to learn more.</i>
+                                        <i>Pick a country on the globe to learn more.</i>
                                     </small>
                                 </CardTitle>
                             )}

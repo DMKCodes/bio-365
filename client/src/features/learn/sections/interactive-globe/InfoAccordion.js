@@ -28,7 +28,7 @@ const InfoAccordion = () => {
                     Sources
                 </AccordionHeader>
                 <AccordionBody accordionId='1'>
-                    <p className='text-center'>
+                    <p>
                         <b>Sources: </b><br />
                         <a 
                             href='https://www.iucnredlist.org/' 
@@ -36,13 +36,6 @@ const InfoAccordion = () => {
                             rel='noreferrer'
                         >
                             IUCN Red List
-                        </a><br />
-                        <a
-                            href='https://www.biodiversitya-z.org/'
-                            target='blank' 
-                            rel='noreferrer'
-                        >
-                            Biodiversity A-Z
                         </a><br />
                         <a 
                             href='http://datazone.birdlife.org/country'
@@ -66,7 +59,6 @@ const InfoAccordion = () => {
                             The Reptile Database
                         </a><br />
                     </p>
-                    <br />
                     <small className='text-muted'>
                         Map tool created by{' '}
                         <a 
@@ -85,14 +77,14 @@ const InfoAccordion = () => {
                     Notes
                 </AccordionHeader>
                 <AccordionBody accordionId='2'>
-                    <p className='mt-3 text-center'>
+                    <p>
                         All data is based on estimates from trusted third-party sources.
                     </p>
-                    <p className='text-center'>
+                    <p>
                         The map tool is incomplete, particularly in the Caribbean, and will be improved in the future.
                     </p>
                     <small className='text-muted'>
-                        Last updated 22 May 2023.
+                        Data last updated: 27 Sep 2023
                     </small>
                 </AccordionBody>
             </AccordionItem>

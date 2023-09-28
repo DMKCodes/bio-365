@@ -1,4 +1,6 @@
 import { Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const TopButton = () => {
     const scrollToTop = () => {
@@ -8,11 +10,11 @@ const TopButton = () => {
     return (
         <Button 
             outline
-            className='top-button rounded-0'
-            color='success'
+            className='top-button rounded-circle btn-sm'
+            color='dark'
             onClick={() => scrollToTop()}
         >
-            Back to top
+            <FontAwesomeIcon icon={faChevronUp} size='sm' />
         </Button>
     );
 };

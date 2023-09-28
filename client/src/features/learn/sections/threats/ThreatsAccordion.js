@@ -5,6 +5,7 @@ import {
     AccordionHeader,
     AccordionItem
 } from 'reactstrap';
+import ExternalButton from '../../../../components/ExternalButton';
 import defineKeywords from '../../../../utils/defineKeywords';
 import { THREATS_ACCORDION_CONTENT } from '../../../../app/shared/LEARN_CONTENT';
 
@@ -24,7 +25,7 @@ const ThreatsAccordion = () => {
     };
 
     return (
-        <Accordion flush open={accordionOpen} toggle={toggleAccordion} className='mb-2 text-center'>
+        <Accordion flush open={accordionOpen} toggle={toggleAccordion} className='mb-3 text-start'>
             {THREATS_ACCORDION_CONTENT.map((text, index) => {
                 const textWithKeywords = defineKeywords(text.body);
                 return (
@@ -35,13 +36,9 @@ const ThreatsAccordion = () => {
                         <AccordionBody accordionId={`${index}`}>
                             {textWithKeywords}
                             {text.link &&
-                                <a
-                                    href={text.link}
-                                    target='blank'
-                                    rel='noreferrer'
-                                >
-                                    [...]
-                                </a>
+                                <div className='mt-3 mb-2 text-center'>
+                                    <ExternalButton link={text.link} />
+                                </div>
                             }
                         </AccordionBody>
                     </AccordionItem>

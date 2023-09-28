@@ -1,21 +1,26 @@
-import { useState, useEffect } from 'react';
-import {
-    Container,
-    Col,
-    Row,
-    Button
-} from 'reactstrap';
-import InteractiveGlobe from '../../datavis/InteractiveGlobe';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { Container, Col, Row, Button, Tooltip } from 'reactstrap';
+import InteractiveGlobe from './InteractiveGlobe';
 import GlobeInfoCard from './GlobeInfoCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { SPECIES_COUNTRIES } from '../../../../app/shared/SPECIES_COUNTRIES.js';
 import { ENDANGERED_SPECIES } from '../../../../app/shared/ENDANGERED_SPECIES';
 
 const GlobePanel = () => {
     const [countryToDisplay, setCountryToDisplay] = useState(null);
-
     const [speciesData, setSpeciesData] = useState(null);
     const [endangeredData, setEndangeredData] = useState(null);
     const [viewType, setViewType] = useState('species');
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
+    const colRef = useRef(null);
+    const [width, setWidth] = useState(0);
+    console.log(width);
+
+    useLayoutEffect(() => {
+        setWidth(colRef.current.offsetWidth);
+    }, []);
 
     useEffect(() => {
         if (countryToDisplay) {
@@ -55,13 +60,13 @@ const GlobePanel = () => {
             break;
         default:
             title = 'Info Panel';
-    }
+    };
 
     return (
-        <Container fluid>
+        <Container fluid className='p-0'>
             <Row>
-                <Col md='8' className='mb-2 d-flex flex-row align-items-center'>
-                    <h5 className='me-3'>View:</h5>
+                <Col xs='8' className='w-100 mb-2 d-flex justify-content-center justify-content-md-start align-items-center'>
+                    <p className='m-0 me-2'>Views:</p>
                     <Button
                         type='button'
                         color={viewType === 'species' ? 'success' : 'secondary'}
@@ -86,17 +91,36 @@ const GlobePanel = () => {
                     >
                         Endangered
                     </Button>
-                    <small className='text-muted'>More views coming soon!</small>
+                    <small className='text-muted d-none d-md-flex'>More views coming soon!</small>
                 </Col>
             </Row>
             <Row>
-                <Col md='8'>
-                    <InteractiveGlobe
-                        setCountryToDisplay={setCountryToDisplay}
-                        viewType={viewType}
-                    />
+                <Col lg='9' className='d-flex align-items-center px-0 mb-1 mb-md-0'>
+                    <div ref={colRef} className='w-100 position-relative'>
+                        <InteractiveGlobe
+                            setCountryToDisplay={setCountryToDisplay}
+                            viewType={viewType}
+                            width={width}
+                        />
+                        <Button
+                            outline
+                            color='light'
+                            className='globe-notes rounded-circle'
+                            id='globe-tooltip'
+                            onClick={() => setTooltipOpen(!tooltipOpen)}
+                        >
+                            <FontAwesomeIcon icon={faQuestion} />
+                        </Button>
+                        <Tooltip
+                            isOpen={tooltipOpen}
+                            target='globe-tooltip'
+                            placement='left'
+                        >
+                            The globe tool is not optimized for use on small screens. Please bear with us as we work on a permanent solution.<br /><br /><b>NOTE</b>: Resizing the screen requires a page refresh to rerender the canvas.
+                        </Tooltip>
+                    </div>
                 </Col>
-                <Col md='4'>
+                <Col lg='3'>
                     <GlobeInfoCard
                         countryToDisplay={countryToDisplay}
                         speciesData={speciesData}
