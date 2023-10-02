@@ -9,10 +9,6 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType, width }) => {
     const [countries, setCountries] = useState({ features: [] });
     const [hover, setHover] = useState();
 
-    if (width) {
-        console.log(width);
-    }
-
     const globeRef = useRef(null);
 
     useEffect(() => {
@@ -32,7 +28,7 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType, width }) => {
     useEffect(() => {
         const windowWidth = window.innerWidth;
 
-        if (windowWidth < 800) {
+        if (windowWidth < 1000) {
             const newAltitude = 4;
             const { lat, lng } = globeRef.current.pointOfView();
             globeRef.current.pointOfView({ lat, lng, altitude: newAltitude });
@@ -47,7 +43,7 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType, width }) => {
 
             // Container Layer
             width={width}
-            height={window.innerHeight * 0.8}
+            height={window.innerHeight * 0.9}
             lineHoverPrecision={0}
             globeImageUrl='//unpkg.com/three-globe/example/img/earth-night.jpg'
             backgroundImageUrl='//unpkg.com/three-globe/example/img/night-sky.png'

@@ -33,7 +33,7 @@ export const PODCASTS = [
     {
         name: 'Biodiversity Speaks',
         link: 'https://ibios.ubc.ca/events/the-podcast/',
-        description: 'A brief peek into the personal and professional journeys of experts in the field of biodiversity conservation.',
+        description: 'A brief peek into the journeys of experts in the field of biodiversity conservation.',
         image: biodiversityspeaks
     },
     {

@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { Container, Col, Row, Button, Tooltip } from 'reactstrap';
+import { Container, Col, Row, Button } from 'reactstrap';
 import InteractiveGlobe from './InteractiveGlobe';
-import GlobeInfoCard from './GlobeInfoCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import GlobeDataCard from './GlobeDataCard';
 import { SPECIES_COUNTRIES } from '../../../../app/shared/SPECIES_COUNTRIES.js';
 import { ENDANGERED_SPECIES } from '../../../../app/shared/ENDANGERED_SPECIES';
 
@@ -12,14 +10,12 @@ const GlobePanel = () => {
     const [speciesData, setSpeciesData] = useState(null);
     const [endangeredData, setEndangeredData] = useState(null);
     const [viewType, setViewType] = useState('species');
-    const [tooltipOpen, setTooltipOpen] = useState(false);
 
-    const colRef = useRef(null);
+    const rowRef = useRef(null);
     const [width, setWidth] = useState(0);
-    console.log(width);
 
     useLayoutEffect(() => {
-        setWidth(colRef.current.offsetWidth);
+        setWidth(rowRef.current.offsetWidth);
     }, []);
 
     useEffect(() => {
@@ -77,58 +73,38 @@ const GlobePanel = () => {
                     </Button>
                     <Button
                         type='button'
-                        color={viewType === 'megadiverse' ? 'success' : 'secondary'}
-                        className='btn-sm rounded-0 me-2'
-                        onClick={() => setViewType('megadiverse')}
-                    >
-                        Megadiverse
-                    </Button>
-                    <Button
-                        type='button'
                         color={viewType === 'endangered' ? 'success' : 'secondary'}
                         className='btn-sm rounded-0 me-2'
                         onClick={() => setViewType('endangered')}
                     >
                         Endangered
                     </Button>
+                    <Button
+                        type='button'
+                        color={viewType === 'megadiverse' ? 'success' : 'secondary'}
+                        className='btn-sm rounded-0 me-2'
+                        onClick={() => setViewType('megadiverse')}
+                    >
+                        Megadiverse
+                    </Button>
                     <small className='text-muted d-none d-md-flex'>More views coming soon!</small>
                 </Col>
             </Row>
             <Row>
-                <Col lg='9' className='d-flex align-items-center px-0 mb-1 mb-md-0'>
-                    <div ref={colRef} className='w-100 position-relative'>
-                        <InteractiveGlobe
-                            setCountryToDisplay={setCountryToDisplay}
-                            viewType={viewType}
-                            width={width}
-                        />
-                        <Button
-                            outline
-                            color='light'
-                            className='globe-notes rounded-circle'
-                            id='globe-tooltip'
-                            onClick={() => setTooltipOpen(!tooltipOpen)}
-                        >
-                            <FontAwesomeIcon icon={faQuestion} />
-                        </Button>
-                        <Tooltip
-                            isOpen={tooltipOpen}
-                            target='globe-tooltip'
-                            placement='left'
-                        >
-                            The globe tool is not optimized for use on small screens. Please bear with us as we work on a permanent solution.<br /><br /><b>NOTE</b>: Resizing the screen requires a page refresh to rerender the canvas.
-                        </Tooltip>
-                    </div>
-                </Col>
-                <Col lg='3'>
-                    <GlobeInfoCard
+                <div ref={rowRef} className='w-100 position-relative p-0'>
+                    <InteractiveGlobe
+                        setCountryToDisplay={setCountryToDisplay}
+                        viewType={viewType}
+                        width={width}
+                    />
+                    <GlobeDataCard
                         countryToDisplay={countryToDisplay}
                         speciesData={speciesData}
                         endangeredData={endangeredData}
                         viewType={viewType}
                         title={title}
                     />
-                </Col>
+                </div>
             </Row>
         </Container>
     );

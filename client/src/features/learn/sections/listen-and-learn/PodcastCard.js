@@ -14,7 +14,7 @@ const PodcastCard = ({ podcast }) => {
 
     return (
         <Card 
-            className='podcast-card text-start rounded-0 mb-3 mb-xl-0' 
+            className='podcast-card position-relative text-center rounded-0 mb-3 mb-xxl-0' 
             onMouseEnter={() => setIsHovered(true)} 
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -23,12 +23,12 @@ const PodcastCard = ({ podcast }) => {
                 alt='impervious surfaces' 
                 className='podcast-card-img rounded-0' 
             />
-            <div className='podcast-card-overlay rounded-0'>
-                <CardBody>
+            <div className='podcast-card-overlay rounded-0 d-flex align-items-center'>
+                <CardBody className='p-1 px-2'>
                     {isHovered &&
                         <>
                             <CardText>
-                                <small>{podcast.description}</small>
+                                <p>{podcast.description}</p>
                             </CardText>
                             <a
                                 href={podcast.link}
