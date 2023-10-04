@@ -109,7 +109,7 @@ export const IMPERVIOUS_STORY_INTRO_MEDIA = [
     {
         index: 0,
         image: null,
-        video: 'https://www.youtube.com/embed/EbAoOQPNsu8',
+        video: 'EbAoOQPNsu8',
         alt: null,
         source: 'PennState Extension',
         caption: null,
@@ -122,7 +122,7 @@ export const IMPERVIOUS_STORY_INTRO_MEDIA = [
     {
         index: 1,
         image: null,
-        video: 'https://www.youtube.com/embed/EbAoOQPNsu8',
+        video: 'EbAoOQPNsu8',
         alt: null,
         source: 'PennState Extension',
         caption: null,
@@ -375,7 +375,7 @@ export const IMPERVIOUS_STORY_THREATS_MEDIA = [
     {
         index: 4,
         image: null,
-        video: 'https://www.youtube.com/embed/ft7s7y-f8Q8',
+        video: 'ft7s7y-f8Q8',
         alt: null,
         source: 'United States Geological Survey',
         caption: null,
@@ -767,7 +767,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 2,
         image: null,
-        video: 'https://www.youtube.com/embed/cswQpkHiPOs',
+        video: 'cswQpkHiPOs',
         alt: null,
         source: 'The Center for Large Landscape Conservation',
         caption: null,
@@ -819,7 +819,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 6,
         image: null,
-        video: 'https://www.youtube.com/embed/7LHPzybDWtc',
+        video: '7LHPzybDWtc',
         alt: null,
         source: 'Oak Pavers',
         caption: null,
@@ -832,7 +832,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 7,
         image: null,
-        video: 'https://www.youtube.com/embed/7LHPzybDWtc',
+        video: '7LHPzybDWtc',
         alt: null,
         source: 'Oak Pavers',
         caption: null,
@@ -858,7 +858,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 9,
         image: null,
-        video: 'https://www.youtube.com/embed/AU5czu931yU',
+        video: 'AU5czu931yU',
         alt: null,
         source: 'U.S. Fish & Wildlife Service',
         caption: null,
@@ -884,7 +884,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 11,
         image: null,
-        video: 'https://www.youtube.com/embed/ykzFmT4rhmM',
+        video: 'ykzFmT4rhmM',
         alt: null,
         source: 'Natural Capital Ireland',
         caption: null,
@@ -936,7 +936,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 15,
         image: null,
-        video: 'https://www.youtube.com/embed/BCYgajPrT64',
+        video: 'BCYgajPrT64',
         alt: null,
         source: 'dotDK Media, Denmark',
         caption: null,
@@ -988,7 +988,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 19,
         image: null,
-        video: 'https://www.youtube.com/embed/ggYzYUBw97c',
+        video: 'ggYzYUBw97c',
         alt: null,
         source: 'OECD Environment',
         caption: null,
@@ -1040,7 +1040,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_MEDIA = [
     {
         index: 23,
         image: null,
-        video: 'https://www.youtube.com/embed/O4xdKenrlJ4',
+        video: 'O4xdKenrlJ4',
         alt: null,
         source: 'Environmental Social Science Research Group',
         caption: '',

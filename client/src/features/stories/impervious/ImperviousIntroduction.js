@@ -4,6 +4,7 @@ import { Row, Col } from 'reactstrap';
 import ChartLine from '../../../components/ChartLine';
 import ChartBar from '../../../components/ChartBar';
 import ExternalButton from '../../../components/ExternalButton';
+import YoutubeEmbed from '../../../components/YoutubeEmbed';
 import defineKeywords from '../../../utils/defineKeywords';
 import { 
     IMPERVIOUS_STORY_INTRO_CONTENT, 
@@ -36,13 +37,14 @@ const ImperviousIntroduction = () => {
                     <Scrollama 
                         offset={0.5} 
                         onStepEnter={onStepEnter}
+                        debug
                     >
                         {IMPERVIOUS_STORY_INTRO_CONTENT &&
                             IMPERVIOUS_STORY_INTRO_CONTENT.map((content, index) => {
                                 return (
                                     <Step 
-                                        data={index} 
-                                        key={index} 
+                                        data={index}
+                                        key={index}
                                     >
                                         <div className='story-step py-3 text-center'>
                                             <h5 className='text-uppercase fw-bold'>
@@ -68,14 +70,14 @@ const ImperviousIntroduction = () => {
                 </div>
             </Col>
             <Col md='7' className='story-main px-0'>
-                <div className='story-main-content d-flex justify-content-center'>
+                <div className='story-main-content d-flex flex-column justify-content-center align-items-center'>
                     {IMPERVIOUS_STORY_INTRO_MEDIA &&
                         IMPERVIOUS_STORY_INTRO_MEDIA.filter((content) => currentStepIndex === content.index)
                         .map((content) => {
                             return (
                                 <Fragment key={content.index}>
                                     {currentStepIndex === content.index ? (
-                                        <span className='d-flex flex-column align-items-center'>
+                                        <>
                                             {content.image ? (
                                                 <img
                                                     src={content.image}
@@ -83,7 +85,7 @@ const ImperviousIntroduction = () => {
                                                     className='story-main-image mb-2'
                                                 />
                                             ) : content.video ? (
-                                                <iframe width='560' height='315' src={content.video} title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullscreen />
+                                                <YoutubeEmbed id={content.video} />
                                             ) : content.chart && content.chartType === 'line' ? (
                                                 <Fragment>
                                                     <h3 className='text-center'>{content.chartTitle}</h3>
@@ -104,7 +106,7 @@ const ImperviousIntroduction = () => {
                                                     {content.caption}
                                                 </small>
                                             }
-                                        </span>
+                                        </>
                                     ) : null}
                                 </Fragment>
                             );

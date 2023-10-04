@@ -35,7 +35,7 @@ const StoryCard = ({ story }) => {
                                     {story.titleSplit[1]}
                                 </h2>
                             </CardTitle>
-                            <CardText>{story.description}</CardText>
+                            <CardText className='text-center'>{story.description}</CardText>
                             {!story.comingSoon ? (
                                 <NavLink 
                                     className='nav-link' 
@@ -56,7 +56,7 @@ const StoryCard = ({ story }) => {
                                     disabled
                                     className='story-card-btn rounded-0 btn-sm col-4'
                                 >
-                                    Coming Soon
+                                    Soon
                                 </Button>
                             )}
                         </>

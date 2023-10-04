@@ -3,6 +3,7 @@ import { Scrollama, Step } from 'react-scrollama';
 import { Row, Col } from 'reactstrap';
 import ChartBar from '../../../components/ChartBar';
 import ExternalButton from '../../../components/ExternalButton';
+import YoutubeEmbed from '../../../components/YoutubeEmbed';
 import defineKeywords from '../../../utils/defineKeywords';
 import { 
     IMPERVIOUS_STORY_THREATS_CONTENT,
@@ -13,13 +14,14 @@ const ImperviousThreats = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
     const onStepEnter = ({ data }) => {
+        console.log(currentStepIndex);
         setCurrentStepIndex(data);
     };
 
     return (
         <Row>
             <Col md='7' className='story-main px-5'>
-                <div className='story-main-content d-flex justify-content-center'>
+                <div className='story-main-content w-100 d-flex justify-content-center'>
                     {IMPERVIOUS_STORY_THREATS_MEDIA &&
                         IMPERVIOUS_STORY_THREATS_MEDIA.filter((content) => currentStepIndex === content.index)
                         .map((content) => {
@@ -34,7 +36,7 @@ const ImperviousThreats = () => {
                                                         className='story-main-image mb-2'
                                                     />
                                                 ) : content.video ? (
-                                                    <iframe width='560' height='315' src={content.video} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen />
+                                                    <iframe width='560' height='315' src={content.video} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullscreen />
                                                 ) : content.chart && content.chartType === 'bar' ? (
                                                     <Fragment>
                                                         <h3 className='text-center'>{content.chartTitle}</h3>

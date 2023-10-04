@@ -2,7 +2,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .App {
@@ -12,7 +12,7 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .form-field {
@@ -232,6 +232,14 @@ html {
   min-width: 32px;
 }
 
+.featured-article-btns button {
+  max-width: 90px;
+}
+
+.featured-article-btns a {
+  max-width: 90px;
+}
+
 .toggle-read-more {
   cursor: pointer;
 }
@@ -293,6 +301,10 @@ html {
 }
 
 /* Learn Section */
+
+.learn-page {
+  overflow-x: hidden;
+}
 
 .learn-section {
   margin-top: 100px;
@@ -457,10 +469,38 @@ html {
   justify-content: center;
 }
 
+/* Resources Section */
+
+.resource-sidebar-header {
+  font-size: 0.9rem;
+}
+
+.resource-sidebar-collapse-btn {
+  width: 50px;
+  box-shadow: none;
+}
+
+.resource-category {
+  cursor: pointer;
+}
+
+.resource-card {
+  min-height: 300px;
+  max-width: 300px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.resource-searchbar-icons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer
+}
+
 /* Embedded video */
 
 .responsive-video {
-  overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;

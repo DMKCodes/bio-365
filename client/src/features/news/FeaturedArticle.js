@@ -17,7 +17,7 @@ import {
     faMinus, 
     faArrowUpRightFromSquare, 
     faBookmark, 
-    faBook 
+    faXmark 
 } from '@fortawesome/free-solid-svg-icons';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
@@ -116,32 +116,27 @@ const FeaturedArticle = ({ article, dashboard }) => {
                         </small>
                     </Row>
 
-                    <Row className='my-3'>
-                        <Col xs='4' className='d-flex justify-content-center'>
+                    <Row className='featured-article-btns my-3 d-flex justify-content-center'>
                             <Button
                                 type='link'
                                 outline
                                 color='dark'
-                                className='rounded-0 btn-sm'
+                                className='rounded-0 btn-sm me-3'
                                 href={link}
                                 target='_blank'
                                 rel='noreferrer noopener'
                             >
-                                <span className='d-none d-sm-inline-block me-2'>
-                                    Full Article
-                                </span>
+                                <span className='me-2'>Read</span>
                                 <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
                             </Button>
-                        </Col>
-                        <Col xs='4' className='d-flex justify-content-center'>
                             <Button
                                 type='button'
                                 outline
-                                color='dark'
-                                className='rounded-0 btn-sm'
+                                color={expanded ? 'success' : 'dark'}
+                                className='rounded-0 btn-sm me-3'
                                 onClick={() => setExpanded(!expanded)}
                             >
-                                <span className='d-none d-sm-inline-block me-2'>Preview</span>
+                                <span className='me-2'>Peek</span>
                                 <span>
                                     {!expanded ? 
                                         <FontAwesomeIcon icon={faPlus} /> : 
@@ -149,40 +144,37 @@ const FeaturedArticle = ({ article, dashboard }) => {
                                     }
                                 </span>
                             </Button>
-                        </Col>
-                        <Col xs='4' className='d-flex justify-content-center'>
                             {currentUser && isSaved ? (
                                 <Button
                                     type='button'
                                     color='danger'
                                     outline
-                                    className='rounded-0 btn-sm'
+                                    className='rounded-0 btn-sm mt-md-3 mt-lg-0'
                                     onClick={() => {
                                         delArticle();
                                         setIsSaved(false);
                                     }}
                                 >
-                                    <span className='d-none d-sm-inline-block me-2'>Remove</span>
-                                    <FontAwesomeIcon icon={faBook} />
+                                    <span className='me-2'>Unsave</span>
+                                    <FontAwesomeIcon icon={faXmark} />
                                 </Button>
                             ) : currentUser && !isSaved ? (
                                 <Button
                                     type='button'
                                     outline
                                     color='dark'
-                                    className='rounded-0 btn-sm'
+                                    className='rounded-0 btn-sm mt-md-3 mt-lg-0'
                                     onClick={() => {
                                         addArticle();
                                         setIsSaved(true);
                                     }}
                                 >
-                                    <span className='d-none d-sm-inline-block me-2'>Bookmark</span>
+                                    <span className='me-2'>Save</span>
                                     <span>
                                         <FontAwesomeIcon icon={faBookmark} />
                                     </span>
                                 </Button>
                             ) : null}
-                        </Col>
                     </Row>
 
                     <Row className='featured-article-preview text-center'>

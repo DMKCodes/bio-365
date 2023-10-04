@@ -15,10 +15,11 @@ const ImperviousSolutions = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
     const onStepEnter = ({ data }) => {
+        console.log(currentStepIndex);
         setCurrentStepIndex(data);
     };
 
-    const onStepExit = ({ direction }) => {
+    const onStepExit = () => {
         return;
     };
 

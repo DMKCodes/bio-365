@@ -26,7 +26,7 @@ const LearnPage = () => {
     const [showGlobePanel, setShowGlobePanel] = useState(true);
 
     return (
-        <Container fluid className='p-0'>
+        <Container fluid className='learn-page p-0'>
             <VideoBackground video={LEARN_PAGE_VIDEO_BG} />
             <Header />
 

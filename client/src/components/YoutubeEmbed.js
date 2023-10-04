@@ -1,8 +1,6 @@
-
-
 const YoutubeEmbed = ({ id }) => {
     return (
-        <div className='responsive-video'>
+        <div className='responsive-video w-100'>
             <iframe
                 src={`https://www.youtube.com/embed/${id}`}
                 frameBorder='0'

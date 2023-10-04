@@ -73,10 +73,10 @@ const ImperviousSummary = () => {
                             {IMPERVIOUS_STORY_SOURCES.map((item, index) => {
                                 return (
                                     <AccordionItem key={index}>
-                                        <AccordionHeader targetId={index}>
+                                        <AccordionHeader targetId={`${index}`}>
                                             {item.category}
                                         </AccordionHeader>
-                                        <AccordionBody accordionId={index}>
+                                        <AccordionBody accordionId={`${index}`}>
                                             {item.category === 'Photography' &&
                                                 <>
                                                     <div className='mb-3'>

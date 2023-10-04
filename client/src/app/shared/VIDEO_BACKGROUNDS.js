@@ -48,7 +48,7 @@ export const RESOURCE_PAGE_VIDEO_BG = {
     videoSource: 'Shah Jahan',
     title: 'RESOURCES',
     content: [
-        ''
+        'A growing compendium of conservation resources.'
     ],
     author: null,
     button: null,

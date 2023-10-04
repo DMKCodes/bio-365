@@ -9,10 +9,7 @@ const ExternalButton = ({ link }) => {
             target='_blank'
             rel='noreferrer'
         >
-            <Button 
-                color='success'
-                className='btn-sm rounded-0'
-            >
+            <Button color='success' className='btn-sm rounded-0'>
                 <span className='me-2'>Read More</span> 
                 <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
             </Button>

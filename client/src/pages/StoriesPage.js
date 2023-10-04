@@ -7,13 +7,10 @@ import { STORY_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 const StoriesPage = () => {
     return (
         <Container fluid className='p-0'>
-            <Row id='intro-section' className='text-center'>
-                <VideoBackground video={STORY_PAGE_VIDEO_BG} />
-            </Row>
-            
+            <VideoBackground video={STORY_PAGE_VIDEO_BG} />
             <Header />
 
-            <Container className='my-5 px-4 w-100'>
+            <Container className='my-5 px-4'>
                 <h2 className='text-center fw-bold mb-5'>Our Stories</h2>
 
                 <StoriesList />
