@@ -7,8 +7,6 @@ import ResourcesSidebar from '../features/resources/ResourcesSidebar';
 import { RESOURCE_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
 const ResourcesPage = () => {
-    const [searchQuery, setSearchQuery] = useState('Search...');
-    const [searchPerformed, setSearchPerformed] = useState(false);
     const [category, setCategory] = useState('All Resources');
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
@@ -26,10 +24,6 @@ const ResourcesPage = () => {
                         xl='2'
                     >
                         <ResourcesSidebar
-                            searchQuery={searchQuery}
-                            setSearchQuery={setSearchQuery}
-                            searchPerformed={searchPerformed}
-                            setSearchPerformed={setSearchPerformed}
                             setCategory={setCategory}
                             sidebarCollapsed={sidebarCollapsed}
                             setSidebarCollapsed={setSidebarCollapsed}

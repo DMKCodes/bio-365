@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import PersistLogin from './components/PersistLogin';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
@@ -9,9 +9,10 @@ import NewsPage from './pages/NewsPage';
 import LearnPage from './pages/LearnPage';
 import StoriesPage from './pages/StoriesPage';
 import StoryPage from './pages/StoryPage';
-import Footer from './components/Footer';
-import GlossaryPage from './pages/GlossaryPage';
 import ResourcesPage from './pages/ResourcesPage';
+import GlossaryPage from './pages/GlossaryPage';
+import DonationsPage from './pages/DonationsPage';
+import Footer from './components/Footer';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path='/stories/:storyName' element={<StoryPage />} />
                 <Route path='/resources' element={<ResourcesPage />} />
                 <Route path='/glossary' element={<GlossaryPage />} />
+                <Route path='/donations' element={<DonationsPage />} />
             </Routes>
 
             <Footer />
