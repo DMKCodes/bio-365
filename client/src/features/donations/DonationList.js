@@ -5,7 +5,7 @@ import { DONATIONS_ORGS } from '../../app/shared/DONATIONS';
 const DonationList = () => {
     return (
         <Container>
-            <h2 className='section-header mb-5 fw-bold text-center'>Conservation Groups</h2>
+            <h2 className='pf mb-5 fw-bold text-center'>Conservation Groups</h2>
             {DONATIONS_ORGS.map((org, index) => {
                 return (
                     <Row className='featured-organization d-flex justify-content-center'>

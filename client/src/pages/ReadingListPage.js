@@ -17,7 +17,7 @@ const ReadingListPage = () => {
 
     return (
         <Container>
-            <h2 className='text-center'>Your Reading List</h2>
+            <h2 className='pf text-center'>Your Reading List</h2>
             {isError ? (
                 error.status === 404 ? (
                     <p>{error.data.error}</p>

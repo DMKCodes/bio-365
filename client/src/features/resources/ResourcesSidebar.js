@@ -16,14 +16,14 @@ const ResourcesSidebar = ({ setCategory, sidebarCollapsed, setSidebarCollapsed }
                 <FontAwesomeIcon icon={sidebarCollapsed ? faChevronRight : faChevronLeft} />
             </Button>
             <div className={sidebarCollapsed ? 'd-none' : 'd-block'}>
-                <p className='resource-sidebar-header fw-bold mt-5 mb-3'>Internal Resources</p>
+                <h5 className='pf fw-bold mt-5 mb-3'>Internal</h5>
                 <NavLink className='nav-link' to='/glossary'>
                     <p className='mb-2'>Glossary</p>
                 </NavLink>
                 <NavLink className='nav-link' to='/donations'>
                     <p className='mb-0'>Donate</p>
                 </NavLink>
-                <p className='resource-sidebar-header fw-bold mt-5 mb-3'>External Resources</p>
+                <h5 className='pf fw-bold mt-5 mb-3'>External</h5>
                 {CATEGORIES.map((category, index) => {
                     return (
                         <p 

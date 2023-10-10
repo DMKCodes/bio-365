@@ -161,7 +161,7 @@ const GlossaryPage = () => {
                         searchResults.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <h2>{item.term}</h2>
+                                    <h2 className='pf'>{item.term}</h2>
                                     <p className='mb-0'>{item.definition}</p>
                                     <p>- {item.source}</p>
                                 </div>
@@ -171,7 +171,7 @@ const GlossaryPage = () => {
                         items[currentLetter].map((item, index) => {
                             return (
                                 <div key={index} className='my-3'>
-                                    <h2>{item.term}</h2>
+                                    <h2 className='pf'>{item.term}</h2>
                                     <p className='mb-2'>{item.definition}</p>
                                     <p>- {item.source}</p>
                                 </div>

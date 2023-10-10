@@ -45,7 +45,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                 >
                     The globe tool is not optimized for use on small screens. Please bear with us as we work on a permanent solution.<br /><br /><b>NOTE</b>: Resizing the screen requires a page refresh to rerender the canvas.
                 </Tooltip>
-                <h5 className='mx-auto mb-0 fw-bold w-100 text-center'>{title}</h5>
+                <h5 className='pf mx-auto mb-0 fw-bold w-100 text-center'>{title}</h5>
                 <span 
                     className='icon-wrapper d-inline-flex text-light'
                     onClick={() => setExpanded(!expanded)}
@@ -62,7 +62,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                 <CardText className={expanded ? 'd-block px-2 pt-2' : 'd-none'}>
                     {countryToDisplay && viewType !== 'megadiverse' &&
                         <CardTitle>
-                            <h5 className='mb-0'>
+                            <h5 className='pf mb-0'>
                                 <b>{countryToDisplay.toUpperCase()}</b>
                             </h5>
                         </CardTitle>

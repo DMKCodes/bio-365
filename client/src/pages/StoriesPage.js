@@ -11,11 +11,11 @@ const StoriesPage = () => {
             <Header />
 
             <Container className='my-5 px-4'>
-                <h2 className='text-center fw-bold mb-5'>Our Stories</h2>
+                <h2 className='pf text-center fw-bold mb-5'>Our Stories</h2>
 
                 <StoriesList />
 
-                <h2 className='text-center fw-bold mb-5'>User Stories</h2>
+                <h2 className='pf text-center fw-bold mb-5'>User Stories</h2>
                 <p className='text-center'>
                     If you have your own story to tell, get in touch via our feedback form to collaborate!
                 </p>

@@ -30,7 +30,7 @@ const StoryCard = ({ story }) => {
                     {isHovered ? (
                         <>
                             <CardTitle className='mb-0'>
-                                <h2 className='text-uppercase fw-bold'>
+                                <h2 className='pf fw-bold'>
                                     {story.titleSplit[0]}<br />
                                     {story.titleSplit[1]}
                                 </h2>
@@ -62,7 +62,7 @@ const StoryCard = ({ story }) => {
                         </>
                     ) : (
                         <CardTitle>
-                            <h2 className='text-uppercase fw-bold'>
+                            <h2 className='pf fw-bold'>
                                 {story.titleSplit[0]}<br />
                                 {story.titleSplit[1]}
                             </h2>

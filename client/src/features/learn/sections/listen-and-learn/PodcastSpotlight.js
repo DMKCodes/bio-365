@@ -1,4 +1,6 @@
 import { Row, Col } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const PodcastSpotlight = () => {
     return (
@@ -13,7 +15,7 @@ const PodcastSpotlight = () => {
                     />
                 </Row>
                 <Row className='text-center'>
-                    <h5 className='text-uppercase fw-bold'>Episode Spotlight</h5>
+                    <h5 className='pf fw-bold'>Episode Spotlight</h5>
                     <p className='mb-0'>
                         Lowell Baier: Codex of the Endangered Species Act
                     </p>
@@ -22,7 +24,7 @@ const PodcastSpotlight = () => {
                         target='_blank' 
                         rel='noreferrer'
                     >
-                        <p>Conservation Conversations</p>
+                        <p>Conservation Conversations<FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' /></p>
                     </a>
                 </Row>
             </Col>

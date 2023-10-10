@@ -8,7 +8,7 @@ const FeaturedOrganization = ({ org }) => {
     return (
         <Row className='featured-organization d-flex justify-content-center my-5'>
             <Col lg='6' className='d-flex flex-column align-items-center justify-content-center text-center'>
-                <h4 className='section-header fw-bold mb-3'>{org.name}</h4>
+                <h5 className='pf fw-bold mb-3'>{org.name}</h5>
                 <p className='m-0 mb-3 d-flex align-items-center'>
                     Charity Navigator:
                     <a 

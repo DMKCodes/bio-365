@@ -17,7 +17,7 @@ export const DONATIONS_DIRECT_SUPPORT = {
 export const DONATIONS_INTRO = {
     content: [
         "Our planet's wildlife faces unprecedented risk, and human activity is to blame.",
-        'Direct conservation, education, and advocacy are the most effective tools in the fight to ensure a sustainable future — not just for plants and animals, but for humans as well. Your contributions support initiatives that safeguard the intricate web of life that sustains us all, protecting endangered species, restoring habitats, and educating the next generation of defenders.',
+        'Direct conservation, education, and advocacy are the most effective tools in the fight to ensure a sustainable future—not just for plants and animals, but for humans as well. Your contributions support initiatives that safeguard the intricate web of life that sustains us all, protecting endangered species, restoring habitats, and educating the next generation of defenders.',
         'Read on to learn more about Biodiversity365 and some of the amazing conservation groups on the front lines of global conservation.'
     ]
 };

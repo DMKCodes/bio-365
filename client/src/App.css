@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -24,6 +25,11 @@ html {
 
 .no-resize {
   resize: none;
+}
+
+.pf {
+  font-family: 'Playfair Display', 'serif';
+  letter-spacing: 1px;
 }
 
 .btn {
@@ -73,11 +79,6 @@ html {
   cursor: pointer;
 }
 
-.section-header {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
-}
-
 /* Video Backgrounds */
 
 .video-background {
@@ -104,11 +105,14 @@ html {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
 }
 
 .video-overlay-header {
-  font-size: 1.5rem;
+  font-family: 'Merriweather', 'serif';
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  text-shadow: 0px 5px 12px black;
 }
 
 .video-overlay-body {
@@ -182,9 +186,10 @@ html {
   z-index: 1;
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, #198754, #198754);
+  background: radial-gradient(circle, black, black);
   transform: translate(50%, -10%);
   border-radius: 50%;
+  opacity: 0.9;
 }
 
 .collapsing {
@@ -315,6 +320,16 @@ html {
   margin-bottom: 100px;
 }
 
+.learn-importance-vid {
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  .learn-importance-vid {
+    width: 100%;
+  }
+}
+
 .globe-data-card {
   position: absolute !important;
   top: 12px;
@@ -356,7 +371,7 @@ html {
 }
 
 .learn-img {
-  max-height: 420px;
+  max-height: 75%;
   overflow: hidden;
 }
 
@@ -474,10 +489,6 @@ html {
 }
 
 /* Resources Section */
-
-.resource-sidebar-header {
-  font-size: 0.9rem;
-}
 
 .resource-sidebar-collapse-btn {
   width: 50px;

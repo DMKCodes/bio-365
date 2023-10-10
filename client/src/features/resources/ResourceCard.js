@@ -7,7 +7,7 @@ const ResourceCard = ({ resource }) => {
 
     return (
         <Card className='resource-card mt-4 rounded-0'>
-            <CardHeader className='text-center px-2'>
+            <CardHeader className='pf text-center px-2'>
                 <FontAwesomeIcon icon={icon} size='xl' className='mb-2' fixedWidth />
                 <CardTitle>
                     <h5 className='fw-bold'>{name}</h5>

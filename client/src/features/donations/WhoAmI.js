@@ -13,7 +13,7 @@ const WhoAmI = () => {
                 <img src={me} alt='me and my son on a hike' className='img-fluid' />
             </Col>
             <Col xl='6' className='d-flex flex-column justify-content-center text-center text-xl-start'>
-                <h2 className='section-header mb-4 fw-bold mt-4 mt-xl-0'>Who am I?</h2>
+                <h2 className='pf mb-4 fw-bold mt-4 mt-xl-0'>Who am I?</h2>
                 {description.map((text, index) => {
                     return (
                         <p key={index} className='donations-direct-content px-4 px-sm-2'>{text}</p>

@@ -11,7 +11,7 @@ const AdminPage = () => {
     return (
         <Container className='text-center'>
             <Row className='pt-1'>
-                <h2>Welcome, {username}!</h2>
+                <h2 className='pf'>Welcome, {username}!</h2>
             </Row>
             { isAdmin ? (
                 <Row className='d-flex justify-content-center'>

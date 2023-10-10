@@ -10,7 +10,7 @@ import donationBg from '../media/donation-page-video.mp4';
 export const HOME_PAGE_VIDEO_BG = {
     video: homeBg,
     videoSource: null,
-    title: 'BIODIVERSITY MADE SIMPLE',
+    title: 'Biodiversity Made Simple',
     content: [
         'Dive in to learn more about our incredible natural world, the challenges it faces, and what we can do to help.',
         'Explore, learn, protect — today and every day.'
@@ -23,7 +23,7 @@ export const HOME_PAGE_VIDEO_BG = {
 export const LEARN_PAGE_VIDEO_BG = {
     video: learnBg,
     videoSource: null,
-    title: 'WHAT IS BIODIVERSITY?',
+    title: 'What is biodiversity?',
     content: [
         'Biodiversity is the term we use to describe all the different kinds of life on Earth—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. These species work together in ecosystems, like an intricate web, to maintain balance and support life.'
     ],
@@ -35,7 +35,7 @@ export const LEARN_PAGE_VIDEO_BG = {
 export const NEWS_PAGE_VIDEO_BG = {
     video: newsBg,
     videoSource: 'Nicky Pe',
-    title: 'NEWS & RESEARCH',
+    title: 'News & Research',
     content: [
         'The latest in biodiversity news and scientific research, updated daily.'
     ],
@@ -47,7 +47,7 @@ export const NEWS_PAGE_VIDEO_BG = {
 export const RESOURCE_PAGE_VIDEO_BG = {
     video: resourceBg,
     videoSource: 'Shah Jahan',
-    title: 'RESOURCES',
+    title: 'Resources',
     content: [
         'A growing compendium of conservation resources.'
     ],
@@ -59,7 +59,7 @@ export const RESOURCE_PAGE_VIDEO_BG = {
 export const GLOSSARY_PAGE_VIDEO_BG = {
     video: glossaryBg,
     videoSource: 'Михайло Пожега',
-    title: 'GLOSSARY',
+    title: 'Glossary',
     content: [
         'The A-Z of biodiversity.'
     ],
@@ -72,7 +72,7 @@ export const GLOSSARY_PAGE_VIDEO_BG = {
 export const STORY_PAGE_VIDEO_BG = {
     video: storiesBg,
     videoSource: 'dabatepatvideos',
-    title: 'STORIES',
+    title: 'Stories',
     content: [
         'Bite-sized, scrollable looks at the challenges facing biodiversity around the world.'
     ],
@@ -84,7 +84,7 @@ export const STORY_PAGE_VIDEO_BG = {
 export const IMPERVIOUS_VIDEO_BG = {
     video: imperviousBg,
     videoSource: null,
-    title: 'IMPERVIOUS',
+    title: 'Impervious',
     content: [
         'How our sprawling cities lead the attack on wildlife.'
     ],
@@ -96,7 +96,7 @@ export const IMPERVIOUS_VIDEO_BG = {
 export const DONATION_VIDEO_BG = {
     video: donationBg,
     videoSource: 'Mikhail Nilov',
-    title: 'DONATIONS',
+    title: 'Donations',
     content: [
         'Support the Biodiversity365 platform or donate directly to conservation groups around the world.'
     ],

@@ -14,7 +14,7 @@ const DashboardPage = () => {
             </Row>
             {currentUser ? (
                 <Row className='d-flex justify-content-center mb-5'>
-                    <h1 className='mb-5'>User Dashboard</h1>
+                    <h1 className='pf mb-5'>User Dashboard</h1>
                     <Col xs='10' md='8'>
                         <UserPanel />
                     </Col>

@@ -14,7 +14,7 @@ const DonationsPage = () => {
 
             <Container className='my-5'>
                 <Row className='d-flex flex-column align-items-center text-center'>
-                    <h1 className='section-header mb-4 fw-bold'>Why Support Biodiversity?</h1>
+                    <h1 className='pf mb-4 fw-bold'>Why Support Biodiversity?</h1>
                     {DONATIONS_INTRO.content.map((content, index) => {
                         return (
                             <p key={index} className='donations-intro-content px-4 px-sm-2'>{content}</p>

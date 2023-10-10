@@ -5,7 +5,7 @@ import GlobeDataCard from './GlobeDataCard';
 import { SPECIES_COUNTRIES } from '../../../../app/shared/SPECIES_COUNTRIES.js';
 import { ENDANGERED_SPECIES } from '../../../../app/shared/ENDANGERED_SPECIES';
 
-const GlobePanel = () => {
+const GlobePanel = ({ showGlobePanel, setShowGlobePanel }) => {
     const [countryToDisplay, setCountryToDisplay] = useState(null);
     const [speciesData, setSpeciesData] = useState(null);
     const [endangeredData, setEndangeredData] = useState(null);
@@ -59,54 +59,58 @@ const GlobePanel = () => {
     };
 
     return (
-        <Container fluid className='p-0'>
-            <Row>
-                <Col xs='8' className='w-100 mb-2 d-flex justify-content-center justify-content-md-start align-items-center'>
-                    <p className='m-0 me-2'>Views:</p>
-                    <Button
-                        type='button'
-                        color={viewType === 'species' ? 'success' : 'secondary'}
-                        className='btn-sm rounded-0 me-2'
-                        onClick={() => setViewType('species')}
-                    >
-                        Species
-                    </Button>
-                    <Button
-                        type='button'
-                        color={viewType === 'endangered' ? 'success' : 'secondary'}
-                        className='btn-sm rounded-0 me-2'
-                        onClick={() => setViewType('endangered')}
-                    >
-                        Endangered
-                    </Button>
-                    <Button
-                        type='button'
-                        color={viewType === 'megadiverse' ? 'success' : 'secondary'}
-                        className='btn-sm rounded-0 me-2'
-                        onClick={() => setViewType('megadiverse')}
-                    >
-                        Megadiverse
-                    </Button>
-                    <small className='text-muted d-none d-md-flex'>More views coming soon!</small>
-                </Col>
-            </Row>
-            <Row>
-                <div ref={rowRef} className='w-100 position-relative p-0'>
-                    <InteractiveGlobe
-                        setCountryToDisplay={setCountryToDisplay}
-                        viewType={viewType}
-                        width={width}
-                    />
-                    <GlobeDataCard
-                        countryToDisplay={countryToDisplay}
-                        speciesData={speciesData}
-                        endangeredData={endangeredData}
-                        viewType={viewType}
-                        title={title}
-                    />
-                </div>
-            </Row>
-        </Container>
+        <Row>
+            <span className={showGlobePanel ? 'd-block p-0' : 'd-none'}>
+                <Container fluid className='p-0'>
+                    <Row>
+                        <Col xs='8' className='w-100 mb-2 d-flex justify-content-center justify-content-md-start align-items-center'>
+                            <p className='m-0 me-2'>Views:</p>
+                            <Button
+                                type='button'
+                                color={viewType === 'species' ? 'success' : 'secondary'}
+                                className='btn-sm rounded-0 me-2'
+                                onClick={() => setViewType('species')}
+                            >
+                                Species
+                            </Button>
+                            <Button
+                                type='button'
+                                color={viewType === 'endangered' ? 'success' : 'secondary'}
+                                className='btn-sm rounded-0 me-2'
+                                onClick={() => setViewType('endangered')}
+                            >
+                                Endangered
+                            </Button>
+                            <Button
+                                type='button'
+                                color={viewType === 'megadiverse' ? 'success' : 'secondary'}
+                                className='btn-sm rounded-0 me-2'
+                                onClick={() => setViewType('megadiverse')}
+                            >
+                                Megadiverse
+                            </Button>
+                            <small className='text-muted d-none d-md-flex'>More views coming soon!</small>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <div ref={rowRef} className='w-100 position-relative p-0'>
+                            <InteractiveGlobe
+                                setCountryToDisplay={setCountryToDisplay}
+                                viewType={viewType}
+                                width={width}
+                            />
+                            <GlobeDataCard
+                                countryToDisplay={countryToDisplay}
+                                speciesData={speciesData}
+                                endangeredData={endangeredData}
+                                viewType={viewType}
+                                title={title}
+                            />
+                        </div>
+                    </Row>
+                </Container>
+            </span>
+        </Row>
     );
 };
 
