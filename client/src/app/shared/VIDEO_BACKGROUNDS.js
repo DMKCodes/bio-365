@@ -5,6 +5,7 @@ import newsBg from '../media/news-page-video.mp4';
 import storiesBg from '../media/story-page-video.mp4';
 import resourceBg from '../media/resource-page-video.mp4';
 import glossaryBg from '../media/glossary-page-video.mp4';
+import donationBg from '../media/donation-page-video.mp4';
 
 export const HOME_PAGE_VIDEO_BG = {
     video: homeBg,
@@ -15,8 +16,8 @@ export const HOME_PAGE_VIDEO_BG = {
         'Explore, learn, protect — today and every day.'
     ],
     author: null,
-    button: '',
-    buttonLink: ''
+    button: null,
+    buttonLink: null
 };
 
 export const LEARN_PAGE_VIDEO_BG = {
@@ -88,6 +89,18 @@ export const IMPERVIOUS_VIDEO_BG = {
         'How our sprawling cities lead the attack on wildlife.'
     ],
     author: 'Douglas Kissack',
+    button: null,
+    buttonLink: null
+};
+
+export const DONATION_VIDEO_BG = {
+    video: donationBg,
+    videoSource: 'Mikhail Nilov',
+    title: 'DONATIONS',
+    content: [
+        'Support the Biodiversity365 platform or donate directly to conservation groups around the world.'
+    ],
+    author: null,
     button: null,
     buttonLink: null
 };

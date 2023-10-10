@@ -99,10 +99,10 @@ const FeaturedArticle = ({ article, dashboard }) => {
 
     return (
         <Row className='featured-article m-0 my-0 my-md-5 p-0 border'>
-            <Col xs='12' md='6' className='p-0'>
+            <Col md='6' className='p-0'>
                 <img src={image} alt='' className='featured-article-image w-100' />
             </Col>
-            <Col xs='12' md='6' className='p-5'>
+            <Col md='6' className='p-5'>
                 <div className='d-flex flex-column justify-content-center h-100'>
                     <Row>
                         <h5 className='fw-bold text-center'>

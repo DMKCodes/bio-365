@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 html {
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
 }
 
 .App {
@@ -12,7 +12,6 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* overflow-x: hidden; */
 }
 
 .form-field {
@@ -74,6 +73,11 @@ html {
   cursor: pointer;
 }
 
+.section-header {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
 /* Video Backgrounds */
 
 .video-background {
@@ -100,7 +104,7 @@ html {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.4);
 }
 
 .video-overlay-header {
@@ -498,7 +502,49 @@ html {
   cursor: pointer
 }
 
-/* Embedded video */
+/* Donations Section */
+
+.donations-img {
+  width: 300px;
+}
+
+.charity-nav-img {
+  height: 20px;
+}
+
+.featured-organization a {
+  color: black;
+}
+
+.featured-organization-desc {
+  width: 75%;
+}
+
+.signature {
+  height: 50px;
+}
+
+@media (min-width: 992px) {
+  .donations-intro-content {
+    width: 75% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .donations-direct-content {
+    width: 75% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .donations-direct-content {
+    width: 100% !important;
+  }
+}
+
+/* Embedded Video */
 
 .responsive-video {
   padding-bottom: 56.25%;

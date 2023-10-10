@@ -2,17 +2,19 @@ import { Container, Row, Col, Nav, NavItem, Navbar } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import ContactForm from './ContactForm';
 import Donations from './Donations';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return (
         <footer className='footer'>
             <Container fluid className='p-4 mt-5 bg-dark text-light'>
                 <Row className='mt-3'>
-                    <Col md='4' xs='4' className='text-center'>
-                        <h5 className='mb-2 fw-bold'>
+                    <Col md='6' lg='4' className='text-center'>
+                        <h5 className='mb-3 fw-bold'>
                             Explore
                         </h5>
-                        <Navbar>
+                        <Navbar className='py-0'>
                             <Nav navbar className='w-100 fw-bold'>
                                 <NavItem>
                                     <NavLink className='nav-link text-light' to='/news'>
@@ -37,18 +39,21 @@ const Footer = () => {
                             </Nav>
                         </Navbar>
                     </Col>
-                    <Col md='4' xs='8' className='mb-5 text-center d-flex flex-column'>
-                        <h5 className='mb-4 fw-bold'>
-                            Support Biodiversity
+                    <Col md='6' lg='4' className='text-center d-flex flex-column'>
+                        <h5 className='mt-5 mt-md-0 mb-3 fw-bold d-flex flex-row justify-content-center'>
+                            Donate
+                            <NavLink className='nav-link text-light ms-2' to='/donations'>
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' />
+                            </NavLink>
                         </h5>
                         <Donations />
-                        <h5 className='mt-4 fw-bold'>
+                        <h5 className='mt-5 fw-bold'>
                             Socials
                         </h5>
                         <small className='text-muted'>Coming soon!</small>
                     </Col>
-                    <Col md='4' xs='12' className='d-flex flex-column align-items-center'>
-                        <h5 className='mb-4 fw-bold'>
+                    <Col lg='4' className='d-flex flex-column align-items-center mt-5 mb-5 mt-lg-0'>
+                        <h5 className='mb-3 fw-bold'>
                             Feedback
                         </h5>
                         <ContactForm />

@@ -61,6 +61,13 @@ export const RESOURCES = [
         icon: faBuildingNgo
     },
     {
+        name: 'The Conservation Fund',
+        link: 'https://www.conservationfund.org/',
+        category: 'Organization',
+        about: "The Conservation Fund protects America's most critical lands and waters to provide greater access to nature, strengthen local economies and enhance climate resiliency.",
+        icon: faBuildingNgo
+    },
+    {
         name: 'Conservation International',
         link: 'https://www.conservation.org/',
         category: 'Organization',

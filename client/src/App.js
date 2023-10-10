@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import PersistLogin from './components/PersistLogin';
+import ScrollToTop from './utils/ScrollToTop';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
 import AdminPage from './pages/AdminPage';
@@ -18,7 +19,7 @@ function App() {
     return (
         <div className='App'>
             <PersistLogin />
-
+            <ScrollToTop />
             <Routes>
                 <Route path='/dashboard' element={<DashboardPage />} />
                 <Route path='/admin' element={<AdminPage />} />
