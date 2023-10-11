@@ -4,7 +4,8 @@ import {
     faBuildingColumns,
     faNewspaper,
     faFlaskVial,
-    faEarthAmericas
+    faEarthAmericas,
+    faPodcast
 } from '@fortawesome/free-solid-svg-icons';
 
 export const CATEGORIES = [
@@ -36,9 +37,20 @@ export const CATEGORIES = [
         name: 'Research',
         icon: faFlaskVial
     },
+    {
+        name: 'Podcast',
+        icon: faPodcast
+    }
 ];
 
 export const RESOURCES = [
+    {
+        name: 'All Creatures',
+        link: 'https://www.allcreaturespod.com/episode_type/all/',
+        category: 'Podcast',
+        about: 'The All Creatures Podcast is a 5-star rated animal podcast covering hundreds of species, including interviews with conservation experts from all around the world.',
+        icon: faPodcast
+    },
     {
         name: 'Biodiversity A-Z',
         link: 'https://www.biodiversitya-z.org/',
@@ -54,11 +66,32 @@ export const RESOURCES = [
         icon: faBuildingNgo
     },
     {
+        name: 'Biodiversity Speaks',
+        link: 'https://ibios.ubc.ca/events/the-podcast/',
+        category: 'Podcast',
+        about: 'Dr. Helina Jolly engages in discussions with esteemed speakers on diverse topics related to biodiversity. Through each conversation, gain a unique glimpse into the personal and professional journeys of individuals in the realm of biodiversity conservation.',
+        icon: faPodcast
+    },
+    {
+        name: 'The Business of Biodiversity',
+        link: 'https://www.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/saving-our-species-program/business-of-biodiversity-podcast',
+        category: 'Podcast',
+        about: 'The Business of Biodiversity, brought to you by the Saving our Species program, aims to prove why biodiversity is not just good for the environment - but good for business too.',
+        icon: faPodcast
+    },
+    {
         name: 'Cambridge Institute for Sustainability Leadership',
         link: 'https://www.cisl.cam.ac.uk/resources/sustainability-horizons',
         category: 'Organization',
         about: 'CISL is an impact-led institute within the University of Cambridge that activates leadership globally to transform economies for people, nature and climate.',
         icon: faBuildingNgo
+    },
+    {
+        name: 'Conservation Conversations',
+        link: 'https://audioboom.com/channels/5029774-conservation-conversations-with-sean-o-brien',
+        category: 'Podcast',
+        about: 'Geared towards both conservation professionals and casual listeners alike, this educational and entertaining podcast discusses how emerging technologies can benefit conservation, regional and global trends in biodiversity, and the future for life on Earth.',
+        icon: faPodcast
     },
     {
         name: 'The Conservation Fund',
@@ -130,7 +163,13 @@ export const RESOURCES = [
         about: 'The International Union for Conservation of Nature (IUCN) is a membership Union uniquely composed of both government and civil society organisations. IUCN is a global authority on the status of the natural world and the measures needed to safeguard it.',
         icon: faBuildingNgo
     },
-    
+    {
+        name: 'Life in the Soil',
+        link: 'https://rilliglab.org/podcast/',
+        category: 'Podcast',
+        about: "Life in the Soil brings you the insights and voices of some of the world's best soil scientists.",
+        icon: faPodcast
+    },
     {
         name: 'Mongabay',
         link: 'https://news.mongabay.com/',
@@ -158,6 +197,13 @@ export const RESOURCES = [
         category: 'Organization',
         about: 'The Nature Conservancy is a global environmental nonprofit working to create a world where people and nature can thrive.',
         icon: faBuildingNgo
+    },
+    {
+        name: 'NOAA Ocean Podcast',
+        link: 'https://oceanservice.noaa.gov/podcast/',
+        category: 'Podcast',
+        about: 'Connect with ocean experts and explore topics from corals to coastal science with this audio podcast for teens and adults.',
+        icon: faPodcast
     },
     {
         name: 'Planet Custodian',

@@ -41,7 +41,7 @@ const HomeNav = () => {
                 <Collapse isOpen={menuOpen} navbar>
                     <Nav className='fw-bold text-end pe-2 pe-sm-0 pt-3 pt-sm-0' navbar>
                         <NavItem>
-                            <NavLink className='nav-link text-light' to='/news'>
+                            <NavLink className='nav-link text-light' to='/articles'>
                                 Articles
                             </NavLink>
                         </NavItem>

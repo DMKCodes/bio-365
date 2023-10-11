@@ -32,10 +32,10 @@ export const LEARN_PAGE_VIDEO_BG = {
     buttonLink: null
 };
 
-export const NEWS_PAGE_VIDEO_BG = {
+export const ARTICLES_PAGE_VIDEO_BG = {
     video: newsBg,
     videoSource: 'Nicky Pe',
-    title: 'News & Research',
+    title: 'Articles',
     content: [
         'The latest in biodiversity news and scientific research, updated daily.'
     ],

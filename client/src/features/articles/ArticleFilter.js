@@ -18,7 +18,7 @@ import {
     Input
 } from 'reactstrap';
 
-const NewsFilter = () => {
+const ArticleFilter = () => {
     const dispatch = useDispatch();
     
     const [sourceDropdownOpen, setSourceDropdownOpen] = useState(false);
@@ -165,4 +165,4 @@ const NewsFilter = () => {
     );
 };
 
-export default NewsFilter;
+export default ArticleFilter;

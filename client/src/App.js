@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
 import AdminPage from './pages/AdminPage';
 import ReadingListPage from './pages/ReadingListPage';
-import NewsPage from './pages/NewsPage';
+import ArticlesPage from './pages/ArticlesPage';
 import LearnPage from './pages/LearnPage';
 import StoriesPage from './pages/StoriesPage';
 import StoryPage from './pages/StoryPage';
@@ -21,11 +21,11 @@ function App() {
             <PersistLogin />
             <ScrollToTop />
             <Routes>
+                <Route path='/' element={<HomePage />} />
                 <Route path='/dashboard' element={<DashboardPage />} />
                 <Route path='/admin' element={<AdminPage />} />
                 <Route path='/readinglist' element={<ReadingListPage />} />
-                <Route path='/' element={<HomePage />} />
-                <Route path='/news' element={<NewsPage />} />
+                <Route path='/articles' element={<ArticlesPage />} />
                 <Route path='/learn' element={<LearnPage />} />
                 <Route path='/stories' element={<StoriesPage />} />
                 <Route path='/stories/:storyName' element={<StoryPage />} />

@@ -28,15 +28,16 @@ const ConservationPanel = () => {
                         </Button>
                     </NavLink>
                     <p>
-                        If you prefer to contribute in person, consider volunteering with an environmental agency in your state or country, or check out citizen science opportunities, such as{' '}
+                        If you prefer to contribute in person, consider volunteering with an environmental organization in your state or country, or check out citizen science opportunities, such as with the{' '}
                         <a
                             href='https://www.gbif.org/citizen-science'
                             target='_blank'
                             rel='noreferrer'
                         >
-                            the Global Biodiversity Information Facility<FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />
+                            Global Biodiversity Information Facility
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />
                         </a>
-                        , to see your options.
+                        .
                     </p>
                 </Row>
             </Col>

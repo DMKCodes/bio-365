@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../features/users/userSlice';
 import { useGetArticlesQuery } from '../features/users/articlesApiSlice';
-import NewsList from '../features/news/NewsList';
+import NewsList from '../features/articles/ArticleList';
 import { Container } from 'reactstrap';
 
 const ReadingListPage = () => {
@@ -27,9 +27,9 @@ const ReadingListPage = () => {
             ) : isLoading ? (
                 <p>Fetching the latest articles...</p>
             ) : data ? (
-                <NewsList 
+                <NewsList
                     articles={data.articles}
-                    dashboard={true} 
+                    dashboard={true}
                 />
             ) : null}
         </Container>

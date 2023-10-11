@@ -1,21 +1,21 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { 
-    setAllArticles, 
-    clearAllArticles, 
+import {
+    setAllArticles,
+    clearAllArticles,
     setDisplayArticles,
     selectDisplayArticles
-} from '../features/news/newsSlice';
-import { useArticlesQuery } from '../features/news/newsApiSlice';
+} from '../features/articles/newsSlice';
+import { useArticlesQuery } from '../features/articles/newsApiSlice';
 import { Container, Row } from 'reactstrap';
-import NewsList from '../features/news/NewsList';
-import NewsFilter from '../features/news/NewsFilter';
+import ArticleList from '../features/articles/ArticleList';
+import ArticleFilter from '../features/articles/ArticleFilter';
 import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';
-import { NEWS_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
+import { ARTICLES_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
 
-const NewsPage = () => {
+const ArticlesPage = () => {
     const dispatch = useDispatch();
     const displayArticles = useSelector(selectDisplayArticles);
 
@@ -36,26 +36,26 @@ const NewsPage = () => {
 
     return (
         <Container fluid className='p-0'>
-            <VideoBackground video={NEWS_PAGE_VIDEO_BG} />
+            <VideoBackground video={ARTICLES_PAGE_VIDEO_BG} />
             <Header />
 
             <Container className='my-5'>
-                <NewsFilter />
+                <ArticleFilter />
                 <Row>
                     {isError ? (
                         <h3 className='mt-5 text-center'>Error retrieving articles. Please refresh and try again.</h3>
                     ) : isLoading ? (
                         <h3 className='mt-5 text-center'>Fetching the latest articles...</h3>
                     ) : displayArticles ? (
-                        <NewsList 
+                        <ArticleList
                             articles={displayArticles}
-                            dashboard={false} 
+                            dashboard={false}
                         />
                     ) : null}
                 </Row>
             </Container>
         </Container>
     );
-};  
+};
 
-export default NewsPage;
+export default ArticlesPage;

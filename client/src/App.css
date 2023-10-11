@@ -505,6 +505,14 @@ html {
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
+.resource-card-footer {
+  border-top: none !important;
+}
+
+.resource-card-button {
+  box-shadow: none;
+}
+
 .resource-searchbar-icons {
   position: absolute;
   right: 10px;

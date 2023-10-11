@@ -17,7 +17,12 @@ const Footer = () => {
                         <Navbar className='py-0'>
                             <Nav navbar className='w-100 fw-bold'>
                                 <NavItem>
-                                    <NavLink className='nav-link text-light' to='/news'>
+                                    <NavLink className='nav-link text-light' to='/'>
+                                        Home
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className='nav-link text-light' to='/articles'>
                                         Articles
                                     </NavLink>
                                 </NavItem>

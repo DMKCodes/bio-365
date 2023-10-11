@@ -63,6 +63,7 @@ const ArticleCard = ({ article }) => {
 
     const [image, setImage] = useState(null);
 
+    // If article has no image, use placeholder image.
     useEffect(() => {
         if (article.image) {
             setImage(article.image);
