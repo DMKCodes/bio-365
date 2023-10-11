@@ -10,6 +10,7 @@ const newsSlice = createSlice({
     initialState,
     reducers: {
         setAllArticles: (state, action) => {
+            console.log(action.payload);
             return ({
                 ...state,
                 allArticles: action.payload,

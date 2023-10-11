@@ -39,6 +39,7 @@ const userSlice = createSlice({
             });
         },
         removeSavedArticle: (state, action) => {
+            console.log(action.payload);
             return ({
                 ...state,
                 currentUser: {

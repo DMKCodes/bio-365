@@ -4,7 +4,7 @@ const Donations = () => {
     return (
         <div>
             <a href='https://www.buymeacoffee.com/dmkcodes' target='_blank' rel='noreferrer'>
-                <img src={donationsImg} className='donations-img' />
+                <img src={donationsImg} alt='support biodiversity donation link' className='donations-img' />
             </a>
         </div>
     );

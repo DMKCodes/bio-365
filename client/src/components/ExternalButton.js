@@ -4,16 +4,16 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const ExternalButton = ({ link }) => {
     return (
-        <a
+        <Button 
+            color='success' 
+            type='link'
             href={link}
             target='_blank'
-            rel='noreferrer'
+            rel='noreferrer noopener'
         >
-            <Button color='success' className='btn-sm rounded-0'>
-                <span className='me-2'>Read More</span> 
-                <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
-            </Button>
-        </a>
+            <span className='me-2'>Read More</span> 
+            <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
+        </Button>
     );
 };
 

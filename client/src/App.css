@@ -32,13 +32,8 @@ html {
   letter-spacing: 1px;
 }
 
-.btn {
-  box-shadow: 2px 2px black;
-}
-
-.bmc-button {
-  box-shadow: 3px 3px black;
-  background-color: #ffdd00;
+.nb-card-footer {
+  border-top: none !important;
 }
 
 .top-button {
@@ -221,15 +216,24 @@ html {
 .article-card {
   text-align: center;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  min-height: 550px;
 }
 
-.featured-article {
-  border: 1px solid rgba(0, 0, 0, 0.175);
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+.article-card-info {
+  position: absolute;
+  bottom: 5px;
+  width: 90%;
+}
+
+.article-card-bookmark {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .article-title {
-  height: 4.8em;
+  max-height: 4.8em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -237,24 +241,8 @@ html {
   -webkit-box-orient: vertical;
 }
 
-.article-btns button {
-  min-width: 32px;
-}
-
-.featured-article-btns button {
-  max-width: 90px;
-}
-
-.featured-article-btns a {
-  max-width: 90px;
-}
-
-.toggle-read-more {
-  cursor: pointer;
-}
-
-.toggle-read-more:hover {
-  color: #198754;
+.article-preview-btn {
+  width: 100px !important;
 }
 
 .article-image {
@@ -264,9 +252,62 @@ html {
   border-bottom: 1px solid rgba(0, 0, 0, 0.175);
 }
 
-.featured-article-image {
-  max-height: 700px;
-  object-fit: scale-down;
+.featured-article {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.featured-article-title {
+  min-height: 1.25em;
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.featured-article-snippet {
+  height: 10.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 1399px) {
+  .featured-article-content {
+    height: 362px;
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .featured-article-snippet {
+    height: 7.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.featured-article-external-btn {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+.toggle-read-more {
+  cursor: pointer;
+}
+
+.toggle-read-more:hover {
+  color: #198754;
 }
 
 .pagination .page-link {
@@ -324,7 +365,7 @@ html {
   width: 75%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .learn-importance-vid {
     width: 100%;
   }
@@ -364,7 +405,7 @@ html {
   background: rgba(0,0,0,0.6);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .learn-img-container {
     height: 500px;
   }
@@ -505,10 +546,6 @@ html {
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
-.resource-card-footer {
-  border-top: none !important;
-}
-
 .resource-card-button {
   box-shadow: none;
 }
@@ -549,7 +586,7 @@ html {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .donations-direct-content {
     width: 75% !important;
     margin-left: auto;

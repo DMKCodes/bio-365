@@ -16,9 +16,10 @@ import {
     faPlus, 
     faMinus, 
     faArrowUpRightFromSquare, 
-    faBookmark, 
-    faXmark 
+    faBookmark,
+    faEyeSlash
 } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-icons';
 import Frontiers from '../../app/media/frontiers.png';
 import Plos from '../../app/media/plos.png';
 import SciDaily from '../../app/media/sciencedaily.jpg';
@@ -27,7 +28,6 @@ import DTE from '../../app/media/dte.png';
 
 const FeaturedArticle = ({ article, dashboard }) => {
     const dispatch = useDispatch();
-
     const currentUser = useSelector(selectCurrentUser);
 
     const {
@@ -42,9 +42,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
     } = article;
 
     const [expanded, setExpanded] = useState(false);
-
     const [isSaved, setIsSaved] = useState(false);
-
     const checkSaved = useSelector((state) => checkSavedArticles(state, title));
 
     useEffect(() => {
@@ -88,118 +86,70 @@ const FeaturedArticle = ({ article, dashboard }) => {
         const { _id } = currentUser;
 
         try {
-            const articleId = article._id;
-            await deleteArticle({ _id, articleId }).unwrap();
-
+            if (article._id) {
+                const articleId = article._id;
+                await deleteArticle({ _id, articleId }).unwrap();
+            }
             dispatch(removeSavedArticle(title));
+            setIsSaved(false);
         } catch (error) {
             console.log(error);
         }
     };
 
     return (
-        <Row className='featured-article m-0 my-0 my-md-5 p-0 border'>
-            <Col md='6' className='p-0'>
+        <Row className='featured-article position-relative m-0 mt-0 mt-md-5 mb-5 p-0 border'>
+            <Col xl='6' className='p-0'>
                 <img src={image} alt='' className='featured-article-image w-100' />
             </Col>
-            <Col md='6' className='p-5'>
-                <div className='d-flex flex-column justify-content-center h-100'>
-                    <Row>
-                        <h5 className='fw-bold text-center'>
-                            {title}
-                        </h5>
-                    </Row>
+            <Col xl='6' className='featured-article-content position-relative p-1 p-xl-3'>
+                {currentUser && isSaved ? (
+                    <FontAwesomeIcon 
+                        icon={faBookmark}
+                        className='article-card-bookmark' 
+                        size='lg'
+                        onClick={() => {
+                            delArticle();
+                        }}
+                        style={{ color: 'green' }}
+                    />
+                ) : currentUser && !isSaved ? (
+                    <FontAwesomeIcon 
+                        icon={faBookmarkEmpty}
+                        className='article-card-bookmark' 
+                        size='lg'
+                        onClick={() => {
+                            addArticle();
+                        }}
+                    />
+                ) : null}
 
-                    <Row>
-                        <small className='text-muted text-center'>
-                            Author: {author}, {pubDate}
-                        </small>
-                    </Row>
+                <div className='mt-0 mt-xl-4 px-4 px-xl-2'>
+                    <h4 className='featured-article-title pf fw-bold my-1'>{title}</h4>
+                    <small className='text-muted'>{author}, {pubDate}</small>
+                    {snippet ? (
+                        <p className='featured-article-snippet mt-2'>
+                            <b>Preview: </b>{snippet}
+                        </p>
+                    ) : (
+                        <p className='featured-article-snippet mt-2'>
+                            <i>No Preview Available</i>
+                        </p>
+                    )}
 
-                    <Row className='featured-article-btns my-3 d-flex justify-content-center'>
-                            <Button
-                                type='link'
-                                outline
-                                color='dark'
-                                className='rounded-0 btn-sm me-3'
-                                href={link}
-                                target='_blank'
-                                rel='noreferrer noopener'
-                            >
-                                <span className='me-2'>Read</span>
-                                <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>
-                            </Button>
-                            <Button
-                                type='button'
-                                outline
-                                color={expanded ? 'success' : 'dark'}
-                                className='rounded-0 btn-sm me-3'
-                                onClick={() => setExpanded(!expanded)}
-                            >
-                                <span className='me-2'>Peek</span>
-                                <span>
-                                    {!expanded ? 
-                                        <FontAwesomeIcon icon={faPlus} /> : 
-                                        <FontAwesomeIcon icon={faMinus} />
-                                    }
-                                </span>
-                            </Button>
-                            {currentUser && isSaved ? (
-                                <Button
-                                    type='button'
-                                    color='danger'
-                                    outline
-                                    className='rounded-0 btn-sm mt-md-3 mt-lg-0'
-                                    onClick={() => {
-                                        delArticle();
-                                        setIsSaved(false);
-                                    }}
-                                >
-                                    <span className='me-2'>Unsave</span>
-                                    <FontAwesomeIcon icon={faXmark} />
-                                </Button>
-                            ) : currentUser && !isSaved ? (
-                                <Button
-                                    type='button'
-                                    outline
-                                    color='dark'
-                                    className='rounded-0 btn-sm mt-md-3 mt-lg-0'
-                                    onClick={() => {
-                                        addArticle();
-                                        setIsSaved(true);
-                                    }}
-                                >
-                                    <span className='me-2'>Save</span>
-                                    <span>
-                                        <FontAwesomeIcon icon={faBookmark} />
-                                    </span>
-                                </Button>
-                            ) : null}
-                    </Row>
-
-                    <Row className='featured-article-preview text-center'>
-                        {(expanded && snippet.length > 0) &&
-                            <p>{snippet}</p>
-                        }
-                    </Row>
                 </div>
 
-                <Row className='float-bottom'>
-                    <Col xs='3'>
-                        <p>
-                            <small className='text-success fw-bold float-start ms-2'>
-                                {category}
-                            </small>
-                        </p>
-                    </Col>
-                    <Col xs='9'>
-                        <p>
-                            <small className='text-muted float-end me-2'>
-                                Source: <a href={source}>{publisher}</a>
-                            </small>
-                        </p>
-                    </Col>
-                </Row>
+                <Button
+                    type='link'
+                    color='success'
+                    className='featured-article-external-btn rounded-0 d-flex align-items-center justify-content-center'
+                    href={link}
+                    target='_blank'
+                    rel='noreferrer noopener'
+                >
+                    Full Article
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='sm' className='ms-2' />
+                </Button>
             </Col>
         </Row>
     );

@@ -45,7 +45,7 @@ const ArticleList = ({ articles, dashboard }) => {
                     ) : (
                         articles.slice(currentPage * pageSize, (currentPage + 1) * pageSize).map((article, index) => {
                             return (
-                                <Col md='6' lg='4' key={index}>
+                                <Col md='6' xl='4' key={index}>
                                     <ArticleCard article={article} dashboard={dashboard} />
                                 </Col>
                             );

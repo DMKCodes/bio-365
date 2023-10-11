@@ -1,4 +1,4 @@
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 import StoriesList from '../features/stories/StoriesList';
 import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';

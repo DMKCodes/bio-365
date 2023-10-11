@@ -18,19 +18,17 @@ const ResourceCard = ({ resource }) => {
                     <small>{about}</small>
                 </CardText>
             </CardBody>
-            <CardFooter className='resource-card-footer text-center rounded-0 p-0 m-0'>
-                <a
+            <CardFooter className='nb-card-footer text-center rounded-0 p-0 m-0'>
+                <Button
+                    color='success'
+                    type='link'
                     href={link}
                     target='_blank'
-                    rel='noreferrer'
+                    rel='noreferrer noopener'
+                    className='resource-card-button w-100 h-100 rounded-0'
                 >
-                    <Button
-                        color='success'
-                        className='resource-card-button w-100 h-100 rounded-0'
-                    >
-                        Visit <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />
-                    </Button>
-                </a>
+                    Visit <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />
+                </Button>
             </CardFooter>
         </Card>
     );

@@ -14,7 +14,6 @@ import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';
 import { ARTICLES_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
-
 const ArticlesPage = () => {
     const dispatch = useDispatch();
     const displayArticles = useSelector(selectDisplayArticles);

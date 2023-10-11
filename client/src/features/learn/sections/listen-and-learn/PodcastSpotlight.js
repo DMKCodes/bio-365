@@ -12,6 +12,7 @@ const PodcastSpotlight = () => {
                         height='160px' 
                         width='100%' 
                         loading='lazy'
+                        title='Lowell Baider Codex'
                     />
                 </Row>
                 <Row className='text-center'>
