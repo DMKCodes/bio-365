@@ -8,9 +8,9 @@ import { faArrowRight, faArrowUpRightFromSquare } from '@fortawesome/free-solid-
 
 const ConservationPanel = () => {
     return (
-        <Row className='d-flex justify-content-center text-center'>
+        <Row className='d-flex justify-content-center'>
             <Col lg='7' xl='8' className='px-3 px-lg-4 px-xl-5'>
-                <h4 className='pf mb-3 fw-bold'>Conservation Strategies</h4>
+                <h4 className='pf mb-3 fw-bold text-center'>Conservation Strategies</h4>
                 <Row>
                     {CONSERVATION_CONTENT.map((text, index) => {
                         const textWithKeywords = defineKeywords(text);
@@ -20,13 +20,13 @@ const ConservationPanel = () => {
                 <Row>
                     <h4 className='pf text-center fw-bold my-3'>How can we help?</h4>
                     <p>
-                        Direct conservation, education, and advocacy are the most effective tools in the fight to ensure a sustainable future—not just for plants and animals, but for humans as well. Donating to reputable conservation groups is a great way to ensure your money directly benefits wildlife across the world.
+                        Direct conservation, education, and advocacy are our most effective tools in the fight to ensure a sustainable future—not just for plants and animals, but for humans as well. Donating to reputable conservation groups is a reliable way to ensure your money directly benefits wildlife across the world.
                     </p>
-                    <NavLink className='nav-link' to='/donations'>
-                        <Button color='success' className='rounded-0 mb-3'>
+                    <Button color='success' className='rounded-0 mb-3'>
+                        <NavLink className='nav-link' to='/donations'>
                             Donate<FontAwesomeIcon icon={faArrowRight} className='ms-2' />
-                        </Button>
-                    </NavLink>
+                        </NavLink>
+                    </Button>
                     <p>
                         If you prefer to contribute in person, consider volunteering with an environmental organization in your state or country, or check out citizen science opportunities, such as with the{' '}
                         <a

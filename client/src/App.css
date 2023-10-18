@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -32,6 +32,16 @@ html {
   letter-spacing: 1px;
 }
 
+.fr {
+  font-family: 'Frank Ruhl Libre', serif;
+  letter-spacing: 1px;
+}
+
+.square-btn {
+  width: 125px;
+  height: 125px;
+}
+
 .nb-card-footer {
   border-top: none !important;
 }
@@ -47,6 +57,10 @@ html {
 
 .top-button:hover {
   opacity: 1;
+}
+
+.external-btn {
+  width: 125px;
 }
 
 .accordion {
@@ -105,7 +119,6 @@ html {
 
 .video-overlay-header {
   font-family: 'Merriweather', 'serif';
-  font-size: 1.75rem;
   letter-spacing: 1px;
   text-shadow: 0px 5px 12px black;
 }
@@ -113,6 +126,7 @@ html {
 .video-overlay-body {
   font-size: 1rem;
   width: 70%;
+  text-shadow: 0px 5px 12px black;
 }
 
 .video-background-btn {
@@ -209,6 +223,31 @@ html {
   text-decoration: underline;
   text-decoration-thickness: 0.3em;
   text-decoration-color: #198754;
+}
+
+/* Home Page */
+
+.home-page-section {
+  margin-bottom: 10rem;
+}
+
+.home-help-panel-header {
+  position: absolute;
+  height: 300px;
+  z-index: 0;
+}
+
+.home-help-panel-content {
+  z-index: 1;
+  margin-top: 175px !important;
+  width: 60% !important;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1400px) {
+  .home-help-panel-content {
+    width: 80% !important;
+  }
 }
 
 /* News & Articles */
@@ -375,7 +414,7 @@ html {
   position: absolute !important;
   top: 12px;
   right: 12px;
-  width: 336px;
+  width: 350px;
 }
 
 @media (max-width: 575px) {

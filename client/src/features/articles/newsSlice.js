@@ -28,13 +28,13 @@ const newsSlice = createSlice({
             return ({
                 ...state,
                 displayArticles: action.payload
-            })
+            });
         },
         resetDisplayArticles: (state) => {
             return ({
                 ...state,
                 displayArticles: state.allArticles
-            })
+            });
         },
         filterDisplayArticles: (state, action) => {
             const { filterType, filterValue } = action.payload;
@@ -79,4 +79,8 @@ export const {
 
 export const selectDisplayArticles = (state) => {
     return state.news.displayArticles;
+};
+
+export const selectHomePageArticles = (state) => {
+
 };

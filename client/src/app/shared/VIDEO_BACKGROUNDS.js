@@ -12,7 +12,7 @@ export const HOME_PAGE_VIDEO_BG = {
     videoSource: null,
     title: 'Biodiversity Made Simple',
     content: [
-        'Dive in to learn more about our incredible natural world, the challenges it faces, and what we can do to help.',
+        "Dive in to learn more about our planet's incredible wildlife, the challenges it faces, and what we can do to help.",
         'Explore, learn, protect — today and every day.'
     ],
     author: null,
@@ -25,7 +25,7 @@ export const LEARN_PAGE_VIDEO_BG = {
     videoSource: null,
     title: 'What is biodiversity?',
     content: [
-        'Biodiversity is the term we use to describe all the different kinds of life on Earth—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. These species work together in ecosystems, like an intricate web, to maintain balance and support life.'
+        'Biodiversity is the term we use to describe all the different kinds of life on Earth—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. These species work together in ecosystems, like intricate webs, to maintain balance and support life.'
     ],
     author: null,
     button: null,

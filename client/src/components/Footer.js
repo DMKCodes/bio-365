@@ -45,17 +45,17 @@ const Footer = () => {
                         </Navbar>
                     </Col>
                     <Col md='6' lg='4' className='text-center d-flex flex-column'>
-                        <h5 className='pf mt-5 mt-md-0 mb-3 fw-bold d-flex flex-row justify-content-center'>
-                            Donate
+                        <h5 className='pf fw-bold mt-5 mt-md-0'>
+                            Connect
+                        </h5>
+                        <small className='text-muted mb-5'>Coming soon!</small>
+                        <h5 className='pf mb-3 fw-bold d-flex flex-row justify-content-center'>
+                            Support
                             <NavLink className='nav-link text-light ms-2' to='/donations'>
                                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' />
                             </NavLink>
                         </h5>
                         <Donations />
-                        <h5 className='pf mt-5 fw-bold'>
-                            Socials
-                        </h5>
-                        <small className='text-muted'>Coming soon!</small>
                     </Col>
                     <Col lg='4' className='d-flex flex-column align-items-center mt-5 mb-5 mt-lg-0'>
                         <h5 className='pf mb-3 fw-bold'>

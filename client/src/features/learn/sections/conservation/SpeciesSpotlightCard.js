@@ -33,7 +33,7 @@ const SpeciesSpotlightCard = () => {
         <Card className='rounded-0'>
             <iframe width={'100%'} height='250' src='https://www.youtube.com/embed/_cBgz2eud64' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
             <CardBody className='d-flex justify-content-center'>
-                <CardHeader className='mb-0 rounded-0 border w-75'>
+                <CardHeader className='mb-0 rounded-0 border w-75 text-center'>
                     <CardTitle className='mb-0'>
                         <h5 className='mb-0 fw-bold'>Giant Panda</h5>
                         <small className='text-muted'>(Ailuropoda melanoleuca)</small>
@@ -62,7 +62,7 @@ const SpeciesSpotlightCard = () => {
                 })}
             </Accordion>
 
-            <CardFooter className='py-3'>
+            <CardFooter className='py-3 text-center'>
                 <ExternalButton link={'https://www.worldwildlife.org/species/giant-panda'} />
             </CardFooter>
         </Card>

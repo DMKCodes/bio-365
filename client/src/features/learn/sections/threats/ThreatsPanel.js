@@ -23,19 +23,21 @@ const ThreatsPanel = () => {
                         className='learn-img img-fluid d-block d-lg-none'
                     />
                     <small className='text-muted mt-1'>Photo Credit: Jo-Anne McArthur</small>
-                    <small className='mb-4 mt-1 mb-lg-0 text-center'>
+                    <small className='mb-4 mt-1 mb-lg-0 text-center w-75'>
                         Climate change has increased the frequency and intensity of extreme events, such as wildfires, which threaten the survival of thousands of plant and animal species.
                     </small>
                 </div>
             </Col>
-            <Col lg='6' xl='7' className='text-center'>
-                <h4 className='pf mb-3 fw-bold d-none d-lg-block'>Under Threat</h4>
+            <Col lg='6' xl='7'>
+                <h4 className='pf mb-3 fw-bold d-none d-lg-block text-center'>Under Threat</h4>
                 {THREATS_MAIN_CONTENT.map((text, index) => {
                     const textWithKeywords = defineKeywords(text);
                     return <p key={index}>{textWithKeywords}</p>;
                 })}
                 <ThreatsAccordion />
-                <ExternalButton link='https://livingplanet.panda.org/en-US/' />
+                <div className='text-center'>
+                    <ExternalButton link='https://livingplanet.panda.org/en-US/' />
+                </div>
             </Col>
         </Row>
     );

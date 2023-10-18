@@ -76,9 +76,11 @@ export const selectToken = (state) => {
 };
 
 export const checkSavedArticles = (state, title) => {
-    const savedArticles = state.user.currentUser.savedArticles;
-    if (!savedArticles) {
-        return false;
+    if (state.user.currentUser) {
+        const savedArticles = state.user.currentUser.savedArticles;
+        if (!savedArticles) {
+            return false;
+        }
+        return savedArticles.some((article) => article.title === title);
     }
-    return savedArticles.some((article) => article.title === title);
 };

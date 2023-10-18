@@ -1,11 +1,13 @@
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
-import FeaturedContent from '../components/FeaturedContent';
-import YoutubeEmbed from '../components/YoutubeEmbed';
+import IntroPanel from '../features/home/IntroPanel';
+import FeaturedContent from '../features/home/FeaturedContent';
+import NumbersPanel from '../features/home/NumbersPanel';
+import HelpPanel from '../features/home/HelpPanel';
+import HomePageArticles from '../features/articles/HomePageArticles';
 import { HOME_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 import { IPBES_REPORT } from '../app/shared/FEATURES';
-import puffins from '../app/media/puffins.jpg';
 
 const HomePage = () => {
     return (
@@ -13,24 +15,24 @@ const HomePage = () => {
             <VideoBackground video={HOME_PAGE_VIDEO_BG} />
             <Header />
 
-            <Container className='my-5'>
-                <Row>
-                    <Col lg='7' className='p-0 bg-warning'></Col>
-                    <Col lg='5' className='p-0'>
-                        <YoutubeEmbed id='GlWNuzrqe7U' />
-                    </Col>
-                </Row>
-                
-                <Row>
-                    <Col lg='5' className='p-0'>
-                        <img src={puffins} alt='puffins in the wild' className='img-fluid' />
-                    </Col>
-                    <Col lg='7' className='p-0 bg-success'>
-                        
-                    </Col>
-                </Row>
-                
+            <Container className='mt-5 home-page-section'>
+                <IntroPanel />
+            </Container>
+
+            <Container className='home-page-section'>
                 <FeaturedContent feature={IPBES_REPORT} />
+            </Container>
+
+            <Container fluid className='home-page-section bg-dark'>
+                <NumbersPanel />
+            </Container>
+
+            <Container className='home-page-section'>
+                <HomePageArticles />
+            </Container>
+
+            <Container fluid className='home-page-section mb-5'>
+                <HelpPanel />
             </Container>
         </Container>
     );

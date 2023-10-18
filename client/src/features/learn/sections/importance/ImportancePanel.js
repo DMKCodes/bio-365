@@ -8,14 +8,16 @@ import importantImgLg from '../../../../app/media/bio-importance-lg.jpg';
 
 const ImportancePanel = () => {
     return (
-        <Row className='pt-5 text-center'>
+        <Row className='pt-5'>
             <Col lg='7' className='d-flex flex-column justify-content-center'>
-                <h4 className='pf mb-4 fw-bold'>Why is it important?</h4>
+                <h4 className='pf mb-4 fw-bold mx-auto'>Why is it important?</h4>
                 {IMPORTANT_CONTENT.map((text, index) => {
                     const textWithKeywords = defineKeywords(text);
-                    return <p key={index}>{textWithKeywords}</p>;
+                    return <p key={index} className='text-start'>{textWithKeywords}</p>;
                 })}
-                <ExternalButton link='https://www.nrdc.org/stories/biodiversity-101' />
+                <span className='mx-auto'>
+                    <ExternalButton link='https://www.nrdc.org/stories/biodiversity-101' />
+                </span>
                 <div className='learn-importance-vid mt-4 mx-auto'>
                     <YoutubeEmbed id='GlWNuzrqe7U' />
                 </div>
@@ -32,7 +34,7 @@ const ImportancePanel = () => {
                     className='learn-img img-fluid mt-4 d-block d-lg-none'
                 />
                 <small className='text-muted mt-1'>Photo Credit: Łukasz Rawa</small>
-                <small className='mt-1'>
+                <small className='mt-1 w-75 text-center'>
                     Pollination is an ecosystem service that plays a critical role in the reproduction of many plants, preserving nature and preventing food scarcity.
                 </small>
             </Col>

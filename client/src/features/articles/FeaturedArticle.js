@@ -13,11 +13,8 @@ import {
 } from '../users/articlesApiSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faPlus, 
-    faMinus, 
     faArrowUpRightFromSquare, 
-    faBookmark,
-    faEyeSlash
+    faBookmark
 } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-icons';
 import Frontiers from '../../app/media/frontiers.png';
@@ -26,7 +23,7 @@ import SciDaily from '../../app/media/sciencedaily.jpg';
 import Conservation from '../../app/media/conservation.jpg';
 import DTE from '../../app/media/dte.png';
 
-const FeaturedArticle = ({ article, dashboard }) => {
+const FeaturedArticle = ({ article }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
 
@@ -41,7 +38,6 @@ const FeaturedArticle = ({ article, dashboard }) => {
         category
     } = article;
 
-    const [expanded, setExpanded] = useState(false);
     const [isSaved, setIsSaved] = useState(false);
     const checkSaved = useSelector((state) => checkSavedArticles(state, title));
 
@@ -106,12 +102,11 @@ const FeaturedArticle = ({ article, dashboard }) => {
                 {currentUser && isSaved ? (
                     <FontAwesomeIcon 
                         icon={faBookmark}
-                        className='article-card-bookmark' 
+                        className='article-card-bookmark text-success' 
                         size='lg'
                         onClick={() => {
                             delArticle();
                         }}
-                        style={{ color: 'green' }}
                     />
                 ) : currentUser && !isSaved ? (
                     <FontAwesomeIcon 
@@ -124,7 +119,7 @@ const FeaturedArticle = ({ article, dashboard }) => {
                     />
                 ) : null}
 
-                <div className='mt-0 mt-xl-4 px-4 px-xl-2'>
+                <div className='mt-0 mt-xl-4 ps-2 pe-4 pe-xl-2'>
                     <h4 className='featured-article-title pf fw-bold my-1'>{title}</h4>
                     <small className='text-muted'>{author}, {pubDate}</small>
                     {snippet ? (

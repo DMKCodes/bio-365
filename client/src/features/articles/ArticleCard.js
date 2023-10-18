@@ -54,7 +54,6 @@ const ArticleCard = ({ article }) => {
     } = article;
 
     const [isSaved, setIsSaved] = useState(false);
-
     const checkSaved = useSelector((state) => checkSavedArticles(state, title));
 
     useEffect(() => {
@@ -124,12 +123,11 @@ const ArticleCard = ({ article }) => {
                 {currentUser && isSaved ? (
                     <FontAwesomeIcon 
                         icon={faBookmark}
-                        className='article-card-bookmark' 
+                        className='article-card-bookmark text-success' 
                         size='lg'
                         onClick={() => {
                             delArticle();
                         }}
-                        style={{ color: 'green' }}
                     />
                 ) : currentUser && !isSaved ? (
                     <FontAwesomeIcon 
