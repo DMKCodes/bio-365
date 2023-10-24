@@ -31,10 +31,10 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                 return (
                     <Form className='p-2 pt-4'>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='currentPassword' md='3'>
+                            <Label htmlFor='currentPassword' xl='3' lg='4'>
                                 Current Password: 
                             </Label>
-                            <Col md='6'>
+                            <Col lg='6' xl='8'>
                                 <Field 
                                     name='currentPassword'
                                     type='password'
@@ -51,10 +51,10 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='newPassword' md='3'>
+                            <Label htmlFor='newPassword' xl='3' lg='4'>
                                 New Password: 
                             </Label>
-                            <Col md='6'>
+                            <Col lg='6' xl='8'>
                                 <Field 
                                     name='newPassword'
                                     type='password'
@@ -71,10 +71,10 @@ const ChangePasswordForm = ({ putUser, setChangePassword }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='confirmNewPassword' md='3'>
+                            <Label htmlFor='confirmNewPassword' xl='3' lg='4'>
                                 Confirm New Password: 
                             </Label>
-                            <Col md='6'>
+                            <Col lg='6' xl='8'>
                                 <Field 
                                     name='confirmNewPassword'
                                     type='password'

@@ -85,9 +85,15 @@ const UserPanel = () => {
     };
 
     return (
-        <Container className='bg-light'>
+        <Container className='bs-card bg-light'>
             <Row className='border'>
-                    <h4 className='pt-2'>Manage Your Account</h4>
+                <h4 className='pf fw-bold my-3'>Manage Your Account</h4>
+                <UpdateAccountDropdown 
+                    setChangeUsername={setChangeUsername}
+                    setChangePassword={setChangePassword}
+                    setChangeEmail={setChangeEmail}
+                    setDeleteAccount={setDeleteAccount}
+                />
             </Row>
             <Row>
                 {statusMsg &&
@@ -95,20 +101,13 @@ const UserPanel = () => {
                 }
             </Row>
             <Row className='border border-top-0 text-center'>
-                <Col md='6' className='py-3'>
-                    <b>Username</b>: {username}<br/>
-                    <b>Email</b>: {email}<br/>
-                </Col>
-                <Col md='6' className='py-3 d-flex justify-content-center align-items-center'>
-                    <UpdateAccountDropdown 
-                        setChangeUsername={setChangeUsername}
-                        setChangePassword={setChangePassword}
-                        setChangeEmail={setChangeEmail}
-                        setDeleteAccount={setDeleteAccount}
-                    />
-                </Col>
+                <p className='mt-3 mb-1'><b>Username</b>: {username}<br/></p>
+                <p><b>Email</b>: {email}<br/></p>
             </Row>
             <Row className='d-flex justify-content-center py-3 border border-top-0'>
+                <small className='text-center'>
+                    <i>Choose an action above to make changes to your account.</i>
+                </small>
                 {changeUsername ? (
                     <ChangeUsernameForm
                         putUser={updateUserDetails}

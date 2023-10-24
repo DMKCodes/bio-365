@@ -20,23 +20,23 @@ const ImperviousThreats = () => {
 
     return (
         <Row>
-            <Col md='7' className='story-main px-5'>
-                <div className='story-main-content w-100 d-flex justify-content-center'>
+            <Col lg='6' className='story-main px-0'>
+                <div className='story-media-content w-100 d-flex justify-content-center'>
                     {IMPERVIOUS_STORY_THREATS_MEDIA &&
                         IMPERVIOUS_STORY_THREATS_MEDIA.filter((content) => currentStepIndex === content.index)
                         .map((content) => {
                             return (
                                 <Fragment key={content.index}>
                                     {currentStepIndex === content.index ? (
-                                        <span className='d-flex flex-column align-items-center'>
+                                        <div className='d-flex flex-column align-items-center w-100 h-100'>
                                                 {content.image ? (
                                                     <img
                                                         src={content.image}
                                                         alt={content.alt}
-                                                        className='story-main-image mb-2'
+                                                        className='img-fluid mb-2'
                                                     />
                                                 ) : content.video ? (
-                                                    <iframe width='560' height='315' src={content.video} title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullscreen />
+                                                    <YoutubeEmbed id={content.video} />
                                                 ) : content.chart && content.chartType === 'bar' ? (
                                                     <Fragment>
                                                         <h3 className='text-center'>{content.chartTitle}</h3>
@@ -52,7 +52,7 @@ const ImperviousThreats = () => {
                                                         {content.caption}
                                                     </small>
                                                 }
-                                        </span>
+                                        </div>
                                     ) : null}
                                 </Fragment>
                             );
@@ -60,8 +60,8 @@ const ImperviousThreats = () => {
                     }
                 </div>
             </Col>
-            <Col md='5'>
-                <div className='story-side-content'>
+            <Col lg='6' className='px-0'>
+                <div className='story-main-content'>
                     <Scrollama 
                         offset={0.5} 
                         onStepEnter={onStepEnter}

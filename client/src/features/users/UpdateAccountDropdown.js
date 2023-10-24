@@ -19,6 +19,7 @@ const UpdateAccountDropdown = ({
             isOpen={dropdownOpen} 
             toggle={() => setDropdownOpen(!dropdownOpen)}
             group
+            className='mb-3 w-25 mx-auto'
         >   
             <DropdownToggle 
                 caret
@@ -27,8 +28,8 @@ const UpdateAccountDropdown = ({
             >
                 Actions
             </DropdownToggle>
-            <DropdownMenu>
-                <DropdownItem onClick={() => {
+            <DropdownMenu className='rounded-0 w-100'>
+                <DropdownItem className='py-2' onClick={() => {
                     setChangeUsername(true);
                     setChangePassword(false);
                     setChangeEmail(false);
@@ -36,7 +37,7 @@ const UpdateAccountDropdown = ({
                 }}>
                     Change Username
                 </DropdownItem>
-                <DropdownItem onClick={() => {
+                <DropdownItem className='py-2' onClick={() => {
                     setChangeUsername(false);
                     setChangePassword(false);
                     setChangeEmail(true);
@@ -44,7 +45,7 @@ const UpdateAccountDropdown = ({
                 }}>
                     Change Email
                 </DropdownItem>
-                <DropdownItem onClick={() => {
+                <DropdownItem className='py-2' onClick={() => {
                     setChangeUsername(false);
                     setChangePassword(true);
                     setChangeEmail(false);
@@ -52,7 +53,7 @@ const UpdateAccountDropdown = ({
                 }}>
                     Change Password
                 </DropdownItem>
-                <DropdownItem onClick={() => {
+                <DropdownItem className='py-2' onClick={() => {
                     setChangeUsername(false);
                     setChangePassword(false);
                     setChangeEmail(false);

@@ -31,9 +31,9 @@ const ImperviousIntroduction = () => {
     };
 
     return (
-        <Row>
-            <Col md='5'>
-                <div className='story-side-content'>
+        <Row className='d-flex justify-content-center'>
+            <Col lg='6'>
+                <div className='story-main-content'>
                     <Scrollama 
                         offset={0.5} 
                         onStepEnter={onStepEnter}
@@ -69,20 +69,20 @@ const ImperviousIntroduction = () => {
                     </Scrollama>
                 </div>
             </Col>
-            <Col md='7' className='story-main px-0'>
-                <div className='story-main-content d-flex flex-column justify-content-center align-items-center'>
+            <Col lg='6' className='px-0'>
+                <div className='story-media-content d-flex flex-column justify-content-center align-items-center'>
                     {IMPERVIOUS_STORY_INTRO_MEDIA &&
                         IMPERVIOUS_STORY_INTRO_MEDIA.filter((content) => currentStepIndex === content.index)
                         .map((content) => {
                             return (
                                 <Fragment key={content.index}>
                                     {currentStepIndex === content.index ? (
-                                        <>
+                                        <div className='d-flex flex-column align-items-center w-100 h-100'>
                                             {content.image ? (
                                                 <img
                                                     src={content.image}
                                                     alt={content.alt}
-                                                    className='story-main-image mb-2'
+                                                    className='img-fluid mb-2'
                                                 />
                                             ) : content.video ? (
                                                 <YoutubeEmbed id={content.video} />
@@ -97,7 +97,7 @@ const ImperviousIntroduction = () => {
                                                     <ChartBar data={content.chartData} />
                                                 </Fragment>
                                             ) : null}
-            
+                                            
                                             <small className='text-muted text-center mb-2'>
                                                 Source: {content.source}
                                             </small>
@@ -106,7 +106,7 @@ const ImperviousIntroduction = () => {
                                                     {content.caption}
                                                 </small>
                                             }
-                                        </>
+                                        </div>
                                     ) : null}
                                 </Fragment>
                             );

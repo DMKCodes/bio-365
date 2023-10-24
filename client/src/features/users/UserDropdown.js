@@ -33,7 +33,7 @@ const UserDropdown = () => {
                 isOpen={dropdownOpen} 
                 toggle={() => setDropdownOpen(!dropdownOpen)}
                 group
-                className='mx-0 mx-md-3 my-3 my-md-0'
+                className='mx-0 mx-sm-3 my-3 my-sm-0'
             >   
                 <DropdownToggle 
                     caret

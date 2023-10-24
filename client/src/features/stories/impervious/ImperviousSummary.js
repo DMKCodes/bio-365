@@ -1,18 +1,22 @@
 import { useState, Fragment } from 'react';
-import { 
+import { NavLink } from 'react-router-dom';
+import {
+    Container, 
     Row, 
     Col,
+    Button,
     Accordion,
     AccordionBody,
     AccordionHeader,
     AccordionItem
 } from 'reactstrap';
-import Donations from '../../../components/Donations';
 import defineKeywords from '../../../utils/defineKeywords';
 import { 
     IMPERVIOUS_STORY_SUMMARY, 
     IMPERVIOUS_STORY_SOURCES 
 } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const ImperviousSummary = () => {
     const [accordionOpen, setAccordionOpen] = useState([]);
@@ -30,9 +34,9 @@ const ImperviousSummary = () => {
     };
 
     return (
-        <>
+        <Container>
             <Row className='mb-5'>
-                <Col lg='8' className='pe-4'>
+                <Col lg='8' className='pe-4 mb-5 mb-lg-0'>
                     <h3 className='fw-bold text-center mb-3'>TL;DR</h3>
                     {IMPERVIOUS_STORY_SUMMARY &&
                         IMPERVIOUS_STORY_SUMMARY.map((content, index) => {
@@ -54,15 +58,16 @@ const ImperviousSummary = () => {
                 </Col>
                 <Col lg='4' className='d-flex flex-column align-items-center ps-4'>
                     <h3 className='fw-bold mb-3'>Support</h3>
-                    <Donations />
                     <small className='text-center mb-2 w-75'>
-                        If you enjoyed this story, please consider donating directly. Proceeds keep us online and any excess goes to biodiversity conservation and research.
+                        If you enjoyed this story, please consider making a donation to Bio365 or one of our suggested conservation groups.
                     </small>
-                    <small className='text-center mb-5 w-75'>
-                        You can also donate directly to <a href='https://www.charitynavigator.org/discover-charities/best-charities/protect-environment/' target='_blank' rel='noreferrer'>conservation groups</a>.
-                    </small>
+                    <Button color='success' className='rounded-0 mb-3'>
+                        <NavLink className='nav-link' to='/donations'>
+                            Donations<FontAwesomeIcon icon={faArrowRight} className='ms-2' />
+                        </NavLink>
+                    </Button>
 
-                    <h3 className='fw-bold mb-3'>Sources</h3>
+                    <h3 className='fw-bold mb-3 mt-5'>Sources</h3>
                     {IMPERVIOUS_STORY_SOURCES &&
                         <Accordion 
                             flush 
@@ -122,7 +127,7 @@ const ImperviousSummary = () => {
                     }
                 </Col>
             </Row>
-        </>
+        </Container>
     );
 };
 

@@ -24,10 +24,10 @@ const ChangeUsernameForm = ({ setChangeUsername, putUser }) => {
                 return (
                     <Form className='p-2 pt-4'>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='newUsername' md='2'>
+                            <Label htmlFor='newUsername' xl='2' lg='3'>
                                 New Username:
                             </Label>
-                            <Col xs='8' md='6'>
+                            <Col md='8'>
                                 <Field 
                                     name='newUsername'
                                     autoComplete='off'

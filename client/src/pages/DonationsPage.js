@@ -1,10 +1,13 @@
-import { Container, Row } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import { Container, Row, Button } from 'reactstrap';
 import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
 import DonationList from '../features/donations/DonationList';
 import WhoAmI from '../features/donations/WhoAmI';
 import { DONATIONS_INTRO } from '../app/shared/DONATIONS';
 import { DONATION_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const DonationsPage = () => {
     return (
@@ -13,6 +16,11 @@ const DonationsPage = () => {
             <Header />
 
             <Container className='my-5'>
+                <Button color='dark' outline className='rounded-0 mb-3 me-auto'>
+                    <NavLink className='nav-link' to='/resources'>
+                        <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Back to Resources
+                    </NavLink>
+                </Button>
                 <Row className='d-flex flex-column align-items-center text-center'>
                     <h1 className='pf mb-4 fw-bold'>Why Support Biodiversity?</h1>
                     {DONATIONS_INTRO.content.map((content, index) => {

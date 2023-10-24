@@ -33,7 +33,7 @@ const HomeNav = () => {
                     className='header-logo-bare d-xs-block d-md-none'
                 />
             </NavLink>
-            <Navbar expand='md' className='header-menu p-0 ms-auto mb-auto'>
+            <Navbar expand='sm' className='header-menu p-0 ms-auto mb-auto'>
                 <NavbarToggler 
                     onClick={() => setMenuOpen(!menuOpen)} 
                     className='ms-auto border-light rounded-0' 

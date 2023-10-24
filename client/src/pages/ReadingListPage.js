@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../features/users/userSlice';
 import { useGetArticlesQuery } from '../features/users/articlesApiSlice';
+import { Container, Row } from 'reactstrap';
 import NewsList from '../features/articles/ArticleList';
-import { Container } from 'reactstrap';
+import Header from '../components/Header';
 
 const ReadingListPage = () => {
     const currentUser = useSelector(selectCurrentUser);
@@ -16,8 +17,11 @@ const ReadingListPage = () => {
     } = useGetArticlesQuery(_id);
 
     return (
-        <Container>
-            <h2 className='pf text-center'>Your Reading List</h2>
+        <Container fluid>
+            <Row className='header-row bg-dark mb-5'>
+                <Header />
+            </Row>
+            <h1 className='pf fw-bold text-center'>Your Reading List</h1>
             {isError ? (
                 error.status === 404 ? (
                     <p>{error.data.error}</p>

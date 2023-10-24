@@ -32,10 +32,7 @@ const FeaturedArticle = ({ article }) => {
         link,
         pubDate,
         author,
-        snippet,
-        publisher,
-        source,
-        category
+        snippet
     } = article;
 
     const [isSaved, setIsSaved] = useState(false);

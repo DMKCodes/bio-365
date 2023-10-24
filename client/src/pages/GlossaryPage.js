@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { 
     Container, 
     Row, 
@@ -7,13 +8,14 @@ import {
     Input, 
     Pagination, 
     PaginationItem, 
-    PaginationLink 
+    PaginationLink,
+    Button
 } from 'reactstrap';
 import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
-import { GLOSSARY_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTimes, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { GLOSSARY_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 import { GLOSSARY } from '../app/shared/GLOSSARY';
 
 const GlossaryPage = () => {
@@ -105,6 +107,11 @@ const GlossaryPage = () => {
             <Header />
 
             <Container className='my-5'>
+                <Button color='dark' outline className='rounded-0 mb-3 me-auto'>
+                    <NavLink className='nav-link' to='/resources'>
+                        <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Back to Resources
+                    </NavLink>
+                </Button>
                 <Row className='d-flex justify-content-center'>
                     <Col lg='6' md='8' xs='10'>
                         <Form>

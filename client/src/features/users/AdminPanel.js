@@ -1,20 +1,15 @@
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import UserList from './UserList';
 
 const AdminPanel = () => {
     return (
-        <Container className='mb-5 bg-light'>
+        <Container className='bs-card mb-5 bg-light'>
             <Row className='border'>
-                <h4 className='pt-2'>Admin Panel</h4>
-                <p>Use this panel to view and modify other user accounts.</p>
+                <h4 className='pf fw-bold my-3'>Admin Panel</h4>
+                <p>Use this panel to view and modify user accounts.</p>
             </Row>
             <Row>
-                <Col>
-                    <Row className='border border-top-0'>
-                        <div><b>All Users</b></div>
-                    </Row>
-                    <UserList />
-                </Col>
+                <UserList />
             </Row>
         </Container>
     );

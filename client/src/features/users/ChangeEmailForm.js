@@ -34,10 +34,10 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
                 return (
                     <Form className='p-2 pt-4'>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='currentEmail' md='2'>
+                            <Label htmlFor='currentEmail' xl='3' lg='4'>
                                 Current Email: 
                             </Label>
-                            <Col md='6'>
+                            <Col lg='6' xl='8'>
                                 <Field 
                                     name='currentEmail'
                                     type='email'
@@ -54,10 +54,10 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='newEmail' md='2'>
+                            <Label htmlFor='newEmail' xl='3' lg='4'>
                                 New Email: 
                             </Label>
-                            <Col md='6'>
+                            <Col lg='6' xl='8'>
                                 <Field 
                                     name='newEmail'
                                     type='email'
@@ -74,10 +74,10 @@ const ChangeEmailForm = ({ putUser, setChangeEmail }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row className='justify-content-center'>
-                            <Label htmlFor='confirmNewEmail' md='2'>
+                            <Label htmlFor='confirmNewEmail' xl='3' lg='4'>
                                 Confirm New Email: 
                             </Label>
-                            <Col md='6'>
+                            <Col lg='6' xl='8'>
                                 <Field 
                                     name='confirmNewEmail'
                                     type='password'

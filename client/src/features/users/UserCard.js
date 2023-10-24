@@ -3,8 +3,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectCurrentUser, clearCurrentUser } from '../../features/users/userSlice';
 import { usePutUserByIdMutation, useDeleteUserByIdMutation } from '../../features/users/authApiSlice';
-import { Row, Col, Button } from 'reactstrap';
-import ChangeUsernameForm from './ChangeUsernameForm';
+import { 
+    Row,
+    Col,
+    Button,
+    Card,
+    CardBody,
+    CardHeader,
+    CardText,
+    CardFooter,
+    FormGroup,
+    Label
+} from 'reactstrap';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 
 const UserCard = ({ user, setStatusMsg }) => {
     const [changeUsername, setChangeUsername] = useState(false);
@@ -74,26 +86,88 @@ const UserCard = ({ user, setStatusMsg }) => {
         }
     };
 
+    const changeUsernameSchema = yup.object().shape({
+        newUsername: yup
+            .string()
+            .min(4, 'Must be at least 4 characters.')
+            .max(16, 'Cannot be more than 16 characters.')
+            .required('Required.')
+    });
+
     return (
-        <Col xl='5' md='8' key={_id} className='m-1 p-2 border'>
-            <p><b>Username</b>: {username}</p>
-            <p className='mb-0'>ID: {_id}</p>
-            <p className='mb-0'>Email: {email}</p>
-            <p>Admin: {admin ? 'Yes' : 'No'}</p>
-            <Row className='justify-content-center'>
+        <Card className='user-card rounded-0'>
+            <CardHeader>
+                <CardText>
+                    <b>Username</b>: {username}
+                </CardText>
+            </CardHeader>
+            <CardBody>
+                <p className='mb-1'>ID: {_id}</p>
+                <p className='mb-1'>Email: {email}</p>
+                <p className='mb-1'>Admin: {admin ? 'Yes' : 'No'}</p>
+            </CardBody>
+            <CardFooter className='d-flex justify-content-center'>
                 {changeUsername ? (
-                    <ChangeUsernameForm
-                        setChangeUsername={setChangeUsername}
-                        putUserUsername={putUserUsername}
-                    />
+                    <Formik
+                        initialValues={{
+                            newUsername: ''
+                        }}
+                        validationSchema={changeUsernameSchema}
+                        onSubmit={(values) => putUserUsername(values)}
+                    >
+                        {(formik) => {
+                            const { errors, touched } = formik;
+                            return (
+                                <Form className='p-2'>
+                                    <FormGroup row className='justify-content-center'>
+                                        <Label htmlFor='newUsername'>
+                                            New Username:
+                                        </Label>
+                                        <Col>
+                                            <Field 
+                                                name='newUsername'
+                                                autoComplete='off'
+                                                className={`form-control${errors.newUsername && touched.newUsername ? ' is-invalid' : ''}`}
+                                            />
+                                            {errors.newUsername && touched.newUsername ? (
+                                                <ErrorMessage
+                                                    component='span'
+                                                    name='newUsername'
+                                                    className='invalid-feedback'
+                                                />
+                                            ) : null}
+                                        </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Col className='d-flex justify-content-center'>
+                                            <Button 
+                                                type='submit' 
+                                                color='success' 
+                                                className='me-3 rounded-0 btn-sm'
+                                            >
+                                                Submit
+                                            </Button>
+                                            <Button 
+                                                type='button'
+                                                className='rounded-0 btn-sm'
+                                                onClick={() => setChangeUsername(false)}
+                                            >
+                                                Cancel
+                                            </Button>
+                                        </Col>
+                                    </FormGroup>
+                                </Form>
+                            );
+                        }}
+                    </Formik>
                 ) : usernameChanged ? (
                     <p className='text-success'><b>Username successfully changed.</b></p>
                 ) : userDeleted ? (
                     <p className='text-success'><b>User successfully deleted.</b></p>
                 ) : deleteUser ? (
-                    <>
+                    <Row className='d-flex flex-column align-items-center'>
                         <p>Are you sure you want to delete this account?  This operation is <b style={{ color: 'red' }}>permanent</b>.</p>
-                        <Col md='6'>
+                        <span>
                             <Button
                                 type='submit'
                                 color='danger'
@@ -102,8 +176,6 @@ const UserCard = ({ user, setStatusMsg }) => {
                             >
                                 Confirm
                             </Button>
-                        </Col>
-                        <Col md='6'>
                             <Button
                                 type='button'
                                 color='secondary'
@@ -112,35 +184,31 @@ const UserCard = ({ user, setStatusMsg }) => {
                             >
                                 Cancel
                             </Button>
-                        </Col>
-                    </>
+                        </span>
+                    </Row>
                 ) : (
                     <>
-                        <Col md='6'>
-                            <Button
-                                type='button'
-                                color='warning'
-                                className='rounded-0 btn-sm'
-                                style={{ width: '175px' }}
-                                onClick={() => setChangeUsername(true)}
-                            >
-                                Change Username
-                            </Button>
-                        </Col>
-                        <Col md='6'>
-                            <Button
-                                type='button'
-                                color='danger'
-                                className='rounded-0 btn-sm'
-                                onClick={() => setDeleteUser(true)}
-                            >
-                                Delete User
-                            </Button>
-                        </Col>
+                        <Button
+                            type='button'
+                            color='dark'
+                            className='rounded-0 btn-sm me-3'
+                            onClick={() => setChangeUsername(true)}
+                        >
+                            Change Username
+                        </Button>
+
+                        <Button
+                            type='button'
+                            color='danger'
+                            className='rounded-0 btn-sm'
+                            onClick={() => setDeleteUser(true)}
+                        >
+                            Delete User
+                        </Button>
                     </>
                 )}
-            </Row>
-        </Col>
+            </CardFooter>
+        </Card>
     );
 };
 

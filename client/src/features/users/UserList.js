@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import {
     useGetAllUsersQuery,
     useDeleteAllUsersMutation
@@ -53,19 +53,18 @@ const UserList = () => {
     };
 
     return (
-        <>
-            <Row className='border border-top-0 justify-content-center p-3'>
-                <Col md='4'>
+        <Container className='p-0'>
+            <Row className='d-flex justify-content-center border border-top-0 p-3 mx-auto'>
+                <h5 className='pf fw-bold'><b>All Users</b></h5>
+                <Col xs='12' className='mt-2'>
                     <Button
                         type='submit'
                         color='success'
-                        className='rounded-0 btn-sm'
+                        className='rounded-0 me-4 btn-sm'
                         onClick={() => setGetAllUsersStarted(true)}
                     >
                         Populate Users
                     </Button>
-                </Col>
-                <Col md='4'>
                     <Button
                         type='submit'
                         color='danger'
@@ -76,29 +75,26 @@ const UserList = () => {
                     </Button>
                 </Col>
                 {statusMsg &&
-                    <Col xs='12' className='mt-3'>
-                        <p><b>{statusMsg}</b></p>
-                    </Col>
+                    <p className='my-3'><b>{statusMsg}</b></p>
                 }
-            </Row>
-            <Row className='border border-top-0 justify-content-center p-2'>
                 {allUsers ? (
-                    <>
-                        {allUsers.map((user) => {
+                    <Row className='p-0 d-flex justify-content-center'>
+                        {allUsers.map((user, index) => {
                             return (
-                                <UserCard
-                                    key={user._id}
-                                    user={user}
-                                    setStatusMsg={setStatusMsg}
-                                />
+                                <Col xl='4' md='6' key={index} className='mx-2 p-2'>
+                                    <UserCard
+                                        user={user}
+                                        setStatusMsg={setStatusMsg}
+                                    />
+                                </Col>
                             );
                         })}
-                    </>
+                    </Row>
                 ) : (
                     null
                 )}
             </Row>
-        </>
+        </Container>
     );
 };
 
