@@ -43,7 +43,7 @@ const UserDropdown = () => {
                     {currentUser.username}
                 </DropdownToggle>
                 <DropdownMenu className='rounded-0 mt-1 text-center'>
-                    <DropdownItem className='p-0'>
+                    <DropdownItem className='p-0 py-2'>
                         <NavLink 
                             className='nav-link' 
                             to='/dashboard'
@@ -52,7 +52,7 @@ const UserDropdown = () => {
                         </NavLink>
                     </DropdownItem>
                     { currentUser && isAdmin &&
-                        <DropdownItem className='p-0'>
+                        <DropdownItem className='p-0 py-2'>
                             <NavLink 
                                 className='nav-link' 
                                 to='/admin' 
@@ -61,7 +61,7 @@ const UserDropdown = () => {
                             </NavLink>
                         </DropdownItem>
                     }
-                    <DropdownItem className='p-0'>
+                    <DropdownItem className='p-0 py-2'>
                         <NavLink 
                             className='nav-link' 
                             to='/readinglist' 
@@ -70,7 +70,7 @@ const UserDropdown = () => {
                         </NavLink>
                     </DropdownItem>
                     <hr className='my-2'/>
-                    <DropdownItem className='p-0 text-muted'>
+                    <DropdownItem className='p-0'>
                         <NavItem onClick={() => logout()}>
                             Logout
                         </NavItem>

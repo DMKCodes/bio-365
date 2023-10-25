@@ -25,38 +25,38 @@ const HomeNav = () => {
                 <img 
                     src={logoFull} 
                     alt='Biodiversity365 logo' 
-                    className='header-logo-full d-none d-md-block' 
+                    className='header-logo header-logo-full d-none d-md-block' 
                 />
                 <img
                     src={logoBare}
                     alt='Biodiversity365 logo'
-                    className='header-logo-bare d-xs-block d-md-none'
+                    className='header-logo header-logo-bare d-xs-block d-md-none'
                 />
             </NavLink>
             <Navbar expand='sm' className='header-menu p-0 ms-auto mb-auto'>
                 <NavbarToggler 
                     onClick={() => setMenuOpen(!menuOpen)} 
-                    className='ms-auto border-light rounded-0' 
+                    className='ms-auto border-light rounded-0'
                 />
                 <Collapse isOpen={menuOpen} navbar>
-                    <Nav className='fw-bold text-end pe-2 pe-sm-0 pt-3 pt-sm-0' navbar>
+                    <Nav className='fw-bold pe-2 pe-sm-0 pt-3 pt-sm-0' navbar>
                         <NavItem>
-                            <NavLink className='nav-link text-light' to='/articles'>
+                            <NavLink className='nav-link nav-link-main text-light' to='/articles'>
                                 Articles
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link text-light' to='/learn'>
+                            <NavLink className='nav-link nav-link-main text-light' to='/learn'>
                                 Learn
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link text-light' to='/stories'>
+                            <NavLink className='nav-link nav-link-main text-light' to='/stories'>
                                 Stories
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link text-light' to='/resources'>
+                            <NavLink className='nav-link nav-link-main text-light' to='/resources'>
                                 Resources
                             </NavLink>
                         </NavItem>
@@ -66,7 +66,6 @@ const HomeNav = () => {
                             <RegisterLoginModal currentUser={currentUser} />
                         )}
                     </Nav>
-
                 </Collapse>
             </Navbar>
             <div className={`menu-bg ${!menuOpen ? 'd-none' : ''}`}></div>

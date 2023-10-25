@@ -68,7 +68,11 @@ export const selectCurrentUser = (state) => {
 };
 
 export const checkAdmin = (state) => {
-    return state.user.currentUser.admin;
+    if (state.currentUser) {
+        return state.user.currentUser.admin;
+    } else {
+        return false;
+    }
 };
 
 export const selectToken = (state) => {

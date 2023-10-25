@@ -30,19 +30,16 @@ const PodcastCard = ({ podcast }) => {
                             <CardText>
                                 <p>{podcast.description}</p>
                             </CardText>
-                            <a
+                            <Button
+                                type='link'
                                 href={podcast.link}
                                 target='_blank'
-                                rel='noreferrer'
+                                rel='noreferrer noopener'
+                                color='success'
+                                className='rounded-0 btn-sm podcast-card-btn'
                             >
-                                <Button
-                                    type='button'
-                                    color='success'
-                                    className='rounded-0 btn-sm podcast-card-btn'
-                                >
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                </Button>
-                            </a>
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </Button>
                         </>
                     }
                 </CardBody>

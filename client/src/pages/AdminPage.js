@@ -19,36 +19,36 @@ const AdminPage = () => {
             <Row className='d-flex justify-content-center mb-5'>
                 <h1 className='pf fw-bold mb-5'>Admin Dashboard</h1>
                 {!currentUser ? (
-                    <>
+                    <div>
                         <p>You are not logged in.</p>
                         <Button color='success' className='rounded-0 mb-3 me-auto'>
                             <NavLink className='nav-link' to='/'>
                                 <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
                             </NavLink>
                         </Button>
-                    </>
+                    </div>
                 ) : currentUser && !isAdmin ? (
-                    <>
+                    <div>
                         <p className='text-center'>You are not authorized to view this page.</p>
                         <Button color='success' className='rounded-0 mb-3 me-auto'>
                             <NavLink className='nav-link' to='/'>
                                 <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
                             </NavLink>
                         </Button>
-                    </>
+                    </div>
                 ) : currentUser && isAdmin ? (
                     <Col xs='12' md='8'>
                         <AdminPanel />
                     </Col>
                 ) : 
-                    <>
+                    <div>
                         <p className='text-center'>An error has occurred, please try again later.</p>
                         <Button color='success' className='rounded-0 mb-3 me-auto'>
                             <NavLink className='nav-link' to='/'>
                                 <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
                             </NavLink>
                         </Button>
-                    </>
+                    </div>
                 }
             </Row>
         </Container>

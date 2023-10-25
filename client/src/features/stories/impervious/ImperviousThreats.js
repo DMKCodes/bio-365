@@ -62,10 +62,7 @@ const ImperviousThreats = () => {
             </Col>
             <Col lg='6' className='px-0'>
                 <div className='story-main-content'>
-                    <Scrollama 
-                        offset={0.5} 
-                        onStepEnter={onStepEnter}
-                    >
+                    <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                         {IMPERVIOUS_STORY_THREATS_CONTENT &&
                             IMPERVIOUS_STORY_THREATS_CONTENT.map((content, index) => {
                                 return (

@@ -3,13 +3,12 @@ import { Container, Button } from 'reactstrap';
 import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
 import TopButton from '../components/TopButton';
-import { LEARN_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
-
 import ImportancePanel from '../features/learn/sections/importance/ImportancePanel';
 import GlobePanel from '../features/learn/sections/interactive-globe/GlobePanel';
 import ThreatsPanel from '../features/learn/sections/threats/ThreatsPanel';
 import ConservationPanel from '../features/learn/sections/conservation/ConservationPanel';
 import ListenPanel from '../features/learn/sections/listen-and-learn/ListenPanel';
+import { LEARN_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
 const LearnPage = () => {
     const [showGlobePanel, setShowGlobePanel] = useState(true);

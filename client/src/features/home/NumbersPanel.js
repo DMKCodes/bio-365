@@ -9,7 +9,7 @@ const NumbersPanel = () => {
             <Col md='4' lg='3'>
                 <h2 className='fr mb-3 fw-bold'>By the Numbers</h2>
                 <p className='mb-3 me-4'>
-                    The risk to our planet's wildlife is unprecedented in modern history.
+                    The risk to our planet's wildlife is unprecedented in modern history, which makes conservation more important than ever.
                 </p>
                 <Button
                     type='link'

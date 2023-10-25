@@ -12,14 +12,12 @@ import {
 } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 import { URBAN_RURAL_POPULATIONS, CHART_YEARS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
 
-
 const ImperviousIntroduction = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
     const [chartData, setChartData] = useState(URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960));
 
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
-        console.log(currentStepIndex);
 
         if (data === 3) {
             setChartData((URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960)));
@@ -34,18 +32,11 @@ const ImperviousIntroduction = () => {
         <Row className='d-flex justify-content-center'>
             <Col lg='6'>
                 <div className='story-main-content'>
-                    <Scrollama 
-                        offset={0.5} 
-                        onStepEnter={onStepEnter}
-                        debug
-                    >
+                    <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
                         {IMPERVIOUS_STORY_INTRO_CONTENT &&
                             IMPERVIOUS_STORY_INTRO_CONTENT.map((content, index) => {
                                 return (
-                                    <Step 
-                                        data={index}
-                                        key={index}
-                                    >
+                                    <Step data={index} key={index}>
                                         <div className='story-step py-3 text-center'>
                                             <h5 className='text-uppercase fw-bold'>
                                                 {content.header}

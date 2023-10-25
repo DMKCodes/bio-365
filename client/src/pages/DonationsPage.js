@@ -14,18 +14,23 @@ const DonationsPage = () => {
         <Container fluid className='p-0'>
             <VideoBackground video={DONATION_VIDEO_BG} />
             <Header />
+            <Button color='dark' outline className='rounded-0 my-3 ms-3 me-auto'>
+                <NavLink className='nav-link' to='/resources'>
+                    <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Back to Resources
+                </NavLink>
+            </Button>
 
             <Container className='my-5'>
-                <Button color='dark' outline className='rounded-0 mb-3 me-auto'>
-                    <NavLink className='nav-link' to='/resources'>
-                        <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Back to Resources
-                    </NavLink>
-                </Button>
-                <Row className='d-flex flex-column align-items-center text-center'>
-                    <h1 className='pf mb-4 fw-bold'>Why Support Biodiversity?</h1>
+                <Row className='d-flex flex-column align-items-center'>
+                    <h1 className='pf mb-4 fw-bold text-center'>Why Support Biodiversity?</h1>
                     {DONATIONS_INTRO.content.map((content, index) => {
                         return (
-                            <p key={index} className='donations-intro-content px-4 px-sm-2'>{content}</p>
+                            <p 
+                                key={index} 
+                                className='donations-intro-content text-start text-md-center px-4 px-sm-2'
+                            >
+                                {content}
+                            </p>
                         );
                     })}
                 </Row>

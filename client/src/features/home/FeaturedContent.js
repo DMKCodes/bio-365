@@ -13,7 +13,7 @@ const FeaturedContent = ({ feature }) => {
                 <Quote quote={feature.quote} source={feature.quoteSource} />
                 <ExternalButton link={feature.link} />
             </Col>
-            <Col lg='5' className='p-0 d-flex align-items-center mt-4 mt-lg-0'>
+            <Col lg='5' className='py-0 px-2 d-flex align-items-center mt-4 mt-lg-0'>
                 {feature.video &&
                     <YoutubeEmbed id={feature.video} />
                 }

@@ -1,7 +1,7 @@
 export const IMPORTANT_CONTENT = [
     'Biodiversity plays a crucial role in ecosystem health and functionality. Plants and animals participate in the cycling of nutrients, regulation of climate, and purification of water and air. Healthy ecosystems with high biodiversity are more resilient—better able to recover from disturbances such as natural disasters or human encroachment. A diverse farm can withstand pests or diseases much better than a monoculture plantation, as the latter may be wiped out if susceptible to a particular threat.',
-    'Beyond its ecological importance, biodiversity holds immense economic and cultural value. Many industries, including agriculture and pharmaceuticals, rely directly on nature to produce the food, water, and medicine that maintain our quality of life.', 
-    "Every species is a product of millions of years of evolution and represents a unique piece of life's complex puzzle. Thus, preserving biodiversity is also a moral obligation, emphasizing our responsibility as stewards of the planet."
+    'Beyond its ecological importance, biodiversity holds immense economic and cultural value. Many industries, including agriculture and pharmaceuticals, rely directly on nature to produce the food, water, and medicine that maintain our quality of life, and many people derive inspiration, mental well-being, and spiritual significance from nature.', 
+    "Thus, helping to preserve biodiversity is a moral obligation, one that emphasizes our responsibility not just as caretakers of our planet, but of each other."
 ];
 
 export const THREATS_MAIN_CONTENT = [

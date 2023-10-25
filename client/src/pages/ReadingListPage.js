@@ -22,14 +22,16 @@ const ReadingListPage = () => {
                 <Header />
             </Row>
             <h1 className='pf fw-bold text-center'>Your Reading List</h1>
-            {isError ? (
+            {!currentUser ? (
+                <p className='text-center mt-5'>You are not logged in.</p>
+            ) : isError ? (
                 error.status === 404 ? (
-                    <p>{error.data.error}</p>
+                    <p className='text-center mt-5'>{error.data.error}</p>
                 ) : (
-                    <p>Error retrieving articles. Please refresh and try again.</p>
+                    <p className='text-center mt-5'>Error retrieving articles. Please refresh and try again.</p>
                 )
             ) : isLoading ? (
-                <p>Fetching the latest articles...</p>
+                <p className='text-center mt-5'>Fetching the latest articles...</p>
             ) : data ? (
                 <NewsList
                     articles={data.articles}

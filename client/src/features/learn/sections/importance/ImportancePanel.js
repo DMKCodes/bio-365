@@ -10,7 +10,7 @@ const ImportancePanel = () => {
     return (
         <Row className='pt-5'>
             <Col lg='7' className='d-flex flex-column justify-content-center'>
-                <h4 className='pf mb-4 fw-bold mx-auto'>Why is it important?</h4>
+                <h4 className='pf mb-4 fw-bold mx-auto'>Why is biodiversity important?</h4>
                 {IMPORTANT_CONTENT.map((text, index) => {
                     const textWithKeywords = defineKeywords(text);
                     return <p key={index} className='text-start'>{textWithKeywords}</p>;

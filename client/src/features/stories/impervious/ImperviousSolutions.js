@@ -15,23 +15,14 @@ const ImperviousSolutions = () => {
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
 
     const onStepEnter = ({ data }) => {
-        console.log(currentStepIndex);
         setCurrentStepIndex(data);
-    };
-
-    const onStepExit = () => {
-        return;
     };
 
     return (
         <Row className='d-flex justify-content-center'>
             <Col lg='6' xxl='5'>
                 <div className='story-main-content'>
-                    <Scrollama 
-                        offset={0.5} 
-                        onStepEnter={onStepEnter} 
-                        onStepExit={onStepExit}
-                    >
+                    <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                         {IMPERVIOUS_STORY_SOLUTIONS_CONTENT &&
                             IMPERVIOUS_STORY_SOLUTIONS_CONTENT.map((content, index) => {
                                 return (

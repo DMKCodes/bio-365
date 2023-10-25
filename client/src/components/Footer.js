@@ -1,9 +1,8 @@
-import { Container, Row, Col, Nav, NavItem, Navbar } from 'reactstrap';
+import { Container, Row, Col, Nav, NavItem, Navbar, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import ContactForm from './ContactForm';
-import Donations from './Donations';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return (
@@ -50,12 +49,13 @@ const Footer = () => {
                         </h5>
                         <small className='text-muted mb-5'>Coming soon!</small>
                         <h5 className='pf mb-3 fw-bold d-flex flex-row justify-content-center'>
-                            Support
-                            <NavLink className='nav-link text-light ms-2' to='/donations'>
-                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' />
-                            </NavLink>
+                            Donate
                         </h5>
-                        <Donations />
+                        <Button color='success' className='rounded-0 mb-3 mx-auto'>
+                            <NavLink className='nav-link' to='/donations'>
+                                Support Biodiversity<FontAwesomeIcon icon={faArrowRight} className='ms-2' />
+                            </NavLink>
+                        </Button>
                     </Col>
                     <Col lg='4' className='d-flex flex-column align-items-center mt-5 mb-5 mt-lg-0'>
                         <h5 className='pf mb-3 fw-bold'>
