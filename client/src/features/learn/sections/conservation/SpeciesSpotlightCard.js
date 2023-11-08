@@ -11,6 +11,7 @@ import {
     AccordionItem
 } from 'reactstrap';
 import ExternalButton from '../../../../components/ExternalButton';
+import YoutubeEmbed from '../../../../components/YoutubeEmbed';
 import defineKeywords from '../../../../utils/defineKeywords';
 import { SPECIES_SPOTLIGHT_CONTENT } from '../../../../app/shared/LEARN_CONTENT';
 
@@ -31,7 +32,7 @@ const SpeciesSpotlightCard = () => {
 
     return (
         <Card className='rounded-0'>
-            <iframe width={'100%'} height='250' src='https://www.youtube.com/embed/_cBgz2eud64' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
+            <YoutubeEmbed id={'_cBgz2eud64'} />
             <CardBody className='d-flex justify-content-center'>
                 <CardHeader className='mb-0 rounded-0 border w-75 text-center'>
                     <CardTitle className='mb-0'>

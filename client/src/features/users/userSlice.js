@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     currentUser: null,
-    token: null
+    token: null,
+    isLoading: true,
+    errMsg: null
 };
 
 const userSlice = createSlice({
@@ -39,7 +41,6 @@ const userSlice = createSlice({
             });
         },
         removeSavedArticle: (state, action) => {
-            console.log(action.payload);
             return ({
                 ...state,
                 currentUser: {
@@ -49,8 +50,20 @@ const userSlice = createSlice({
                     )
                 }
             });
+        },
+        setLoading: (state, action) => {
+            return ({
+                ...state,
+                isLoading: action.payload
+            });
+        },
+        setError: (state, action) => {
+            return ({
+                ...state,
+                errMsg: action.payload
+            });
         }
-    }
+    },
 });
 
 export const userReducer = userSlice.reducer;
@@ -60,7 +73,9 @@ export const {
     clearCurrentUser, 
     updateToken,
     addSavedArticle,
-    removeSavedArticle
+    removeSavedArticle,
+    setLoading,
+    setError
 } = userSlice.actions;
 
 export const selectCurrentUser = (state) => {
@@ -68,11 +83,7 @@ export const selectCurrentUser = (state) => {
 };
 
 export const checkAdmin = (state) => {
-    if (state.currentUser) {
-        return state.user.currentUser.admin;
-    } else {
-        return false;
-    }
+    return state.user.currentUser.admin;
 };
 
 export const selectToken = (state) => {
@@ -88,3 +99,11 @@ export const checkSavedArticles = (state, title) => {
         return savedArticles.some((article) => article.title === title);
     }
 };
+
+export const selectLoading = (state) => {
+    return state.user.isLoading;
+};
+
+export const selectError = (state) => {
+    return state.user.errMsg;
+}

@@ -8,6 +8,7 @@ import {
     Line,
     ResponsiveContainer
 } from 'recharts';
+import abbrNum from '../utils/abbrNum';
 
 const ChartLine = ({ data, ticks }) => {
     const keys = data[0] && Object.keys(data[0]).filter(key => key !== 'name');
@@ -37,7 +38,7 @@ const ChartLine = ({ data, ticks }) => {
 
     const CustomLegend = ({ payload }) => {
         return (
-            <p>
+            <p className=''>
                 {payload.map((entry, index) => (
                     <span key={`item-${index}`} className='me-3' style={{ color: entry.color }}>
                         • {formatCamelCase(entry.value)}
@@ -48,11 +49,11 @@ const ChartLine = ({ data, ticks }) => {
     };
 
     return (
-        <ResponsiveContainer width='100%' height='100%'>
-            <LineChart data={data} margin={{ top: 15, right: 30, left: 60, bottom: 15 }}>
+        <ResponsiveContainer className='story-chart'>
+            <LineChart data={data}>
                 <CartesianGrid strokeDasharray='3 3' />
                 <XAxis dataKey='name' ticks={ticks} />
-                <YAxis tickFormatter={tick => tick.toLocaleString()} />
+                <YAxis tickFormatter={tick => abbrNum(tick)} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend content={<CustomLegend />} />
                 {keys.map((key, index) => (

@@ -1,26 +1,23 @@
 import { useState, Fragment } from 'react';
 import { Scrollama, Step } from 'react-scrollama';
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import ChartLine from '../../../components/ChartLine';
 import ChartBar from '../../../components/ChartBar';
 import ExternalButton from '../../../components/ExternalButton';
 import YoutubeEmbed from '../../../components/YoutubeEmbed';
 import defineKeywords from '../../../utils/defineKeywords';
-import { 
-    IMPERVIOUS_STORY_INTRO_CONTENT, 
-    IMPERVIOUS_STORY_INTRO_MEDIA 
-} from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
+import { IMPERVIOUS_STORY_INTRO_CONTENT } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 import { URBAN_RURAL_POPULATIONS, CHART_YEARS } from '../../../app/shared/URBAN_RURAL_POPULATIONS';
 
-const ImperviousIntroduction = () => {
-    const [currentStepIndex, setCurrentStepIndex] = useState(null);
+const ImperviousIntroduction = ({ isMobileView }) => {
+    const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const [chartData, setChartData] = useState(URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960));
 
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
 
         if (data === 3) {
-            setChartData((URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960)));
+            setChartData(URBAN_RURAL_POPULATIONS.filter((item) => item.name === 1960));
         } else if (data === 4) {
             setChartData(URBAN_RURAL_POPULATIONS.filter((item) => item.name <= 2007));
         } else if (data === 5) {
@@ -29,83 +26,160 @@ const ImperviousIntroduction = () => {
     };
 
     return (
-        <Row className='d-flex justify-content-center'>
-            <Col lg='6'>
-                <div className='story-main-content'>
-                    <Scrollama offset={0.5} onStepEnter={onStepEnter} debug>
-                        {IMPERVIOUS_STORY_INTRO_CONTENT &&
-                            IMPERVIOUS_STORY_INTRO_CONTENT.map((content, index) => {
-                                return (
-                                    <Step data={index} key={index}>
-                                        <div className='story-step py-3 text-center'>
-                                            <h5 className='text-uppercase fw-bold'>
-                                                {content.header}
-                                            </h5>
-                                            {content.body.map((text, index) => {
-                                                const textWithKeywords = defineKeywords(text);
-                                                return (
-                                                    <p className='mx-5' key={index}>
-                                                        {textWithKeywords}
-                                                    </p>
-                                                )
-                                            })}
-                                            {content.link &&
-                                                <ExternalButton link={content.link} />
-                                            }
-                                        </div>
-                                    </Step>
-                                );
-                            })
-                        }
-                    </Scrollama>
-                </div>
-            </Col>
-            <Col lg='6' className='px-0'>
-                <div className='story-media-content d-flex flex-column justify-content-center align-items-center'>
-                    {IMPERVIOUS_STORY_INTRO_MEDIA &&
-                        IMPERVIOUS_STORY_INTRO_MEDIA.filter((content) => currentStepIndex === content.index)
-                        .map((content) => {
+        <Container fluid>
+            {isMobileView ? (
+                <div className='text-center'>
+                    {IMPERVIOUS_STORY_INTRO_CONTENT &&
+                        IMPERVIOUS_STORY_INTRO_CONTENT.map((content) => {
                             return (
-                                <Fragment key={content.index}>
-                                    {currentStepIndex === content.index ? (
-                                        <div className='d-flex flex-column align-items-center w-100 h-100'>
-                                            {content.image ? (
-                                                <img
-                                                    src={content.image}
-                                                    alt={content.alt}
-                                                    className='img-fluid mb-2'
-                                                />
-                                            ) : content.video ? (
-                                                <YoutubeEmbed id={content.video} />
-                                            ) : content.chart && content.chartType === 'line' ? (
-                                                <Fragment>
-                                                    <h3 className='text-center'>{content.chartTitle}</h3>
-                                                    <ChartLine data={chartData} ticks={CHART_YEARS} />
-                                                </Fragment>
-                                            ) : content.chart && content.chartType === 'bar' ? (
-                                                <Fragment>
-                                                    <h3 className='text-center'>{content.chartTitle}</h3>
-                                                    <ChartBar data={content.chartData} />
-                                                </Fragment>
-                                            ) : null}
-                                            
-                                            <small className='text-muted text-center mb-2'>
-                                                Source: {content.source}
+                                <Row key={content.index} className='story-mobile-row'>
+                                    <h5 className='text-uppercase fw-bold'>
+                                        {content.text.header}
+                                    </h5>
+                                    {content.text.body.map((text, index) => {
+                                        const textWithKeywords = defineKeywords(text);
+                                        return (
+                                            <p key={index}>
+                                                {textWithKeywords}
+                                            </p>
+                                        )
+                                    })}
+                                    <div className='mt-3 px-0'>
+                                        {content.media.image ? (
+                                            <img
+                                                src={content.media.image}
+                                                alt={content.alt}
+                                                className='img-fluid mb-2'
+                                            />
+                                        ) : content.media.video ? (
+                                            <YoutubeEmbed id={content.media.video} />
+                                        ) : content.media.chart && content.media.chartType === 'line' ? (
+                                            <div className='story-chart'>
+                                                <h3>{content.media.chartTitle}</h3>
+                                                {content.media.chartSubtitle &&
+                                                    <p><i>{content.media.chartSubtitle}</i></p>
+                                                }
+                                                <ChartLine data={content.media.chartMobileData} ticks={CHART_YEARS} />
+                                            </div>
+                                        ) : content.media.chart && content.media.chartType === 'bar' ? (
+                                            <div className='story-chart'>
+                                                <h3>{content.media.chartTitle}</h3>
+                                                {content.media.chartSubtitle &&
+                                                    <p><i>{content.media.chartSubtitle}</i></p>
+                                                }
+                                                <ChartBar data={content.media.chartData} />
+                                            </div>
+                                        ) : null}
+                                        <div>
+                                            <small className='text-muted mb-2'>
+                                                Source: {content.media.source}
                                             </small>
-                                            {content.caption &&
-                                                <small className='text-center story-caption'>
-                                                    {content.caption}
-                                                </small>
-                                            }
                                         </div>
-                                    ) : null}
-                                </Fragment>
+                                        {content.media.caption &&
+                                            <div>
+                                                <small className='story-caption'>
+                                                    {content.media.caption}
+                                                </small>
+                                            </div>
+                                        }
+                                        {content.text.link &&
+                                            <div className='mt-3'>
+                                                <ExternalButton link={content.text.link} />
+                                            </div>
+                                        }
+                                    </div>
+                                </Row>
                             );
                         })
                     }
                 </div>
-            </Col>
-        </Row>
+            ) : (
+                <Row className='d-flex justify-content-center'>
+                    <Col lg='6'>
+                        <div className='story-main-content'>
+                            <Scrollama offset={0.5} onStepEnter={onStepEnter}>
+                                {IMPERVIOUS_STORY_INTRO_CONTENT &&
+                                    IMPERVIOUS_STORY_INTRO_CONTENT.map((content) => {
+                                        return (
+                                            <Step data={content.index} key={content.index}>
+                                                <div className='story-step py-3 text-center'>
+                                                    <h5 className='text-uppercase fw-bold'>
+                                                        {content.text.header}
+                                                    </h5>
+                                                    {content.text.body.map((text) => {
+                                                        const textWithKeywords = defineKeywords(text);
+
+                                                        return (
+                                                            <p className='mx-5' key={content.index}>
+                                                                {textWithKeywords}
+                                                            </p>
+                                                        );
+                                                    })}
+                                                    {content.text.link &&
+                                                        <ExternalButton link={content.text.link} />
+                                                    }
+                                                </div>
+                                            </Step>
+                                        );
+                                    })
+                                }
+                            </Scrollama>
+                        </div>
+                    </Col>
+                    <Col lg='6' className='px-0'>
+                        <div className='story-media-content d-flex flex-column justify-content-center align-items-center'>
+                            {IMPERVIOUS_STORY_INTRO_CONTENT &&
+                                IMPERVIOUS_STORY_INTRO_CONTENT.filter((content) => currentStepIndex === content.index)
+                                .map((content) => {
+                                    return (
+                                        <Fragment key={content.index}>
+                                            {currentStepIndex === content.index ? (
+                                                <div className='d-flex flex-column align-items-center justify-content-center w-100 h-100'>
+                                                    {content.media.image ? (
+                                                        <img
+                                                            src={content.media.image}
+                                                            alt={content.media.alt}
+                                                            className='story-media-img img-fluid mb-2'
+                                                        />
+                                                    ) : content.media.video ? (
+                                                        <YoutubeEmbed id={content.media.video} />
+                                                    ) : content.media.chart && content.media.chartType === 'line' ? (
+                                                        <Fragment>
+                                                            <h3>{content.media.chartTitle}</h3>
+                                                            {content.media.chartSubtitle &&
+                                                                <h5><i>{content.media.chartSubtitle}</i></h5>
+                                                            }
+                                                            <ChartLine data={chartData} ticks={CHART_YEARS} />
+                                                        </Fragment>
+                                                    ) : content.media.chart && content.media.chartType === 'bar' ? (
+                                                        <Fragment>
+                                                            <h3 className='text-center'>{content.media.chartTitle}</h3>
+                                                            {content.media.chartSubtitle &&
+                                                                <h5><i>{content.media.chartSubtitle}</i></h5>
+                                                            }
+                                                            <ChartBar data={content.media.chartData} />
+                                                        </Fragment>
+                                                    ) : null}
+                                                    
+                                                    <small className='text-muted text-center mb-2'>
+                                                        Source: {content.media.source}
+                                                    </small>
+                                                    {content.media.caption &&
+                                                        <small className='text-center story-caption'>
+                                                            {content.media.caption}
+                                                        </small>
+                                                    }
+                                                </div>
+                                            ) : null}
+                                        </Fragment>
+                                    );
+                                })
+                            }
+                        </div>
+                    </Col>
+                </Row>
+            )}
+        </Container>
     );
 };
 

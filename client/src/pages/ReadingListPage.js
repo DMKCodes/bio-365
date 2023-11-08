@@ -1,20 +1,20 @@
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../features/users/userSlice';
-import { useGetArticlesQuery } from '../features/users/articlesApiSlice';
-import { Container, Row } from 'reactstrap';
-import NewsList from '../features/articles/ArticleList';
+import { NavLink } from 'react-router-dom';
+import { 
+    selectCurrentUser, 
+    selectLoading, 
+    selectError 
+} from '../features/users/userSlice';
+import { Container, Row, Button } from 'reactstrap';
 import Header from '../components/Header';
+import ReadingList from '../features/users/ReadingList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const ReadingListPage = () => {
     const currentUser = useSelector(selectCurrentUser);
-    const { _id } = currentUser;
-
-    const {
-        data,
-        isError,
-        error,
-        isLoading
-    } = useGetArticlesQuery(_id);
+    const isLoading = useSelector(selectLoading);
+    const errMsg = useSelector(selectError);
 
     return (
         <Container fluid>
@@ -22,25 +22,42 @@ const ReadingListPage = () => {
                 <Header />
             </Row>
             <h1 className='pf fw-bold text-center'>Your Reading List</h1>
-            {!currentUser ? (
-                <p className='text-center mt-5'>You are not logged in.</p>
-            ) : isError ? (
-                error.status === 404 ? (
-                    <p className='text-center mt-5'>{error.data.error}</p>
-                ) : (
-                    <p className='text-center mt-5'>Error retrieving articles. Please refresh and try again.</p>
-                )
+            {currentUser ? (
+                <ReadingList currentUser={currentUser} />
             ) : isLoading ? (
-                <p className='text-center mt-5'>Fetching the latest articles...</p>
-            ) : data ? (
-                <NewsList
-                    articles={data.articles}
-                    dashboard={true}
-                />
-            ) : null}
+                <div>
+                    <p>Loading...</p>
+                </div>
+            ) : errMsg ? (
+                <div>
+                    <p>ERROR: {errMsg}</p>
+                    <Button color='success' className='rounded-0 mb-3 me-auto'>
+                        <NavLink className='nav-link' to='/'>
+                            <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
+                        </NavLink>
+                    </Button>
+                </div>
+            ) : !currentUser ? (
+                <div>
+                    <p>Please log in to view your reading list.</p>
+                    <Button color='success' className='rounded-0 mb-3 me-auto'>
+                        <NavLink className='nav-link' to='/'>
+                            <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
+                        </NavLink>
+                    </Button>
+                </div>
+            ) : 
+                <div>
+                    <p>An unspecified error occurred.  Please try again later.</p>
+                    <Button color='success' className='rounded-0 mb-3 me-auto'>
+                        <NavLink className='nav-link' to='/'>
+                            <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
+                        </NavLink>
+                    </Button>
+                </div>
+            }
         </Container>
     );
-
 };
 
 export default ReadingListPage;

@@ -18,6 +18,10 @@ const ChartBar = ({ data }) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
+    const formatYAxisTick = (tick) => {
+        return `${tick}%`;
+    };
+
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
             return (
@@ -48,11 +52,11 @@ const ChartBar = ({ data }) => {
     };
 
     return (
-        <ResponsiveContainer width='100%' height={400} className='bar-chart'>
+        <ResponsiveContainer className='story-chart'>
             <BarChart data={data}>
                 <CartesianGrid strokeDasharray='3 3' />
                 <XAxis dataKey='name' />
-                <YAxis />
+                <YAxis tickFormatter={formatYAxisTick} />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend content={<CustomLegend />} />
                 {keys.map((key, index) => (

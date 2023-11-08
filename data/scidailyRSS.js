@@ -25,6 +25,7 @@ const fetchSciDailyArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching SciDaily RSS feed:', error);
+        return [];
     }
 };
 

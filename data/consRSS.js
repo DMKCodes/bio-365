@@ -25,6 +25,7 @@ const fetchConsArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching Conservation RSS feed:', error);
+        return [];
     }
 };
 

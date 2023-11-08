@@ -33,6 +33,7 @@ const fetchConvArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching Conversation RSS feed:', error);
+        return [];
     }
 };
 

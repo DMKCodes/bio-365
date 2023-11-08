@@ -28,7 +28,7 @@ const PodcastCard = ({ podcast }) => {
                     {isHovered &&
                         <>
                             <CardText>
-                                <p>{podcast.description}</p>
+                                <small>{podcast.description}</small>
                             </CardText>
                             <Button
                                 type='link'

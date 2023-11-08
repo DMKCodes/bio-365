@@ -44,7 +44,7 @@ const ArticlesPage = () => {
                     {isError ? (
                         <h3 className='mt-5 text-center'>Error retrieving articles. Please refresh and try again.</h3>
                     ) : isLoading ? (
-                        <h3 className='mt-5 text-center'>Fetching the latest articles...</h3>
+                        <h3 className='mt-5 text-center'>Gathering the latest articles...</h3>
                     ) : displayArticles ? (
                         <ArticleList
                             articles={displayArticles}

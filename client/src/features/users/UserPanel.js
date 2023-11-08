@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentUser, clearCurrentUser } from '../../features/users/userSlice';
+import { useDispatch } from 'react-redux';
+import { clearCurrentUser } from '../../features/users/userSlice';
 import { useNavigate } from 'react-router-dom';
 import {
     usePutUserByIdMutation, 
@@ -12,7 +12,9 @@ import ChangeUsernameForm from './ChangeUsernameForm';
 import ChangePasswordForm from './ChangePasswordForm';
 import ChangeEmailForm from './ChangeEmailForm';
 
-const UserPanel = () => {
+const UserPanel = ({ currentUser }) => {
+    const { _id, username, email } = currentUser;
+    
     const [changeUsername, setChangeUsername] = useState(false);
     const [changePassword, setChangePassword] = useState(false);
     const [changeEmail, setChangeEmail] = useState(false);
@@ -24,9 +26,6 @@ const UserPanel = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const currentUser = useSelector(selectCurrentUser);
-    const { _id, username, email } = currentUser;
 
     const [putUserById] = usePutUserByIdMutation();
     const [deleteUserById] = useDeleteUserByIdMutation();

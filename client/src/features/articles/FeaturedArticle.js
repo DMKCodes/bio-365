@@ -32,7 +32,8 @@ const FeaturedArticle = ({ article }) => {
         link,
         pubDate,
         author,
-        snippet
+        snippet,
+        publisher
     } = article;
 
     const [isSaved, setIsSaved] = useState(false);
@@ -118,7 +119,7 @@ const FeaturedArticle = ({ article }) => {
 
                 <div className='mt-0 mt-xl-4 ps-2 pe-4 pe-xl-2'>
                     <h4 className='featured-article-title pf fw-bold my-1'>{title}</h4>
-                    <small className='text-muted'>{author}, {pubDate}</small>
+                    <small className='text-muted'>{author}, {publisher}, {pubDate}</small>
                     {snippet ? (
                         <p className='featured-article-snippet mt-2'>
                             <b>Preview: </b>{snippet}

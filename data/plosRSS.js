@@ -25,6 +25,7 @@ const fetchPlosArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching PLOS RSS feed:', error);
+        return [];
     }
 };
 

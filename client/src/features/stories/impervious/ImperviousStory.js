@@ -1,3 +1,4 @@
+import { useState, useLayoutEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Button } from 'reactstrap';
 import VideoBackground from '../../../components/VideoBackground';
@@ -11,6 +12,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const ImperviousStory = () => {
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    // Use useLayoutEffect to detect window size changes and update isMobileView state
+    useLayoutEffect(() => {
+      const handleResize = () => {
+        setIsMobileView(window.innerWidth <= 768);
+      };
+  
+      handleResize();
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
     return (
         <Container fluid className='p-0'>
@@ -28,17 +44,17 @@ const ImperviousStory = () => {
                 <Row className='mt-5'>
                     <h2 className='text-uppercase text-center fw-bold'>1. Introduction</h2>
                 </Row>
-                <ImperviousIntroduction />
+                <ImperviousIntroduction isMobileView={isMobileView} />
 
                 <Row className='mt-5'>
                     <h2 className='text-uppercase text-center fw-bold'>2. Threats to Biodiversity</h2>
                 </Row>
-                <ImperviousThreats />
+                <ImperviousThreats isMobileView={isMobileView} />
 
                 <Row className='mt-5'>
                     <h2 className='text-uppercase text-center fw-bold'>3. Solutions</h2>
                 </Row>
-                <ImperviousSolutions />
+                <ImperviousSolutions isMobileView={isMobileView} />
 
                 <Row className='mt-5 mb-3'>
                     <h2 className='text-uppercase text-center fw-bold mb-5'>Conclusion</h2>

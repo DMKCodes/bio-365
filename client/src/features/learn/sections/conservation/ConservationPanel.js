@@ -22,11 +22,13 @@ const ConservationPanel = () => {
                     <p>
                         Direct conservation, education, and advocacy are our most effective tools in the fight to ensure a sustainable future—not just for plants and animals, but for humans as well. Donating to reputable conservation groups is a reliable way to ensure your money directly benefits wildlife across the world.
                     </p>
-                    <Button color='success' className='rounded-0 mb-3'>
-                        <NavLink className='nav-link' to='/donations'>
-                            Donate<FontAwesomeIcon icon={faArrowRight} className='ms-2' />
-                        </NavLink>
-                    </Button>
+                    <div className='text-center'>
+                        <Button color='success' className='rounded-0 mb-3'>
+                            <NavLink className='nav-link' to='/donations'>
+                                Support Biodiversity<FontAwesomeIcon icon={faArrowRight} className='ms-2' />
+                            </NavLink>
+                        </Button>
+                    </div>
                     <p>
                         If you prefer to contribute in person, consider volunteering with an environmental organization in your state or country, or check out citizen science opportunities, such as with the{' '}
                         <a

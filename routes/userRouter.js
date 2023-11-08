@@ -138,6 +138,15 @@ userRouter.route('/:userId/articles')
         const user = await User.findById(req.params.userId);
         if (user) {
             const article = req.body.article;
+
+            const isDuplicate = user.savedArticles.some(savedArticle => {
+                savedArticle.title === article.title
+            });
+
+            if (isDuplicate) {
+                return res.status(400).json({ error: 'This article is already saved.' });
+            }
+            
             const newArticle = new Article(article);
 
             user.savedArticles.push(newArticle);

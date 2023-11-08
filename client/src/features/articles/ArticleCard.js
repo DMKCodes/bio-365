@@ -115,7 +115,7 @@ const ArticleCard = ({ article }) => {
         <Card className='article-card my-2 rounded-0'>
             <CardImg
                 alt='Article Image'
-                className='article-image rounded-0'
+                className='article-image rounded-0 img-fluid'
                 src={image}
             />
             <CardBody className='position-relative'>

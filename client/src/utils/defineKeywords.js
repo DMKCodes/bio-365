@@ -1,4 +1,3 @@
-import React from 'react';
 import DefinitionTooltip from '../components/DefinitionTooltip';
 import { GLOSSARY_DICT } from '../app/shared/GLOSSARY';
 

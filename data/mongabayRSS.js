@@ -12,7 +12,7 @@ const fetchMongabayArticles = async () => {
                 title: item.title,
                 link: item.link,
                 pubDate: item.pubDate,
-                author: item.author,
+                author: item.creator,
                 image: item.enclosure.url,
                 snippet: item.contentSnippet,
                 category: 'News',
@@ -26,6 +26,7 @@ const fetchMongabayArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching Mongabay RSS feed:', error);
+        return [];
     }
 };
 

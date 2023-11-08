@@ -25,6 +25,7 @@ const fetchFrontierArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching Frontiers RSS feed:', error);
+        return [];
     }
 };
 

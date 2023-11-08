@@ -253,13 +253,13 @@ html {
   margin-top: auto;
 }
 
-.footer .nav-link.active {
+.footer .navbar .nav-link.active {
   text-decoration: underline;
   text-decoration-thickness: 0.3em;
   text-decoration-color: #198754;
 }
 
-.footer .nav-link:hover {
+.footer .navbar .nav-link:hover {
   color: black;
   text-decoration: underline;
   text-decoration-thickness: 0.3em;
@@ -584,17 +584,12 @@ html {
 
 .story-media-content {
   position: sticky;
-  top: 25vh; 
-  margin: 25vh 0; 
-  height: 50vh;
+  top: 0; 
+  height: 100vh;
 }
 
-.story-main-sm {
-  height: 50vh;
-}
-
-.story-media-sm {
-  height: 50vh;
+.story-media-img {
+  max-height: 75%;
 }
 
 .story-step {
@@ -609,9 +604,23 @@ html {
   background-color: #fff;
 }
 
+.story-mobile-row {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 50vh !important;
+}
+
 .recharts-legend-wrapper {
   display: flex !important;
   justify-content: center;
+}
+
+.spotlight {
+  color: #E4C239;
 }
 
 /* Resources Section */

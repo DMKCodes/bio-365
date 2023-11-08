@@ -41,6 +41,7 @@ const dteArticles = async () => {
         return abbrArticles;
     } catch (error) {
         console.log('Error fetching articles from DTH', error);
+        return [];
     }
 };
 

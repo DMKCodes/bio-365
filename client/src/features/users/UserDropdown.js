@@ -23,6 +23,7 @@ const UserDropdown = () => {
 
     const logout = () => {
         dispatch(clearCurrentUser());
+        localStorage.setItem('persist', false);
         setPersist(false);
         navigate('/');
     };
