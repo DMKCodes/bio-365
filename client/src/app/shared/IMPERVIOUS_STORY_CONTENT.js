@@ -314,7 +314,9 @@ export const IMPERVIOUS_STORY_THREATS_CONTENT = [
         text: {
             header: '',
             body: [
-                "There are cultural benefits as well. Society values groundwater not just for practical uses, but for its religious and recreational contributions. If you've ever spent a day at the lake or gone whitewater rafting, you have groundwater to thank."
+                "There are cultural benefits as well. Society values groundwater not just for practical uses, but for its religious and recreational contributions. If you've ever spent a day at the lake or gone whitewater rafting, you have groundwater to thank.",
+                'Likewise, many religions derive significance from particular sources of water.  Examples include The Sanctuary of Our Lady of Lourdes in France, the Zamzam Well in Saudi Arabia, and the Ganges River in India and Bangladesh.',
+
             ],
         },
         media: {
@@ -503,9 +505,9 @@ export const IMPERVIOUS_STORY_THREATS_CONTENT = [
         text: {
             header: '',
             body: [
-                'Soil disruption has a cascading effect on the food chain. When the plant species that are primary food sources for animals are affected, it leads to food scarcity for herbivores. And when the herbivore population is reduced, the carnivores that prey on them are in turn impacted by food scarcity of their own.',
-                'The opposite can also be true. As the amounts of topsoil and vegetation dwindle, the cover and shelter that insects and small animals use to hide from predators disappears. Without adequate hiding spots, these animals become more vulnerable to predation.',
-                'The key takeaway is that all ecosystems exist in a delicate balance of autotrophs and heterotrophs, which make up its food chain. If that balance is disrupted, every organism in the chain is affected.'
+                'Soil disruption has a cascading effect on the food web. When the plant species that are primary food sources for animals are affected, it leads to food scarcity for herbivores. And when the herbivore population is reduced, the carnivores that prey on them are in turn impacted by food scarcity of their own.',
+                'The opposite can also be true. As the amounts of topsoil and vegetation dwindle, the cover and shelter that insects and small animals use to hide from predators disappears. Without adequate hiding spots, these animals become more vulnerable to overpredation.',
+                'The key takeaway is that all ecosystems exist in a delicate balance of autotrophs and heterotrophs, which make up its food web. If that balance is disrupted, every organism in the web, including humans, is affected.'
             ],
         },
         media: {
@@ -722,7 +724,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
             video: null,
             alt: 'a hand holding a chunk of pervious concrete, through which water flows freely',
             source: 'Zonda Media',
-            caption: null,
+            caption: 'Pervious concrete, another type of permeable building material, is designed to be exceptionally porous, allowing the majority of rainwater to pass directly through it.',
             chart: null,
             chartTitle: null,
             chartSubtitle: null,
@@ -745,7 +747,7 @@ export const IMPERVIOUS_STORY_SOLUTIONS_CONTENT = [
             video: null,
             alt: 'a pair of greater sandhill cranes wander through a meadow',
             source: 'Joshua J. Cotten',
-            caption: "The greater sandhill crane, native to Michigan, USA, is considered to be the oldest living bird species in the world, with fossil remains dating back more than 10 million years. In the 1940s, only 34 greater sandhill cranes could be found in Michigan. Today, that number is closer to 24,000, due in large part to the restoration and protection of Michigan's wetland habitats, most notably the Waterloo Recreation Area.",
+            caption: "The greater sandhill crane, native to Michigan, USA, is considered to be the oldest living bird species in the world, with fossil remains dating back more than 10 million years. In the 1940s, only 34 greater sandhill cranes could be found in Michigan. Today, that number is closer to 24,000, due in large part to the restoration and protection of the state's wetland habitats, most notably the Waterloo Recreation Area.",
             chart: null,
             chartTitle: null,
             chartSubtitle: null,

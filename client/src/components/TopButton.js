@@ -11,7 +11,7 @@ const TopButton = () => {
         <Button 
             outline
             className='top-button rounded-circle btn-sm'
-            color='dark'
+            color='success'
             onClick={() => scrollToTop()}
         >
             <FontAwesomeIcon icon={faChevronUp} size='sm' />

@@ -20,11 +20,8 @@ const LearnPage = () => {
 
             <Container className='my-5'>
                 <ImportancePanel />
-            </Container>
 
-            <hr className='learn-section' />
-
-            <Container>
+                <hr className='learn-section' />
                 <div className='d-flex justify-content-center align-items-center mb-4'>
                     <h4 className='pf text-center fw-bold mb-0'>Around the Globe</h4>
                     <Button
@@ -39,28 +36,18 @@ const LearnPage = () => {
                 <span className={showGlobePanel ? 'd-block p-0' : 'd-none'}>
                     <GlobePanel showGlobePanel={showGlobePanel} setShowGlobePanel={setShowGlobePanel} />
                 </span>
-            </Container>
-                
-            <hr className='learn-section' />
-
-            <Container>
+                    
+                <hr className='learn-section' />
                 <ThreatsPanel />
-            </Container>
 
-            <hr className='learn-section' />
-
-            <Container>
-
+                <hr className='learn-section' />
                 <ConservationPanel />
-            </Container>
 
-            <hr className='learn-section' />
-
-            <Container>
+                <hr className='learn-section' />
                 <ListenPanel />
-            </Container>
 
-            <TopButton />
+                <TopButton />
+            </Container>
         </Container>
     );
 };
