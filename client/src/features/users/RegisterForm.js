@@ -5,7 +5,7 @@ import { Col, Button, FormGroup, Label } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
-const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => {
+const RegisterForm = ({ setModalOpen, setActiveTab, setError, setErrorMsg }) => {
     const dispatch = useDispatch();
     const [register] = useRegisterMutation();
     const [login] = useLoginMutation();
@@ -24,7 +24,7 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
             .string()
             .matches(
                 /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[0-9]){1})((?=.*[A-Z]){1}).*$/,
-                "Password must contain at least 8 characters, one uppercase, one number and one special character."
+                "Password must contain at least 8 characters, one uppercase letter, one number and one special character."
             )
             .required('Required.'),
         confirmPassword: yup
@@ -64,7 +64,7 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                 setModalOpen(false);
                 setActiveTab('login');
                 setError(false);
-            }, '2000');
+            }, 2000);
         } catch (error) {
             setError(true);
             if (!error?.data) {
@@ -77,7 +77,7 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
             setTimeout(() => {
                 setModalOpen(false);
                 setError(false);
-            }, '3000');
+            }, 3000);
         };
     };
 
@@ -93,17 +93,19 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
         >
             {(formik) => {
                 const { errors, touched } = formik;
+                console.log(errors);
+                console.log(touched);
                 return (
                     <Form className='p-3'>
                         <FormGroup row>
                             <Label htmlFor='username' md='4'>
                                 Username:
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col md='8' className='d-flex flex-column'>
                                 <Field
                                     name='username'
                                     autoComplete='off'
-                                    className={`form-control${errors.username && touched.username ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
+                                    className={`${errors.username && touched.username ? 'is-invalid form-control border-dark rounded-0 w-100' : 'form-control border-dark rounded-0 w-100'}`}
                                 />
                                 {errors.username && touched.username ? (
                                     <ErrorMessage
@@ -118,12 +120,12 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='password' md='4'>
                                 Password:
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col md='8' className='d-flex flex-column'>
                                 <Field
                                     name='password'
                                     type='password'
                                     autoComplete='off'
-                                    className={`form-control${errors.password && touched.password ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
+                                    className={`${errors.password && touched.password ? 'is-invalid form-control border-dark rounded-0 w-100' : 'form-control border-dark rounded-0 w-100'}`}
                                 />
                                 {errors.password && touched.password ? (
                                     <ErrorMessage
@@ -138,12 +140,12 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='confirmPassword' md='4'>
                                 Confirm Password:
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col md='8' className='d-flex flex-column'>
                                 <Field
                                     name='confirmPassword'
                                     type='password'
                                     autoComplete='off'
-                                    className={`form-control${errors.confirmPassword && touched.confirmPassword ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
+                                    className={`${errors.confirmPassword && touched.confirmPassword ? 'is-invalid  form-control border-dark rounded-0 w-100' : 'form-control border-dark rounded-0 w-100'}`}
                                 />
                                 {errors.confirmPassword && touched.confirmPassword ? (
                                     <ErrorMessage
@@ -158,11 +160,11 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                             <Label htmlFor='email' md='4'>
                                 Email:
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col md='8' className='d-flex flex-column'>
                                 <Field
                                     name='email'
                                     autoComplete='off'
-                                    className={`form-control${errors.email && touched.email ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
+                                    className={`${errors.email && touched.email ? 'is-invalid form-control border-dark rounded-0 w-100' : 'form-control border-dark rounded-0 w-100'}`}
                                 />
                                 {errors.email && touched.email ? (
                                     <ErrorMessage
@@ -175,16 +177,16 @@ const RegisterForm = ({ setModalOpen, setError, setErrorMsg, setActiveTab }) => 
                         </FormGroup>
                         <FormGroup row className='mt-4'>
                             <Col className='d-flex justify-content-around'>
-                                <Button 
-                                    type='submit' 
-                                    color='success' 
+                                <Button
+                                    type='submit'
+                                    color='success'
                                     className='me-3 rounded-0'
                                 >
                                     Register
                                 </Button>
-                                <Button 
-                                    type='button' 
-                                    color='secondary' 
+                                <Button
+                                    type='button'
+                                    color='secondary'
                                     onClick={() => setModalOpen(false)}
                                     className='rounded-0'
                                 >

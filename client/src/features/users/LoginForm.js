@@ -23,7 +23,7 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
             .string()
             .matches(
                 /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[0-9]){1})((?=.*[A-Z]){1}).*$/,
-                "Password must contain at least 8 characters, one uppercase, one number and one special character."
+                "Password must contain at least 8 characters, one uppercase letter, one number and one special character."
             )
             .required('Required.')
     });
@@ -46,7 +46,7 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
             setTimeout(() => {
                 setModalOpen(false);
                 setError(false);
-            }, '2000');
+            }, 2000);
         } catch (error) {
             console.log(error);
             setError(true);
@@ -60,7 +60,7 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
             setTimeout(() => {
                 setModalOpen(false);
                 setError(false);
-            }, '3000');
+            }, 3000);
         };
     };
 
@@ -78,15 +78,15 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 const { errors, touched } = formik;
                 return (
                     <Form className='p-3'>
-                        <FormGroup row className='d-flex align-items-center'>
+                        <FormGroup row className='d-flex'>
                             <Label htmlFor='username' md='4'>
                                 Username:
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col md='8' className='d-flex flex-column'>
                                 <Field
                                     name='username'
                                     autoComplete='off'
-                                    className={`form-control${errors.username && touched.username ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
+                                    className={`${errors.username && touched.username ? 'is-invalid form-control border-dark rounded-0 w-100' : 'form-control border-dark rounded-0 w-100'}`}
                                 />
                                 {errors.username && touched.username ? (
                                     <ErrorMessage
@@ -101,12 +101,12 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             <Label htmlFor='password' md='4'>
                                 Password:
                             </Label>
-                            <Col md='8' className='d-flex align-items-center'>
+                            <Col md='8' className='d-flex flex-column'>
                                 <Field
                                     name='password'
                                     type='password'
                                     autoComplete='off'
-                                    className={`form-control${errors.password && touched.password ? 'is-invalid rounded-0 w-100' : 'rounded-0 w-100'}`}
+                                    className={`${errors.password && touched.password ? 'form-control border-dark is-invalid rounded-0 w-100' : 'form-control border-dark rounded-0 w-100'}`}
                                 />
                                 {errors.password && touched.password ? (
                                     <ErrorMessage
@@ -118,10 +118,10 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                             </Col>
                         </FormGroup>
                         <FormGroup row>
-                            <Label check htmlFor='remember' xs='5'>
+                            <Label check htmlFor='remember' xs='4'>
                                 Remember me?
                             </Label>
-                            <Col xs='7' className='d-flex align-items-center'>
+                            <Col xs='8' className='d-flex align-items-center'>
                                 <Field
                                     name='remember'
                                     type='checkbox'
@@ -131,16 +131,16 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                         </FormGroup>
                         <FormGroup row>
                             <Col className='d-flex justify-content-around'>
-                                <Button 
-                                    type='submit' 
-                                    color='success' 
+                                <Button
+                                    type='submit'
+                                    color='success'
                                     className='rounded-0'
                                 >
                                     Log in
                                 </Button>
-                                <Button 
-                                    type='button' 
-                                    color='secondary' 
+                                <Button
+                                    type='button'
+                                    color='secondary'
                                     onClick={() => setModalOpen(false)}
                                     className='rounded-0'
                                 >
