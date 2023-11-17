@@ -33,7 +33,8 @@ const FeaturedArticle = ({ article }) => {
         pubDate,
         author,
         snippet,
-        publisher
+        publisher,
+        category
     } = article;
 
     const [isSaved, setIsSaved] = useState(false);
@@ -92,33 +93,36 @@ const FeaturedArticle = ({ article }) => {
     };
 
     return (
-        <Row className='featured-article position-relative m-0 mt-0 mt-md-5 mb-5 p-0 border'>
+        <Row className='featured-article m-0 mt-0 mt-md-5 mb-5 p-0 border'>
             <Col xl='6' className='p-0'>
                 <img src={image} alt='' className='featured-article-image w-100' />
             </Col>
             <Col xl='6' className='featured-article-content position-relative p-1 p-xl-3'>
-                {currentUser && isSaved ? (
-                    <FontAwesomeIcon 
-                        icon={faBookmark}
-                        className='article-card-bookmark text-success' 
-                        size='lg'
-                        onClick={() => {
-                            delArticle();
-                        }}
-                    />
-                ) : currentUser && !isSaved ? (
-                    <FontAwesomeIcon 
-                        icon={faBookmarkEmpty}
-                        className='article-card-bookmark' 
-                        size='lg'
-                        onClick={() => {
-                            addArticle();
-                        }}
-                    />
-                ) : null}
+                <div className='w-100 px-2 mt-2 d-flex justify-content-between'>
+                    <small className='text-success fw-bold'>{category}</small>
+                    {currentUser && isSaved ? (
+                        <FontAwesomeIcon 
+                            icon={faBookmark}
+                            className='article-card-bookmark text-success my-auto' 
+                            size='lg'
+                            onClick={() => {
+                                delArticle();
+                            }}
+                        />
+                    ) : currentUser && !isSaved ? (
+                        <FontAwesomeIcon 
+                            icon={faBookmarkEmpty}
+                            className='article-card-bookmark float-end my-auto' 
+                            size='lg'
+                            onClick={() => {
+                                addArticle();
+                            }}
+                        />
+                    ) : null}
+                </div>
 
-                <div className='mt-0 mt-xl-4 ps-2 pe-4 pe-xl-2'>
-                    <h4 className='featured-article-title pf fw-bold my-1'>{title}</h4>
+                <div className='mt-0 mt-xl-4 px-2'>
+                    <h4 className='featured-article-title pf fw-bold mt-2 mb-1'>{title}</h4>
                     <small className='text-muted'>{author}, {publisher}, {pubDate}</small>
                     {snippet ? (
                         <p className='featured-article-snippet mt-2'>

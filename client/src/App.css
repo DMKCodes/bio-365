@@ -313,9 +313,6 @@ html {
 
 .article-card-bookmark {
   cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 10px;
 }
 
 .article-title {
@@ -354,11 +351,11 @@ html {
 }
 
 .featured-article-snippet {
-  height: 10.8em;
+  height: 9em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
