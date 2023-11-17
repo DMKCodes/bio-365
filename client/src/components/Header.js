@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectCurrentUser } from '../features/users/userSlice';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import {
     Container,
     Navbar,
@@ -10,6 +9,7 @@ import {
     NavItem,
     Collapse
 } from 'reactstrap';
+import { selectCurrentUser } from '../features/users/userSlice';
 import RegisterLoginModal from '../features/users/RegisterLoginModal';
 import UserDropdown from '../features/users/UserDropdown';
 import logoFull from '../app/media/logo.png';
@@ -17,6 +17,7 @@ import logoBare from '../app/media/logo-bare.png';
 
 const HomeNav = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const location = useLocation();
     const currentUser = useSelector(selectCurrentUser);
 
     return (
@@ -40,6 +41,13 @@ const HomeNav = () => {
                 />
                 <Collapse isOpen={menuOpen} navbar>
                     <Nav className='fw-bold pe-2 pe-sm-0 pt-3 pt-sm-0' navbar>
+                        {location.pathname !== '/' &&
+                            <NavItem>
+                                <NavLink className='nav-link nav-link-main text-light' to='/'>
+                                    Home
+                                </NavLink>
+                            </NavItem>
+                        }
                         <NavItem>
                             <NavLink className='nav-link nav-link-main text-light' to='/articles'>
                                 Articles
@@ -68,7 +76,6 @@ const HomeNav = () => {
                     </Nav>
                 </Collapse>
             </Navbar>
-            <div className={`menu-bg ${!menuOpen ? 'd-none' : ''}`}></div>
         </Container>
     );
 };
