@@ -68,11 +68,13 @@ const HomeNav = () => {
                                 Resources
                             </NavLink>
                         </NavItem>
-                        {currentUser ? (
-                            <UserDropdown />
-                        ) : (
-                            <RegisterLoginModal currentUser={currentUser} />
-                        )}
+                        <div>
+                            {currentUser ? (
+                                <UserDropdown />
+                            ) : (
+                                <RegisterLoginModal currentUser={currentUser} />
+                            )}
+                        </div>
                     </Nav>
                 </Collapse>
             </Navbar>

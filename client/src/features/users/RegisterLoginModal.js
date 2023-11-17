@@ -18,11 +18,11 @@ const RegisterLoginModal = ({ currentUser }) => {
     const [errorMsg, setErrorMsg] = useState('');
 
     return (
-        <>       
+        <div>       
             <Button 
                 outline
                 color='light'
-                className='rounded-0 w-50 ms-auto ms-md-0 me-0 ms-md-3 my-3 my-sm-0' 
+                className='rounded-0 ms-auto me-0 ms-md-3 my-3 my-sm-0' 
                 onClick={() => setModalOpen(true)}
             >
                 Log in
@@ -78,7 +78,7 @@ const RegisterLoginModal = ({ currentUser }) => {
                     </TabPane>
                 </TabContent>
             </Modal>
-        </>
+        </div>
     );
 };
 
