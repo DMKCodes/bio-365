@@ -22,12 +22,21 @@ const ArticleFilter = () => {
     const dispatch = useDispatch();
     
     const [sourceDropdownOpen, setSourceDropdownOpen] = useState(false);
+    const [source, setSource] = useState('Publisher');
+
     const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+    const [category, setCategory] = useState('Category');
 
     const [searchQuery, setSearchQuery] = useState('');
     const [searchPerformed, setSearchPerformed] = useState(false);
 
     const handleFilterChange = (filterType, filterValue) => {
+        if (filterType === 'publisher') {
+            setSource(filterValue);
+        } else if (filterType === 'category') {
+            setCategory(filterValue);
+        }
+
         dispatch(filterDisplayArticles({ filterType, filterValue }));
     };
 
@@ -86,11 +95,11 @@ const ArticleFilter = () => {
                         color='success' 
                         className='rounded-0'
                     >
-                        Category
+                        {category}
                     </DropdownToggle>
-                    <DropdownMenu className='rounded-0 mt-1'>
+                    <DropdownMenu className='rounded-0'>
                         <DropdownItem
-                            onClick={() => handleFilterChange('category', null)}
+                            onClick={() => handleFilterChange('category', 'Category')}
                         >
                             All Categories
                         </DropdownItem>
@@ -115,11 +124,11 @@ const ArticleFilter = () => {
                         color='success' 
                         className='rounded-0'
                     >
-                        Publisher
+                        {source}
                     </DropdownToggle>
-                    <DropdownMenu className='rounded-0 mt-1'>
+                    <DropdownMenu className='rounded-0'>
                         <DropdownItem
-                            onClick={() => handleFilterChange('publisher', null)}
+                            onClick={() => handleFilterChange('publisher', 'Publisher')}
                         >
                             All Publishers
                         </DropdownItem>
@@ -134,9 +143,9 @@ const ArticleFilter = () => {
                             Down To Earth
                         </DropdownItem>
                         <DropdownItem
-                            onClick={() => handleFilterChange('publisher', 'Frontiers in Conservation Science')}
+                            onClick={() => handleFilterChange('publisher', 'Frontiers')}
                         >
-                            Frontiers in Conservation Science
+                            Frontiers
                         </DropdownItem>
                         <DropdownItem
                             onClick={() => handleFilterChange('publisher', 'Mongabay')}

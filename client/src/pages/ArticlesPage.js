@@ -4,7 +4,8 @@ import {
     setAllArticles,
     clearAllArticles,
     setDisplayArticles,
-    selectDisplayArticles
+    selectDisplayArticles,
+    selectFilterError
 } from '../features/articles/newsSlice';
 import { useArticlesQuery } from '../features/articles/newsApiSlice';
 import { Container, Row } from 'reactstrap';
@@ -12,11 +13,13 @@ import ArticleList from '../features/articles/ArticleList';
 import ArticleFilter from '../features/articles/ArticleFilter';
 import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';
+import removeHtmlTags from '../utils/removeHtmlTags';
 import { ARTICLES_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
 const ArticlesPage = () => {
     const dispatch = useDispatch();
     const displayArticles = useSelector(selectDisplayArticles);
+    const filterError = useSelector(selectFilterError);
 
     const {
         data,
@@ -26,9 +29,15 @@ const ArticlesPage = () => {
 
     useEffect(() => {
         if (data) {
+            const articlesWithHtmlRemoved = data.articles.map((article) => ({
+                ...article,
+                title: removeHtmlTags(article.title),
+                snippet: removeHtmlTags(article.snippet)
+            }));
+
             dispatch(clearAllArticles());
-            dispatch(setAllArticles(data.articles));
-            dispatch(setDisplayArticles(data.articles));
+            dispatch(setAllArticles(articlesWithHtmlRemoved));
+            dispatch(setDisplayArticles(articlesWithHtmlRemoved));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);
@@ -42,9 +51,17 @@ const ArticlesPage = () => {
                 <ArticleFilter />
                 <Row>
                     {isError ? (
-                        <h3 className='mt-5 text-center'>Error retrieving articles. Please refresh and try again.</h3>
+                        <h3 className='mt-5 text-center'>
+                            Error retrieving articles. Please refresh and try again.
+                        </h3>
                     ) : isLoading ? (
-                        <h3 className='mt-5 text-center'>Gathering the latest articles...</h3>
+                        <h3 className='mt-5 text-center'>
+                            Gathering the latest articles...
+                        </h3>
+                    ) : filterError ? (
+                        <h3 className='mt-5 text-center'>
+                            {filterError}
+                        </h3>
                     ) : displayArticles ? (
                         <ArticleList
                             articles={displayArticles}

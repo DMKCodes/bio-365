@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     allArticles: null,
-    displayArticles: null
+    displayArticles: null,
+    filterError: null
 };
 
 const newsSlice = createSlice({
@@ -32,18 +33,37 @@ const newsSlice = createSlice({
         resetDisplayArticles: (state) => {
             return ({
                 ...state,
-                displayArticles: state.allArticles
+                displayArticles: state.allArticles,
+                filterError: null
             });
         },
         filterDisplayArticles: (state, action) => {
             const { filterType, filterValue } = action.payload;
 
-            if (!filterValue) {
-                state.displayArticles = state.allArticles;
+            if (filterValue === 'Category' || filterValue === 'Publisher') {
+                return ({ 
+                    ...state,
+                    displayArticles: state.allArticles,
+                    filterError: null
+                });
             } else {
-                state.displayArticles = state.allArticles.filter((article) => {
+                const filteredArticles = state.allArticles.filter((article) => {
                     return article[filterType] === filterValue;
                 });
+
+                if (filteredArticles.length === 0) {
+                    return ({ 
+                        ...state,
+                        displayArticles: [],
+                        filterError: `No articles found for ${filterValue}.`
+                    });
+                } else {
+                    return ({ 
+                        ...state,
+                        displayArticles: filteredArticles,
+                        filterError: null
+                    });
+                };
             }
         },
         searchDisplayArticles: (state, action) => {
@@ -51,18 +71,26 @@ const newsSlice = createSlice({
 
             if (!searchQuery) {
                 state.displayArticles = state.allArticles;
-            } else {
-                state.displayArticles = state.allArticles.filter((article) => {
-                    return (
-                        article.title.toLowerCase().includes(searchQuery) ||
-                        article.publisher.toLowerCase().includes(searchQuery) ||
-                        article.category.toLowerCase().includes(searchQuery) ||
-                        article.snippet.toLowerCase().includes(searchQuery)
-                    );
-                });
             }
-        }
-    }
+
+            const filteredArticles = state.allArticles.filter((article) => {
+                return (
+                    article.title.toLowerCase().includes(searchQuery) ||
+                    article.publisher.toLowerCase().includes(searchQuery) ||
+                    article.category.toLowerCase().includes(searchQuery) ||
+                    article.snippet.toLowerCase().includes(searchQuery)
+                );
+            });
+
+            if (filteredArticles.length === 0) {
+                state.displayArticles = [];
+                state.filterError = `No results found for ${action.payload}.`
+            } else {
+                state.displayArticles = filteredArticles;
+                state.filterError = null;
+            };
+        },
+    },
 });
 
 export const newsReducer = newsSlice.reducer;
@@ -78,4 +106,8 @@ export const {
 
 export const selectDisplayArticles = (state) => {
     return state.news.displayArticles;
+};
+
+export const selectFilterError = (state) => {
+    return state.news.filterError;
 };

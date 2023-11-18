@@ -122,10 +122,10 @@ const FeaturedArticle = ({ article }) => {
                 </div>
 
                 <div className='mt-0 mt-xl-4 px-2'>
-                    <h4 className='featured-article-title pf fw-bold mt-2 mb-1'>{title}</h4>
+                    <h4 title={title} className='featured-article-title pf fw-bold mt-2 mb-1'>{title}</h4>
                     <small className='text-muted'>{author}, {publisher}, {pubDate}</small>
                     {snippet ? (
-                        <p className='featured-article-snippet mt-2'>
+                        <p title={snippet} className='featured-article-snippet mt-2'>
                             <b>Preview: </b>{snippet}
                         </p>
                     ) : (

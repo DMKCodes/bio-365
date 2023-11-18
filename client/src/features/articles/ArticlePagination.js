@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 const ArticlePagination = ({ currentPage, setCurrentPage, pageSize, articlesLength }) => {
     const pagesCount = Math.ceil(articlesLength / pageSize);
     const pagesToShow = 3;
     const pagesOffset = Math.max(0, Math.min(pagesCount - pagesToShow, currentPage - Math.floor(pagesToShow / 2)));
+
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [articlesLength, setCurrentPage]);
 
     const handleClick = (e, index) => {
         e.preventDefault();

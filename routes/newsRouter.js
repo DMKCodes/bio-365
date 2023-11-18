@@ -18,7 +18,6 @@ newsRouter.get('/articles', async (req, res, next) => {
             res.status(404).json({ message: 'No articles found.' });
         }
     } catch (err) {
-        console.log(err);
         return next(err);
     }
 });

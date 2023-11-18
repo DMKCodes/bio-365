@@ -38,7 +38,6 @@ import DTE from '../../app/media/dte.png';
 
 const ArticleCard = ({ article }) => {
     const dispatch = useDispatch();
-
     const currentUser = useSelector(selectCurrentUser);
 
     const {
@@ -115,7 +114,7 @@ const ArticleCard = ({ article }) => {
         <Card className='article-card my-2 rounded-0'>
             <CardImg
                 alt='Article Image'
-                className='article-image rounded-0 img-fluid'
+                className='article-image rounded-0'
                 src={image}
             />
             <CardBody className='position-relative'>
@@ -139,7 +138,11 @@ const ArticleCard = ({ article }) => {
                     />
                 ) : null}
                 
-                <CardTitle tag='h5' className='article-title pf fw-bold px-3 mt-0 mb-1'>
+                <CardTitle 
+                    title={title} 
+                    tag='h5' 
+                    className='article-title pf fw-bold px-3 mt-0 mb-1'
+                >
                     {title}
                 </CardTitle>
 
