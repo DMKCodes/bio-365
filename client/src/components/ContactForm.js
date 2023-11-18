@@ -1,11 +1,37 @@
+import { useState } from 'react';
 import { Col, Button, FormGroup } from 'reactstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { validateContactForm } from '../utils/validateContactForm';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
-    const handleSubmit = (values) => {
-        return;
-        // Placeholder for email.js
+    const [mailSent, setMailSent] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
+    const sendEmail = (values) => {
+        return emailjs.send('service_u7sogze', 'contact_form', values, 'cMM44Klo6HrPOcopj')
+            .then((response) => {
+                return true;
+            }, (error) => {
+                return false;
+            })
+    };
+
+    const handleSubmit = async (values) => {
+        try {
+            const send = await (sendEmail(values));
+
+            if (send) {
+                setMailSent(true);
+            } else {
+                setMailSent(false);
+            }
+
+            setFormSubmitted(true);
+        } catch (error) {
+            setMailSent(false);
+            setFormSubmitted(true);
+        }
     };
 
     return (
@@ -61,13 +87,23 @@ const ContactForm = () => {
                 </FormGroup>
                 <FormGroup row className='text-center'>
                     <Col md='12'>
-                        <Button 
-                            type='submit' 
-                            color='success' 
-                            className='button rounded-0 btn-sm'
-                        >
-                            Send
-                        </Button>
+                        {formSubmitted && mailSent ? (
+                            <p className='text-success fw-bold'>
+                                Your feedback has been sent. Thank you!
+                            </p>
+                        ) : formSubmitted && !mailSent ? (
+                            <p className='text-danger fw-bold'>
+                                An error has occurred. Please try resending.
+                            </p>
+                        ) : !formSubmitted ? (
+                            <Button 
+                                type='submit' 
+                                color='success' 
+                                className='button rounded-0 btn-sm'
+                            >
+                                Send
+                            </Button>
+                        ) : null}
                     </Col>
                 </FormGroup>
             </Form>
