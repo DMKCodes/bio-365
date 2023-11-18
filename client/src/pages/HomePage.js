@@ -6,6 +6,7 @@ import FeaturedContent from '../features/home/FeaturedContent';
 import NumbersPanel from '../features/home/NumbersPanel';
 import HelpPanel from '../features/home/HelpPanel';
 import HomePageArticles from '../features/articles/HomePageArticles';
+import TopButton from '../components/TopButton';
 import { HOME_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 import { IPBES_REPORT } from '../app/shared/FEATURES';
 
@@ -34,6 +35,8 @@ const HomePage = () => {
             <Container fluid className='home-page-section mb-5'>
                 <HelpPanel />
             </Container>
+            
+            <TopButton />
         </Container>
     );
 };

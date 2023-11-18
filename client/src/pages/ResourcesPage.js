@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
 import ResourcesList from '../features/resources/ResourcesList';
 import ResourcesSidebar from '../features/resources/ResourcesSidebar';
+import TopButton from '../components/TopButton';
 import { RESOURCE_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
 const ResourcesPage = () => {
@@ -38,6 +39,8 @@ const ResourcesPage = () => {
                         <ResourcesList category={category} />
                     </Col>
                 </Row>
+
+                <TopButton />
             </Container>
         </Container>
     );

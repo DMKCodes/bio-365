@@ -13,6 +13,7 @@ import ArticleList from '../features/articles/ArticleList';
 import ArticleFilter from '../features/articles/ArticleFilter';
 import VideoBackground from '../components/VideoBackground';
 import Header from '../components/Header';
+import TopButton from '../components/TopButton';
 import removeHtmlTags from '../utils/removeHtmlTags';
 import { ARTICLES_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
@@ -69,6 +70,8 @@ const ArticlesPage = () => {
                         />
                     ) : null}
                 </Row>
+                
+                <TopButton />
             </Container>
         </Container>
     );
