@@ -14,6 +14,7 @@ const DefinitionTooltip = ({ term, targetId }) => {
             isOpen={open}
             target={`${targetId}`}
             toggle={toggle}
+            className='definition-tooltip'
         >
             {term.definition}<br />
             - {term.source}

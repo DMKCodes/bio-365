@@ -454,6 +454,12 @@ html {
   }
 }
 
+.scene-tooltip {
+  background: black;
+  padding: 6px;
+  font-weight: bold;
+}
+
 .globe-data-card {
   position: absolute !important;
   top: 12px;

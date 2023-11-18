@@ -18,18 +18,20 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType, width }) => {
     const totalSpecies = new Map(
         ENDANGERED_RATIOS.map(({ name, totalSpecies }) => [name, totalSpecies])
     );
+
     const totalSpeciesToColor = scaleLinear().domain([0, 50414]).range(['white', 'green']);
 
     const endangeredRatios = new Map(
         ENDANGERED_RATIOS.map(({ name, ratio }) => [name, ratio])
     );
+
     const endangeredRatioToColor = scaleLinear().domain([0, 0.258]).range(['white', 'red']);
 
     useEffect(() => {
         const windowWidth = window.innerWidth;
 
         if (windowWidth < 1000) {
-            const newAltitude = 4;
+            const newAltitude = 2.5;
             const { lat, lng } = globeRef.current.pointOfView();
             globeRef.current.pointOfView({ lat, lng, altitude: newAltitude });
         } else {
@@ -55,15 +57,16 @@ const InteractiveGlobe = ({ setCountryToDisplay, viewType, width }) => {
             // Polygons Layer
             polygonsData={countries.features.filter((d) => d.properties.ISO_A2)}
             polygonAltitude={(d) => d === hover ? 0.12 : 0.06}
-            polygonCapColor={d => {
+            polygonLabel={(d) => d.properties.NAME_LONG}
+            polygonCapColor={(d) => {
                 if (viewType === 'megadiverse' && MEGADIVERSE_COUNTRIES.includes(d.properties.NAME_LONG)) {
-                    return 'steelblue';
+                    return '#b2967d';
                 } else if (viewType === 'endangered') {
                     return endangeredRatioToColor(endangeredRatios.get(d.properties.NAME_LONG) || 0);
                 } else if (viewType === 'species') {
                     return totalSpeciesToColor(totalSpecies.get(d.properties.NAME_LONG) || 0);
                 } else {
-                    return d === hover ? 'steelblue' : 'white';
+                    return d === hover ? 'white' : 'white';
                 }
             }}
             polygonSideColor={() => 'rgba(0, 100, 0, 0.15'}

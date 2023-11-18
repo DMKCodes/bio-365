@@ -43,7 +43,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                     target='globe-tooltip'
                     placement='bottom'
                 >
-                    The globe tool is not optimized for use on small screens. Please bear with us as we work on a permanent solution.<br /><br /><b>NOTE</b>: Resizing the screen requires a page refresh to rerender the canvas.
+                    The globe tool is not optimized for mobile use. Please bear with us as we work on a permanent solution.<br /><br /><b>NOTE</b>: Resizing the screen requires a page refresh to rerender the canvas.
                 </Tooltip>
                 <h5 className='pf mx-auto mb-0 fw-bold w-100 text-center'>{title}</h5>
                 <span 
@@ -74,10 +74,15 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                             Fungi: {speciesData.fungusSpecies.toLocaleString('en-US')}<br />
                             Chromists: {speciesData.chromistSpecies.toLocaleString('en-US')}<br /><br />
                             Total: {speciesData.totalSpecies.toLocaleString('en-US')}<br /><br />
+
                             {SPECIES_CONTENT.map((text, index) => {
                                 const textWithKeywords = defineKeywords(text);
                                 return <span key={index}>{textWithKeywords}</span>;
                             })}
+
+                            <small className='d-block mt-3'>
+                                <i>Darker green indicates a higher number of unique species.</i>
+                            </small>
                         </p>
                     ) : viewType === 'endangered' && endangeredData ? (
                         <p>
@@ -96,6 +101,10 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                                 const textWithKeywords = defineKeywords(text);
                                 return <p key={index}>{textWithKeywords}</p>;
                             })}
+
+                            <small className='d-block mt-3'>
+                                <i>Darker red indicates a higher ratio of endangered to total species.</i>
+                            </small>
                         </p>
                     ) : viewType === 'megadiverse' ? (
                         <span>
@@ -103,6 +112,10 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                                 const textWithKeywords = defineKeywords(text);
                                 return <p key={index}>{textWithKeywords}</p>;
                             })}
+
+                            <small className='d-block mt-3'>
+                                <i>Countries in brown are considered megadiverse.</i>
+                            </small>
                         </span>
                     ) : null}
                 </CardText>
