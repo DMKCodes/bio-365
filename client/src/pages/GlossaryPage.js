@@ -13,13 +13,14 @@ import {
 } from 'reactstrap';
 import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
+import TopButton from '../components/TopButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { GLOSSARY_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
-import { GLOSSARY } from '../app/shared/GLOSSARY';
+import { formatGlossary } from '../app/shared/GLOSSARY';
 
 const GlossaryPage = () => {
-    const [items, setItems] = useState([]);
+    const [allItems, setAllItems] = useState([]);
     const [currentLetter, setCurrentLetter] = useState(null);
 
     const [searchQuery, setSearchQuery] = useState('');
@@ -28,38 +29,16 @@ const GlossaryPage = () => {
     const [searchResults, setSearchResults] = useState(null);
     const [noResults, setNoResults] = useState(false);
 
-    const organizeTerms = (terms) => {
-        // Filter out duplicates
-        const filteredItems = terms.filter((item, index, self) =>
-            index === self.findIndex((t) => (
-                t.term.slice(0, 6) === item.term.slice(0, 6)
-            ))
-        );
-   
-        // Sort alphabetically
-        const sortedItems = filteredItems.sort((a, b) => a.term.localeCompare(b.term));
-
-        return sortedItems;
-    };
-
     useEffect(() => {
-        const organizedGlossary = organizeTerms(GLOSSARY);
-
-        // Group items by the first letter
-        const groupedItems = organizedGlossary.reduce((grouped, item) => {
-            const letter = item.term.charAt(0).toUpperCase();
-
-            if (!grouped[letter]) {
-                grouped[letter] = [];
-            }
-
-            grouped[letter].push(item);
-            return grouped;
-        }, {});
-
-        setItems(groupedItems);
-        setCurrentLetter(Object.keys(groupedItems)[0]);
+        const glossary = formatGlossary();
+        setAllItems(glossary);
     }, []);
+
+    const populatePagination = () => {
+        return Array.from(
+            new Set(allItems.map(item => item.term[0].toUpperCase()))
+        );
+    };
 
     const handleLetterClick = (letter) => {
         setCurrentLetter(letter);
@@ -79,17 +58,17 @@ const GlossaryPage = () => {
             setSearchPerformed(true);
 
             // Filter out glossary items w/ no matching strings
-            const filteredItems = GLOSSARY.filter((item) => 
-                item.term.toLowerCase().includes(searchQuery.toLowerCase())
+            const filteredItems = allItems.filter((item) => 
+                item.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                item.definition.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                item.source.toLowerCase().includes(searchQuery.toLowerCase())
             );
 
             if (!filteredItems[0]) {
                 setNoResults(true);
-                return;
             } else {
                 setNoResults(false);
-                const organizedItems = organizeTerms(filteredItems);
-                setSearchResults(organizedItems);
+                setSearchResults(filteredItems);
             }
         }
     };
@@ -98,7 +77,7 @@ const GlossaryPage = () => {
         setSearchPerformed(false);
         setNoResults(false);
         setSearchQuery('');
-        setCurrentLetter('A');
+        setCurrentLetter(null);
     };
 
     return (
@@ -142,13 +121,29 @@ const GlossaryPage = () => {
                 <Row className='mt-3 d-flex justify-content-center'>
                     <Col lg='6' md='8' xs='10' className='d-flex justify-content-center'>
                         <Pagination className='pagination'>
-                            {Object.keys(items).map((letter) => (
+                            <PaginationItem
+                                active={!currentLetter}
+                                className='me-3'
+                            >
+                                <PaginationLink
+                                    onClick={() => {
+                                        setCurrentLetter(null);
+                                    }}
+                                    className='rounded-0'
+                                >
+                                    All
+                                </PaginationLink>
+                            </PaginationItem>
+                            {populatePagination().map((letter) => (
                                 <PaginationItem 
                                     key={letter} 
                                     active={currentLetter === letter}
                                 >
                                     <PaginationLink 
-                                        onClick={() => handleLetterClick(letter)} 
+                                        onClick={() => {
+                                            console.log(letter); 
+                                            handleLetterClick(letter)
+                                        }} 
                                         className='rounded-0'
                                     >
                                         {letter}
@@ -161,8 +156,8 @@ const GlossaryPage = () => {
 
                 <Row className='mb-5'>
                     {noResults ? (
-                        <div className='text-center'>
-                            <h5>No results...</h5>
+                        <div className='text-center mt-5'>
+                            <h3>No results found for <i>{searchQuery}</i>.</h3>
                         </div>
                     ) : searchPerformed ? (
                         searchResults.map((item, index) => {
@@ -174,18 +169,32 @@ const GlossaryPage = () => {
                                 </div>
                             );
                         })
-                    ) : items[currentLetter] ? (
-                        items[currentLetter].map((item, index) => {
+                    ) : currentLetter ? (
+                        allItems.filter((item) => item.term.charAt(0).toUpperCase() === currentLetter)
+                            .map((item, index) => {
+                                return (
+                                    <div key={index} className='my-4'>
+                                        <h2 className='pf'>{item.term}</h2>
+                                        <p className='mb-2'>{item.definition}</p>
+                                        <p>- {item.source}</p>
+                                    </div>
+                                );
+                            }
+                        )
+                    ) : (
+                        allItems.map((item, index) => {
                             return (
-                                <div key={index} className='my-3'>
+                                <div key={index} className='my-4'>
                                     <h2 className='pf'>{item.term}</h2>
                                     <p className='mb-2'>{item.definition}</p>
                                     <p>- {item.source}</p>
                                 </div>
-                            );
+                            )
                         })
-                    ) : null}
+                    )}
                 </Row>
+
+                <TopButton />
             </Container>
         </Container>
     );

@@ -350,3 +350,15 @@ export const GLOSSARY_DICT = GLOSSARY.reduce((dict, item) => {
     dict[item.term] = item;
     return dict;
 }, {});
+
+export const formatGlossary = () => {
+    const similarTermsRemoved = GLOSSARY.filter((item, index, self) =>
+        index === self.findIndex((t) => (
+            t.term.slice(0, 6) === item.term.slice(0, 6)
+        )
+    ));
+
+    const sortedItems = similarTermsRemoved.sort((a, b) => a.term.localeCompare(b.term));
+
+    return sortedItems;
+};
