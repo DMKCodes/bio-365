@@ -53,6 +53,8 @@ const GlossaryPage = () => {
     };
     
     const handleSearchSubmit = (event) => {
+        setCurrentLetter(null);
+
         if ((event.type === 'click' || event.key === 'Enter') && searchQuery) {
             event.preventDefault();
             setSearchPerformed(true);
@@ -122,7 +124,7 @@ const GlossaryPage = () => {
                     <Col lg='6' md='8' xs='10' className='d-flex justify-content-center'>
                         <Pagination className='pagination'>
                             <PaginationItem
-                                active={!currentLetter}
+                                active={!currentLetter && !searchPerformed}
                                 className='me-3'
                             >
                                 <PaginationLink
@@ -163,8 +165,8 @@ const GlossaryPage = () => {
                         searchResults.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <h2 className='pf'>{item.term}</h2>
-                                    <p className='mb-0'>{item.definition}</p>
+                                    <h2 className='pf fw-bold'>{item.term}</h2>
+                                    <p>{item.definition}</p>
                                     <p>- {item.source}</p>
                                 </div>
                             );
@@ -174,24 +176,24 @@ const GlossaryPage = () => {
                             .map((item, index) => {
                                 return (
                                     <div key={index} className='my-4'>
-                                        <h2 className='pf'>{item.term}</h2>
-                                        <p className='mb-2'>{item.definition}</p>
+                                        <h2 className='pf fw-bold'>{item.term}</h2>
+                                        <p>{item.definition}</p>
                                         <p>- {item.source}</p>
                                     </div>
                                 );
                             }
                         )
-                    ) : (
+                    ) : !currentLetter && !searchPerformed ? (
                         allItems.map((item, index) => {
                             return (
                                 <div key={index} className='my-4'>
                                     <h2 className='pf fw-bold'>{item.term}</h2>
-                                    <p className='mb-2'>{item.definition}</p>
+                                    <p>{item.definition}</p>
                                     <p>- {item.source}</p>
                                 </div>
                             )
                         })
-                    )}
+                    ) : null}
                 </Row>
 
                 <TopButton />
