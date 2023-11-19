@@ -185,7 +185,7 @@ const GlossaryPage = () => {
                         allItems.map((item, index) => {
                             return (
                                 <div key={index} className='my-4'>
-                                    <h2 className='pf'>{item.term}</h2>
+                                    <h2 className='pf fw-bold'>{item.term}</h2>
                                     <p className='mb-2'>{item.definition}</p>
                                     <p>- {item.source}</p>
                                 </div>

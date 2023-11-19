@@ -633,10 +633,6 @@ html {
   box-shadow: none;
 }
 
-.resource-category {
-  cursor: pointer;
-}
-
 .resource-card {
   min-height: 300px;
   max-width: 300px;
@@ -647,12 +643,24 @@ html {
   box-shadow: none;
 }
 
-.resource-searchbar-icons {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer
+.resource-category-nav .container-fluid {
+  padding-left: 0;
+}
+
+.resource-category-nav .nav-item {
+  cursor: pointer;
+}
+
+.resource-category-nav .nav-item.active {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3em;
+  text-decoration-color: #198754;
+}
+
+.resource-category-nav .nav-item:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.3em;
+  text-decoration-color: #198754;
 }
 
 /* Donations Section */

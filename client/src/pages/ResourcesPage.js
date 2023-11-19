@@ -4,11 +4,10 @@ import Header from '../components/Header';
 import VideoBackground from '../components/VideoBackground';
 import ResourcesList from '../features/resources/ResourcesList';
 import ResourcesSidebar from '../features/resources/ResourcesSidebar';
-import TopButton from '../components/TopButton';
 import { RESOURCE_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 
 const ResourcesPage = () => {
-    const [category, setCategory] = useState('All Resources');
+    const [activeCategory, setActiveCategory] = useState('All Resources');
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
     return (
@@ -25,7 +24,8 @@ const ResourcesPage = () => {
                         xl='2'
                     >
                         <ResourcesSidebar
-                            setCategory={setCategory}
+                            activeCategory={activeCategory}
+                            setActiveCategory={setActiveCategory}
                             sidebarCollapsed={sidebarCollapsed}
                             setSidebarCollapsed={setSidebarCollapsed}
                         />
@@ -36,7 +36,7 @@ const ResourcesPage = () => {
                         md={sidebarCollapsed ? '10' : '9'}
                         xl='10'
                     >
-                        <ResourcesList category={category} />
+                        <ResourcesList activeCategory={activeCategory} />
                     </Col>
                 </Row>
 

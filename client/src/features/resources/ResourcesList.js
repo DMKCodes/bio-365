@@ -3,16 +3,16 @@ import { Row, Col } from 'reactstrap';
 import ResourceCard from './ResourceCard';
 import { RESOURCES } from '../../app/shared/RESOURCES';
 
-const ResourcesList = ({ category }) => {
+const ResourcesList = ({ activeCategory }) => {
     const [filteredResources, setFilteredResources] = useState(RESOURCES);
 
     useEffect(() => {
-        if (category !== 'All Resources') {
-            setFilteredResources(RESOURCES.filter((resource) => resource.category === category));         
+        if (activeCategory !== 'All Resources') {
+            setFilteredResources(RESOURCES.filter((resource) => resource.category === activeCategory));         
         } else {
             setFilteredResources(RESOURCES);
         }
-    }, [category]);
+    }, [activeCategory]);
 
     return (
         <Row>
