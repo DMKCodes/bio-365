@@ -28,18 +28,18 @@ const ImperviousIntroduction = ({ isMobileView }) => {
     return (
         <Container fluid>
             {isMobileView ? (
-                <div className='text-center'>
+                <div className='text-center px-1'>
                     {IMPERVIOUS_STORY_INTRO_CONTENT &&
-                        IMPERVIOUS_STORY_INTRO_CONTENT.map((content) => {
+                        IMPERVIOUS_STORY_INTRO_CONTENT.map((content, index) => {
                             return (
-                                <Row key={content.index} className='story-mobile-row'>
+                                <Row key={`intro-mobile-${index}`} className='story-mobile-row'>
                                     <h5 className='text-uppercase fw-bold'>
                                         {content.text.header}
                                     </h5>
                                     {content.text.body.map((text, index) => {
                                         const textWithKeywords = defineKeywords(text);
                                         return (
-                                            <p key={index}>
+                                            <p key={`intro-mobile-text-${index}`}>
                                                 {textWithKeywords}
                                             </p>
                                         )
@@ -99,18 +99,17 @@ const ImperviousIntroduction = ({ isMobileView }) => {
                         <div className='story-main-content'>
                             <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                                 {IMPERVIOUS_STORY_INTRO_CONTENT &&
-                                    IMPERVIOUS_STORY_INTRO_CONTENT.map((content) => {
+                                    IMPERVIOUS_STORY_INTRO_CONTENT.map((content, index) => {
                                         return (
-                                            <Step data={content.index} key={content.index}>
+                                            <Step key={`intro-content-${index}`} data={content.index}>
                                                 <div className='story-step py-3 text-center'>
                                                     <h5 className='text-uppercase fw-bold'>
                                                         {content.text.header}
                                                     </h5>
-                                                    {content.text.body.map((text) => {
+                                                    {content.text.body.map((text, index) => {
                                                         const textWithKeywords = defineKeywords(text);
-
                                                         return (
-                                                            <p className='mx-5' key={content.index}>
+                                                            <p  key={`intro-content-text-${index}`} className='mx-5'>
                                                                 {textWithKeywords}
                                                             </p>
                                                         );
@@ -130,9 +129,9 @@ const ImperviousIntroduction = ({ isMobileView }) => {
                         <div className='story-media-content d-flex flex-column justify-content-center align-items-center'>
                             {IMPERVIOUS_STORY_INTRO_CONTENT &&
                                 IMPERVIOUS_STORY_INTRO_CONTENT.filter((content) => currentStepIndex === content.index)
-                                .map((content) => {
+                                .map((content, index) => {
                                     return (
-                                        <Fragment key={content.index}>
+                                        <Fragment key={`intro-media-${index}`}>
                                             {currentStepIndex === content.index ? (
                                                 <div className='d-flex flex-column align-items-center justify-content-center w-100 h-100'>
                                                     {content.media.image ? (
@@ -142,7 +141,9 @@ const ImperviousIntroduction = ({ isMobileView }) => {
                                                             className='story-media-img img-fluid mb-2'
                                                         />
                                                     ) : content.media.video ? (
-                                                        <YoutubeEmbed id={content.media.video} />
+                                                        <div className='story-video-wrapper mb-2'>
+                                                            <YoutubeEmbed id={content.media.video} />
+                                                        </div>
                                                     ) : content.media.chart && content.media.chartType === 'line' ? (
                                                         <Fragment>
                                                             <h3>{content.media.chartTitle}</h3>

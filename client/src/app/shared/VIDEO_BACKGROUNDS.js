@@ -15,7 +15,6 @@ export const HOME_PAGE_VIDEO_BG = {
         "Dive in to learn more about our planet's incredible wildlife, the challenges it faces, and what we can do to help.",
         'Explore, learn, protect — today and every day.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };
@@ -27,7 +26,6 @@ export const LEARN_PAGE_VIDEO_BG = {
     content: [
         'Biodiversity is the term we use to describe all the different kinds of life on Earth—the variety of animals, plants, fungi, and even microorganisms like bacteria that make up our natural world. These species work together in ecosystems, like intricate webs, to maintain balance and support life.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };
@@ -39,7 +37,6 @@ export const ARTICLES_PAGE_VIDEO_BG = {
     content: [
         'The latest in biodiversity news and scientific research, updated daily.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };
@@ -51,7 +48,6 @@ export const RESOURCE_PAGE_VIDEO_BG = {
     content: [
         'A growing compendium of conservation resources.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };
@@ -63,7 +59,6 @@ export const GLOSSARY_PAGE_VIDEO_BG = {
     content: [
         'The A-Z of biodiversity.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };
@@ -76,7 +71,6 @@ export const STORY_PAGE_VIDEO_BG = {
     content: [
         'Bite-sized, scrollable looks at the challenges facing biodiversity around the world.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };
@@ -88,7 +82,6 @@ export const IMPERVIOUS_VIDEO_BG = {
     content: [
         'How our sprawling cities lead the attack on wildlife.'
     ],
-    author: 'Douglas Kissack',
     button: null,
     buttonLink: null
 };
@@ -100,7 +93,6 @@ export const DONATION_VIDEO_BG = {
     content: [
         'Support the Biodiversity365 platform or donate directly to conservation groups around the world.'
     ],
-    author: null,
     button: null,
     buttonLink: null
 };

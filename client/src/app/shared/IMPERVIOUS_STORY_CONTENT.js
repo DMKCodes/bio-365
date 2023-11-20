@@ -44,6 +44,16 @@ import loveCanalProtest from '../media/love-canal-protest.jpg';
 import loisGibbs from '../media/lois-gibbs.jpg';
 import superfundAct from '../media/superfund-act.png';
 import somethingGreat from '../media/do-something-great.jpg';
+import authorImg from '../media/me.png';
+
+export const IMPERVIOUS_STORY_METADATA = {
+    author: 'Douglas Kissack',
+    authorImg,
+    publishDate: '20 Nov 2023',
+    revision: 0,
+    revisedDate: null,
+    readLength: 23,
+};
 
 export const IMPERVIOUS_STORY_INTRO_CONTENT = [
     {

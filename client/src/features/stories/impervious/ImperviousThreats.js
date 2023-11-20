@@ -17,11 +17,11 @@ const ImperviousThreats = ({ isMobileView }) => {
     return (
         <Container fluid>
             {isMobileView ? (
-                <div className='text-center'>
+                <div className='text-center px-1'>
                     {IMPERVIOUS_STORY_THREATS_CONTENT &&
-                        IMPERVIOUS_STORY_THREATS_CONTENT.map((content) => {
+                        IMPERVIOUS_STORY_THREATS_CONTENT.map((content, index) => {
                             return (
-                                <Row key={content.index} className='story-mobile-row'>
+                                <Row key={`threats-mobile-${index}`} className='story-mobile-row'>
                                     <div>
                                         <h5 className='text-uppercase fw-bold'>
                                             {content.text.header}
@@ -29,7 +29,7 @@ const ImperviousThreats = ({ isMobileView }) => {
                                         {content.text.body.map((text, index) => {
                                             const textWithKeywords = defineKeywords(text);
                                             return (
-                                                <p key={index}>
+                                                <p key={`threats-mobile-text-${index}`}>
                                                     {textWithKeywords}
                                                 </p>
                                             )
@@ -82,18 +82,17 @@ const ImperviousThreats = ({ isMobileView }) => {
                         <div className='story-main-content'>
                             <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                                 {IMPERVIOUS_STORY_THREATS_CONTENT &&
-                                    IMPERVIOUS_STORY_THREATS_CONTENT.map((content) => {
+                                    IMPERVIOUS_STORY_THREATS_CONTENT.map((content, index) => {
                                         return (
-                                            <Step data={content.index} key={content.index}>
+                                            <Step key={`threats-content-${index}`} data={content.index}>
                                                 <div className='story-step py-3 text-center'>
                                                     <h5 className='text-uppercase fw-bold'>
                                                         {content.text.header}
                                                     </h5>
-                                                    {content.text.body.map((text) => {
+                                                    {content.text.body.map((text, index) => {
                                                         const textWithKeywords = defineKeywords(text);
-
                                                         return (
-                                                            <p className='mx-5' key={content.index}>
+                                                            <p key={`threats-content-text-${index}`} className='mx-5'>
                                                                 {textWithKeywords}
                                                             </p>
                                                         );
@@ -113,9 +112,9 @@ const ImperviousThreats = ({ isMobileView }) => {
                         <div className='story-media-content d-flex flex-column justify-content-center align-items-center'>
                             {IMPERVIOUS_STORY_THREATS_CONTENT &&
                                 IMPERVIOUS_STORY_THREATS_CONTENT.filter((content) => currentStepIndex === content.index)
-                                .map((content) => {
+                                .map((content, index) => {
                                     return (
-                                        <Fragment key={content.index}>
+                                        <Fragment key={`threats-media-${index}`}>
                                             {currentStepIndex === content.index ? (
                                                 <div className='d-flex flex-column align-items-center justify-content-center w-100 h-100'>
                                                     {content.media.image ? (

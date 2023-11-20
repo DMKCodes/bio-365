@@ -17,6 +17,7 @@ import {
 } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import authorImg from '../../../app/media/me.png';
 
 const ImperviousSummary = () => {
     const [accordionOpen, setAccordionOpen] = useState([]);
@@ -37,17 +38,16 @@ const ImperviousSummary = () => {
         <Container>
             <Row className='mb-5'>
                 <Col lg='8' className='pe-4 mb-5 mb-lg-0'>
-                    <h3 className='fw-bold text-center mb-3'>TL;DR</h3>
                     {IMPERVIOUS_STORY_SUMMARY &&
                         IMPERVIOUS_STORY_SUMMARY.map((content, index) => {
                             return (
-                                <Fragment key={index}>
+                                <Fragment key={`summary-content-${index}`}>
                                     <h5 className='fw-bold'>{content.header}</h5>
                                     <ul>
                                         {content.bullets.map((bullet, index) => {
                                             const textWithKeywords = defineKeywords(bullet);
                                             return (
-                                                <li className='mb-2' key={index}>{textWithKeywords}</li>
+                                                <li key={`summary-content-text-${index}`} className='mb-2'>{textWithKeywords}</li>
                                             );
                                         })}
                                     </ul>
@@ -57,7 +57,16 @@ const ImperviousSummary = () => {
                     }
                 </Col>
                 <Col lg='4' className='d-flex flex-column align-items-center ps-4'>
-                    <h3 className='fw-bold mb-3'>Support</h3>
+                    <h3 className='fw-bold mb-3'>Author</h3>
+                    <img 
+                        src={authorImg} 
+                        alt='headshot of the author' 
+                        className='story-author-img rounded-circle border-dark mb-2'
+                    />
+                    <p className='mb-0'>Douglas Kissack</p>
+                    <small>20 Nov 2023</small>
+
+                    <h3 className='fw-bold mb-3 mt-5'>Support</h3>
                     <small className='text-center mb-2 w-75'>
                         If you enjoyed this story, please consider making a donation to Bio365 or one of our suggested conservation groups.
                     </small>
@@ -77,7 +86,7 @@ const ImperviousSummary = () => {
                         >
                             {IMPERVIOUS_STORY_SOURCES.map((item, index) => {
                                 return (
-                                    <AccordionItem key={index}>
+                                    <AccordionItem key={`summary-sources-headers-${index}`}>
                                         <AccordionHeader targetId={`${index}`}>
                                             {item.category}
                                         </AccordionHeader>
@@ -91,7 +100,7 @@ const ImperviousSummary = () => {
                                                     </div>
                                                     {item.sources.map((source, index) => {
                                                         return (
-                                                            <div key={index} className='mb-2'>
+                                                            <div key={`summary-sources-${index}`} className='mb-2'>
                                                                 <small>{source}</small>
                                                             </div>
                                                         );
@@ -100,7 +109,7 @@ const ImperviousSummary = () => {
                                             }
                                             {item.sources.map((source, index) => {
                                                 return (
-                                                    <div key={index} className='mb-3'>
+                                                    <div key={`summary-sources-names-${index}`} className='mb-3'>
                                                         {source.name &&
                                                             <small className='mb-1'>
                                                                 <a

@@ -38,11 +38,6 @@ const VideoBackground = ({ video }) => {
                         </h5>
                     );
                 })}
-                {video.author &&
-                    <h5 className='video-overlay-body text-center'>
-                        Created by {video.author}
-                    </h5>
-                }
             </div>
             {!isPaused ? (
                 <Button

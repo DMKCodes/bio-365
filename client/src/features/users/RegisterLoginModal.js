@@ -31,7 +31,7 @@ const RegisterLoginModal = ({ currentUser }) => {
                 <Nav tabs justified>
                     <NavItem>
                         <NavLink
-                            className={activeTab === 'login' ? 'active' : ''}
+                            className={activeTab === 'login' ? 'active rounded-0' : 'rounded-0'}
                             onClick={() => setActiveTab('login')}
                             style={{ cursor: 'pointer' }}
                         >
@@ -40,7 +40,7 @@ const RegisterLoginModal = ({ currentUser }) => {
                     </NavItem>
                     <NavItem>
                         <NavLink
-                            className={activeTab === 'register' ? 'active' : ''}
+                            className={activeTab === 'register' ? 'active rounded-0' : 'rounded-0'}
                             onClick={() => setActiveTab('register')}
                             style={{ cursor: 'pointer' }}
                         >
