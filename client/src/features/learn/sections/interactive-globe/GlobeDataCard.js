@@ -61,14 +61,12 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                 </CardTitle>
                 <CardText className={expanded ? 'd-block px-2 pt-2' : 'd-none'}>
                     {countryToDisplay && viewType !== 'megadiverse' &&
-                        <CardTitle>
-                            <h5 className='pf mb-0'>
-                                <b>{countryToDisplay.toUpperCase()}</b>
-                            </h5>
-                        </CardTitle>
+                        <span className='pf d-block h5 mb-2'>
+                            <b>{countryToDisplay.toUpperCase()}</b>
+                        </span>
                     }
                     {viewType === 'species' && speciesData ? (
-                        <p>
+                        <span>
                             Animals: {speciesData.animalSpecies.toLocaleString('en-US')}<br />
                             Plants: {speciesData.plantSpecies.toLocaleString('en-US')}<br />
                             Fungi: {speciesData.fungusSpecies.toLocaleString('en-US')}<br />
@@ -83,9 +81,9 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                             <small className='d-block mt-3'>
                                 <i>Darker green indicates a higher number of unique species.</i>
                             </small>
-                        </p>
+                        </span>
                     ) : viewType === 'endangered' && endangeredData ? (
-                        <p>
+                        <span>
                             Amphibians: {endangeredData.amphibians.toLocaleString('en-US')}<br />
                             Birds: {endangeredData.birds.toLocaleString('en-US')}<br />
                             Fish: {endangeredData.fish.toLocaleString('en-US')}<br />
@@ -99,18 +97,18 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                             
                             {ENDANGERED_CONTENT.map((text, index) => {
                                 const textWithKeywords = defineKeywords(text);
-                                return <p key={index}>{textWithKeywords}</p>;
+                                return <span key={index}>{textWithKeywords}</span>;
                             })}
 
                             <small className='d-block mt-3'>
                                 <i>Darker red indicates a higher ratio of endangered to total species.</i>
                             </small>
-                        </p>
+                        </span>
                     ) : viewType === 'megadiverse' ? (
                         <span>
                             {MEGADIVERSE_CONTENT.map((text, index) => {
                                 const textWithKeywords = defineKeywords(text);
-                                return <p key={index}>{textWithKeywords}</p>;
+                                return <span key={index}>{textWithKeywords}</span>;
                             })}
 
                             <small className='d-block mt-3'>

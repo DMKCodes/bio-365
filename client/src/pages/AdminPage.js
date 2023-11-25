@@ -13,7 +13,6 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const AdminPage = () => {
     const currentUser = useSelector(selectCurrentUser);
-    console.log(currentUser);
     const isLoading = useSelector(selectLoading);
     const errMsg = useSelector(selectError);
 

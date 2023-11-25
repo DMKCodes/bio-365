@@ -143,7 +143,6 @@ const GlossaryPage = () => {
                                 >
                                     <PaginationLink 
                                         onClick={() => {
-                                            console.log(letter); 
                                             handleLetterClick(letter)
                                         }} 
                                         className='rounded-0'

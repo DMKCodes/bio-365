@@ -59,7 +59,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
                     console.log(error);
                 }
             }
-        })
+        }),
     })
 });
 

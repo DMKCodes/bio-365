@@ -48,7 +48,6 @@ const LoginForm = ({ setModalOpen, setError, setErrorMsg }) => {
                 setError(false);
             }, 2000);
         } catch (error) {
-            console.log(error);
             setError(true);
             if (!error?.data) {
                 setErrorMsg('No server response.');

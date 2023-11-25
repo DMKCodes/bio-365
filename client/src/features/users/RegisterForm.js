@@ -93,8 +93,6 @@ const RegisterForm = ({ setModalOpen, setActiveTab, setError, setErrorMsg }) => 
         >
             {(formik) => {
                 const { errors, touched } = formik;
-                console.log(errors);
-                console.log(touched);
                 return (
                     <Form className='p-3'>
                         <FormGroup row>

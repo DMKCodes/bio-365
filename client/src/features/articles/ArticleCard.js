@@ -21,6 +21,7 @@ import {
     CardText,
     CardFooter
 } from 'reactstrap';
+import ToastNotification from '../../components/ToastNotification';
 import getArticleImg from '../../utils/getArticleImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -35,6 +36,10 @@ import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-ic
 const ArticleCard = ({ article, dashboard }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
+
+    const [isError, setIsError] = useState(false);
+    const [errMsg, setErrMsg] = useState('');
+
     const [expanded, setExpanded] = useState(false);
     const [image, setImage] = useState(null);
     const [readingListDisplay, setReadingListDisplay] = useState(true);
@@ -75,7 +80,8 @@ const ArticleCard = ({ article, dashboard }) => {
             dispatch(addSavedArticle(article));
             setIsSaved(true);
         } catch (error) {
-            console.log(error);
+            setIsError(true);
+            setErrMsg('An error occurred while saving this article. Please try again.');
         }
     };
 
@@ -91,8 +97,13 @@ const ArticleCard = ({ article, dashboard }) => {
                 setReadingListDisplay(false);
             }
         } catch (error) {
-            console.log(error);
+            setIsError(true);
+            setErrMsg('An error occurred while removing this article. Please try again.');
         }
+    };
+    
+    const handleCloseToast = () => {
+        setIsError(null);
     };
 
     return (
@@ -187,6 +198,10 @@ const ArticleCard = ({ article, dashboard }) => {
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-2' />
                 </Button>
             </CardFooter>
+            
+            {isError &&
+                <ToastNotification message={errMsg} isError={isError} onClose={handleCloseToast}  />
+            }
         </Card>
     );
 };

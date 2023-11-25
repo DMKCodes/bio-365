@@ -17,7 +17,8 @@ const PersistLogin = () => {
                 try {
                     await refresh().unwrap();
                 } catch (error) {
-                    console.log(error);
+                    console.error(error);
+                    alert('An error occurred while retrieving your saved login. Please try logging in again.');
                 }
             }
 

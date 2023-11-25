@@ -11,6 +11,7 @@ import {
     useAddArticleMutation,
     useDeleteArticleMutation,
 } from '../users/articlesApiSlice';
+import ToastNotification from '../../components/ToastNotification';
 import getArticleImg from '../../utils/getArticleImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare, faBookmark } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +20,10 @@ import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-ic
 const FeaturedArticle = ({ article }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
+
+    const [isError, setIsError] = useState(false);
+    const [errMsg, setErrMsg] = useState('');
+
     const [image, setImage] = useState(null);
 
     const {
@@ -54,7 +59,8 @@ const FeaturedArticle = ({ article }) => {
             await postArticle({ _id, article }).unwrap();
             dispatch(addSavedArticle(article));
         } catch (error) {
-            console.log(error);
+            setIsError(true);
+            setErrMsg('An error occurred while saving this article. Please try again.');
         }
     };
 
@@ -66,8 +72,13 @@ const FeaturedArticle = ({ article }) => {
             dispatch(removeSavedArticle(title));
             setIsSaved(false);
         } catch (error) {
-            console.log(error);
+            setIsError(true);
+            setErrMsg('An error occurred while removing this article. Please try again.');
         }
+    };
+
+    const handleCloseToast = () => {
+        setIsError(null);
     };
 
     return (
@@ -126,6 +137,10 @@ const FeaturedArticle = ({ article }) => {
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='sm' className='ms-2' />
                 </Button>
             </Col>
+
+            {isError &&
+                <ToastNotification message={errMsg} isError={isError} onClose={handleCloseToast}  />
+            }
         </Row>
     );
 };
