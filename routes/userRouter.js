@@ -136,11 +136,12 @@ userRouter.route('/:userId/articles')
 .post(authenticate.verifyUser, async (req, res, next) => {
     try {
         const user = await User.findById(req.params.userId);
+
         if (user) {
             const article = req.body.article;
 
             const isDuplicate = user.savedArticles.some(savedArticle => {
-                savedArticle.title === article.title
+                return savedArticle.title === article.title
             });
 
             if (isDuplicate) {
@@ -162,21 +163,20 @@ userRouter.route('/:userId/articles')
     } catch (err) {
         return next(err);
     }
-});
-
-userRouter.route('/:userId/articles/:articleId')
+})
 .delete(authenticate.verifyUser, async (req, res, next) => {
     try {
         const user = await User.findById(req.params.userId);
+
         if (user) {
-            const articleIndex = await user.savedArticles.findIndex(
-                (article) => article._id.toString() === req.params.articleId
+            const articleToDelete = req.body.article;
+            const index = user.savedArticles.findIndex(
+                article => article.title === articleToDelete.title
             );
 
-            if (articleIndex > -1) {
-                user.savedArticles.splice(articleIndex, 1);
+            if (index > -1) {
+                user.savedArticles.splice(index, 1);
                 await user.save();
-
                 res.status(200).json({ status: 'Article removed.' });
             } else {
                 res.status(404).json({ error: 'Article not found in saved articles.' });

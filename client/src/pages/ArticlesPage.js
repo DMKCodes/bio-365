@@ -39,7 +39,7 @@ const ArticlesPage = () => {
             dispatch(clearAllArticles());
             dispatch(setAllArticles(articlesWithHtmlRemoved));
             dispatch(setDisplayArticles(articlesWithHtmlRemoved));
-        }
+        };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);
 

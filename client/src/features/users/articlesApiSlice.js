@@ -13,10 +13,10 @@ export const articlesApiSlice = apiSlice.injectEndpoints({
             })
         }),
         deleteArticle: builder.mutation({
-            query: ({ _id, articleId, ...credentials }) => ({
-                url: `/users/${_id}/articles/${articleId}`,
+            query: ({ _id, article, ...credentials }) => ({
+                url: `/users/${_id}/articles`,
                 method: 'DELETE',
-                body: { ...credentials }
+                body: { article, ...credentials }
             })
         })
     })

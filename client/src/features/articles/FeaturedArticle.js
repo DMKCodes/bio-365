@@ -11,21 +11,15 @@ import {
     useAddArticleMutation,
     useDeleteArticleMutation,
 } from '../users/articlesApiSlice';
+import getArticleImg from '../../utils/getArticleImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faArrowUpRightFromSquare, 
-    faBookmark
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-icons';
-import Frontiers from '../../app/media/frontiers.png';
-import Plos from '../../app/media/plos.png';
-import SciDaily from '../../app/media/sciencedaily.jpg';
-import Conservation from '../../app/media/conservation.jpg';
-import DTE from '../../app/media/dte.png';
 
 const FeaturedArticle = ({ article }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
+    const [image, setImage] = useState(null);
 
     const {
         title,
@@ -44,22 +38,9 @@ const FeaturedArticle = ({ article }) => {
         setIsSaved(checkSaved);
     }, [checkSaved]);
 
-    const [image, setImage] = useState(null);
-
     useEffect(() => {
-        if (article.image) {
-            setImage(article.image);
-        } else if (article.publisher === 'Frontiers') {
-            setImage(Frontiers);
-        } else if (article.publisher === 'PLOS ONE Biodiversity') {
-            setImage(Plos);
-        } else if (article.publisher === 'ScienceDaily') {
-            setImage(SciDaily);
-        } else if (article.publisher === 'Conservation International') {
-            setImage(Conservation);
-        } else if (article.publisher === 'Down To Earth') {
-            setImage(DTE);
-        }
+        const articleImg = getArticleImg(article);
+        setImage(articleImg);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [article]);
 
@@ -81,10 +62,7 @@ const FeaturedArticle = ({ article }) => {
         const { _id } = currentUser;
 
         try {
-            if (article._id) {
-                const articleId = article._id;
-                await deleteArticle({ _id, articleId }).unwrap();
-            }
+            await deleteArticle({ _id, article }).unwrap();
             dispatch(removeSavedArticle(title));
             setIsSaved(false);
         } catch (error) {

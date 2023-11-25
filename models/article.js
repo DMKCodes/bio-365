@@ -20,7 +20,7 @@ const articleSchema = new Schema({
     },
     snippet: {
         type: String,
-        required: true
+        required: false
     },
     category: {
         type: String,

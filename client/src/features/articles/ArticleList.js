@@ -10,11 +10,11 @@ const ArticleList = ({ articles, dashboard }) => {
     const pageSize = 16;
 
     if (!articles) {
-        return <p>Loading...</p>;
+        return <p>Loading....</p>;
     } else {
         return (
             <Container>
-                <Row className='mt-5 mt-md-5'>
+                <Row className='mt-5 px-3'>
                     <ArticlePagination 
                         pageSize={pageSize}
                         currentPage={currentPage}
@@ -53,7 +53,7 @@ const ArticleList = ({ articles, dashboard }) => {
                     ))}
                 </Row>
 
-                <Row className='my-5'>
+                <Row className='my-5 px-3'>
                     <ArticlePagination 
                         pageSize={pageSize}
                         currentPage={currentPage}

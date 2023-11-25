@@ -21,6 +21,7 @@ import {
     CardText,
     CardFooter
 } from 'reactstrap';
+import getArticleImg from '../../utils/getArticleImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faPlus, 
@@ -30,15 +31,12 @@ import {
     faEyeSlash
 } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-icons';
-import Frontiers from '../../app/media/frontiers.png';
-import Plos from '../../app/media/plos.png';
-import SciDaily from '../../app/media/sciencedaily.jpg';
-import Conservation from '../../app/media/conservation.jpg';
-import DTE from '../../app/media/dte.png';
 
 const ArticleCard = ({ article }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
+    const [expanded, setExpanded] = useState(false);
+    const [image, setImage] = useState(null);
 
     const {
         title,
@@ -58,25 +56,10 @@ const ArticleCard = ({ article }) => {
         setIsSaved(checkSaved);
     }, [checkSaved]);
 
-    const [expanded, setExpanded] = useState(false);
-
-    const [image, setImage] = useState(null);
-
     // If article has no image, use placeholder image.
     useEffect(() => {
-        if (article.image) {
-            setImage(article.image);
-        } else if (article.publisher === 'Frontiers') {
-            setImage(Frontiers);
-        } else if (article.publisher === 'PLOS ONE Biodiversity') {
-            setImage(Plos);
-        } else if (article.publisher === 'ScienceDaily') {
-            setImage(SciDaily);
-        } else if (article.publisher === 'Conservation International') {
-            setImage(Conservation);
-        } else if (article.publisher === 'Down To Earth') {
-            setImage(DTE);
-        }
+        const articleImg = getArticleImg(article);
+        setImage(articleImg);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [article]);
 
@@ -99,10 +82,7 @@ const ArticleCard = ({ article }) => {
         const { _id } = currentUser;
 
         try {
-            if (article._id) {
-                const articleId = article._id;
-                await deleteArticle({ _id, articleId }).unwrap();
-            }
+            await deleteArticle({ _id, article }).unwrap();
             dispatch(removeSavedArticle(title));
             setIsSaved(false);
         } catch (error) {
@@ -117,11 +97,11 @@ const ArticleCard = ({ article }) => {
                 className='article-image rounded-0'
                 src={image}
             />
-            <CardBody className='position-relative'>
+            <CardBody className='position-relative pt-2 px-2'>
                 {currentUser && isSaved ? (
                     <FontAwesomeIcon 
                         icon={faBookmark}
-                        className='article-card-bookmark text-success' 
+                        className='article-card-bookmark text-success float-end' 
                         size='lg'
                         onClick={() => {
                             delArticle();
@@ -130,7 +110,7 @@ const ArticleCard = ({ article }) => {
                 ) : currentUser && !isSaved ? (
                     <FontAwesomeIcon 
                         icon={faBookmarkEmpty}
-                        className='article-card-bookmark' 
+                        className='article-card-bookmark float-end' 
                         size='lg'
                         onClick={() => {
                             addArticle();
@@ -141,7 +121,7 @@ const ArticleCard = ({ article }) => {
                 <CardTitle 
                     title={title} 
                     tag='h5' 
-                    className='article-title pf fw-bold px-3 mt-0 mb-1'
+                    className='article-title pf fw-bold px-3 mt-4 mb-1'
                 >
                     {title}
                 </CardTitle>

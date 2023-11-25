@@ -24,21 +24,8 @@ const ReadingListPage = () => {
             <h1 className='pf fw-bold text-center'>Your Reading List</h1>
             {currentUser ? (
                 <ReadingList currentUser={currentUser} />
-            ) : isLoading ? (
-                <div>
-                    <p>Loading...</p>
-                </div>
-            ) : errMsg ? (
-                <div>
-                    <p>ERROR: {errMsg}</p>
-                    <Button color='success' className='rounded-0 mb-3 me-auto'>
-                        <NavLink className='nav-link' to='/'>
-                            <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
-                        </NavLink>
-                    </Button>
-                </div>
             ) : !currentUser ? (
-                <div>
+                <div className='text-center mt-5'>
                     <p>Please log in to view your reading list.</p>
                     <Button color='success' className='rounded-0 mb-3 me-auto'>
                         <NavLink className='nav-link' to='/'>
@@ -46,8 +33,21 @@ const ReadingListPage = () => {
                         </NavLink>
                     </Button>
                 </div>
+            ) : isLoading ? (
+                <div className='text-center mt-5'>
+                    <p>Getting your reading list...</p>
+                </div>
+            ) : errMsg ? (
+                <div className='text-center mt-5'>
+                    <p>ERROR: {errMsg}</p>
+                    <Button color='success' className='rounded-0 mb-3 me-auto'>
+                        <NavLink className='nav-link' to='/'>
+                            <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Return Home
+                        </NavLink>
+                    </Button>
+                </div>
             ) : 
-                <div>
+                <div className='text-center mt-5'>
                     <p>An unspecified error occurred.  Please try again later.</p>
                     <Button color='success' className='rounded-0 mb-3 me-auto'>
                         <NavLink className='nav-link' to='/'>
