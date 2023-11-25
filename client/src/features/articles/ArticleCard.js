@@ -32,11 +32,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-icons';
 
-const ArticleCard = ({ article }) => {
+const ArticleCard = ({ article, dashboard }) => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
     const [expanded, setExpanded] = useState(false);
     const [image, setImage] = useState(null);
+    const [readingListDisplay, setReadingListDisplay] = useState(true);
 
     const {
         title,
@@ -85,13 +86,17 @@ const ArticleCard = ({ article }) => {
             await deleteArticle({ _id, article }).unwrap();
             dispatch(removeSavedArticle(title));
             setIsSaved(false);
+
+            if (dashboard) {
+                setReadingListDisplay(false);
+            }
         } catch (error) {
             console.log(error);
         }
     };
 
     return (
-        <Card className='article-card my-2 rounded-0'>
+        <Card className={readingListDisplay ? 'article-card my-2 rounded-0' : 'd-none'}>
             <CardImg
                 alt='Article Image'
                 className='article-image rounded-0'
