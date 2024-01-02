@@ -11,12 +11,16 @@ const refreshTokenRouter = require('./routes/refreshTokenRouter');
 const userRouter = require('./routes/userRouter');
 const newsRouter = require('./routes/newsRouter');
 
+require('dotenv').config();
+
 // configure mongodb w/ mongoose
 const mongoose = require('mongoose');
-const connect = mongoose.connect('mongodb://127.0.0.1:27017/eco-update', {
+const connect = mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-});
+})
+.then(() => console.log('Connected to MongoDB Atlas'))
+.catch(err => console.error('Could not connect to MongoDB Atlas:', err));
 
 connect.then(() => console.log('Connected to server.'),
     err => console.log(err)
