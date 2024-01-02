@@ -1,15 +1,18 @@
 import { NavLink } from 'react-router-dom';
+import { useTheme } from '../../hooks/ThemeProvider';
 import { Button, Nav, Navbar, NavItem } from 'reactstrap';
 import { CATEGORIES } from '../../app/shared/RESOURCES';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const ResourcesSidebar = ({ activeCategory, setActiveCategory, sidebarCollapsed, setSidebarCollapsed }) => {
+    const { mode } = useTheme();
+
     return (
         <div className='resource-sidebar sticky-top'>
             <Button
                 outline
-                color='dark'
+                color={mode === 'dark' ? 'light' : 'dark'}
                 className='resource-sidebar-collapse-btn btn-sm rounded-0 mt-4'
                 onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
             >
@@ -32,7 +35,7 @@ const ResourcesSidebar = ({ activeCategory, setActiveCategory, sidebarCollapsed,
                                 <NavItem 
                                     key={index} 
                                     onClick={() => setActiveCategory(category.name)}
-                                    className={`nav-link text-dark ${category.name === activeCategory ? 'active' : ''}`}
+                                    className={`nav-link ${mode === 'dark' ? 'text-light' : 'text-dark'} ${category.name === activeCategory ? 'active' : ''}`}
                                 >
                                     {category.icon &&
                                         <FontAwesomeIcon icon={category.icon} className='me-2' fixedWidth />

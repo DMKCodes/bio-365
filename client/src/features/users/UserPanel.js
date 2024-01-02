@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useTheme } from '../../hooks/ThemeProvider';
 import { clearCurrentUser } from '../../features/users/userSlice';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -13,6 +14,8 @@ import ChangePasswordForm from './ChangePasswordForm';
 import ChangeEmailForm from './ChangeEmailForm';
 
 const UserPanel = ({ currentUser }) => {
+    const { mode } = useTheme();
+
     const { _id, username, email } = currentUser;
     
     const [changeUsername, setChangeUsername] = useState(false);
@@ -84,7 +87,7 @@ const UserPanel = ({ currentUser }) => {
     };
 
     return (
-        <Container className='bs-card bg-light'>
+        <Container className={`bs-card ${mode === 'dark' ? 'bg-dark' : 'bg-light'}`}>
             <Row className='border'>
                 <h4 className='pf fw-bold my-3'>Manage Your Account</h4>
                 <UpdateAccountDropdown 

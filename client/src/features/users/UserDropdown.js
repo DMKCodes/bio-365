@@ -38,8 +38,8 @@ const UserDropdown = () => {
             >   
                 <DropdownToggle 
                     caret
-                    color='light' 
-                    className='rounded-0'
+                    color='success' 
+                    className='rounded-0 fw-bold'
                 >
                     {currentUser.username}
                 </DropdownToggle>

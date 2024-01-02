@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useTheme } from '../../hooks/ThemeProvider';
 import { Row, Col, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
@@ -7,13 +8,15 @@ import engageImg from '../../app/media/home-engage.jpg';
 import donateImg from '../../app/media/home-donate.jpg';
 
 const HelpPanel = () => {
+    const { mode } = useTheme();
+
     return (
         <Row className='position-relative d-flex justify-content-center'>
             <div className='home-help-panel-header bg-dark text-light text-center'>
                 <h2 className='pf mt-5 mb-3 fw-bold'>How Can We Help?</h2>
                 <p>Stewardship of our environment is both a moral obligation and an urgent necessity, and every contribution makes a difference.</p>
             </div>
-            <div className='home-help-panel-content bg-light'>
+            <div className={`home-help-panel-content ${mode === 'dark' ? 'bg-dark border border-light' : 'bg-light'}`}>
                 <Row className='p-0'>
                     <Col lg='6' className='d-flex flex-column justify-content-center p-4'>
                         <h5 className='pf fw-bold'>Donate</h5>
@@ -50,14 +53,14 @@ const HelpPanel = () => {
                                 href='https://www.gbif.org/citizen-science'
                                 target='_blank'
                                 rel='noreferrer'
-                                className='text-dark'
+                                className={`${mode === 'dark' ? 'text-light' : 'text-dark'}`}
                             >
                                 Global Biodiversity Information Facility
                                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />
                             </a>
                             .
                         </p>
-                        <p>Even the largest non-profits rely on volunteers for support in areas as diverse as data gathering and analysis, montoring for invasive species, habitat rehabilitation, and more. No matter your skillset, you have a role to play.</p>
+                        <p>Even the largest non-profits rely on volunteers for support in areas as diverse as data gathering and analysis, monitoring for invasive species, habitat rehabilitation, and more. No matter your skillset, you have a role to play.</p>
                     </Col>
                     <Col lg='6' className='d-flex d-lg-none flex-column justify-content-center px-0'>
                         <img 
@@ -76,7 +79,7 @@ const HelpPanel = () => {
                                 href='https://www.licci.eu/'
                                 target='_blank'
                                 rel='noreferrer'
-                                className='text-dark'
+                                className={`${mode === 'dark' ? 'text-light' : 'text-dark'}`}
                             >
                                 indigenous peoples and community-level knowledge
                                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />

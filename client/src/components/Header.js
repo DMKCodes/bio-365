@@ -12,6 +12,7 @@ import {
 import { selectCurrentUser } from '../features/users/userSlice';
 import RegisterLoginModal from '../features/users/RegisterLoginModal';
 import UserDropdown from '../features/users/UserDropdown';
+import DisplayMode from '../components/DisplayMode';
 import logoFull from '../app/media/logo.png';
 import logoBare from '../app/media/logo-bare.png';
 
@@ -68,6 +69,7 @@ const HomeNav = () => {
                                 Resources
                             </NavLink>
                         </NavItem>
+                        <DisplayMode />
                         <div>
                             {currentUser ? (
                                 <UserDropdown />

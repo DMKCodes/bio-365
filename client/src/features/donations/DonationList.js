@@ -8,8 +8,8 @@ const DonationList = () => {
             <h2 className='pf mb-5 fw-bold text-center'>Conservation Groups</h2>
             {DONATIONS_ORGS.map((org, index) => {
                 return (
-                    <Row className='featured-organization d-flex justify-content-center'>
-                        <FeaturedOrganization org={org} key={index} />
+                    <Row key={index} className='featured-organization d-flex justify-content-center'>
+                        <FeaturedOrganization org={org} />
                     </Row>
                 );
             })}

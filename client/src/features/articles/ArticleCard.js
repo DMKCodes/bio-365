@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTheme } from '../../hooks/ThemeProvider';
 import {
     selectCurrentUser,
     checkSavedArticles,
@@ -34,6 +35,8 @@ import {
 import { faBookmark as faBookmarkEmpty }  from '@fortawesome/free-regular-svg-icons';
 
 const ArticleCard = ({ article, dashboard }) => {
+    const { mode } = useTheme();
+
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
 
@@ -113,7 +116,7 @@ const ArticleCard = ({ article, dashboard }) => {
                 className='article-image rounded-0'
                 src={image}
             />
-            <CardBody className='position-relative pt-2 px-2'>
+            <CardBody className={`position-relative pt-2 px-2 ${mode === 'dark' ? 'bg-dark text-light' : ''}`}>
                 {currentUser && isSaved ? (
                     <FontAwesomeIcon 
                         icon={faBookmark}
@@ -152,11 +155,8 @@ const ArticleCard = ({ article, dashboard }) => {
                     <Button
                         type='button'
                         outline
-                        color='dark'
-                        className={snippet ? 
-                            'article-preview-btn rounded-0 btn-sm mx-auto' : 
-                            'disabled article-preview-btn rounded-0 btn-sm mx-auto'
-                        }
+                        color={`${mode === 'dark' ? 'light' : 'dark'}`}
+                        className={`article-preview-btn rounded-0 btn-sm mx-auto ${!snippet ? 'disabled' : ''}`}
                         onClick={() => setExpanded(!expanded)}
                     >
                         Preview
@@ -170,18 +170,19 @@ const ArticleCard = ({ article, dashboard }) => {
                     </Button>
                 </Row>
                 
-                <CardText className='mt-3 mb-4'>
+                <CardText className='mt-3 mb-5'>
                     {expanded && snippet &&
                         snippet
                     }
                 </CardText>
 
-                <div className='article-card-info'>
+                <div className='article-card-info w-100 pe-3 mb-1'>
                     <small className='text-success fw-bold float-start'>
                         {category}
                     </small>
-                    <small className='text-muted float-end'>
+                    <small className='float-end'>
                         Source: <a href={source}>{publisher}</a>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs' className='ms-1' />
                     </small>
                 </div>
             </CardBody>

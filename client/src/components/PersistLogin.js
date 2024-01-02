@@ -1,15 +1,22 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToken } from '../features/users/userSlice';
 import { useRefreshMutation } from '../features/users/authApiSlice';
 import usePersist from '../hooks/usePersist';
+import ToastNotification from '../components/ToastNotification';
 
 const PersistLogin = () => {
     const [persist, ] = usePersist();
-
     const token = useSelector(selectToken);
+
+    const [isError, setIsError] = useState(false);
+    const [errMsg, setErrMsg] = useState('');
     
     const [refresh] = useRefreshMutation();
+
+    const handleCloseToast = () => {
+        setIsError(null);
+    };
 
     useEffect(() => {
         if (!token && persist) {
@@ -17,8 +24,8 @@ const PersistLogin = () => {
                 try {
                     await refresh().unwrap();
                 } catch (error) {
-                    console.error(error);
-                    alert('An error occurred while retrieving your saved login. Please try logging in again.');
+                    setIsError(true);
+                    setErrMsg('Your login could not be retrieved. Please log in again.');
                 }
             }
 
@@ -26,7 +33,7 @@ const PersistLogin = () => {
         }
     }, [token, persist, refresh]);
 
-    return null;
+    return isError ? <ToastNotification message={errMsg} isError={isError} onClose={handleCloseToast}  /> : null;
 };
 
 export default PersistLogin;

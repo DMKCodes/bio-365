@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTheme } from '../../../../hooks/ThemeProvider';
 import {
     Card, 
     CardBody, 
@@ -19,6 +20,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType, title }) => {
+    const { mode } = useTheme();
+
     const [expanded, setExpanded] = useState(false);
     const [tooltipOpen, setTooltipOpen] = useState(false);
 
@@ -30,7 +33,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
 
     return (
         <Card className='globe-data-card rounded-0'>
-            <CardHeader className='d-flex py-2'>
+            <CardHeader className={`d-flex rounded-0 py-2 ${mode === 'dark' ? 'bg-dark border-light' : ''}`}>
                 <span 
                     className='icon-wrapper d-inline-flex text-light' 
                     id='globe-tooltip'
@@ -53,7 +56,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                     <FontAwesomeIcon icon={expanded ? faMinus : faPlus} size='xs' />
                 </span>
             </CardHeader>
-            <CardBody className='text-center p-1'>
+            <CardBody className={`text-center p-1 ${mode === 'dark' ? 'bg-dark' : ''}`}>
                 <CardTitle className={expanded ? 'd-none' : 'my-2'}>
                     <small className='text-muted'>
                         <i>Pick a country on the globe to learn more.</i>
@@ -75,7 +78,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
 
                             {SPECIES_CONTENT.map((text, index) => {
                                 const textWithKeywords = defineKeywords(text);
-                                return <span key={index}>{textWithKeywords}</span>;
+                                return <span key={index}>{textWithKeywords}<br /></span>;
                             })}
 
                             <small className='d-block mt-3'>
@@ -97,7 +100,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                             
                             {ENDANGERED_CONTENT.map((text, index) => {
                                 const textWithKeywords = defineKeywords(text);
-                                return <span key={index}>{textWithKeywords}</span>;
+                                return <span key={index}>{textWithKeywords}<br /></span>;
                             })}
 
                             <small className='d-block mt-3'>
@@ -108,7 +111,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                         <span>
                             {MEGADIVERSE_CONTENT.map((text, index) => {
                                 const textWithKeywords = defineKeywords(text);
-                                return <span key={index}>{textWithKeywords}</span>;
+                                return <span key={index}>{textWithKeywords}<br /><br /></span>;
                             })}
 
                             <small className='d-block mt-3'>
@@ -118,7 +121,7 @@ const GlobeDataCard = ({ countryToDisplay, speciesData, endangeredData, viewType
                     ) : null}
                 </CardText>
             </CardBody>
-            <CardFooter className={expanded ? 'd-block' : 'd-none'}>
+            <CardFooter className={`${expanded ? 'd-block' : 'd-none'} ${mode === 'dark' ? 'bg-dark border-light' : ''}`}>
                 <InfoAccordion />
             </CardFooter>
         </Card>

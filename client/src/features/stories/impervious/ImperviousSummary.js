@@ -1,5 +1,6 @@
 import { useState, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTheme } from '../../../hooks/ThemeProvider';
 import {
     Container, 
     Row, 
@@ -16,10 +17,12 @@ import {
     IMPERVIOUS_STORY_SOURCES 
 } from '../../../app/shared/IMPERVIOUS_STORY_CONTENT';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import authorImg from '../../../app/media/me.png';
 
 const ImperviousSummary = () => {
+    const { mode } = useTheme();
+
     const [accordionOpen, setAccordionOpen] = useState([]);
 
     const toggleAccordion = (id) => {
@@ -86,7 +89,7 @@ const ImperviousSummary = () => {
                         >
                             {IMPERVIOUS_STORY_SOURCES.map((item, index) => {
                                 return (
-                                    <AccordionItem key={`summary-sources-headers-${index}`}>
+                                    <AccordionItem key={`summary-sources-headers-${index}`} className={`${mode === 'dark' ? 'bg-dark text-light' : ''}`}>
                                         <AccordionHeader targetId={`${index}`}>
                                             {item.category}
                                         </AccordionHeader>
@@ -118,7 +121,7 @@ const ImperviousSummary = () => {
                                                                     rel='noreferrer'
                                                                     key={index}
                                                                 >
-                                                                    {source.name}<br />
+                                                                    {source.name}<FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ms-1' size='sm' /><br />
                                                                 </a>
                                                             </small>
                                                         }

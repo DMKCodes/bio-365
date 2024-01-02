@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../../hooks/ThemeProvider';
 import { selectCurrentUser, clearCurrentUser } from '../../features/users/userSlice';
 import { usePutUserByIdMutation, useDeleteUserByIdMutation } from '../../features/users/authApiSlice';
 import { 
@@ -19,6 +20,8 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
 const UserCard = ({ user, setStatusMsg }) => {
+    const { mode } = useTheme();
+
     const [changeUsername, setChangeUsername] = useState(false);
     const [usernameChanged, setUsernameChanged] = useState(false);
     
@@ -95,7 +98,7 @@ const UserCard = ({ user, setStatusMsg }) => {
     });
 
     return (
-        <Card className='user-card rounded-0'>
+        <Card className={`user-card rounded-0 ${mode === 'dark' ? 'bg-dark border-light' : 'bg-light'}`}>
             <CardHeader>
                 <CardText>
                     <b>Username</b>: {username}
@@ -190,7 +193,7 @@ const UserCard = ({ user, setStatusMsg }) => {
                     <>
                         <Button
                             type='button'
-                            color='dark'
+                            color={mode === 'dark' ? 'light' : 'dark'}
                             className='rounded-0 btn-sm me-3'
                             onClick={() => setChangeUsername(true)}
                         >

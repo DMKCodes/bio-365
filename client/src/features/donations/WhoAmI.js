@@ -1,11 +1,15 @@
 import { Row, Col, Button } from 'reactstrap';
+import { useTheme } from '../../hooks/ThemeProvider';
 import { DONATIONS_DIRECT_SUPPORT } from '../../app/shared/DONATIONS';
 import signature from '../../app/media/signature.png';
+import signatureWhite from '../../app/media/signature-white.png';
 import me from '../../app/media/me.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const WhoAmI = () => {
+    const { mode } = useTheme();
+
     const { description } = DONATIONS_DIRECT_SUPPORT;
 
     return (
@@ -21,7 +25,7 @@ const WhoAmI = () => {
                     );
                 })}
                 <img 
-                    src={signature} 
+                    src={mode === 'dark' ? signatureWhite : signature} 
                     alt='signed name Doug' 
                     className='signature mb-4 mx-auto mx-xl-0 ms-3 me-xl-auto'
                 />

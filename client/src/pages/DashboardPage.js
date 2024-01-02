@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const DashboardPage = () => {
+    
     const currentUser = useSelector(selectCurrentUser);
     const isLoading = useSelector(selectLoading);
     const errMsg = useSelector(selectError);

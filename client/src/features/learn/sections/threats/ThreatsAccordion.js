@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTheme } from '../../../../hooks/ThemeProvider';
 import {
     Accordion,
     AccordionBody,
@@ -10,6 +11,8 @@ import defineKeywords from '../../../../utils/defineKeywords';
 import { THREATS_ACCORDION_CONTENT } from '../../../../app/shared/LEARN_CONTENT';
 
 const ThreatsAccordion = () => {
+    const { mode } = useTheme();
+
     const [accordionOpen, setAccordionOpen] = useState([]);
 
     const toggleAccordion = (id) => {
@@ -29,7 +32,7 @@ const ThreatsAccordion = () => {
             {THREATS_ACCORDION_CONTENT.map((text, index) => {
                 const textWithKeywords = defineKeywords(text.body);
                 return (
-                    <AccordionItem key={`${index}`}>
+                    <AccordionItem key={`${index}`} className={`${mode === 'dark' ? 'bg-dark text-light' : ''}`}>
                         <AccordionHeader targetId={`${index}`}>
                             {text.header}
                         </AccordionHeader>

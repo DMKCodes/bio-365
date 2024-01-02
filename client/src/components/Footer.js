@@ -1,12 +1,15 @@
-import { Container, Row, Col, Nav, NavItem, Navbar, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { useTheme } from '../hooks/ThemeProvider';
+import { Container, Row, Col, Nav, NavItem, Navbar, Button } from 'reactstrap';
 import ContactForm from './ContactForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
+    const { mode } = useTheme();
+
     return (
-        <footer className='footer'>
+        <footer className={`footer ${mode === 'dark' ? 'border-top mt-5' : ''}`}>
             <Container fluid className='p-4 mt-5 bg-dark text-light'>
                 <Row className='mt-3'>
                     <Col md='6' lg='4' className='text-center'>

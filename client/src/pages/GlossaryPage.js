@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTheme } from '../hooks/ThemeProvider';
 import { 
     Container, 
     Row, 
@@ -20,6 +21,8 @@ import { GLOSSARY_PAGE_VIDEO_BG } from '../app/shared/VIDEO_BACKGROUNDS';
 import { formatGlossary } from '../app/shared/GLOSSARY';
 
 const GlossaryPage = () => {
+    const { mode } = useTheme();
+
     const [allItems, setAllItems] = useState([]);
     const [currentLetter, setCurrentLetter] = useState(null);
 
@@ -88,7 +91,7 @@ const GlossaryPage = () => {
             <Header />
 
             <Container className='my-5'>
-                <Button color='dark' outline className='rounded-0 mb-3 me-auto'>
+                <Button color={mode === 'dark' ? 'light' : 'dark'} outline className='rounded-0 mb-3 me-auto'>
                     <NavLink className='nav-link' to='/resources'>
                         <FontAwesomeIcon icon={faArrowLeft} className='me-2' />Back to Resources
                     </NavLink>

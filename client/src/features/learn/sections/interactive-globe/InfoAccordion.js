@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTheme } from '../../../../hooks/ThemeProvider';
 import {
     Accordion,
     AccordionBody,
@@ -7,6 +8,8 @@ import {
 } from 'reactstrap';
 
 const InfoAccordion = () => {
+    const { mode } = useTheme();
+
     const [accordionOpen, setAccordionOpen] = useState([]);
 
     const toggleAccordion = (id) => {
@@ -23,7 +26,7 @@ const InfoAccordion = () => {
     
     return (
         <Accordion flush open={accordionOpen} toggle={toggleAccordion}>
-            <AccordionItem>
+            <AccordionItem className={`${mode === 'dark' ? 'bg-dark text-light' : ''}`}>
                 <AccordionHeader targetId='1'>
                     Sources
                 </AccordionHeader>
@@ -72,7 +75,7 @@ const InfoAccordion = () => {
                     </small>
                 </AccordionBody>
             </AccordionItem>
-            <AccordionItem>
+            <AccordionItem className={`${mode === 'dark' ? 'bg-dark text-light' : ''}`}>
                 <AccordionHeader targetId='2'>
                     Notes
                 </AccordionHeader>

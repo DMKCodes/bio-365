@@ -1,12 +1,15 @@
+import { useTheme } from '../../hooks/ThemeProvider';
 import { Card, CardHeader, CardBody, CardText, CardTitle, CardFooter, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const ResourceCard = ({ resource }) => {
+    const { mode } = useTheme();
+
     const { name, link, about, icon } = resource;
 
     return (
-        <Card className='resource-card mt-4 rounded-0'>
+        <Card className={`resource-card mt-4 rounded-0 ${mode === 'dark' ? 'bg-dark border-light' : ''}`}>
             <CardHeader className='pf text-center px-2'>
                 <FontAwesomeIcon icon={icon} size='xl' className='mb-2' fixedWidth />
                 <CardTitle>

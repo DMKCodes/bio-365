@@ -105,6 +105,9 @@ const ImperviousSolutions = ({ isMobileView }) => {
                                                     {content.text.link &&
                                                         <ExternalButton link={content.text.link} />
                                                     }
+                                                    {content.text.quote &&
+                                                        <Quote quote={content.text.quote} source={content.text.quoteSource} />
+                                                    }
                                                 </div>
                                             </Step>
                                         );
@@ -129,7 +132,9 @@ const ImperviousSolutions = ({ isMobileView }) => {
                                                                 className='story-media-img img-fluid mb-2'
                                                             />
                                                         ) : content.media.video ? (
-                                                            <YoutubeEmbed id={content.media.video} />
+                                                            <div className='story-video-wrapper mb-2'>
+                                                                <YoutubeEmbed id={content.media.video} />
+                                                            </div>
                                                         ) : content.media.chart && content.media.chartType === 'bar' ? (
                                                             <Fragment>
                                                                 <h3 className='text-center'>{content.media.chartTitle}</h3>
